@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 188, 240);
+    text-align: center; /* Center all text by default */
+}
+
+/* Header styling */
+header {
+    background-color: #6fa6e2;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center; /* Ensure header text is centered */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main content area */
+main {
+    padding: 80px 20px 20px 20px; /* Adjust padding-top for fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the main content */
+}
+
+/* Sections styling */
+section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a max-width for better readability */
+    text-align: center; /* Center text in section */
+}
+
+/* Override text alignment for questions */
+section .question {
+    text-align: left; /* Keep questions left-aligned */
+    margin-bottom: 15px;
+}
+
+/* Ensure images do not exceed the width of their container */
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Center the image within the section with some margin */
+}
+
+/* Buttons styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Remove display: block and margin: auto to allow inline display */
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+button:active {
+    background-color: #003f7f;
+}
+
+button[type="button"] {
+    background-color: #007bff;
+    color: rgb(247, 240, 240);
+}
+
+/* Center the buttons and display them inline with gaps */
+#button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Correct and incorrect answer styling */
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+/* Form styling */
+#quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Label styling */
+label {
+    margin-right: 10px;
+}
+
+/* Input text field styling */
+input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    max-width: 500px; /* Set a max-width for text inputs */
+    -webkit-text-fill-color: black;
+}
+
+/* Radio and checkbox inputs */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}

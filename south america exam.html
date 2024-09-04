@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>explore the world</title>
+    <link rel="stylesheet" href="css-test-one.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+
+            <h1>Explore South america exam </h1>
+        </header>
+        <main>
+            <section id="instructions">
+                <p>Test your knowledge about South America, we wish you have finished your exploration for South America! 
+                <p>Click the button below to start.</p>
+                <button onclick="startTest()">Start Exam</button>
+                <p>Good lucky!</p>
+            </section>
+
+            <section id="quiz" style="display: none;">
+                <form id="quiz-form">
+                    <div id="questions-container"></div>
+                    <h2>click submit button to view your scores.</h2>
+                    <button type="button" onclick="submitAnswers()">Submit</button>
+                </form>
+            </section>
+
+            <section id="results" style="display: none;">
+                <h2>Your Exam Results</h2>
+                <p id="score"></p>
+                <h2>view corrections</h2>
+                <div id="corrections"></div>
+                <h2>click restart to restart the quiz and click finish to go back to continue your exploration.</h2>
+                <button onclick="restartQuiz()">Restart Exam</button>
+                <button class="button" onclick="document.location='south america.html'">FINISH</button>
+            </section>
+        </main>
+    </div>
+    <script src="south america exam.js"></script>
+</body>
+
+</html>

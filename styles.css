@@ -1,0 +1,270 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding: 0;
+    background-image:url="new.gif";
+}
+
+header {
+    background-image:transparent;
+    color: rgb(229, 6, 6);
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-top: 20px;
+}
+input[type="text"] {
+    padding: 2px;
+    width: 50%;
+    margin-right: 25%;
+    
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.911);
+    
+}
+
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+button:active {
+    background-color: #003f7f;
+}
+
+.primary-btn {
+    background-color: #007bff;
+    color: rgb(227, 218, 218);
+}
+
+.secondary-btn {
+    background-color: #e2ed14;
+    color: rgb(172, 157, 219);
+}
+
+#question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right:75px;
+    margin-left: 75px;
+}
+
+#question-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#question-list label {
+    margin-right: 20px;
+}
+
+#result-message {
+    margin-bottom: 25px;
+}
+
+#correct-answers h4 {
+    margin: 10px 0;
+}
+
+#correct-answers p {
+    margin: 5px 0;
+}
+/* Example styles for new sections */
+#login-section, #create-account-section {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(7, 195, 101, 0.1);
+}
+
+#login-section header, #create-account-section header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#login-section form div, #create-account-section form div {
+    margin-bottom: 15px;
+}
+
+#login-section form label, #create-account-section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#login-section form input, #create-account-section form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#login-section button, #create-account-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-section button:hover, #create-account-section button:hover {
+    background-color: #0056b3;
+}
+
+#login-error, #create-success {
+    text-align: center;
+    font-weight: bold;
+}
+
+#login-error {
+    color: red;
+}
+
+#create-success {
+    color: rgb(18, 219, 18);
+}
+
+#description {
+    margin-bottom: 20px;
+}
+.hamburger-menu {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#menu li {
+    margin: 10px 0;
+}
+
+#menu a {
+    text-decoration: none;
+    color: rgb(216, 209, 209);
+}
+
+.introduction{ font-family: Arial, sans-serif; 
+    color: #050101; 
+    line-height: 1.0; 
+    margin: 15px; padding: 12px;
+    border-radius: 10px; 
+    background-color: #48b9b0;}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(91, 151, 163);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #1dd9ad;
+        color: rgb(28, 8, 1);
+    }
+
+    .header h1 {
+        margin: 0;
+    }
+
+    .menu {
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        background-color: rgb(1, 240, 229);
+        border: 5px solid #0c0103;
+        display: none;
+        flex-direction: column;
+    }
+
+    .dropdown a {
+        padding: 10px;
+        text-decoration: none;
+        color: rgb(61, 255, 3);
+        display: block;
+        color:#0c0103
+    }
+
+    .dropdown a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .content {
+        display: none;
+        padding: 20px;
+    }
+
+    .marks {
+        margin-top: 10px;
+    }
+
+    .quiz-question {
+        margin-bottom: 20px;
+    }
+
+    .quiz-question label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .results {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+    }
+
+    .correct {
+        color: green;
+        font-weight: bold;
+    }
+
+    .incorrect {
+        color: red;
+        font-weight: bold;
+    }

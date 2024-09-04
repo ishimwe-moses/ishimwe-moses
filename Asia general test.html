@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Quiz</title>
+    <link rel="stylesheet" href="css-test-one.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Explore Asia  GENERAL TEST </h1>
+        </header>
+        <main>
+            <section id="instructions">
+                <p>Test your knowledge about Asia, we wish you have finished your exploration for ASIA! 
+                <p>Click the button below to start.</p>
+                <button onclick="startTest()">START GENERAL TEST</button>
+               <p>Good lucky!</p>
+            </section>
+
+            <section id="quiz" style="display: none;">
+                <form id="quiz-form">
+                    <div id="questions-container"></div>
+                    <button type="button" onclick="submitAnswers()">Submit</button>
+                </form>
+            </section>
+
+            <section id="results" style="display: none;">
+                <h2>Your General test Results</h2>
+                <p id="score"></p>
+                <h2>view corrections</h2>
+                <div id="corrections"></div>
+                <h2>click restart to restart general test, and click finish to go back to continue your exploration.</h2>
+                <button onclick="restartQuiz()">Restart Exam</button>
+                <button class="button" onclick="document.location='asia exam.html'">NEXT</button>
+                <button class="button" onclick="document.location='asia.html'">FINISH</button>
+            </section>
+        </main>
+    </div>
+    <script src="asia general test.js"></script>
+</body>
+
+</html>

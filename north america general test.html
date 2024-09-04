@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the world!</title>
+    <link rel="stylesheet" href="css-test-one.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Explore North America :General test </h1>
+        </header>
+        <main>
+            <section id="instructions">
+                <p>Test your knowledge about North Aerica, we wish you have finished your exploration ! 
+                <p>Click the button below to start.</p>
+                <button onclick="startTest()">Start General Test</button>
+               <p>Good lucky!</p>
+            </section>
+
+            <section id="quiz" style="display: none;">
+                <form id="quiz-form">
+                    <div id="questions-container"></div>
+                    <button type="button" onclick="submitAnswers()">Submit</button>
+                </form>
+            </section>
+
+            <section id="results" style="display: none;">
+                <h2>Quiz Results</h2>
+                <p id="score"></p>
+                <div id="corrections"></div>
+                <button onclick="restartQuiz()">Restart General Test</button>
+                <button class="button" onclick="document.location='north america exam.html'">NEXT</button>
+                <button class="button" onclick="document.location='north america.html'">FINISH</button>
+            </section>
+        </main>
+    </div>
+    <script src="north america general test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the world</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <div class="menu" onclick="toggleMenu()">&#9776;</div>
+    <h1>Let's South America</h1>
+</div>
+<section>
+<div id="dropdown" class="dropdown">
+    <a href="GEO-Apk.html">Home</a>
+    <a href="south america day1.html">Day 1</a>
+    <a href="south america day2.html">Day 2</a>
+    <a href="south america day3.html">Day 3</a>
+    <a href="south america quiz1.html">Quiz 1</a>
+    <a href="south america day4.html">Day 4</a>
+    <a href="south america day5.html">Day 5</a>
+    <a href="south america day6.html">Day 6</a>
+    <a href="south america quiz2.html">Quiz 2</a>
+    <a href="south america day7.html">Day 7</a>
+    <a href="south america day8.html">day 8</a>
+    <a href="south america day9.html">day 9</a>
+    <a href="south america quiz3.html">Quiz 3</a>
+    <a href="south america general test.html">General-test</a>
+    <a href="south america exam.html">exam</a>
+    <a href="#marks" onclick="showContent('marks'); toggleMenu()">Marks</a>
+</div>
+<main>
+    <section id="continents">
+    <div class="introduction">
+        <p><strong>South America</strong> is known for its rich biodiversity, with the <strong>Amazon Rainforest</strong> being the largest tropical rainforest and the <strong>Amazon River</strong> being the largest river by discharge.</p>
+        <p>The continent is home to diverse cultures and civilizations, including the ancient Inca Empire and a blend of Indigenous, European, and African influences.</p>
+        <p>South America has dramatic landscapes, from the <strong>Andes</strong>, the longest continental mountain range, to the <strong>Atacama Desert</strong>, one of the driest places on Earth.</p>
+        <p>The continent is rich in natural resources, including minerals, oil, and agricultural products like coffee, soy, and beef.</p>
+        <p>South America is known for its vibrant festivals, such as Brazil’s <strong>Carnival</strong>, which is one of the largest and most famous in the world.</p>
+        <p>The continent faces challenges such as political instability, economic inequality, and deforestation but has a growing number of urban centers and economies.</p>
+        <p>South America has contributed significantly to global culture, particularly in music, dance, and sports, with figures like <strong>Pelé</strong> and tango music gaining worldwide recognition.</p>
+        </div>
+        <div><p id="description">Think you know South America? Match the cities with their correct countries and find out!.</p></div>
+        <div class="buttons">
+            <button onclick="chooseContinent('South America')">GeoMatch</button>
+        </div>
+    </section>
+    <section id="quiz" style="display: none;">
+        <h2>You want to prove that you know <span id="chosen-continent"></span></h2>
+        <div class="introduction">
+            <p><strong>South America</strong> is a continent of stunning natural beauty and rich cultural diversity, with 12 countries, each with its own capital city.</p>
+            <p>This quiz will challenge your knowledge of South American geography by asking you to match countries with their capitals.</p>
+            <p>From the high-altitude city of <strong>La Paz</strong> in Bolivia to the vibrant streets of <strong>Buenos Aires</strong> in Argentina, South America's capitals reflect the continent's diversity.</p>
+            <p>These cities are centers of culture, politics, and history, each with a unique blend of indigenous and colonial influences.</p>
+            <p>Whether you're thinking of the colorful festivals of <strong>Rio de Janeiro</strong> in Brazil or the ancient history of <strong>Lima</strong> in Peru, each capital has a story to tell.</p>
+            <p>As you take this quiz, immerse yourself in the vibrant cultures and rich histories that define South America’s capitals.</p>
+            <p>Good luck, and enjoy exploring the capitals of South America!</p>
+        </div>
+        <div class="buttons">
+            <button onclick="startQuiz('country')">Country Finder</button>
+            <button onclick="startQuiz('city')">City Finder</button>
+        </div>
+    </section>
+    <section id="questions" style="display: none;">
+        <h3 id="instruction"></h3>
+        <div id="question-list"></div>
+        <button class="primary-btn" onclick="submitAnswers()">Submit</button>
+    </section>
+
+    <section id="results" style="display: none;">
+        <h3 id="result-message"></h3>
+        <div id="correct-answers"></div>
+        <div class="buttons">
+            <button class="secondary-btn" onclick="continueQuiz()">Back</button>
+        </div>
+    </section>
+</main>
+</div>
+<script src="script.js"></script>
+
+<div id="quiz1" class="content">
+    <h2>Quiz 1</h2>
+    <form id="quizForm1">
+        First Name: <input type="text" id="firstName1" />
+        Last Name: <input type="text" id="lastName1" />
+        PIN: <input type="password" id="pin1" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(1)">Submit Quiz</button>
+    <div id="results1" class="results"></div>
+    <button onclick="retryQuiz(1)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz2" class="content">
+    <h2>Quiz 2</h2>
+    <form id="quizForm2">
+        First Name: <input type="text" id="firstName2" />
+        Last Name: <input type="text" id="lastName2" />
+        PIN: <input type="password" id="pin2" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(2)">Submit Quiz</button>
+    <div id="results2" class="results"></div>
+    <button onclick="retryQuiz(2)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz3" class="content">
+    <h2>Quiz 3</h2>
+    <form id="quizForm3">
+        First Name: <input type="text" id="firstName3" />
+        Last Name: <input type="text" id="lastName3" />
+        PIN: <input type="password" id="pin3" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(3)">Submit Quiz</button>
+    <div id="results3" class="results"></div>
+    <button onclick="retryQuiz(3)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz4" class="content">
+    <h2>Quiz 4</h2>
+    <form id="quizForm4">
+        First Name: <input type="text" id="firstName4" />
+        Last Name: <input type="text" id="lastName4" />
+        PIN: <input type="password" id="pin4" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(4)">Submit Quiz</button>
+    <div id="results4" class="results"></div>
+    <button onclick="retryQuiz(4)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz5" class="content">
+    <h2>Quiz 5</h2>
+    <form id="quizForm5">
+        First Name: <input type="text" id="firstName5" />
+        Last Name: <input type="text" id="lastName5" />
+        PIN: <input type="password" id="pin5" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(5)">Submit Quiz</button>
+    <div id="results5" class="results"></div>
+    <button onclick="retryQuiz(5)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="marks" class="content">
+    <h2>Marks</h2>
+    First Name: <input type="text" id="firstNameMarks" />
+    Last Name: <input type="text" id="lastNameMarks" />
+    PIN: <input type="password" id="pinMarks" />
+    <button onclick="displayMarks()">View Marks</button>
+    <div id="marksContent"></div>
+</div>
+
+<script>
+   
+
+    function toggleMenu() {
+        const dropdown = document.getElementById('dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showContent(id) {
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        if (id.startsWith('quiz')) {
+            loadQuiz(parseInt(id.replace('quiz', '')));
+        }
+    }
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+
+        resultsHTML += '</ul>';
+        resultsHTML += `<p>Your score: ${(correctAnswers / questions.length) * 100}%</p>`;
+        const resultsDiv = document.getElementById('results' + quizNumber);
+        resultsDiv.innerHTML = resultsHTML;
+
+        if ((correctAnswers / questions.length) * 100 >= 60) {
+            resultsDiv.innerHTML += '<p class="correct">You passed the quiz!</p>';
+            const key = `${firstName}_${lastName}_${quizNumber}`;
+            if (!localStorage.getItem(key)) {
+                localStorage.setItem(key, (correctAnswers / questions.length) * 100);
+            }
+        } else {
+            resultsDiv.innerHTML += '<p class="incorrect">You failed the quiz. Please try again.</p>';
+            const retryButton = document.querySelector(`#quiz${quizNumber} button[onclick="retryQuiz(${quizNumber})"]`);
+            retryButton.style.display = 'inline';
+        }
+    
+
+    function displayMarks() {
+        const firstName = document.getElementById('firstNameMarks').value;
+        const lastName = document.getElementById('lastNameMarks').value;
+        const pin = document.getElementById('pinMarks').value;
+
+        if (!firstName || !lastName || !pin) {
+            alert('Please fill out all the fields.');
+            return;
+        }
+
+        let marksHTML = '<h3>Your Marks</h3><ul>';
+        let found = false;
+        for (let i = 1; i <= 5; i++) {
+            const key = `${firstName}_${lastName}_${i}`;
+            const score = localStorage.getItem(key);
+            if (score !== null) {
+                found = true;
+                marksHTML += `<li>Quiz ${i}: ${score}%</li>`;
+            }
+        }
+
+        if (!found) {
+            marksHTML += '<li>No marks found.</li>';
+        }
+
+        marksHTML += '</ul>';
+        document.getElementById('marksContent').innerHTML = marksHTML;
+    }
+
+    // Load the first quiz by default when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        showContent('quiz1');
+    });
+</script>
+</body>
+</html>

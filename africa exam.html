@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Quiz</title>
+    <link rel="stylesheet" href="css-test-one.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Explore Africa EXAM</h1>
+        </header>
+        <main>
+            <!-- Instructions and User Information Section -->
+            <section id="instructions">
+                <p>Test your knowledge about Africa! We wish you have explored the first 3 days!</p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Gmail Address:</label>
+                <input type="email" id="email" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <p>Click the button below to start.</p>
+                <button onclick="startTest()">Start Exam</button>
+                <p>Good luck!</p>
+            </section>
+
+            <!-- Quiz Section -->
+            <section id="quiz" style="display: none;">
+                <form id="quiz-form">
+                    <div id="questions-container"></div>
+                    <h2>Click submit to view your scores.</h2>
+                    <button type="button" onclick="submitAnswers()">Submit</button>
+                </form>
+            </section>
+
+            <!-- Results and Certificate Section -->
+            <section id="results" style="display: none;">
+                <h2>Your Exam Results</h2>
+                <p id="score"></p>
+                <h2>View Corrections</h2>
+                <div id="corrections"></div>
+                <div id="certificate-section"></div> <!-- Certificate Link will be here -->
+                <h2>Click restart to retake the exam or finish to continue your exploration.</h2>
+                <button onclick="restartQuiz()">Restart Exam</button>
+                <button class="button" onclick="document.location='africa.html'">FINISH</button>
+            </section>
+        </main>
+    </div>
+    <script src="africa exam.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the world</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <div class="menu" onclick="toggleMenu()">&#9776;</div>
+    <h1>Let's Explore Antarctica</h1>
+</div>
+<section>
+<div id="dropdown" class="dropdown">
+    <a href="GEO-Apk.html">Home</a>
+<a href="antarctica day1.html">Day 1</a>
+<a href="antarctica day2.html">Day 2</a>
+<a href="antarctica quiz1.html">quiz 1</a>
+<a href="antarctica day3.html">Day 3</a>
+<a href="antarctica day4.html">Day 4</a>
+<a href="antarctica quiz2.html">quiz 2</a>
+<a href="antarctica general test.html">General Test</a>
+<a href="antarctica exam.html">Exam</a>
+    <a href="#marks" onclick="showContent('marks'); toggleMenu()">Marks</a>
+</div>
+<main>
+    <section id="continents">
+        <div class="introduction">
+            <p><strong>Antarctica</strong> is the coldest, driest, and windiest continent, almost entirely covered by ice, which holds about 70% of the world’s fresh water.</p>
+            <p>It has no permanent residents, but it hosts international scientific research stations where scientists study climate, wildlife, and glaciology.</p>
+            <p>The continent is governed by the <strong>Antarctic Treaty System</strong>, which preserves it for peaceful research and bans military activity and mineral mining.</p>
+            <p>Despite its harsh environment, Antarctica is home to unique wildlife, including penguins, seals, and various seabirds.</p>
+            <p>The continent experiences extreme seasonal variations, with six months of continuous daylight (summer) followed by six months of darkness (winter).</p>
+            <p>Antarctica plays a critical role in regulating the Earth’s climate and sea levels, making it a key area of study in global climate research.</p>
+            <p>The continent’s isolation and pristine environment make it a natural laboratory for understanding the impacts of climate change and human activity on the planet.</p>
+            </div>
+        <div><p id="description">Think you know Antarctica? Match the the research stations with their correct countries ownining them and find out!.</p></div>
+        <div class="buttons">
+            <button onclick="chooseContinent('Antarctica')">GeoMatch</button>
+        </div>
+    </section>
+
+    <section id="quiz" style="display: none;">
+        <h2>You want to prove that you know <span id="chosen-continent"?></span></h2>
+        <div class="introduction">
+            <p><strong>Antarctica</strong> is unique among the continents, as it does not have any countries or capital cities.</p>
+                <p>However, this quiz will challenge your knowledge of the research stations and key locations on this remote and icy continent.</p>
+                <p>From the international <strong>McMurdo Station</strong> to the remote <strong>Amundsen-Scott South Pole Station</strong>, these are the outposts of human presence in Antarctica.</p>
+                <p>These stations are centers of scientific research, where scientists from around the world study the extreme environment and its impact on the planet.</p>
+                <p>As you take this quiz, learn about the unique locations and the challenges faced by those who live and work on this frozen continent.</p>
+                <p>Good luck, and enjoy discovering the fascinating places in Antarctica!</p>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="startQuiz('country')">Country Finder</button>
+            <button onclick="startQuiz('city')">station Finder</button>
+        </div>
+    </section>
+    <section id="questions" style="display: none;">
+        <h3 id="instruction"></h3>
+        <div id="question-list"></div>
+        <button class="primary-btn" onclick="submitAnswers()">Submit</button>
+    </section>
+
+    <section id="results" style="display: none;">
+        <h3 id="result-message"></h3>
+        <div id="correct-answers"></div>
+        <div class="buttons">
+            <button class="secondary-btn" onclick="continueQuiz()">Back</button>
+        </div>
+    </section>
+</main>
+</div>
+<script src="script.js"></script>
+
+<div id="quiz1" class="content">
+    <h2>Quiz 1</h2>
+    <form id="quizForm1">
+        First Name: <input type="text" id="firstName1" />
+        Last Name: <input type="text" id="lastName1" />
+        PIN: <input type="password" id="pin1" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(1)">Submit Quiz</button>
+    <div id="results1" class="results"></div>
+    <button onclick="retryQuiz(1)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz2" class="content">
+    <h2>Quiz 2</h2>
+    <form id="quizForm2">
+        First Name: <input type="text" id="firstName2" />
+        Last Name: <input type="text" id="lastName2" />
+        PIN: <input type="password" id="pin2" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(2)">Submit Quiz</button>
+    <div id="results2" class="results"></div>
+    <button onclick="retryQuiz(2)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz3" class="content">
+    <h2>Quiz 3</h2>
+    <form id="quizForm3">
+        First Name: <input type="text" id="firstName3" />
+        Last Name: <input type="text" id="lastName3" />
+        PIN: <input type="password" id="pin3" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(3)">Submit Quiz</button>
+    <div id="results3" class="results"></div>
+    <button onclick="retryQuiz(3)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz4" class="content">
+    <h2>Quiz 4</h2>
+    <form id="quizForm4">
+        First Name: <input type="text" id="firstName4" />
+        Last Name: <input type="text" id="lastName4" />
+        PIN: <input type="password" id="pin4" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(4)">Submit Quiz</button>
+    <div id="results4" class="results"></div>
+    <button onclick="retryQuiz(4)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz5" class="content">
+    <h2>Quiz 5</h2>
+    <form id="quizForm5">
+        First Name: <input type="text" id="firstName5" />
+        Last Name: <input type="text" id="lastName5" />
+        PIN: <input type="password" id="pin5" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(5)">Submit Quiz</button>
+    <div id="results5" class="results"></div>
+    <button onclick="retryQuiz(5)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="marks" class="content">
+    <h2>Marks</h2>
+    First Name: <input type="text" id="firstNameMarks" />
+    Last Name: <input type="text" id="lastNameMarks" />
+    PIN: <input type="password" id="pinMarks" />
+    <button onclick="displayMarks()">View Marks</button>
+    <div id="marksContent"></div>
+</div>
+
+<script>
+   
+
+    function toggleMenu() {
+        const dropdown = document.getElementById('dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showContent(id) {
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        if (id.startsWith('quiz')) {
+            loadQuiz(parseInt(id.replace('quiz', '')));
+        }
+    }
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+
+        resultsHTML += '</ul>';
+        resultsHTML += `<p>Your score: ${(correctAnswers / questions.length) * 100}%</p>`;
+        const resultsDiv = document.getElementById('results' + quizNumber);
+        resultsDiv.innerHTML = resultsHTML;
+
+        if ((correctAnswers / questions.length) * 100 >= 60) {
+            resultsDiv.innerHTML += '<p class="correct">You passed the quiz!</p>';
+            const key = `${firstName}_${lastName}_${quizNumber}`;
+            if (!localStorage.getItem(key)) {
+                localStorage.setItem(key, (correctAnswers / questions.length) * 100);
+            }
+        } else {
+            resultsDiv.innerHTML += '<p class="incorrect">You failed the quiz. Please try again.</p>';
+            const retryButton = document.querySelector(`#quiz${quizNumber} button[onclick="retryQuiz(${quizNumber})"]`);
+            retryButton.style.display = 'inline';
+        }
+    
+
+    function displayMarks() {
+        const firstName = document.getElementById('firstNameMarks').value;
+        const lastName = document.getElementById('lastNameMarks').value;
+        const pin = document.getElementById('pinMarks').value;
+
+        if (!firstName || !lastName || !pin) {
+            alert('Please fill out all the fields.');
+            return;
+        }
+
+        let marksHTML = '<h3>Your Marks</h3><ul>';
+        let found = false;
+        for (let i = 1; i <= 5; i++) {
+            const key = `${firstName}_${lastName}_${i}`;
+            const score = localStorage.getItem(key);
+            if (score !== null) {
+                found = true;
+                marksHTML += `<li>Quiz ${i}: ${score}%</li>`;
+            }
+        }
+
+        if (!found) {
+            marksHTML += '<li>No marks found.</li>';
+        }
+
+        marksHTML += '</ul>';
+        document.getElementById('marksContent').innerHTML = marksHTML;
+    }
+
+    // Load the first quiz by default when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        showContent('quiz1');
+    });
+</script>
+</body>
+</html>

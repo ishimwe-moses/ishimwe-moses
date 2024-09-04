@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the world</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <div class="menu" onclick="toggleMenu()">&#9776;</div>
+    <h1>Let's Explore Asia</h1>
+</div>
+<section>
+<div id="dropdown" class="dropdown">
+    <a href="GEO-Apk.html">Home</a>
+    <a href="asia day1.html">Day 1</a>
+    <a href="asia day2.html">Day 2</a>
+    <a href="asia day3.html">Day 3</a>
+    <a href="asia quiz1.html">Quiz 1</a>
+    <a href="asia day4.html">Day 4</a>
+    <a href="asia day5.html">Day 5</a>
+    <a href="asia day6.html">Day 6</a>
+    <a href="asia quiz2.html">Quiz 2</a>
+    <a href="asia day7.html">Day 7</a>
+    <a href="asia day8.html">day 8</a>
+    <a href="asia day9.html">day 9</a>
+    <a href="asia quiz3.html">Quiz 3</a>
+    <a href="asia general test.html">General-test</a>
+    <a href="asia exam.html">Exam</a>
+    <a href="#marks" onclick="showContent('marks'); toggleMenu()">Marks</a>
+</div>
+<main>
+    <section id="continents">
+        <div class="introduction">
+                <p><strong>Asia</strong> is the <em>largest</em> and most populous continent, containing nearly 60% of the world’s population.</p>
+                <p>It is incredibly diverse, encompassing a wide range of climates, cultures, languages, and religions.</p>
+                <p>Asia is home to the world’s highest peak, <strong>Mount Everest</strong>, and the lowest point on land, the <strong>Dead Sea</strong>.</p>
+                <p>The continent is the birthplace of major world religions, including Hinduism, Buddhism, Islam, and Confucianism.</p>
+                <p>Economically, Asia is a powerhouse, with countries like <strong>China, Japan,</strong> and <strong>India</strong> playing major roles in global trade and technology.</p>
+                <p>The region has a rich history of ancient civilizations, including the Mesopotamian, Indus Valley, and Chinese civilizations.</p>
+                <p>Asia is known for its rapid modernization, with cities like <strong>Tokyo</strong>, <strong>Singapore</strong>, and <strong>Seoul</strong> leading in technological innovation and infrastructure.</p>
+            </div>
+        <div><p id="description">Think you know Asia? Match the cities with their correct countries and find out!.</p></div>
+        <div class="buttons">
+            <button onclick="chooseContinent('Asia')">GeoMatch</button>
+        </div>
+    </section>
+
+    <section id="quiz" style="display: none;">
+        <h2>You want to prove that you know <span id="chosen-continent"?></span></h2>
+        <div class="introduction">
+            <p><strong>Asia</strong> is the largest and most populous continent, with 49 countries, each boasting a capital city rich in culture and history.</p>
+            <p>This quiz challenges your knowledge of Asian geography by asking you to match countries with their capitals.</p>
+            <p>From the vibrant streets of <strong>Tokyo</strong> in Japan to the ancient city of <strong>Beijing</strong> in China, Asia's capitals are as diverse as the continent itself.</p>
+            <p>These cities are not just administrative centers but also cultural and economic powerhouses, with deep historical roots and modern significance.</p>
+            <p>Whether you're familiar with the bustling markets of <strong>Delhi</strong> in India or the serene temples of <strong>Bangkok</strong> in Thailand, each capital has a unique charm.</p>
+            <p>As you take this quiz, reflect on the vastness of Asia and the rich cultural tapestry woven into its capitals.</p>
+            <p>Good luck, and enjoy discovering the capitals of Asia!</p>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="startQuiz('country')">Country Finder</button>
+            <button onclick="startQuiz('city')">City Finder</button>
+        </div>
+    </section>
+    <section id="questions" style="display: none;">
+        <h3 id="instruction"></h3>
+        <div id="question-list"></div>
+        <button class="primary-btn" onclick="submitAnswers()">Submit</button>
+    </section>
+
+    <section id="results" style="display: none;">
+        <h3 id="result-message"></h3>
+        <div id="correct-answers"></div>
+        <div class="buttons">
+            <button class="secondary-btn" onclick="continueQuiz()">Back</button>
+        </div>
+    </section>
+</main>
+</div>
+<script src="script.js"></script>
+
+<div id="quiz1" class="content">
+    <h2>Quiz 1</h2>
+    <form id="quizForm1">
+        First Name: <input type="text" id="firstName1" />
+        Last Name: <input type="text" id="lastName1" />
+        PIN: <input type="password" id="pin1" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(1)">Submit Quiz</button>
+    <div id="results1" class="results"></div>
+    <button onclick="retryQuiz(1)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz2" class="content">
+    <h2>Quiz 2</h2>
+    <form id="quizForm2">
+        First Name: <input type="text" id="firstName2" />
+        Last Name: <input type="text" id="lastName2" />
+        PIN: <input type="password" id="pin2" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(2)">Submit Quiz</button>
+    <div id="results2" class="results"></div>
+    <button onclick="retryQuiz(2)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz3" class="content">
+    <h2>Quiz 3</h2>
+    <form id="quizForm3">
+        First Name: <input type="text" id="firstName3" />
+        Last Name: <input type="text" id="lastName3" />
+        PIN: <input type="password" id="pin3" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(3)">Submit Quiz</button>
+    <div id="results3" class="results"></div>
+    <button onclick="retryQuiz(3)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz4" class="content">
+    <h2>Quiz 4</h2>
+    <form id="quizForm4">
+        First Name: <input type="text" id="firstName4" />
+        Last Name: <input type="text" id="lastName4" />
+        PIN: <input type="password" id="pin4" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(4)">Submit Quiz</button>
+    <div id="results4" class="results"></div>
+    <button onclick="retryQuiz(4)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="quiz5" class="content">
+    <h2>Quiz 5</h2>
+    <form id="quizForm5">
+        First Name: <input type="text" id="firstName5" />
+        Last Name: <input type="text" id="lastName5" />
+        PIN: <input type="password" id="pin5" />
+        <!-- Quiz questions will be inserted here by JavaScript -->
+    </form>
+    <button onclick="submitQuiz(5)">Submit Quiz</button>
+    <div id="results5" class="results"></div>
+    <button onclick="retryQuiz(5)" style="display: none;">Retry Quiz</button>
+</div>
+
+<div id="marks" class="content">
+    <h2>Marks</h2>
+    First Name: <input type="text" id="firstNameMarks" />
+    Last Name: <input type="text" id="lastNameMarks" />
+    PIN: <input type="password" id="pinMarks" />
+    <button onclick="displayMarks()">View Marks</button>
+    <div id="marksContent"></div>
+</div>
+
+<script>
+   
+
+    function toggleMenu() {
+        const dropdown = document.getElementById('dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showContent(id) {
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        if (id.startsWith('quiz')) {
+            loadQuiz(parseInt(id.replace('quiz', '')));
+        }
+    }
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+
+        resultsHTML += '</ul>';
+        resultsHTML += `<p>Your score: ${(correctAnswers / questions.length) * 100}%</p>`;
+        const resultsDiv = document.getElementById('results' + quizNumber);
+        resultsDiv.innerHTML = resultsHTML;
+
+        if ((correctAnswers / questions.length) * 100 >= 60) {
+            resultsDiv.innerHTML += '<p class="correct">You passed the quiz!</p>';
+            const key = `${firstName}_${lastName}_${quizNumber}`;
+            if (!localStorage.getItem(key)) {
+                localStorage.setItem(key, (correctAnswers / questions.length) * 100);
+            }
+        } else {
+            resultsDiv.innerHTML += '<p class="incorrect">You failed the quiz. Please try again.</p>';
+            const retryButton = document.querySelector(`#quiz${quizNumber} button[onclick="retryQuiz(${quizNumber})"]`);
+            retryButton.style.display = 'inline';
+        }
+    
+
+    function displayMarks() {
+        const firstName = document.getElementById('firstNameMarks').value;
+        const lastName = document.getElementById('lastNameMarks').value;
+        const pin = document.getElementById('pinMarks').value;
+
+        if (!firstName || !lastName || !pin) {
+            alert('Please fill out all the fields.');
+            return;
+        }
+
+        let marksHTML = '<h3>Your Marks</h3><ul>';
+        let found = false;
+        for (let i = 1; i <= 5; i++) {
+            const key = `${firstName}_${lastName}_${i}`;
+            const score = localStorage.getItem(key);
+            if (score !== null) {
+                found = true;
+                marksHTML += `<li>Quiz ${i}: ${score}%</li>`;
+            }
+        }
+
+        if (!found) {
+            marksHTML += '<li>No marks found.</li>';
+        }
+
+        marksHTML += '</ul>';
+        document.getElementById('marksContent').innerHTML = marksHTML;
+    }
+
+    // Load the first quiz by default when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        showContent('quiz1');
+    });
+</script>
+</body>
+</html>

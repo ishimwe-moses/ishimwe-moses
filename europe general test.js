@@ -37,9 +37,7 @@ const questions = [
     
     
    
-    { question: "Which country's flag is shown below? <br><img src='flag-of-sweden.jpeg' alt='Flag of Sweden'>", type: "multiple", options: ["Sweden", "Norway", "Finland"], answer: "Sweden" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-denmark.jpeg' alt='Flag of Denmark'>", type: "multiple", options: ["Denmark", "Iceland", "Norway"], answer: "Denmark" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-finland.jpeg' alt='Flag of Finland'>", type: "multiple", options: ["Finland", "Estonia", "Latvia"], answer: "Finland" },
+    
     { question: "Which countries are in Western Europe?", type: "checkbox", options: ["France", "Germany", "Italy", "Poland"], answer: ["France", "Germany", "Italy"] },
     { question: "Select the major rivers in Europe:", type: "checkbox", options: ["Danube", "Rhine", "Amazon", "Thames"], answer: ["Danube", "Rhine", "Thames"] },
     { question: "Which are the major mountain ranges in Europe?", type: "checkbox", options: ["Alps", "Pyrenees", "Rockies", "Appalachians"], answer: ["Alps", "Pyrenees"] },

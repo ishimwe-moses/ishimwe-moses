@@ -1,143 +1,6 @@
 const questions = [
    
-      {
-    question: "Which state's flag is shown below? <br><img src='flag-of-alabama.jpeg' alt='Alabama Flag'>",
-    type: "multiple",
-    options: ["Alabama", "Georgia", "Mississippi"],
-    answer: "Alabama"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-alaska.jpeg' alt='Alaska Flag'>",
-    type: "multiple",
-    options: ["Alaska", "Montana", "Oregon"],
-    answer: "Alaska"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-arizona.jpeg' alt='Arizona Flag'>",
-    type: "multiple",
-    options: ["Arizona", "New Mexico", "Nevada"],
-    answer: "Arizona"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-arkansas.jpeg' alt='Arkansas Flag'>",
-    type: "multiple",
-    options: ["Arkansas", "Kentucky", "Tennessee"],
-    answer: "Arkansas"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-california.jpeg' alt='California Flag'>",
-    type: "multiple",
-    options: ["California", "Nevada", "Texas"],
-    answer: "California"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-colorado.jpeg' alt='Colorado Flag'>",
-    type: "multiple",
-    options: ["Colorado", "Wyoming", "Utah"],
-    answer: "Colorado"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-connecticut.jpeg' alt='Connecticut Flag'>",
-    type: "multiple",
-    options: ["Connecticut", "New York", "Rhode Island"],
-    answer: "Connecticut"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-delaware.jpeg' alt='Delaware Flag'>",
-    type: "multiple",
-    options: ["Delaware", "Maryland", "New Jersey"],
-    answer: "Delaware"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-florida.jpeg' alt='Florida Flag'>",
-    type: "multiple",
-    options: ["Florida", "Alabama", "South Carolina"],
-    answer: "Florida"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-georgia.jpeg' alt='Georgia Flag'>",
-    type: "multiple",
-    options: ["Georgia", "Alabama", "Tennessee"],
-    answer: "Georgia"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-hawaii.jpeg' alt='Hawaii Flag'>",
-    type: "multiple",
-    options: ["Hawaii", "Alaska", "California"],
-    answer: "Hawaii"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-idaho.jpeg' alt='Idaho Flag'>",
-    type: "multiple",
-    options: ["Idaho", "Montana", "Wyoming"],
-    answer: "Idaho"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-illinois.jpeg' alt='Illinois Flag'>",
-    type: "multiple",
-    options: ["Illinois", "Indiana", "Iowa"],
-    answer: "Illinois"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-indiana.jpeg' alt='Indiana Flag'>",
-    type: "multiple",
-    options: ["Indiana", "Ohio", "Michigan"],
-    answer: "Indiana"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-iowa.jpeg' alt='Iowa Flag'>",
-    type: "multiple",
-    options: ["Iowa", "Missouri", "Nebraska"],
-    answer: "Iowa"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-kansas.jpeg' alt='Kansas Flag'>",
-    type: "multiple",
-    options: ["Kansas", "Oklahoma", "Nebraska"],
-    answer: "Kansas"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-kentucky.jpeg' alt='Kentucky Flag'>",
-    type: "multiple",
-    options: ["Kentucky", "Tennessee", "West Virginia"],
-    answer: "Kentucky"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-louisiana.jpeg' alt='Louisiana Flag'>",
-    type: "multiple",
-    options: ["Louisiana", "Mississippi", "Arkansas"],
-    answer: "Louisiana"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-maine.jpeg' alt='Maine Flag'>",
-    type: "multiple",
-    options: ["Maine", "Vermont", "New Hampshire"],
-    answer: "Maine"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-maryland.jpeg' alt='Maryland Flag'>",
-    type: "multiple",
-    options: ["Maryland", "Virginia", "Delaware"],
-    answer: "Maryland"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-massachusetts.jpeg' alt='Massachusetts Flag'>",
-    type: "multiple",
-    options: ["Massachusetts", "Rhode Island", "Connecticut"],
-    answer: "Massachusetts"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-michigan.jpeg' alt='Michigan Flag'>",
-    type: "multiple",
-    options: ["Michigan", "Wisconsin", "Minnesota"],
-    answer: "Michigan"
-  },
-  {
-    question: "Which state's flag is shown below? <br><img src='flag-of-minnesota.jpeg' alt='Minnesota Flag'>",
-    type: "multiple",
-    options: ["Minnesota", "Wisconsin", "Iowa"],
-    answer: "Minnesota"
-  },
+    
   {
     question: "Which state's flag is shown below? <br><img src='flag-of-mississippi.jpeg' alt='Mississippi Flag'>",
     type: "multiple",
@@ -222,141 +85,78 @@ const questions = [
     options: ["Oregon", "Washington", "California"],
     answer: "Oregon"
   },
-       
-        {
-          question: "Which UNESCO World Heritage Site is shown below? <br><img src='chichen-itza.jpeg' alt='Chichen Itza'>",
-          type: "multiple",
-          options: ["Chichen Itza", "Machu Picchu", "Stonehenge"],
-          answer: "Chichen Itza"
-        },
-      
-        {
-          question: "Which countries are part of North America?",
-          type: "checkbox",
-          options: ["Canada", "Brazil", "Mexico", "United States"],
-          answer: ["Canada", "Mexico", "United States"]
-        },
-        {
-          question: "Which of the following states are located on the West Coast of the United States?",
-          type: "checkbox",
-          options: ["California", "Florida", "Oregon", "Nevada"],
-          answer: ["California", "Oregon", "Nevada"]
-        },
-        {
-          question: "Which languages are widely spoken in North America?",
-          type: "checkbox",
-          options: ["English", "Spanish", "French", "Portuguese"],
-          answer: ["English", "Spanish", "French"]
-        },
-        {
-          question: "Which of the following are national parks in the United States?",
-          type: "checkbox",
-          options: ["Yellowstone", "Banff", "Yosemite", "Grand Canyon"],
-          answer: ["Yellowstone", "Yosemite", "Grand Canyon"]
-        },
-        {
-          question: "Which of the following are Canadian provinces?",
-          type: "checkbox",
-          options: ["Ontario", "Quebec", "California", "British Columbia"],
-          answer: ["Ontario", "Quebec", "British Columbia"]
-        },
-        {
-          question: "Which of the following are famous landmarks in the United States?",
-          type: "checkbox",
-          options: ["Statue of Liberty", "Eiffel Tower", "Mount Rushmore", "The White House"],
-          answer: ["Statue of Liberty", "Mount Rushmore", "The White House"]
-        },
-        {
-          question: "Which of the following are islands that are U.S. states?",
-          type: "checkbox",
-          options: ["Hawaii", "Alaska", "Rhode Island", "Maui"],
-          answer: ["Hawaii"]
-        },
-        {
-          question: "Which of the following cities are Canadian?",
-          type: "checkbox",
-          options: ["Montreal", "Ottawa", "Vancouver", "Seattle"],
-          answer: ["Montreal", "Ottawa", "Vancouver"]
-        },
-        {
-          question: "Which of the following are UNESCO World Heritage Sites in North America?",
-          type: "checkbox",
-          options: ["Grand Canyon", "Chichen Itza", "Machu Picchu", "Statue of Liberty"],
-          answer: ["Grand Canyon", "Chichen Itza", "Statue of Liberty"]
-        },
-        {
-          question: "Which of the following are famous U.S. landmarks related to the American Revolution?",
-          type: "checkbox",
-          options: ["Liberty Bell", "Independence Hall", "Alamo", "Boston Tea Party Ships"],
-          answer: ["Liberty Bell", "Independence Hall", "Boston Tea Party Ships"]
-        },
-        {
-          question: "Which of the following are natural wonders located in the United States?",
-          type: "checkbox",
-          options: ["Grand Canyon", "Niagara Falls", "Mount Everest", "Yellowstone"],
-          answer: ["Grand Canyon", "Niagara Falls", "Yellowstone"]
-        }
-      ,
-        {
-          question: "The largest country in North America is the ____.",
-          type: "fillblank",
-          answer: "Canada"
-        },
-        {
-          question: "The capital city of the United States is ____.",
-          type: "fillblank",
-          answer: "Washington, D.C."
-        },
-        {
-          question: "The Grand Canyon is located in the state of ____.",
-          type: "fillblank",
-          answer: "Arizona"
-        },
-        {
-          question: "The tallest mountain in North America is ____.",
-          type: "fillblank",
-          answer: "Denali"
-        },
-        {
-          question: "The official languages of Canada are English and ____.",
-          type: "fillblank",
-          answer: "French"
-        },
-        {
-          question: "The Statue of Liberty is located in the city of ____.",
-          type: "fillblank",
-          answer: "New York"
-        },
-        {
-          question: "The longest river in the United States is the ____ River.",
-          type: "fillblank",
-          answer: "Mississippi"
-        },
-        {
-          question: "The capital city of Canada is ____.",
-          type: "fillblank",
-          answer: "Ottawa"
-        },
-        {
-          question: "The historic site of Chichen Itza is located in the country of ____.",
-          type: "fillblank",
-          answer: "Mexico"
-        },
-        {
-          question: "The province of Quebec in Canada is known for its ____-speaking population.",
-          type: "fillblank",
-          answer: "French"
-        },
-        {
-          question: "The Rocky Mountains stretch across several states and provinces, including ____ in the United States and ____ in Canada.",
-          type: "fillblank",
-          answer: ["Colorado", "British Columbia"]
-        },
-        {
-          question: "The famous national park located in California is called ____.",
-          type: "fillblank",
-          answer: "Yosemite"
-        }
+  {
+    question: "Which UNESCO World Heritage Site is shown below? <br><img src='chichen-itza.jpeg' alt='Chichen Itza'>",
+    type: "multiple",
+    options: ["Chichen Itza", "Machu Picchu", "Stonehenge"],
+    answer: "Chichen Itza"
+  },
+  {
+    question: "Which countries are part of North America?",
+    type: "checkbox",
+    options: ["Canada", "Brazil", "Mexico", "United States"],
+    answer: ["Canada", "Mexico", "United States"]
+  },
+  {
+    question: "Which of the following states are located on the West Coast of the United States?",
+    type: "checkbox",
+    options: ["California", "Florida", "Oregon", "Nevada"],
+    answer: ["California", "Oregon", "Nevada"]
+  },
+  {
+    question: "Which languages are widely spoken in North America?",
+    type: "checkbox",
+    options: ["English", "Spanish", "French", "Portuguese"],
+    answer: ["English", "Spanish", "French"]
+  },
+  {
+    question: "Which of the following are national parks in the United States?",
+    type: "checkbox",
+    options: ["Yellowstone", "Banff", "Yosemite", "Grand Canyon"],
+    answer: ["Yellowstone", "Yosemite", "Grand Canyon"]
+  },
+  {
+    question: "Which of the following are Canadian provinces?",
+    type: "checkbox",
+    options: ["Ontario", "Quebec", "California", "British Columbia"],
+    answer: ["Ontario", "Quebec", "British Columbia"]
+  },
+  {
+    question: "Which of the following are famous landmarks in the United States?",
+    type: "checkbox",
+    options: ["Statue of Liberty", "Eiffel Tower", "Mount Rushmore", "The White House"],
+    answer: ["Statue of Liberty", "Mount Rushmore", "The White House"]
+  },
+  {
+    question: "Which of the following are islands that are U.S. states?",
+    type: "checkbox",
+    options: ["Hawaii", "Alaska", "Rhode Island", "Maui"],
+    answer: ["Hawaii"]
+  },
+  {
+    question: "Which of the following cities are Canadian?",
+    type: "checkbox",
+    options: ["Montreal", "Ottawa", "Vancouver", "Seattle"],
+    answer: ["Montreal", "Ottawa", "Vancouver"]
+  },
+  {
+    question: "Which of the following are UNESCO World Heritage Sites in North America?",
+    type: "checkbox",
+    options: ["Grand Canyon", "Chichen Itza", "Machu Picchu", "Statue of Liberty"],
+    answer: ["Grand Canyon", "Chichen Itza", "Statue of Liberty"]
+  },
+  {
+    question: "Which of the following are famous U.S. landmarks related to the American Revolution?",
+    type: "checkbox",
+    options: ["Liberty Bell", "Independence Hall", "Alamo", "Boston Tea Party Ships"],
+    answer: ["Liberty Bell", "Independence Hall", "Boston Tea Party Ships"]
+  },
+  {
+    question: "Which of the following are natural wonders located in the United States?",
+    type: "checkbox",
+    options: ["Grand Canyon", "Niagara Falls", "Mount Everest", "Yellowstone"],
+    answer: ["Grand Canyon", "Niagara Falls", "Yellowstone"]
+  },
              
 
 ];

@@ -43,8 +43,7 @@ const questions = [
   { question: "Select the capital cities of the Nordic countries:", type: "checkbox", options: ["Oslo", "Helsinki", "Copenhagen", "Stockholm"], answer: ["Oslo", "Helsinki", "Copenhagen", "Stockholm"] },
 
   // Image-Based Questions
-  { question: "Which country's flag is shown below? <br><img src='flag-of-denmark.jpeg' alt='Flag of Denmark'>", type: "multiple", options: ["Denmark", "Norway", "Sweden"], answer: "Denmark" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-sweden.jpeg' alt='Flag of Sweden'>", type: "multiple", options: ["Sweden", "Denmark", "Finland"], answer: "Sweden" },
+  
   { question: "Which country's flag is shown below? <br><img src='flag-of-norway.jpeg' alt='Flag of Norway'>", type: "multiple", options: ["Norway", "Sweden", "Denmark"], answer: "Norway" },
   { question: "Which country's flag is shown below? <br><img src='flag-of-netherlands.jpeg' alt='Flag of Netherlands'>", type: "multiple", options: ["Netherlands", "Belgium", "Luxembourg"], answer: "Netherlands" },
  

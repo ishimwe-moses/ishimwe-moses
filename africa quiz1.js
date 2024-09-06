@@ -14,9 +14,7 @@ const questions = [
     {
         question: "Which country's flag is shown below? <br><img src='flag-of-burundi.jpeg' alt='Flag of Burundi'>", type: "multiple", options: ["Rwanda", "Burundi", "Uganda","kenya"], answer: "Burundi"
     },
-    {
-        question: "Which country's flag is shown below? <br><img src='flag-of-ethiopia.jpeg' alt='Flag of Ethiopia'>", type: "multiple", options: ["Ethiopia", "Sudan", "Eritrea","Uganda"], answer: "Ethiopia"
-    },
+   
     // Fill in the Blank Questions
     { question: "The Sahara Desert is the world's largest ____ desert.", type: "fillblank", answer: "hot" },
     { question: "The longest river in the world is the ____ River.", type: "fillblank", answer: "Nile" },
@@ -137,12 +135,7 @@ const questions = [
             options: ["Ethiopia", "Uganda", "Botswana", "Sudan"], 
             answer: ["Ethiopia", "Uganda"] 
         },
-        { 
-            question: "Which country's flag is shown below? <br><img src='flag-of-kenya.jpeg' alt='Flag of Kenya'>", 
-            type: "multiple", 
-            options: ["Kenya", "Uganda", "Tanzania"], 
-            answer: "Kenya" 
-        },
+       
        
         { question: "Nelson Mandela was a key figure in ending ____ in South Africa.", type: "fillblank", answer: "apartheid" },
     { question: "The Great Rift Valley runs from Lebanon to ____.", type: "fillblank", answer: "Mozambique" },

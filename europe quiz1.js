@@ -12,12 +12,7 @@ const questions = [
   { question: "Select the countries in the Eurozone:", type: "checkbox", options: ["Germany", "United Kingdom", "France", "Italy"], answer: ["Germany", "France", "Italy"] },
   { question: "Which of these cities are capital cities in Europe?", type: "checkbox", options: ["Berlin", "Madrid", "Rome", "Lisbon"], answer: ["Berlin", "Madrid", "Rome", "Lisbon"] },
 
-  // Image-Based Questions
-  { question: "Which country's flag is shown below? <br><img src='flag-of-france.jpeg' alt='Flag of France'>", type: "multiple", options: ["France", "Germany", "Italy"], answer: "France" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-germany.jpeg' alt='Flag of Germany'>", type: "multiple", options: ["Germany", "France", "Spain"], answer: "Germany" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-italy.jpeg' alt='Flag of Italy'>", type: "multiple", options: ["Italy", "France", "Greece"], answer: "Italy" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-spain.jpeg' alt='Flag of Spain'>", type: "multiple", options: ["Spain", "Portugal", "Italy"], answer: "Spain" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-uk.jpeg' alt='Flag of the United Kingdom'>", type: "multiple", options: ["United Kingdom", "Ireland", "Scotland"], answer: "United Kingdom" },
+
 
   // True or False Questions
   { question: "The Eiffel Tower is located in Paris.", type: "truefalse", answer: true },
@@ -52,7 +47,7 @@ const questions = [
   { question: "Which country's flag is shown below? <br><img src='flag-of-sweden.jpeg' alt='Flag of Sweden'>", type: "multiple", options: ["Sweden", "Denmark", "Finland"], answer: "Sweden" },
   { question: "Which country's flag is shown below? <br><img src='flag-of-norway.jpeg' alt='Flag of Norway'>", type: "multiple", options: ["Norway", "Sweden", "Denmark"], answer: "Norway" },
   { question: "Which country's flag is shown below? <br><img src='flag-of-netherlands.jpeg' alt='Flag of Netherlands'>", type: "multiple", options: ["Netherlands", "Belgium", "Luxembourg"], answer: "Netherlands" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-uk.jpeg' alt='Flag of the United Kingdom'>", type: "multiple", options: ["United Kingdom", "Ireland", "Scotland"], answer: "United Kingdom" },
+ 
   
 // Western Europe
 { question: "Which countries are considered part of Western Europe?", type: "checkbox", options: ["France", "Germany", "Spain", "Poland"], answer: ["France", "Germany", "Spain"] },

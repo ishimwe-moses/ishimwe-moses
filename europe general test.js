@@ -29,11 +29,6 @@ const questions = [
 
     
    
-    { question: "Which country's flag is shown below? <br><img src='flag-of-italy.jpeg' alt='Flag of Italy'>", type: "multiple", options: ["Italy", "Greece", "Spain"], answer: "Italy" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-spain.jpeg' alt='Flag of Spain'>", type: "multiple", options: ["Spain", "Portugal", "Italy"], answer: "Spain" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-greece.jpeg' alt='Flag of Greece'>", type: "multiple", options: ["Greece", "Cyprus", "Malta"], answer: "Greece" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-portugal.jpeg' alt='Flag of Portugal'>", type: "multiple", options: ["Portugal", "Spain", "Italy"], answer: "Portugal" },
-    
     // Northern Europe
     { question: "Which countries are considered part of Northern Europe?", type: "checkbox", options: ["Sweden", "Denmark", "Finland", "Italy"], answer: ["Sweden", "Denmark", "Finland"] },
     { question: "Select the major rivers in Northern Europe:", type: "checkbox", options: ["Volga", "Dnieper", "Murray", "Elbe"], answer: ["Volga", "Elbe"] },
@@ -106,11 +101,7 @@ const questions = [
   
   
   
-  { question: "Which country's flag is shown below? <br><img src='flag-of-france.jpeg' alt='Flag of France'>", type: "multiple", options: ["France", "Italy", "Spain"], answer: "France" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-germany.jpeg' alt='Flag of Germany'>", type: "multiple", options: ["Germany", "Austria", "Netherlands"], answer: "Germany" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-spain.jpeg' alt='Flag of Spain'>", type: "multiple", options: ["Spain", "Portugal", "France"], answer: "Spain" },
-  { question: "Which country's flag is shown below? <br><img src='flag-of-uk.jpeg' alt='Flag of the United Kingdom'>", type: "multiple", options: ["United Kingdom", "Ireland", "Netherlands"], answer: "United Kingdom" },
-  
+ 
   // European Union
   { question: "Which countries are members of the European Union?", type: "checkbox", options: ["France", "Sweden", "Norway", "Germany"], answer: ["France", "Germany", "Sweden"] },
   { question: "Select the institutions of the European Union:", type: "checkbox", options: ["European Parliament", "United Nations", "European Commission", "World Trade Organization"], answer: ["European Parliament", "European Commission"] },

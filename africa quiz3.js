@@ -54,10 +54,10 @@ const questions = [
 
     // Image-Based Questions
     { question: "Which country's flag is shown below? <br><img src='flag-of-south-africa.jpeg' alt='Flag of South Africa'>", type: "multiple", options: ["Botswana", "South Africa", "Namibia"], answer: "South Africa" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-botswana.jpeg' alt='Flag of Botswana'>", type: "multiple", options: ["Botswana", "Zimbabwe", "South Africa"], answer: "Botswana" },
+    { question: "Which country's flag is shown below? <br><img src='flag-of-Botswana.jpeg' alt='Flag of Botswana'>", type: "multiple", options: ["Botswana", "Zimbabwe", "South Africa"], answer: "Botswana" },
     { question: "Which country's flag is shown below? <br><img src='flag-of-zimbabwe.jpeg' alt='Flag of Zimbabwe'>", type: "multiple", options: ["Botswana", "Zimbabwe", "Zambia"], answer: "Zimbabwe" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-zambia.jpeg' alt='Flag of Zambia'>", type: "multiple", options: ["Zambia", "Zimbabwe", "Angola"], answer: "Zambia" },
-    { question: "Which country's flag is shown below? <br><img src='flag-of-namibia.jpeg' alt='Flag of Namibia'>", type: "multiple", options: ["Namibia", "Botswana", "South Africa"], answer: "Namibia" },
+   
+   
     { question: "Which country's flag is shown below? <br><img src='flag-of-lesotho.jpeg' alt='Flag of Lesotho'>", type: "multiple", options: ["Lesotho", "Swaziland", "South Africa"], answer: "Lesotho" },
     { question: "Which country's flag is shown below? <br><img src='flag-of-swaziland.jpeg' alt='Flag of Swaziland'>", type: "multiple", options: ["Swaziland", "Botswana", "Lesotho"], answer: "Swaziland" },
     { question: "Which country's flag is shown below? <br><img src='flag-of-angola.jpeg' alt='Flag of Angola'>", type: "multiple", options: ["Angola", "Botswana", "Namibia"], answer: "Angola" },

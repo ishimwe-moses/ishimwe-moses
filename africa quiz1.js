@@ -182,7 +182,7 @@ const questions = [
 { question: "Select the capital cities in East Africa:", type: "checkbox", options: ["Nairobi", "Kampala", "Dodoma"], answer: ["Nairobi", "Kampala", "Dodoma"] },
 
 // Image-Based Questions
-{ question: "Which country's flag is shown below? <br><img src='flag-of-kenya.jpeg' alt='Flag of Kenya'>", type: "multiple", options: ["Kenya", "Uganda", "Tanzania"], answer: "Kenya" },
+
 { question: "Which country's flag is shown below? <br><img src='flag-of-uganda.jpeg' alt='Flag of Uganda'>", type: "multiple", options: ["Kenya", "Uganda", "Tanzania"], answer: "Uganda" },
 { question: "Which country's flag is shown below? <br><img src='flag-of-tanzania.jpeg' alt='Flag of Tanzania'>", type: "multiple", options: ["Kenya", "Uganda", "Tanzania"], answer: "Tanzania" },
 { question: "Which country's flag is shown below? <br><img src='flag-of-ethiopia.jpeg' alt='Flag of Ethiopia'>", type: "multiple", options: ["Kenya", "Uganda", "Ethiopia"], answer: "Ethiopia" },

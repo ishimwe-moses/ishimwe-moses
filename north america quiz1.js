@@ -1,308 +1,227 @@
 const questions = [
    
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-alabama.jpeg' alt='Alabama Flag'>",
-      "type": "multiple",
-      "options": ["Alabama", "Georgia", "Mississippi"],
-      "answer": "Alabama"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-alaska.jpeg' alt='Alaska Flag'>",
-      "type": "multiple",
-      "options": ["Alaska", "Montana", "Oregon"],
-      "answer": "Alaska"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-arizona.jpeg' alt='Arizona Flag'>",
-      "type": "multiple",
-      "options": ["Arizona", "New Mexico", "Nevada"],
-      "answer": "Arizona"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-arkansas.jpeg' alt='Arkansas Flag'>",
-      "type": "multiple",
-      "options": ["Arkansas", "Kentucky", "Tennessee"],
-      "answer": "Arkansas"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-california.jpeg' alt='California Flag'>",
-      "type": "multiple",
-      "options": ["California", "Nevada", "Texas"],
-      "answer": "California"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-colorado.jpeg' alt='Colorado Flag'>",
-      "type": "multiple",
-      "options": ["Colorado", "Wyoming", "Utah"],
-      "answer": "Colorado"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-connecticut.jpeg' alt='Connecticut Flag'>",
-      "type": "multiple",
-      "options": ["Connecticut", "New York", "Rhode Island"],
-      "answer": "Connecticut"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-delaware.jpeg' alt='Delaware Flag'>",
-      "type": "multiple",
-      "options": ["Delaware", "Maryland", "New Jersey"],
-      "answer": "Delaware"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-florida.jpeg' alt='Florida Flag'>",
-      "type": "multiple",
-      "options": ["Florida", "Alabama", "South Carolina"],
-      "answer": "Florida"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-georgia.jpeg' alt='Georgia Flag'>",
-      "type": "multiple",
-      "options": ["Georgia", "Alabama", "Tennessee"],
-      "answer": "Georgia"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-hawaii.jpeg' alt='Hawaii Flag'>",
-      "type": "multiple",
-      "options": ["Hawaii", "Alaska", "California"],
-      "answer": "Hawaii"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-idaho.jpeg' alt='Idaho Flag'>",
-      "type": "multiple",
-      "options": ["Idaho", "Montana", "Wyoming"],
-      "answer": "Idaho"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-illinois.jpeg' alt='Illinois Flag'>",
-      "type": "multiple",
-      "options": ["Illinois", "Indiana", "Iowa"],
-      "answer": "Illinois"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-indiana.jpeg' alt='Indiana Flag'>",
-      "type": "multiple",
-      "options": ["Indiana", "Ohio", "Michigan"],
-      "answer": "Indiana"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-iowa.jpeg' alt='Iowa Flag'>",
-      "type": "multiple",
-      "options": ["Iowa", "Missouri", "Nebraska"],
-      "answer": "Iowa"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-kansas.jpeg' alt='Kansas Flag'>",
-      "type": "multiple",
-      "options": ["Kansas", "Oklahoma", "Nebraska"],
-      "answer": "Kansas"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-kentucky.jpeg' alt='Kentucky Flag'>",
-      "type": "multiple",
-      "options": ["Kentucky", "Tennessee", "West Virginia"],
-      "answer": "Kentucky"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-louisiana.jpeg' alt='Louisiana Flag'>",
-      "type": "multiple",
-      "options": ["Louisiana", "Mississippi", "Arkansas"],
-      "answer": "Louisiana"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-maine.jpeg' alt='Maine Flag'>",
-      "type": "multiple",
-      "options": ["Maine", "Vermont", "New Hampshire"],
-      "answer": "Maine"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-maryland.jpeg' alt='Maryland Flag'>",
-      "type": "multiple",
-      "options": ["Maryland", "Virginia", "Delaware"],
-      "answer": "Maryland"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-massachusetts.jpeg' alt='Massachusetts Flag'>",
-      "type": "multiple",
-      "options": ["Massachusetts", "Rhode Island", "Connecticut"],
-      "answer": "Massachusetts"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-michigan.jpeg' alt='Michigan Flag'>",
-      "type": "multiple",
-      "options": ["Michigan", "Wisconsin", "Minnesota"],
-      "answer": "Michigan"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-minnesota.jpeg' alt='Minnesota Flag'>",
-      "type": "multiple",
-      "options": ["Minnesota", "Wisconsin", "Iowa"],
-      "answer": "Minnesota"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-mississippi.jpeg' alt='Mississippi Flag'>",
-      "type": "multiple",
-      "options": ["Mississippi", "Louisiana", "Arkansas"],
-      "answer": "Mississippi"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-missouri.jpeg' alt='Missouri Flag'>",
-      "type": "multiple",
-      "options": ["Missouri", "Kansas", "Illinois"],
-      "answer": "Missouri"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-montana.jpeg' alt='Montana Flag'>",
-      "type": "multiple",
-      "options": ["Montana", "Idaho", "Wyoming"],
-      "answer": "Montana"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-nebraska.jpeg' alt='Nebraska Flag'>",
-      "type": "multiple",
-      "options": ["Nebraska", "Kansas", "South Dakota"],
-      "answer": "Nebraska"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-nevada.jpeg' alt='Nevada Flag'>",
-      "type": "multiple",
-      "options": ["Nevada", "Utah", "California"],
-      "answer": "Nevada"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-new-hampshire.jpeg' alt='New Hampshire Flag'>",
-      "type": "multiple",
-      "options": ["New Hampshire", "Maine", "Vermont"],
-      "answer": "New Hampshire"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-new-jersey.jpeg' alt='New Jersey Flag'>",
-      "type": "multiple",
-      "options": ["New Jersey", "New York", "Pennsylvania"],
-      "answer": "New Jersey"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-new-mexico.jpeg' alt='New Mexico Flag'>",
-      "type": "multiple",
-      "options": ["New Mexico", "Arizona", "Nevada"],
-      "answer": "New Mexico"
-    },
-    
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-new-york.jpeg' alt='New York Flag'>",
-      "type": "multiple",
-      "options": ["New York", "New Jersey", "Connecticut"],
-      "answer": "New York"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-north-carolina.jpeg' alt='North Carolina Flag'>",
-      "type": "multiple",
-      "options": ["North Carolina", "South Carolina", "Virginia"],
-      "answer": "North Carolina"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-north-dakota.jpeg' alt='North Dakota Flag'>",
-      "type": "multiple",
-      "options": ["North Dakota", "South Dakota", "Montana"],
-      "answer": "North Dakota"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-ohio.jpeg' alt='Ohio Flag'>",
-      "type": "multiple",
-      "options": ["Ohio", "Indiana", "Michigan"],
-      "answer": "Ohio"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-oklahoma.jpeg' alt='Oklahoma Flag'>",
-      "type": "multiple",
-      "options": ["Oklahoma", "Kansas", "Texas"],
-      "answer": "Oklahoma"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-oregon.jpeg' alt='Oregon Flag'>",
-      "type": "multiple",
-      "options": ["Oregon", "Washington", "Idaho"],
-      "answer": "Oregon"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-pennsylvania.jpeg' alt='Pennsylvania Flag'>",
-      "type": "multiple",
-      "options": ["Pennsylvania", "New York", "New Jersey"],
-      "answer": "Pennsylvania"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-rhode-island.jpeg' alt='Rhode Island Flag'>",
-      "type": "multiple",
-      "options": ["Rhode Island", "Massachusetts", "Connecticut"],
-      "answer": "Rhode Island"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-south-carolina.jpeg' alt='South Carolina Flag'>",
-      "type": "multiple",
-      "options": ["South Carolina", "North Carolina", "Georgia"],
-      "answer": "South Carolina"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-south-dakota.jpeg' alt='South Dakota Flag'>",
-      "type": "multiple",
-      "options": ["South Dakota", "North Dakota", "Nebraska"],
-      "answer": "South Dakota"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-tennessee.jpeg' alt='Tennessee Flag'>",
-      "type": "multiple",
-      "options": ["Tennessee", "Kentucky", "Alabama"],
-      "answer": "Tennessee"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-texas.jpeg' alt='Texas Flag'>",
-      "type": "multiple",
-      "options": ["Texas", "New Mexico", "Oklahoma"],
-      "answer": "Texas"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-utah.jpeg' alt='Utah Flag'>",
-      "type": "multiple",
-      "options": ["Utah", "Nevada", "Colorado"],
-      "answer": "Utah"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-vermont.jpeg' alt='Vermont Flag'>",
-      "type": "multiple",
-      "options": ["Vermont", "Maine", "New Hampshire"],
-      "answer": "Vermont"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-virginia.jpeg' alt='Virginia Flag'>",
-      "type": "multiple",
-      "options": ["Virginia", "West Virginia", "North Carolina"],
-      "answer": "Virginia"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-washington.jpeg' alt='Washington Flag'>",
-      "type": "multiple",
-      "options": ["Washington", "Oregon", "Idaho"],
-      "answer": "Washington"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-west-virginia.jpeg' alt='West Virginia Flag'>",
-      "type": "multiple",
-      "options": ["West Virginia", "Virginia", "Kentucky"],
-      "answer": "West Virginia"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-wisconsin.jpeg' alt='Wisconsin Flag'>",
-      "type": "multiple",
-      "options": ["Wisconsin", "Minnesota", "Michigan"],
-      "answer": "Wisconsin"
-    },
-    {
-      "question": "Which state's flag is shown below? <br><img src='flag-of-wyoming.jpeg' alt='Wyoming Flag'>",
-      "type": "multiple",
-      "options": ["Wyoming", "Montana", "Idaho"],
-      "answer": "Wyoming"
-    },
-  
-  
+      {
+    question: "Which state's flag is shown below? <br><img src='flag-of-alabama.jpeg' alt='Alabama Flag'>",
+    type: "multiple",
+    options: ["Alabama", "Georgia", "Mississippi"],
+    answer: "Alabama"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-alaska.jpeg' alt='Alaska Flag'>",
+    type: "multiple",
+    options: ["Alaska", "Montana", "Oregon"],
+    answer: "Alaska"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-arizona.jpeg' alt='Arizona Flag'>",
+    type: "multiple",
+    options: ["Arizona", "New Mexico", "Nevada"],
+    answer: "Arizona"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-arkansas.jpeg' alt='Arkansas Flag'>",
+    type: "multiple",
+    options: ["Arkansas", "Kentucky", "Tennessee"],
+    answer: "Arkansas"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-california.jpeg' alt='California Flag'>",
+    type: "multiple",
+    options: ["California", "Nevada", "Texas"],
+    answer: "California"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-colorado.jpeg' alt='Colorado Flag'>",
+    type: "multiple",
+    options: ["Colorado", "Wyoming", "Utah"],
+    answer: "Colorado"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-connecticut.jpeg' alt='Connecticut Flag'>",
+    type: "multiple",
+    options: ["Connecticut", "New York", "Rhode Island"],
+    answer: "Connecticut"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-delaware.jpeg' alt='Delaware Flag'>",
+    type: "multiple",
+    options: ["Delaware", "Maryland", "New Jersey"],
+    answer: "Delaware"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-florida.jpeg' alt='Florida Flag'>",
+    type: "multiple",
+    options: ["Florida", "Alabama", "South Carolina"],
+    answer: "Florida"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-georgia.jpeg' alt='Georgia Flag'>",
+    type: "multiple",
+    options: ["Georgia", "Alabama", "Tennessee"],
+    answer: "Georgia"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-hawaii.jpeg' alt='Hawaii Flag'>",
+    type: "multiple",
+    options: ["Hawaii", "Alaska", "California"],
+    answer: "Hawaii"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-idaho.jpeg' alt='Idaho Flag'>",
+    type: "multiple",
+    options: ["Idaho", "Montana", "Wyoming"],
+    answer: "Idaho"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-illinois.jpeg' alt='Illinois Flag'>",
+    type: "multiple",
+    options: ["Illinois", "Indiana", "Iowa"],
+    answer: "Illinois"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-indiana.jpeg' alt='Indiana Flag'>",
+    type: "multiple",
+    options: ["Indiana", "Ohio", "Michigan"],
+    answer: "Indiana"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-iowa.jpeg' alt='Iowa Flag'>",
+    type: "multiple",
+    options: ["Iowa", "Missouri", "Nebraska"],
+    answer: "Iowa"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-kansas.jpeg' alt='Kansas Flag'>",
+    type: "multiple",
+    options: ["Kansas", "Oklahoma", "Nebraska"],
+    answer: "Kansas"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-kentucky.jpeg' alt='Kentucky Flag'>",
+    type: "multiple",
+    options: ["Kentucky", "Tennessee", "West Virginia"],
+    answer: "Kentucky"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-louisiana.jpeg' alt='Louisiana Flag'>",
+    type: "multiple",
+    options: ["Louisiana", "Mississippi", "Arkansas"],
+    answer: "Louisiana"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-maine.jpeg' alt='Maine Flag'>",
+    type: "multiple",
+    options: ["Maine", "Vermont", "New Hampshire"],
+    answer: "Maine"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-maryland.jpeg' alt='Maryland Flag'>",
+    type: "multiple",
+    options: ["Maryland", "Virginia", "Delaware"],
+    answer: "Maryland"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-massachusetts.jpeg' alt='Massachusetts Flag'>",
+    type: "multiple",
+    options: ["Massachusetts", "Rhode Island", "Connecticut"],
+    answer: "Massachusetts"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-michigan.jpeg' alt='Michigan Flag'>",
+    type: "multiple",
+    options: ["Michigan", "Wisconsin", "Minnesota"],
+    answer: "Michigan"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-minnesota.jpeg' alt='Minnesota Flag'>",
+    type: "multiple",
+    options: ["Minnesota", "Wisconsin", "Iowa"],
+    answer: "Minnesota"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-mississippi.jpeg' alt='Mississippi Flag'>",
+    type: "multiple",
+    options: ["Mississippi", "Louisiana", "Arkansas"],
+    answer: "Mississippi"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-missouri.jpeg' alt='Missouri Flag'>",
+    type: "multiple",
+    options: ["Missouri", "Kansas", "Illinois"],
+    answer: "Missouri"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-montana.jpeg' alt='Montana Flag'>",
+    type: "multiple",
+    options: ["Montana", "Idaho", "Wyoming"],
+    answer: "Montana"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-nebraska.jpeg' alt='Nebraska Flag'>",
+    type: "multiple",
+    options: ["Nebraska", "Kansas", "South Dakota"],
+    answer: "Nebraska"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-nevada.jpeg' alt='Nevada Flag'>",
+    type: "multiple",
+    options: ["Nevada", "Utah", "California"],
+    answer: "Nevada"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-new-hampshire.jpeg' alt='New Hampshire Flag'>",
+    type: "multiple",
+    options: ["New Hampshire", "Maine", "Vermont"],
+    answer: "New Hampshire"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-new-jersey.jpeg' alt='New Jersey Flag'>",
+    type: "multiple",
+    options: ["New Jersey", "New York", "Pennsylvania"],
+    answer: "New Jersey"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-new-mexico.jpeg' alt='New Mexico Flag'>",
+    type: "multiple",
+    options: ["New Mexico", "Arizona", "Nevada"],
+    answer: "New Mexico"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-new-york.jpeg' alt='New York Flag'>",
+    type: "multiple",
+    options: ["New York", "New Jersey", "Connecticut"],
+    answer: "New York"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-north-carolina.jpeg' alt='North Carolina Flag'>",
+    type: "multiple",
+    options: ["North Carolina", "South Carolina", "Virginia"],
+    answer: "North Carolina"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-north-dakota.jpeg' alt='North Dakota Flag'>",
+    type: "multiple",
+    options: ["North Dakota", "South Dakota", "Montana"],
+    answer: "North Dakota"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-ohio.jpeg' alt='Ohio Flag'>",
+    type: "multiple",
+    options: ["Ohio", "Indiana", "Michigan"],
+    answer: "Ohio"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-oklahoma.jpeg' alt='Oklahoma Flag'>",
+    type: "multiple",
+    options: ["Oklahoma", "Kansas", "Texas"],
+    answer: "Oklahoma"
+  },
+  {
+    question: "Which state's flag is shown below? <br><img src='flag-of-oregon.jpeg' alt='Oregon Flag'>",
+    type: "multiple",
+    options: ["Oregon", "Washington", "California"],
+    answer: "Oregon"
+  },
        
         {
           question: "Which UNESCO World Heritage Site is shown below? <br><img src='chichen-itza.jpeg' alt='Chichen Itza'>",

@@ -132,7 +132,7 @@ let selectedQuestions = [];
 let correctAnswers = 0;
 
 function startTest() {
-    selectedQuestions = questions.sort(() => 0.5 - Math.random()).slice(0, 20);
+    selectedQuestions = questions.sort(() => 0.5 - Math.random()).slice(0, 20000);
     displayQuestions();
     document.getElementById('instructions').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';

@@ -143,19 +143,12 @@ const questions = [
             options: ["Kenya", "Uganda", "Tanzania"], 
             answer: "Kenya" 
         },
-        {
-            question: "Which country's flag is shown below? <br><img src='flag-of-kenya.jpeg' alt='Flag of Kenya'>", type: "multiple", options: ["Kenya", "Uganda", "Tanzania","Rwanda"], answer: "Kenya"
-        },
-        {
-            question: "Which country's flag is shown below? <br><img src='flag-of-uganda.jpeg' alt='Flag of Uganda'>", type: "multiple", options: ["Kenya", "Uganda", "Tanzania","Burundi"], answer: "Uganda"
-        },
+       
         { question: "Nelson Mandela was a key figure in ending ____ in South Africa.", type: "fillblank", answer: "apartheid" },
     { question: "The Great Rift Valley runs from Lebanon to ____.", type: "fillblank", answer: "Mozambique" },
     { question: "Kenya's capital city is ____.", type: "fillblank", answer: "Nairobi" },
     { question: "The highest mountain in Africa is Mount ____.", type: "fillblank", answer: "Kilimanjaro" },
-        {
-            question: "Which country's flag is shown below? <br><img src='flag-of-tanzania.jpeg' alt='Flag of Tanzania'>", type: "multiple", options: ["Kenya", "Uganda", "Tanzania","Burundi"], answer: "Tanzania"
-        },
+      
         {
             question: "Which country's flag is shown below? <br><img src='flag-of-rwanda.jpeg' alt='Flag of Rwanda'>", type: "multiple", options: ["Rwanda", "Burundi", "Uganda","Kenya"], answer: "Rwanda"
         },

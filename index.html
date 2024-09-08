@@ -324,6 +324,37 @@
     mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
     -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
 }
+        .continent-list {
+    list-style: none;
+    padding: 0;
+}
+
+.continent-list li {
+    display: inline-block;
+    margin: 10px;
+    padding: 0;
+    background-color: transparent;
+}
+
+.continent-list a {
+    display: inline-block;
+    padding: 20px 40px; /* Add padding to make the area bigger */
+    text-decoration: none;
+    color: bisque;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.continent-list a:hover {
+    background-color: #228b22; /* Hover background color */
+    color: white; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
 
     </style>
 </head>

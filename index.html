@@ -279,7 +279,7 @@
         }
 
         .user-info .user-icon {
-            font-size: 1.5rem;
+            font-size:2rem;
             cursor: pointer;
         }
 
@@ -313,10 +313,18 @@
         .user-info-box button:hover {
             background-color: #05c17c;
         }
-        .mask1 {
-  -webkit-mask-image: linear-gradient(black, transparent);
-  mask-image: linear-gradient(black, transparent);
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+    color: #333;
+    overflow: hidden;
+    position: relative;
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
 }
+
     </style>
 </head>
 <body>

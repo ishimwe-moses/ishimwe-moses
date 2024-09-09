@@ -98,8 +98,8 @@ main {
 }
 
 .continent-list img {
-    width: 60%;
-    max-width: 35px;
+    width: 70%;
+    max-width: 40px;
     height: auto;
     display: inline-flex;
     margin-left: 10px;
@@ -126,6 +126,21 @@ footer {
     position: relative;
     z-index: 1;
 }
+
+/* The container holding the text */
+.marquee div {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee-alternate 10s linear infinite;
+}
+
+/* Define the alternating keyframes */
+@keyframes marquee-alternate {
+    0% { transform: translateX(100%); }  /* Start off-screen on the right */
+    50% { transform: translateX(-100%); } /* Move to the left off-screen */
+    100% { transform: translateX(100%); } /* Move back to the right */
+}
+
 
 .marquee div {
     display: inline-block;
@@ -404,7 +419,7 @@ footer {
 </div>
     <!-- User Info Icon -->
     <div class="user-info">
-        <span class="user-icon">👤Show/hide</span>
+        <span class="user-icon">🧑‍💻</span>
         <div class="user-info-box" id="user-info-box">
             <p id="user-name"></p>
             <p id="user-email"></p>

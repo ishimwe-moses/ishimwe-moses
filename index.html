@@ -6,379 +6,272 @@
     <title>Explore the World</title>
     <style>
         /* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Tahoma, Verdana, sans-serif;
+        }
 
-body {
-      background-image: url("fine globe.gif");
-    background-size: cover;          /* Ensures the image covers the whole page */
-    background-position: center;     /* Centers the image */
-    background-repeat: no-repeat;    /* Prevents the image from repeating */
-    background-attachment: fixed;    /* Keeps the background fixed while scrolling */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: black;
-    color: #333;
-    overflow: hidden;
-    position: relative;
-    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
-    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
-}
+        body {
+            background-image: url("fine_globe.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            overflow: hidden;
+        }
 
-/* Header */
-header {
-    background-color: black;
-    color: rgb(124, 222, 221);
-    text-align: center;
-    padding: 2rem 1rem;
-}
+        /* Header with Logo */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #000;
+            color: #FFF;
+            padding: 20px;
+        }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: rgb(8, 114, 31);
-}
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
 
-header p {
-    font-size: 1.2rem;
-}
+        header h1 {
+            font-size: 2.5rem;
+            color: #FF5733;
+            text-shadow: 0 0 3px #FF0000;
+            flex: 1;
+        }
 
-/* Main Section */
-main {
-    flex: 1;
-    padding: 2;
-    z-index: 1;
-}
+        header p {
+            font-size: 1.2rem;
+            margin-right: 20px;
+        }
 
-.continent-list {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
+        /* Navigation Menu */
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
 
-.continent-list h2 {
-    font-size: 3rem;
-    margin-bottom: 2.5px;
-}
+        .toggle-menu {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-.continent-list ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+        .toggle-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: #FFF;
+            margin: 5px 0;
+        }
 
-.continent-list li {
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    color: bisque;
-    border-radius: 1.5px;
-    transition: transform 0.3s;
-}
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #333;
+            color: #FFF;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 10;
+        }
 
-.continent-list a {
-    text-decoration: none;
-    color: black;
-    font-size: 0.80rem;
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    z-indx:1;
-    opacity:2;
-}
+        .menu-content a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+        }
 
-.continent-list li:hover {
-    transform: scale(1);
-    background-color: green;
-}
+        .menu-content a:last-child {
+            border-bottom: none;
+        }
 
-.continent-list img {
-    width: 70%;
-    max-width: 40px;
-    height: auto;
-    display: inline-flex;
-    margin-left: 7px;
-}
+        .menu-content a:hover {
+            background-color: #555;
+        }
 
-/* Footer */
-footer {
-    background-color: #000a01;
-    color: rgb(193, 13, 13);
-    text-align: center;
-    padding: 0.5rem 0;
-    z-index: 1;
-    justify-content: center;
-    margin-bottom: 3%;
-    opacity:2;
-}
+        .dropdown:hover .menu-content {
+            display: block;
+        }
 
-/* Marquee */
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    background-color: #333;
-    color: rgb(201, 85, 85);
-    padding: 1rem 0;
-    position: relative;
-    z-index: 1;
-}
+        /* Continent Section */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 20px;
+        }
 
-/* The container holding the text */
-.marquee div {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee-alternate 10s linear infinite;
-}
+        .continent-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
 
-/* Define the alternating keyframes */
-@keyframes marquee-alternate {
-    0% { transform: translateX(100%); }  /* Start off-screen on the right */
-    50% { transform: translateX(-100%); } /* Move to the left off-screen */
-    100% { transform: translateX(100%); } /* Move back to the right */
-}
+        .continent-list li {
+            list-style: none;
+            position: relative;
+            margin: 0 10px;
+            text-align: center;
+            color: #FFF;
+            font-size: 1.5rem;
+            text-shadow: 0 0 3px #FF0000;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
 
+        .continent-list li:hover {
+            transform: scale(1.1);
+        }
 
-.marquee div {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee 25s linear infinite;
-}
+        .continent-list img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.6;
+            width: 150px;
+            height: 150px;
+            z-index: -1;
+        }
 
-@keyframes marquee {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
+        /* Marquee */
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            background-color: #333;
+            color: #FFF;
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
 
-/* Background Elements */
-.background-element {
-    position: absolute;
-    z-index: 0.5;
-    opacity: 1;
-}
+        .marquee div {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite alternate;
+        }
 
-.airplane {
-    width: 80px;
-    height: 50px;
-    bottom: 5%;
-    left: 10%;
-    animation: fly 20s infinite ease-in-out;
-}
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
-.airplan {
-    width: 200px;
-    height: 150px;
-    bottom: 20%;
-    right: 12%;
-    animation: fly 45s infinite ease-in-out;
-}
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #FFF;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-.globe4 {
-    width: 80px;
-    height: 80px;
-    bottom: 20%;
-    left: 4%;
-    animation: fly 50s infinite linear;
-}
+        /* Bottom Links */
+        .bottom-links {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes fly {
-    0% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(450px, -450px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-/* Forms */
-.form-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-}
-
-.form-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-box input {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #0582ef;
-    border-radius: 3px;
-}
-
-.form-box button {
-    padding: 0.5rem;
-    border: none;
-    background-color: #06f390;
-    color: rgb(12, 11, 11);
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.form-box button:hover {
-    background-color: #05c17c;
-}
-
-.form-box a {
-    text-decoration: none;
-    color: #06f390;
-    margin-top: 0.5rem;
-    text-align: center;
-}
-
-.form-box a:hover {
-    color: #05c17c;
-}
-
-.password-container {
-    position: relative;
-}
-
-.password-container input {
-    width: 100%;
-}
-
-.password-container .toggle-password {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-/* Error and User Info */
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    display: none;
-}
-
-.user-info {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 3;
-    cursor: pointer;
-}
-
-.user-info .user-icon {
-    font-size: 2rem;
-}
-
-.user-info-box {
-    display: none;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 5px;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    z-index: 4;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.user-info-box p {
-    margin: 0.5rem 0;
-}
-
-.user-info-box button {
-    padding: 0.5rem;
-    border: none;
-    background-color: #06f390;
-    color: white;
-    cursor: pointer;
-    border-radius: 3px;
-    margin-top: 0.5rem;
-}
-
-.user-info-box button:hover {
-    background-color: #05c17c;
-}
-
-   
-
+        .bottom-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
 
     </style>
 </head>
 <body>
+
+    <!-- Header with Logo -->
     <header>
-        <h1>World Discovery Hub</h1>
-        <p>Experience the unique charm of each continent without leaving your seat.</p>
+        <img src="budapest.jpeg" alt="Logo">
+        <h1>Let's Explore the World</h1>
+        <p>Discover the continents and their cultures.</p>
     </header>
-    
+
+    <!-- Toggle Menu -->
+    <nav>
+        <div class="dropdown">
+            <div class="toggle-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu-content">
+                <a href="#">Home</a>
+                <a href="#">Settings</a>
+                <a href="#">How to Start</a>
+                <a href="#">Usage</a>
+                <a href="#">Make Money</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Marquee -->
     <div class="marquee">
-        <div>🌍 Explore the globe's continents and cultures with our immersive app! 🚀</div>
+        <div>🌍 Explore continents, cultures, and more with our interactive app! 🚀</div>
     </div>
 
+    <!-- Continent List -->
     <main>
-        <section class="continent-list">
-            <h2>Continents</h2>
-            <ul>
-                <li>
-                    <a href="africa.html">AFRICAa</a>
-                    <img src="africa.jpeg" alt="Africa">
-                </li>
-                <li>
-                    <a href="asia.html">ASIA</a>
-                    <img src="asia.jpeg" alt="Asia">
-                </li>
-                <li>
-                    <a href="europe.html">EUROPEe</a>
-                    <img src="europe.jpeg" alt="Europe">
-                </li>
-                <li>
-                    <a href="north america.html">NORTH AMERICA</a>
-                    <img src="north america.jpeg" alt="North America">
-                </li>
-                <li>
-                    <a href="south america.html">SOUTH AMERICA</a>
-                    <img src="south america.jpeg" alt="South America">
-                </li>
-                <li>
-                    <a href="Antarctica.html">ANTARCTICA</a>
-                    <img src="antarctica.jpeg" alt="antarctica map">
-                </li>
-                <li>
-                    <a href="oceania.html">OCEANIA</a>
-                    <img src="australia.jpeg" alt="oceania map">
-                </li>
-            </ul>
-        </section>
+        <ul class="continent-list">
+            <li>
+                <a href="africa.html">AFRICA</a>
+                <img src="africa.jpeg" alt="Africa">
+            </li>
+            <li>
+                <a href="asia.html">ASIA</a>
+                <img src="asia.jpeg" alt="Asia">
+            </li>
+            <li>
+                <a href="europe.html">EUROPE</a>
+                <img src="europe.jpeg" alt="Europe">
+            </li>
+            <li>
+                <a href="northamerica.html">NORTH AMERICA</a>
+                <img src="north_america.jpeg" alt="North America">
+            </li>
+            <li>
+                <a href="southamerica.html">SOUTH AMERICA</a>
+                <img src="south_america.jpeg" alt="South America">
+            </li>
+            <li>
+                <a href="antarctica.html">ANTARCTICA</a>
+                <img src="antarctica.jpeg" alt="Antarctica">
+            </li>
+            <li>
+                <a href="oceania.html">OCEANIA</a>
+                <img src="oceania.jpeg" alt="Oceania">
+            </li>
+        </ul>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Explore the World. All rights reserved.</p>
     </footer>
+
+    <!-- Bottom Links -->
+    <div class="bottom-links">
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </div>
 <div class=mask1>
     <!-- Background Images -->
     
@@ -593,3 +486,8 @@ footer {
     </script>
 </body>
 </html>
+
+
+
+
+   

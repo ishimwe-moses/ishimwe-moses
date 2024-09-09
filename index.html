@@ -63,7 +63,7 @@ main {
 
 .continent-list h2 {
     font-size: 3rem;
-    margin-bottom: 5px;
+    margin-bottom: 2.5px;
 }
 
 .continent-list ul {
@@ -76,7 +76,6 @@ main {
 .continent-list li {
     margin: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: transparent;
     color: bisque;
     border-radius: 1.5px;
     transition: transform 0.3s;
@@ -84,12 +83,14 @@ main {
 
 .continent-list a {
     text-decoration: none;
-    color: #06f390;
+    color: black;
     font-size: 0.80rem;
     display: block;
     width: 100%;
     height: 100%;
     text-align: left;
+    z-indx:1;
+    opacity:2;
 }
 
 .continent-list li:hover {
@@ -114,6 +115,7 @@ footer {
     z-index: 1;
     justify-content: center;
     margin-bottom: 3%;
+    opacity:2;
 }
 
 /* Marquee */
@@ -160,22 +162,8 @@ footer {
 /* Background Elements */
 .background-element {
     position: absolute;
-    z-index: 0;
-    opacity: 0.1;
-}
-
-.globe {
-    width: 65%;
-    top: 2%;
-    left: 30%;
-}
-
-.glob {
-    width: 150px;
-    height: 150px;
-    top: 10%;
-    right: 20%;
-    animation: fly 20s infinite linear;
+    z-index: 0.5;
+    opacity: 1;
 }
 
 .airplane {
@@ -192,22 +180,6 @@ footer {
     bottom: 20%;
     right: 12%;
     animation: fly 45s infinite ease-in-out;
-}
-
-.globe2 {
-    width: 90px;
-    height: 90px;
-    bottom: 15%;
-    left: 10%;
-    animation: spin 30s infinite linear;
-}
-
-.globe3 {
-    width: 100px;
-    height: 100px;
-    bottom: 30%;
-    right: 30%;
-    animation: fly 50s infinite linear;
 }
 
 .globe4 {
@@ -360,12 +332,12 @@ footer {
 </head>
 <body>
     <header>
-        <h1>Explore the World</h1>
-        <p>Discover the beauty and diversity of each continent from the comfort of your home.</p>
+        <h1>World Discovery Hub</h1>
+        <p>Experience the unique charm of each continent without leaving your seat.</p>
     </header>
     
     <div class="marquee">
-        <div>🌍 Explore continents, cultures, and more with our interactive app! 🚀</div>
+        <div>🌍 Explore the globe's continents and cultures with our immersive app! 🚀</div>
     </div>
 
     <main>
@@ -373,32 +345,32 @@ footer {
             <h2>Continents</h2>
             <ul>
                 <li>
-                    <a href="africa.html">Africa</a>
+                    <a href="africa.html">AFRICAa</a>
                     <img src="africa.jpeg" alt="Africa">
                 </li>
                 <li>
-                    <a href="asia.html">Asia</a>
+                    <a href="asia.html">ASIA</a>
                     <img src="asia.jpeg" alt="Asia">
                 </li>
                 <li>
-                    <a href="europe.html">Europe</a>
+                    <a href="europe.html">EUROPEe</a>
                     <img src="europe.jpeg" alt="Europe">
                 </li>
                 <li>
-                    <a href="north america.html">North America</a>
+                    <a href="north america.html">NORTH AMERICA</a>
                     <img src="north america.jpeg" alt="North America">
                 </li>
                 <li>
-                    <a href="south america.html">South America</a>
+                    <a href="south america.html">SOUTH AMERICA</a>
                     <img src="south america.jpeg" alt="South America">
                 </li>
                 <li>
-                    <a href="Antarctica.html">Antarctica</a>
-                    <img src="antarctica.jpeg" alt="Australia">
+                    <a href="Antarctica.html">ANTARCTICA</a>
+                    <img src="antarctica.jpeg" alt="antarctica map">
                 </li>
                 <li>
-                    <a href="oceania.html">Oceania</a>
-                    <img src="australia.jpeg" alt="Antarctica">
+                    <a href="oceania.html">OCEANIA</a>
+                    <img src="australia.jpeg" alt="oceania map">
                 </li>
             </ul>
         </section>
@@ -409,12 +381,9 @@ footer {
     </footer>
 <div class=mask1>
     <!-- Background Images -->
-    <img src="globe.gif" alt="Globe" class="background-element globe">
+    
     <img src="airplane3.gif" alt="Airplane" class="background-element airplane">
     <img src="airplane3.gif" alt="Airplane" class="background-element airplan">
-    <img src="cartoon-480_512.gif" alt="Globe" class="background-element glob">
-    <img src="cartoon-480_512.gif" alt="Globe" class="background-element globe2">
-    <img src="cartoon-480_512.gif" alt="Globe" class="background-element globe3">
     <img src="airplane3.gif" alt="airplane" class="background-element globe4">
 </div>
     <!-- User Info Icon -->

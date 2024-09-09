@@ -14,8 +14,11 @@
 }
 
 body {
-     background-image: url("globe.gif");
-    background-repeat: no-repeat;
+      background-image: url("globe.gif");
+    background-size: cover;          /* Ensures the image covers the whole page */
+    background-position: center;     /* Centers the image */
+    background-repeat: no-repeat;    /* Prevents the image from repeating */
+    background-attachment: fixed;    /* Keeps the background fixed while scrolling */
     display: flex;
     flex-direction: column;
     min-height: 100vh;

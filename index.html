@@ -14,7 +14,7 @@
         }
 
         body {
-            background-image: url("fine_globe.gif");
+            background-image: url("fine globe.gif");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -178,21 +178,187 @@
             color: #FFF;
             text-align: center;
             padding: 10px 0;
+            bottom:4%
         }
 
         /* Bottom Links */
         .bottom-links {
             position: absolute;
-            bottom: 10px;
-            left: 10px;
+            bottom: 4%;
+            right: 4%;
+            
         }
 
         .bottom-links a {
-            color: white;
+            color: black;
             text-decoration: none;
             display: block;
             margin: 5px 0;
         }
+        /* Background Elements */
+.background-element {
+    position: absolute;
+    z-index: 0.5;
+    opacity: 1;
+}
+
+.airplane {
+    width: 80px;
+    height: 50px;
+    bottom: 5%;
+    left: 10%;
+    animation: fly 20s infinite ease-in-out;
+}
+
+.airplan {
+    width: 200px;
+    height: 150px;
+    bottom: 20%;
+    right: 12%;
+    animation: fly 45s infinite ease-in-out;
+}
+
+.globe4 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 4%;
+    animation: fly 50s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(450px, -450px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+        /* Forms */
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #0582ef;
+    border-radius: 3px;
+}
+
+.form-box button {
+    padding: 0.5rem;
+    border: none;
+    background-color: #06f390;
+    color: rgb(12, 11, 11);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.form-box button:hover {
+    background-color: #05c17c;
+}
+
+.form-box a {
+    text-decoration: none;
+    color: #06f390;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.form-box a:hover {
+    color: #05c17c;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Error and User Info */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.user-info {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.user-info .user-icon {
+    font-size: 2rem;
+}
+
+.user-info-box {
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    z-index: 4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-box p {
+    margin: 0.5rem 0;
+}
+
+.user-info-box button {
+    padding: 0.5rem;
+    border: none;
+    background-color: #06f390;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+}
+
+.user-info-box button:hover {
+    background-color: #05c17c;
+}
 
     </style>
 </head>
@@ -200,7 +366,7 @@
 
     <!-- Header with Logo -->
     <header>
-        <img src="budapest.jpeg" alt="Logo">
+        <img src="christ-redeemer.jpeg" alt="Logo">
         <h1>Let's Explore the World</h1>
         <p>Discover the continents and their cultures.</p>
     </header>
@@ -231,6 +397,7 @@
     <!-- Continent List -->
     <main>
         <ul class="continent-list">
+            <h2>Continents</h2>
             <li>
                 <a href="africa.html">AFRICA</a>
                 <img src="africa.jpeg" alt="Africa">
@@ -245,11 +412,11 @@
             </li>
             <li>
                 <a href="northamerica.html">NORTH AMERICA</a>
-                <img src="north_america.jpeg" alt="North America">
+                <img src="north america.jpeg" alt="North America">
             </li>
             <li>
                 <a href="southamerica.html">SOUTH AMERICA</a>
-                <img src="south_america.jpeg" alt="South America">
+                <img src="south america.jpeg" alt="South America">
             </li>
             <li>
                 <a href="antarctica.html">ANTARCTICA</a>
@@ -263,15 +430,16 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Explore the World. All rights reserved.</p>
-    </footer>
+   
 
     <!-- Bottom Links -->
     <div class="bottom-links">
         <a href="#">About Us</a>
         <a href="#">Contact</a>
     </div>
+     <footer>
+        <p>&copy; 2024 Explore the World. All rights reserved.</p>
+    </footer>
 <div class=mask1>
     <!-- Background Images -->
     

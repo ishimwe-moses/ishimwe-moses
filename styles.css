@@ -3,11 +3,12 @@ body {
     text-align: center;
     margin-top: 0;
     padding: 0;
+    background-color:#d3e4dc;
    
 }
 
 header {
-    background-image:transparent;
+  
     color: rgb(229, 6, 6);
     padding: 15px 0;
     text-align: center;
@@ -267,17 +268,9 @@ button:active {
 
     .incorrect {
         color: red;
-        font-weight: bold;
-    }body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 0;
-    padding: 0;
-    background-image:url="new.gif";
-}
+        font-weight: bold; }
 
 header {
-    background-image:transparent;
     color: rgb(229, 6, 6);
     padding: 15px 0;
     text-align: center;

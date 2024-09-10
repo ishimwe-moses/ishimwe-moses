@@ -550,8 +550,8 @@ function startQuiz(field) {
     document.getElementById('questions').style.display = 'block';
     generateQuestions();
     const instruction = selectedField === 'country' ? 
-        'Welcome!look the given names if are countries enter their cities,and vice versa again also check wherther are stations enter the countries that owns those stations.' :
-        'Welcome!look the given names if are countries enter their cities,and vice versa again also check wherther are stations enter the countries that owns those stations.';
+        'Welcome! Check the given names: if they are countries, enter their cities; if they are cities, enter the country. If they are stations, enter the country that owns them.' :
+        'Welcome! Check the given names: if they are countries, enter their cities; if they are cities, enter the country. If they are stations, enter the country that owns them..';
     document.getElementById('instruction').innerText = instruction;
 }
 
@@ -560,7 +560,7 @@ function generateQuestions() {
     questionList.innerHTML = '';
     const data = continentsData[selectedContinent];
     const items = selectedField === 'country' ? data.cities : data.countries;
-    questions = items.sort(() => 0.5 - Math.random()).slice(0, 10);
+    questions = items.sort(() => 0.5 - Math.random()).slice(0, 7);
     questions.forEach((item, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.innerHTML = `
@@ -587,7 +587,7 @@ function submitAnswers() {
     });
     document.getElementById('questions').style.display = 'none';
     document.getElementById('results').style.display = 'block';
-    document.getElementById('result-message').innerText = `You got ${correctAnswers} out of 10 correct!`;
+    document.getElementById('result-message').innerText = `You got ${correctAnswers} out of 7 correct!`;
     const correctAnswersDiv = document.getElementById('correct-answers');
     correctAnswersDiv.innerHTML = correctAnswersList.length > 0 ? 
         `<h4>Correct answers:</h4><p>${correctAnswersList.join('<br>')}</p>` : 

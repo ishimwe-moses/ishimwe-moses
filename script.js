@@ -550,12 +550,8 @@ function startQuiz(field) {
     document.getElementById('questions').style.display = 'block';
     generateQuestions();
     const instruction = selectedField === 'country' ? 
-        'Welcome!look the given names if are countries enter their cities,
-        and vice versa again also check wherther are stations 
-        enter the countries that owns those stations.' :
-        'Welcome!look the given names if are countries enter their cities,
-        and vice versa again also check wherther are stations 
-        enter the countries that owns those stations..';
+        'Welcome!look the given names if are countries enter their cities,and vice versa again also check wherther are stations enter the countries that owns those stations.' :
+        'Welcome!look the given names if are countries enter their cities,and vice versa again also check wherther are stations enter the countries that owns those stations.';
     document.getElementById('instruction').innerText = instruction;
 }
 

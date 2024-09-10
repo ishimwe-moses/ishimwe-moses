@@ -48,10 +48,7 @@
             flex: 1;
         }
 
-        header p {
-            font-size: 1.2rem;
-            left: 16%
-        }
+        
 
         /* Navigation Menu */
         nav {
@@ -59,54 +56,77 @@
             top: 30px;
             right: 35px;
         }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-        .toggle-menu {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            margin-right: 12px;
-        }
+/* Icon styling */
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
-        .toggle-menu div {
-            width: 30px;
-            height: 3px;
-            background-color: #FFF;
-            margin-top: 5px;
-            margin-right: 15px;
-           
-        }
+.icon-img {
+    width: 50px;
+    height: 50px;
+}
 
-        .menu-content {
-            display: none;
-            position: absolute;
-            top: 40px;
-            right: 0;
-            background-color: #333;
-            color: #FFF;
-            border-radius: 5px;
-            padding: 10px;
-            z-index: 10;
-        }
+/* Container for the menu icon (hamburger) */
+.container {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 20px; /* Adjust the value based on your icon */
+    cursor: pointer;
+}
 
-        .menu-content a {
-            display: block;
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            border-bottom: 1px solid #444;
-        }
+/* The bars inside the hamburger menu */
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
 
-        .menu-content a:last-child {
-            border-bottom: none;
-        }
+/* Rotate bars to form 'X' when menu is opened */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
 
-        .menu-content a:hover {
-            background-color: #555;
-        }
+.change .bar2 {
+    opacity: 0;
+}
 
-        .dropdown:hover .menu-content {
-            display: block;
-        }
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+
+
+/* Menu Links Styling */
+.menu-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.menu-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show menu when toggled */
+.menu-content.show {
+    display: block;
+}
+
 
         /* Continent Section */
         main {
@@ -128,13 +148,13 @@
         .continent-list li {
             list-style: none;
             position: relative;
-            margin: 0 10px;
+            margin: 0 6px;
             text-align: center;
             color: #FFF;
             font-size: 1.5rem;
             text-shadow: 0 0 3px #FF0000;
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
+            padding: 7px 15px;
             
             transition: transform 0.3s;
         }
@@ -182,7 +202,7 @@
             color: #FFF;
             text-align: center;
             padding: 10px 0;
-            margin-bottom:8px;
+            margin-bottom:2px;
             font-size: 14px;
             
            
@@ -191,7 +211,7 @@
         /* Bottom Links */
         .bottom-links {
             position: absolute;
-            bottom: 8%;
+            bottom: 10%;
             right: 5%;
             
         }
@@ -341,14 +361,14 @@
     display: none;
     background-color: white;
     border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 5px;
+    padding: 0.5rem;
+    border-radius: 3.5px;
     position: absolute;
     top: 30px;
     right: 0;
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .user-info-box p {
@@ -390,24 +410,26 @@
     <header>
         <img src="christ-redeemer.jpeg" alt="Logo">
         <h1>Let's Explore the World</h1>
-        <p>Explore continents and their rich cultures</p>
     </header>
 
     <!-- Toggle Menu -->
-    <nav>
-        <div class="dropdown">
-            <div class="toggle-menu">
-                <a href="#">Home</a>
-                <a href="#">Settings</a>
-                <a href="#">How to Start</a>
-                <a href="#">insert more</a>
-                <a href="#">insert more</a>
-                <a href="#">insert more</a>
-                <a href="#">insert more</a>
-                <a href="#">insert more</a>
-            </div>
-        </div>
-    </nav>
+    <div class="icon">
+    <img src="your-icon.png" alt="Icon" class="icon-img">
+</div>
+
+<!-- Menu Icon (Hamburger) -->
+<div class="container" onclick="toggleMenu(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+
+<!-- Dropdown Menu (Hidden by Default) -->
+<div class="menu-content" id="menu">
+  <a href="GEO-Apk.html">Home</a>
+  <a href="settings.html">Settings</a>
+  <a href="know-more.html">Know More</a>
+  <a href="things.html">Things</a>
 
     <!-- Marquee -->
     <div class="marquee">
@@ -432,11 +454,11 @@
                 <img src="europe.jpeg" alt="Europe">
             </li>
             <li>
-                <a href="northamerica.html">NORTH AMERICA</a>
+                <a href="north america.html">NORTH AMERICA</a>
                 <img src="north america.jpeg" alt="North America">
             </li>
             <li>
-                <a href="southamerica.html">SOUTH AMERICA</a>
+                <a href="south america.html">SOUTH AMERICA</a>
                 <img src="south america.jpeg" alt="South America">
             </li>
             <li>
@@ -670,8 +692,16 @@
         userSexDisplay.textContent = `Sex: ${storedUserInfo.sex}`;
         userInfoBox.style.display = 'block';
     }
-});
 
+
+});
+    // Function to toggle both the icon and the menu
+    function toggleMenu(x) {
+        x.classList.toggle("change"); // Toggle the hamburger icon to 'X'
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('show'); // Toggle the visibility of the dropdown menu
+    }
+});
     </script>
 </body>
 </html>

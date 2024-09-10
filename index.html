@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-size:12px;
             font-family: Tahoma, Verdana, sans-serif;
         }
 
@@ -50,12 +51,7 @@
 
         
 
-        /* Navigation Menu */
-        nav {
-            position: absolute;
-            top: 30px;
-            right: 35px;
-        }
+       
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -81,28 +77,6 @@ body {
     top: 15px;
     right: 20px; /* Adjust the value based on your icon */
     cursor: pointer;
-}
-
-/* The bars inside the hamburger menu */
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/* Rotate bars to form 'X' when menu is opened */
-.change .bar1 {
-    transform: translate(0, 11px) rotate(-45deg);
-}
-
-.change .bar2 {
-    opacity: 0;
-}
-
-.change .bar3 {
-    transform: translate(0, -11px) rotate(45deg);
 }
 
 
@@ -214,6 +188,7 @@ body {
             bottom: 10%;
             right: 5%;
             z-index:2;
+            padding:4px 0;
             
         }
 
@@ -412,24 +387,6 @@ body {
         <img src="christ-redeemer.jpeg" alt="Logo">
         <h1>Let's Explore the World</h1>
     </header>
-
-    <!-- Toggle Menu -->
-   
-
-<!-- Menu Icon (Hamburger) -->
-<div class="container" onclick="toggleMenu(this)">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div>
-
-<!-- Dropdown Menu (Hidden by Default) -->
-<div class="menu-content" id="menu">
-  <a href="GEO-Apk.html">Home</a>
-  <a href="settings.html">Settings</a>
-  <a href="know-more.html">Know More</a>
-  <a href="things.html">Things</a></div>
-
     <!-- Marquee -->
     <div class="marquee">
         <div>🌍 Explore continents, cultures, and more with our interactive app! 🚀</div>
@@ -479,6 +436,7 @@ body {
         <a href="#">About Us</a>
         <a href="#">Contact</a>
     </div>
+    <br>
      <footer>
         <p>&copy; 2024 Explore the World. All rights reserved.</p>
     </footer>

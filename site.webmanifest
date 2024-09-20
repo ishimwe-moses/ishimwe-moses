@@ -1,6 +1,13 @@
 {
-    "name": "World explorer",
-    "short_name": "World explorer",
+    "name": "World Explorer",
+    "short_name": "World Explorer",
+    "description": "Explore the world from home, learn geography, and take quizzes about continents, countries, flags, and capitals!",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#394111",
+    "background_color": "#394111",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -12,8 +19,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#394111",
-    "background_color": "#394111",
-    "display": "standalone"
+    ]
 }

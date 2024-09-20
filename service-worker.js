@@ -1,32 +1,37 @@
-const cacheName = 'site-cache-v1';
-const assetsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/images/icons/icon-192x192.png'
-];
+const cacheName = 'site-dynamic-cache-v2';
 
-// Install the service worker and cache files
+// Install the service worker
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(cacheName).then((cache) => {
-      return cache.addAll(assetsToCache);
+      console.log('Opened cache');
+      return cache.add('/');
     })
   );
-  self.skipWaiting();  // Optional: forces the SW to activate right away
+  self.skipWaiting(); // Activate the new service worker immediately
 });
 
-// Fetch files from cache or network
+// Fetch files from cache or network, and cache them dynamically
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+      // Serve the cache first
+      if (response) {
+        return response;
+      }
+
+      // If not cached, fetch from network and cache the result
+      return fetch(event.request).then((fetchResponse) => {
+        return caches.open(cacheName).then((cache) => {
+          cache.put(event.request, fetchResponse.clone());
+          return fetchResponse;
+        });
+      });
     })
   );
 });
 
-// Activate and remove old caches if necessary
+// Activate the new service worker and remove old caches
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [cacheName];
   event.waitUntil(

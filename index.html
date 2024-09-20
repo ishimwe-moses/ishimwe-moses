@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore the World</title>
+    <link rel="manifest" href="/manifest.json">
     <style>
         /* Global Styles */
         * {
@@ -682,6 +683,33 @@ main {
 });
   
     </script>
+    
+<script>
+    // Handle user information from localStorage
+    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (storedUserInfo) {
+        loginContainer.style.display = 'none';
+        userNameDisplay.textContent = `Name: ${storedUserInfo.firstName} ${storedUserInfo.lastName}`;
+        userEmailDisplay.textContent = `Gmail: ${storedUserInfo.email}`;
+        userPhoneDisplay.textContent = `Phone: ${storedUserInfo.phone}`;
+        userSexDisplay.textContent = `Sex: ${storedUserInfo.sex}`;
+        userInfoBox.style.display = 'block';
+    }
+
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+        });
+    }
+</script>
+
 </body>
 </html>
 

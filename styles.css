@@ -9,7 +9,7 @@ body {
 
 header {
   
-    color: rgb(229, 6, 6);
+    color: rgb(7, 27, 241);
     padding: 15px 0;
     text-align: center;
 }
@@ -67,7 +67,7 @@ button:active {
 }
 
 .secondary-btn {
-    background-color: #e2ed14;
+    background-color: #bc05ef;
     color: rgb(172, 157, 219);
 }
 
@@ -186,7 +186,7 @@ button:active {
 }
 
 .introduction{ font-family: Arial, sans-serif; 
-    color: #050101; 
+    color: #e3d5d5; 
     line-height: 1.0; 
     margin: 15px; padding: 12px;
     border-radius: 10px; 
@@ -202,7 +202,7 @@ button:active {
         align-items: center;
         padding: 10px;
         background-color: #1dd9ad;
-        color: rgb(28, 8, 1);
+        color: whitesmoke;
     }
 
     .header h1 {
@@ -448,14 +448,14 @@ button:active {
 }
 
 .introduction{ font-family: Arial, sans-serif; 
-    color: #050101; 
+    color: #221e23; 
     line-height: 1.0; 
     margin: 15px; padding: 12px;
     border-radius: 10px; 
-    background-color: #48b9b0;}
+    background-color: #5e7d7a;}
     body {
         font-family: Arial, sans-serif;
-        background-color: rgb(91, 151, 163);
+        background-color: rgb(26, 49, 22);
     }
 
     .header {
@@ -463,8 +463,8 @@ button:active {
         justify-content: space-between;
         align-items: center;
         padding: 10px;
-        background-color: #1dd9ad;
-        color: rgb(28, 8, 1);
+        background-color: rgb(51, 67, 48);
+        color: #7fa9a5;
     }
 
     .header h1 {
@@ -480,8 +480,8 @@ button:active {
         position: absolute;
         top: 50px;
         left: 10px;
-        background-color: rgb(1, 240, 229);
-        border: 5px solid #0c0103;
+        background-color: #7fa9a5;
+        border: 5px solid #02f3e7;
         display: none;
         flex-direction: column;
     }
@@ -495,12 +495,12 @@ button:active {
     }
 
     .dropdown a:hover {
-        background-color: #f1f1f1;
+        background-color: #07ecf4;
     }
 
     .content {
         display: none;
-        padding: 20px;
+        padding: 15px;
     }
 
     .marks {
@@ -524,7 +524,7 @@ button:active {
     }
 
     .correct {
-        color: green;
+        color: rgb(247, 5, 231);
         font-weight: bold;
     }
 
@@ -532,3 +532,6 @@ button:active {
         color: red;
         font-weight: bold;
     }
+    h2{color:#e1f0ef;}
+    #instruction,#question-list,#results{color:whitesmoke}
+

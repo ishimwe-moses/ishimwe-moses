@@ -113,44 +113,26 @@ main {
     padding: 20px;
 }
 
-.continent-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 35px; /* Adjust gap for better spacing */
-    margin-top: 3px; /* Adds some spacing below the previous div */
-}
-
-.continent-list li {
-    list-style: none;
-    position: relative;
-    margin: 0 18px; /* Adds space between each continent */
-    text-align: center;
-    font-weight: 1000;
-    color: #00FF00; /* Green color for the text */
-    font-size: 1.5rem;
-    text-shadow: 0 0 5px rgba(0, 128, 0, 0.7); /* Slight glow effect for green */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better contrast */
-    padding: 12px 20px;
-    transition: transform 0.3s;
-    z-index: 4; /* Ensure text stays on top */
-}
-
 .continent-list li:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-.continent-list img {
-    position: absolute;
-    top: -50px; /* Adjust position to keep maps just above text */
-    left: 5%;
-    transform: translateX(-50%);
-    opacity: 0.5; /* Slightly transparent maps */
-    width: 80px; /* Adjust size as needed */
-    height: 80px;
-    z-index: -1; /* Ensure maps stay behind the text */
+.continent-list {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Adds space between the images */
+    align-items: center; /* Vertically centers images if they vary in size */
+    flex-wrap: nowrap; /* Prevents the images from wrapping to a new line */
 }
+
+.continent-list img {
+    opacity: 0.5; /* Slightly transparent maps */
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    display: block;
+    z-index: -1; /* Ensure maps stay behind the text */
+    margin: 0 10px; /* Adds horizontal space between the images */
+}
+
 
 
         /* Footer */
@@ -194,7 +176,7 @@ main {
             color: black;
             text-decoration: none;
             display: block;
-            margin: 5px 0;
+            margin: 2px 0;
             font-size: 1rem;
         }
     
@@ -350,8 +332,9 @@ main {
 }
 
 .user-info .user-icon {
-    font-size: 3.0rem;
-    position:fixed;
+    width: 30px;
+            height: 30px;
+            margin-left: 15px;
 }
 
 .user-info-box {
@@ -471,13 +454,13 @@ main {
     </div>
     <main>
         <ul class="continent-list">
-            <li><a href="africa.html">AFRICA</a><img src="africa.jpeg" alt="Africa"></li>
-            <li><a href="asia.html">ASIA</a><img src="asia.jpeg" alt="Asia"></li>
-            <li><a href="europe.html">EUROPE</a><img src="europe.jpeg" alt="Europe"></li>
-            <li><a href="north america.html">NORTH AMERICA</a><img src="north america.jpeg" alt="North America"></li>
-            <li><a href="south america.html">SOUTH AMERICA</a><img src="south america.jpeg" alt="South America"></li>
-            <li><a href="antarctica.html">ANTARCTICA</a><img src="antarctica.jpeg" alt="Antarctica"></li>
-            <li><a href="oceania.html">OCEANIA</a><img src="oceania.jpeg" alt="Oceania"></li>
+            <li><a href="africa.html"><img src="africa.jpeg" alt="Africa"></li>
+            <li><a href="asia.html"><img src="asia.jpeg" alt="Asia"></li>
+            <li><a href="europe.html"><img src="europe.jpeg" alt="Europe"></li>
+            <li><a href="north america.html"><img src="north america.jpeg" alt="North America"></li>
+            <li><a href="south america.html"><img src="south america.jpeg" alt="South America"></li>
+            <li><a href="antarctica.html"><img src="antarctica.jpeg" alt="Antarctica"></li>
+            <li><a href="oceania.html"></a><img src="oceania.jpeg" alt="Oceania"></li>
         </ul>
         <div class="footer-links">
             <a href="about.html">About Us</a>

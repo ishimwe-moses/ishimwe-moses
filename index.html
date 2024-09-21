@@ -22,7 +22,7 @@
         }
 
         body {
-            background-image: url("fine globe.gif");
+            background-color:#e1e3c1 );
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -50,7 +50,7 @@
 
         header h1 {
             font-size: 3.1rem;
-            color: #FF5733;
+            color: rgb(10, 76, 244);;
             text-shadow: 0 0 3px #FF0000;
             flex: 1;
         }
@@ -118,14 +118,14 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 50px; /* Adjust gap for better spacing */
-    margin-top: 20px; /* Adds some spacing below the previous div */
+    gap: 35px; /* Adjust gap for better spacing */
+    margin-top: 15px; /* Adds some spacing below the previous div */
 }
 
 .continent-list li {
     list-style: none;
     position: relative;
-    margin: 0 20px; /* Adds space between each continent */
+    margin: 0 18px; /* Adds space between each continent */
     text-align: center;
     font-weight: 1000;
     color: #00FF00; /* Green color for the text */
@@ -134,7 +134,7 @@ main {
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better contrast */
     padding: 12px 20px;
     transition: transform 0.3s;
-    z-index: 3; /* Ensure text stays on top */
+    z-index: 4; /* Ensure text stays on top */
 }
 
 .continent-list li:hover {
@@ -147,18 +147,9 @@ main {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.5; /* Slightly transparent maps */
-    width: 140px; /* Adjust size as needed */
-    height: 140px;
+    width: 120px; /* Adjust size as needed */
+    height: 120px;
     z-index: -1; /* Ensure maps stay behind the text */
-}
-
-/* Optional: Additional styling to ensure overall page structure is maintained */
-body {
-    background-color: #f4f4f4; /* Light background for contrast */
-}
-
-main {
-    margin-bottom: 40px; /* Adds some spacing below the main section */
 }
 
 
@@ -421,7 +412,29 @@ main {
     <!-- Navigation Links -->
     <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="introduction.html">Intro</a>
+        <div class="dropdown">
+            <a href="#">Continents</a>
+            <div class="dropdown-content">
+                <a href="africa.html">Africa</a>
+                <a href="asia.html">Asia</a>
+                <a href="europe.html">Europe</a>
+                <a href="north america.html">North America</a>
+                <a href="south america.html">South America</a>
+                <a href="antarctica.html">Africa</a>
+                <a href="oceania.html">Oceanias</a>
+            </div>
+         </div>
+        <div class="dropdown">
+            <a href="#">A good Explorer</a>
+            <div class="dropdown-content">
+                <a href="animals.html">A good Explorer</a>
+                <a href="culture.html">Our Origin</a>
+                 <a href="visit.html">Our world!</a>
+                <a href="people.html">In Human Natures </a>
+                <a href="magic.html">What beyond Us!</a>
+            </div>
+        </div>
+         <a href="introduction.html">Intro</a>
         <a href="historical facts.html">Historical facts</a>
         <a href="fun facts.html">Fan Facts</a>
         <a href="images.html">Gallery</a>
@@ -433,8 +446,7 @@ main {
             <div class="dropdown-content">
                 <a href="animals.html">Animals</a>
                 <a href="visit.html">Higher visited</a>
-                <a href="culture.html">Culture</a>
-                <a href="people.html">People</a>
+                <a href="culture.html">People and Culture</a>
                 <a href="magic.html">Magic Zones</a>
             </div>
         </div>

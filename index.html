@@ -49,10 +49,12 @@
         }
 
         header h1 {
-            font-size: 3.1rem;
+            font-size: 2.3rem;
             color: rgb(10, 76, 244);;
             text-shadow: 0 0 3px #FF0000;
             flex: 1;
+            z-index:-1
+            
         }
 
         /* Navigation Bar */
@@ -86,7 +88,7 @@
             background-color: rgba(255, 255, 255, 0.9);
             min-width: 160px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 15;
+            z-index: 20;
         }
 
         .dropdown-content a {
@@ -130,6 +132,7 @@ main {
     height: 50px;
     display: block;
     z-index: -1; /* Ensure maps stay behind the text */
+    margin-top:3%;
     margin: 0 10px; /* Adds horizontal space between the images */
 }
 
@@ -142,7 +145,7 @@ main {
             text-align: center;
             padding: 4px 0;
             position: relative;
-            margin-top: auto;
+            margin-top: 5px;
             margin-bottom:auto;
         }
 
@@ -256,12 +259,12 @@ main {
 .form-container {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 80%;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 15;
+    z-index: 5;
 }
 
 .form-box {
@@ -374,7 +377,7 @@ main {
     color: #037ffa; /* A deep blue-gray color */
     text-transform: uppercase; /* Capitalizes all letters */
     letter-spacing: 2px; /* Adds subtle spacing between letters */
-    margin-bottom: 1.2rem; /* Adds space beneath the title */
+    margin-bottom: 5px; /* Adds space beneath the title */
     border-bottom: 3px solid #3498db; /* Light blue underline for emphasis */
     border-width: 50%;
     padding-bottom: 0.5rem; /* Spacing between text and border */

@@ -143,12 +143,12 @@ main {
 
 .continent-list img {
     position: absolute;
-    top: -30px; /* Adjust position to keep maps just above text */
-    left: 50%;
+    top: -50px; /* Adjust position to keep maps just above text */
+    left: 5%;
     transform: translateX(-50%);
     opacity: 0.5; /* Slightly transparent maps */
-    width: 120px; /* Adjust size as needed */
-    height: 120px;
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
     z-index: -1; /* Ensure maps stay behind the text */
 }
 
@@ -351,6 +351,7 @@ main {
 
 .user-info .user-icon {
     font-size: 3.0rem;
+    position:fixed;
 }
 
 .user-info-box {
@@ -361,7 +362,7 @@ main {
     border-radius: 3.5px;
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 1;
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 8px;
@@ -386,7 +387,7 @@ main {
 }
         .h2class {
     font-family: 'Arial', sans-serif; /* Simple, clean font */
-    font-size: 3.5rem; /* Large but not overwhelming */
+    font-size: 3.0rem; /* Large but not overwhelming */
     color: #037ffa; /* A deep blue-gray color */
     text-transform: uppercase; /* Capitalizes all letters */
     letter-spacing: 2px; /* Adds subtle spacing between letters */
@@ -434,11 +435,18 @@ main {
                 <a href="magic.html">What beyond Us!</a>
             </div>
         </div>
-         <a href="introduction.html">Intro</a>
-        <a href="historical facts.html">Historical facts</a>
-        <a href="fun facts.html">Fan Facts</a>
-        <a href="images.html">Gallery</a>
-        <a href="nature.html">Our Nature</a>
+        <div class="dropdown">
+            <a href="#">Map Ur Ideas</a>
+            <div class="dropdown-content">
+            <a href="introduction.html">Intro</a>
+            <a href="historical facts.html">Historical facts</a>
+            <a href="fun facts.html">Fan Facts</a>
+             <a href="fun facts.html">Historical</a>  
+            <a href="images.html">Gallery</a>
+            <a href="nature.html">Our Nature</a>
+            </div>
+     </div>
+        
 
         <!-- Dropdown for extra links -->
         <div class="dropdown">
@@ -471,17 +479,17 @@ main {
             <li><a href="antarctica.html">ANTARCTICA</a><img src="antarctica.jpeg" alt="Antarctica"></li>
             <li><a href="oceania.html">OCEANIA</a><img src="oceania.jpeg" alt="Oceania"></li>
         </ul>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Explore the World. All rights reserved.</p>
         <div class="footer-links">
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact Us</a>
             <a href="policy.html">Our Policy</a>
             <a href="help.html">Help Center</a>
         </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Explore the World. All rights reserved.</p>
     </footer>
 
     <!-- Bottom Links and Background Images are unchanged -->

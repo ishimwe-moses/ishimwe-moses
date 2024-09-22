@@ -485,7 +485,7 @@ main {
   }
 ];
 
-          let currentQuestionIndex = 0;
+         let currentQuestionIndex = 0;
           
           function showQuestion() {
             const questionContainer = document.getElementById('question-container');
@@ -504,7 +504,13 @@ main {
             const currentQuestion = questions[currentQuestionIndex];
           
             // Set question text
-           
+            if (currentQuestion.type !== 'image') {
+              questionElement.textContent = currentQuestion.question;
+            } else {
+              questionElement.innerHTML = `<img src="${currentQuestion.imageUrl}" alt="Flag" width="100"><br>${currentQuestion.question}`;
+            }
+          
+            // Show options
             if (currentQuestion.type === 'multiple-choice' || currentQuestion.type === 'true-false') {
               currentQuestion.options.forEach((option, index) => {
                 const button = document.createElement('button');
@@ -512,7 +518,7 @@ main {
                 button.onclick = () => checkAnswer(index);
                 optionsElement.appendChild(button);
               });
-            } else  (currentQuestion.type === 'checkbox') {
+            } else if (currentQuestion.type === 'checkbox') {
               currentQuestion.options.forEach((option, index) => {
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
@@ -570,7 +576,7 @@ main {
             if (currentQuestionIndex < questions.length) {
               showQuestion();
             } else {
-              alert('You have completed the quiz choose continent to explore!');
+              alert('You have completed the quiz!');
               currentQuestionIndex = 0;
               showQuestion();
             }
@@ -579,7 +585,6 @@ main {
           // Start the quiz
           showQuestion();
           </script>
-  
 </div>
     </main>
 

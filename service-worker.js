@@ -1,4 +1,4 @@
-const cacheName = 'site-dynamic-cache-v2';
+const cacheName = 'site-dynamic-cache-v3';
 
 // Install the service worker
 self.addEventListener('install', (event) => {

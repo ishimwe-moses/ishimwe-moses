@@ -22,7 +22,7 @@
         }
 
         body {
-            background-image:url(world explorer.jpeg);
+            background-image:url(world explorer.gif);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -43,8 +43,8 @@
         }
 
         header img {
-            width: 70px;
-            height: 70px;
+            width: 100px;
+            height: 100px;
             margin-right: 15px;
         }
 
@@ -147,8 +147,8 @@ main {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.5; /* Slightly transparent maps */
-    width: 120px; /* Adjust size as needed */
-    height: 120px;
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
     z-index: -1; /* Ensure maps stay behind the text */
 }
 
@@ -163,46 +163,74 @@ main {
             margin-top: auto;
             margin-bottom:auto;
         }
-
-        .footer-links {
-            position: absolute;
-            right: 20px;
-            bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #FFF;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: #FF5733;
-        }
-
-        /* Bottom Links */
-        .bottom-links {
-            position: absolute;
-            bottom: 10%;
-            right: 5%;
-            z-index: 9;
-            padding: 4px 0;
-        }
-
-        .bottom-links a {
-            color: black;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-            font-size: 1rem;
-        }
     
         /* Background Elements */
 .background-element {
     position: absolute;
     z-index: 0.5;
     opacity: 1;
+}
+/* Container holding the button and drop-up content */
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropup Button */
+.dropup-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The content inside the drop-up (hidden by default) */
+.dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 40px; /* Adjust this value based on button height */
+    left: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the drop-up content when hovering over the drop-up container */
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+/* Optional: Add a transition effect */
+.dropup-content {
+    animation: dropup-animation 0.3s ease-in-out;
+}
+
+/* Drop-up Animation */
+@keyframes dropup-animation {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from 20px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
 }
 
 .airplane {
@@ -270,121 +298,8 @@ main {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-        /* Forms */
-.form-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 15;
-}
 
-.form-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-box input {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #0582ef;
-    border-radius: 3px;
-}
-
-.form-box button {
-    padding: 0.5rem;
-    border: none;
-    background-color: #06f390;
-    color: rgb(12, 11, 11);
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.form-box button:hover {
-    background-color: #05c17c;
-}
-
-.form-box a {
-    text-decoration: none;
-    color: #06f390;
-    margin-top: 0.5rem;
-    text-align: center;
-}
-
-.form-box a:hover {
-    color: #05c17c;
-}
-
-.password-container {
-    position: relative;
-}
-
-.password-container input {
-    width: 100%;
-}
-
-.password-container .toggle-password {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-/* Error and User Info */
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    display: none;
-}
-
-.user-info {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 5;
-    cursor: pointer;
-}
-
-.user-info .user-icon {
-    font-size: 3.0rem;
-}
-
-.user-info-box {
-    display: none;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    border-radius: 3.5px;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    z-index: 2;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 8px;
-}
-
-.user-info-box p {
-    margin: 0.5rem 0;
-}
-
-.user-info-box button {
-    padding: 0.5rem;
-    border: none;
-    background-color: #06f390;
-    color: white;
-    cursor: pointer;
-    border-radius: 3px;
-    margin-top: 0.5rem;
-}
-
-.user-info-box button:hover {
-    background-color: #05c17c;
-}
-        .h2class {
+    .h2class {
     font-family: 'Arial', sans-serif; /* Simple, clean font */
     font-size: 3.5rem; /* Large but not overwhelming */
     color: #037ffa; /* A deep blue-gray color */
@@ -397,8 +312,7 @@ main {
     text-align: center; /* Center the text */
             margin-top:3px;
 }
-        /* Forms and Other Styles are unchanged */
-        /* Keep the rest of your CSS styles as they are */
+        
     </style>
 </head>
 <body>
@@ -410,7 +324,7 @@ main {
     </header>
 
     <!-- Navigation Links -->
-    <div class="nav-links">
+     <div class="nav-links">
         <a href="index.html">Home</a>
         <div class="dropdown">
             <a href="#">Continents</a>
@@ -418,34 +332,38 @@ main {
                 <a href="africa.html">Africa</a>
                 <a href="asia.html">Asia</a>
                 <a href="europe.html">Europe</a>
-                <a href="north america.html">North America</a>
-                <a href="south america.html">South America</a>
-                <a href="antarctica.html">Africa</a>
-                <a href="oceania.html">Oceanias</a>
+                <a href="north-america.html">North America</a>
+                <a href="south-america.html">South America</a>
+                <a href="antarctica.html">Antarctica</a>
+                <a href="oceania.html">Oceania</a>
             </div>
          </div>
         <div class="dropdown">
             <a href="#">A good Explorer</a>
             <div class="dropdown-content">
-                <a href="animals.html">A good Explorer</a>
+                <a href="animals.html">Animals</a>
                 <a href="culture.html">Our Origin</a>
-                 <a href="visit.html">Our world!</a>
-                <a href="people.html">In Human Natures </a>
-                <a href="magic.html">What beyond Us!</a>
+                <a href="visit.html">Our World!</a>
+                <a href="people.html">Human Nature</a>
+                <a href="magic.html">What’s Beyond Us?</a>
             </div>
         </div>
-         <a href="introduction.html">Intro</a>
-        <a href="historical facts.html">Historical facts</a>
-        <a href="fun facts.html">Fan Facts</a>
-        <a href="images.html">Gallery</a>
-        <a href="nature.html">Our Nature</a>
+        <div class="dropdown">
+            <a href="#">Map Ur Ideas</a>
+            <div class="dropdown-content">
+                <a href="introduction.html">Intro</a>
+                <a href="historical-facts.html">Historical Facts</a>
+                <a href="fun-facts.html">Fun Facts</a>
+                <a href="images.html">Gallery</a>
+                <a href="nature.html">Our Nature</a>
+            </div>
+        </div>
 
-        <!-- Dropdown for extra links -->
         <div class="dropdown">
             <a href="#">More</a>
             <div class="dropdown-content">
                 <a href="animals.html">Animals</a>
-                <a href="visit.html">Higher visited</a>
+                <a href="visit.html">Higher Visits</a>
                 <a href="culture.html">People and Culture</a>
                 <a href="magic.html">Magic Zones</a>
             </div>
@@ -463,29 +381,29 @@ main {
     </div>
     <main>
         <ul class="continent-list">
-            <li><a href="africa.html">AFRICA</a><img src="africa.jpeg" alt="Africa"></li>
-            <li><a href="asia.html">ASIA</a><img src="asia.jpeg" alt="Asia"></li>
-            <li><a href="europe.html">EUROPE</a><img src="europe.jpeg" alt="Europe"></li>
-            <li><a href="north america.html">NORTH AMERICA</a><img src="north america.jpeg" alt="North America"></li>
-            <li><a href="south america.html">SOUTH AMERICA</a><img src="south america.jpeg" alt="South America"></li>
-            <li><a href="antarctica.html">ANTARCTICA</a><img src="antarctica.jpeg" alt="Antarctica"></li>
-            <li><a href="oceania.html">OCEANIA</a><img src="oceania.jpeg" alt="Oceania"></li>
+            <li><a href="africa.html"><img src="africa.jpeg" alt="Africa"></a></li>
+            <li><a href="asia.html"><img src="asia.jpeg" alt="Asia"></a></li>
+            <li><a href="europe.html"><img src="europe.jpeg" alt="Europe"></a></li>
+            <li><a href="north-america.html"><img src="north-america.jpeg" alt="North America"></a></li>
+            <li><a href="south-america.html"><img src="south-america.jpeg" alt="South America"></a></li>
+            <li><a href="antarctica.html"><img src="antarctica.jpeg" alt="Antarctica"></a></li>
+            <li><a href="oceania.html"><img src="oceania.jpeg" alt="Oceania"></a></li>
         </ul>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Explore the World. All rights reserved.</p>
-        <div class="footer-links">
+      <div class="dropup">
+    <button class="dropup-btn">Dropup Button</button>
+    <div class="dropup-content">
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact Us</a>
             <a href="policy.html">Our Policy</a>
             <a href="help.html">Help Center</a>
-        </div>
-    </footer>
-
-    <!-- Bottom Links and Background Images are unchanged -->
-
+    </div>
+</div>
+ <p>&copy; 2024 Explore the World. All rights reserved.</p>
+ </footer>
 
 <div class=mask1>
     <!-- Background Images -->
@@ -493,227 +411,8 @@ main {
     <img src="airplane3.gif" alt="Airplane" class="background-element airplane">
     <img src="airplane3.gif" alt="Airplane" class="background-element airplan">
     <img src="airplane3.gif" alt="airplane" class="background-element globe4">
-</div>
-    <!-- User Info Icon -->
-    <div class="user-info">
-        <span class="user-icon">🧑‍💻</span>
-        <div class="user-info-box" id="user-info-box">
-            <p id="user-name"></p>
-            <p id="user-email"></p>
-            <p id="user-phone"></p>
-            <p id="user-sex"></p>
-            
-            <button id="logout">Logout</button>
-        </div>
-    </div>
-
-    <!-- Forms -->
-    <div id="login-container" class="form-container">
-        <form id="login-form" class="form-box">
-            <input type="email" id="login-email" placeholder="Gmail" required>
-            <div class="password-container">
-                <input type="password" id="login-password" placeholder="Password" required>
-                <span class="toggle-password">👁️</span>
-            </div>
-            <button type="submit">Login</button>
-            <a href="#" id="show-signup">Create Account</a>
-            <p class="error-message" id="login-error">Invalid Gmail or password.</p>
-        </form>
-    </div>
-
-    <div id="signup-container" class="form-container" style="display:none;">
-        <form id="signup-form" class="form-box">
-            <input type="text" id="first-name" placeholder="First Name" required>
-            <input type="text" id="last-name" placeholder="Second Name" required>
-            <input type="email" id="signup-email" placeholder="Gmail" required>
-            <div class="password-container">
-                <input type="password" id="signup-password" placeholder="Password" required>
-                <span class="toggle-password">👁️</span>
-            </div>
-            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
-            <input type="text" id="birthdate" placeholder="Birth Date (YYYY-MM-DD)" required>
-            <input type="text" id="telephone" placeholder="Telephone Number (+XXX-XXXXXXXXX)" required>
-            <select id="sex" required>
-                <option value="">Select Sex</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-            <button type="submit">Create Account</button>
-            <a href="#" id="show-login">Already have an account? Login</a>
-            <p class="error-message" id="signup-error">Please fill out all fields correctly.</p>
-        </form>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    const loginContainer = document.getElementById('login-container');
-    const signupContainer = document.getElementById('signup-container');
-    const showSignupLink = document.getElementById('show-signup');
-    const showLoginLink = document.getElementById('show-login');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-
-    const userInfoIcon = document.querySelector('.user-icon');
-    const userInfoBox = document.getElementById('user-info-box');
-    const userNameDisplay = document.getElementById('user-name');
-    const userEmailDisplay = document.getElementById('user-email');
-    const userPhoneDisplay = document.getElementById('user-phone');
-    const userSexDisplay = document.getElementById('user-sex');
-    const logoutButton = document.getElementById('logout');
-
-    const togglePasswordButtons = document.querySelectorAll('.toggle-password');
-    togglePasswordButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const passwordInput = this.previousElementSibling;
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                this.textContent = '🙈';
-            } else {
-                passwordInput.type = 'password';
-                this.textContent = '👁️';
-            }
-        });
-    });
-
-    userInfoIcon.addEventListener('click', () => {
-        userInfoBox.style.display = userInfoBox.style.display === 'none' ? 'block' : 'none';
-    });
-
-    showSignupLink.addEventListener('click', function () {
-        loginContainer.style.display = 'none';
-        signupContainer.style.display = 'block';
-    });
-
-    showLoginLink.addEventListener('click', function () {
-        signupContainer.style.display = 'none';
-        loginContainer.style.display = 'block';
-    });
-
-    function validateEmail(email) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-    }
-
-    function validatePhone(phone) {
-        const phonePattern = /^\+\d{3}-\d{9}$/;
-        return phonePattern.test(phone);
-    }
-
-    function validatePassword(password) {
-        return password.length >= 8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /\d/.test(password);
-    }
-
-    signupForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const firstName = document.getElementById('first-name').value;
-        const lastName = document.getElementById('last-name').value;
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-        const birthdate = document.getElementById('birthdate').value;
-        const phone = document.getElementById('telephone').value;
-        const sex = document.getElementById('sex').value;
-
-        if (!validateEmail(email)) {
-            document.getElementById('signup-error').textContent = "Invalid email format.";
-            document.getElementById('signup-error').style.display = 'block';
-            return;
-        }
-
-        if (!validatePassword(password)) {
-            document.getElementById('signup-error').textContent = "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number.";
-            document.getElementById('signup-error').style.display = 'block';
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            document.getElementById('signup-error').textContent = "Passwords do not match.";
-            document.getElementById('signup-error').style.display = 'block';
-            return;
-        }
-
-        if (!validatePhone(phone)) {
-            document.getElementById('signup-error').textContent = "Phone number must be in the format +XXX-XXXXXXXXX.";
-            document.getElementById('signup-error').style.display = 'block';
-            return;
-        }
-
-        if (firstName && lastName && birthdate && sex) {
-            const userInfo = {
-                firstName,
-                lastName,
-                email,
-                birthdate,
-                phone,
-                sex,
-                password
-            };
-
-            localStorage.setItem('userInfo', JSON.stringify(userInfo));
-
-            signupContainer.style.display = 'none';
-            alert('Account created successfully!');
-            loginContainer.style.display = 'block';
-        } else {
-            document.getElementById('signup-error').textContent = "Please fill out all fields.";
-            document.getElementById('signup-error').style.display = 'block';
-        }
-    });
-
-    loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-        const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
-
-        if (storedUserInfo && storedUserInfo.email === email && storedUserInfo.password === password) {
-            loginContainer.style.display = 'none';
-            alert('Login successful!');
-
-            userNameDisplay.textContent = Name: ${storedUserInfo.firstName} ${storedUserInfo.lastName};
-            userEmailDisplay.textContent = Gmail: ${storedUserInfo.email};
-            userPhoneDisplay.textContent = Phone: ${storedUserInfo.phone};
-            userSexDisplay.textContent = Sex: ${storedUserInfo.sex};
-            userInfoBox.style.display = 'block';
-        } else {
-            document.getElementById('login-error').textContent = "Invalid Gmail or password.";
-            document.getElementById('login-error').style.display = 'block';
-        }
-    });
-
-    logoutButton.addEventListener('click', function () {
-        userInfoBox.style.display = 'none';
-        loginContainer.style.display = 'block';
-    });
-
-    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (storedUserInfo) {
-        loginContainer.style.display = 'none';
-        userNameDisplay.textContent = Name: ${storedUserInfo.firstName} ${storedUserInfo.lastName};
-        userEmailDisplay.textContent = Gmail: ${storedUserInfo.email};
-        userPhoneDisplay.textContent = Phone: ${storedUserInfo.phone};
-        userSexDisplay.textContent = Sex: ${storedUserInfo.sex};
-        userInfoBox.style.display = 'block';
-    }
-
-
-});
-  
-    </script>
-    
+</div>   
 <script>
-    // Handle user information from localStorage
-    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (storedUserInfo) {
-        loginContainer.style.display = 'none';
-        userNameDisplay.textContent = Name: ${storedUserInfo.firstName} ${storedUserInfo.lastName};
-        userEmailDisplay.textContent = Gmail: ${storedUserInfo.email};
-        userPhoneDisplay.textContent = Phone: ${storedUserInfo.phone};
-        userSexDisplay.textContent = Sex: ${storedUserInfo.sex};
-        userInfoBox.style.display = 'block';
-    }
-
     // Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -727,7 +426,6 @@ main {
         });
     }
 </script>
-
 </body>
 </html>
 

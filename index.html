@@ -112,19 +112,23 @@ main {
     padding: 20px;
 }
 
-.continent-list li:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+* {
+  box-sizing: border-box;
 }
 
-.continent-list img {
-    position: absolute;
-    top: -30px; /* Adjust position to keep maps just above text */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px; /* Adjust size as needed */
-    height: 80px;
-    z-index: -1; /* Ensure maps stay behind the text */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
 }
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 
         /* Footer */
@@ -354,15 +358,30 @@ main {
         <h2>Continents</h2>
     </div>
     <main>
-        <ul class="continent-list">
-            <li><a href="africa.html"><img src="africa.jpeg" alt="Africa"></a></li>
-            <li><a href="asia.html"><img src="asia.jpeg" alt="Asia"></a></li>
-            <li><a href="europe.html"><img src="europe.jpeg" alt="Europe"></a></li>
-            <li><a href="north america.html"><img src="north america.jpeg" alt="North America"></a></li>
-            <li><a href="south america.html"><img src="south america.jpeg" alt="South America"></a></li>
-            <li><a href="antarctica.html"><img src="antarctica.jpeg" alt="Antarctica"></a></li>
-            <li><a href="oceania.html"><img src="oceania.jpeg" alt="Oceania"></a></li>
-        </ul>
+        <div class="row">
+            <div class="column">
+            <a href="africa.html"><img src="africa.jpeg" alt="Africa" style="width:100%></a>
+            </div>
+             <div class="column">
+            <a href="asia.html"><img src="asia.jpeg" alt="Asia" style="width:100%></a>
+            </div>
+             <div class="column">
+            <a href="europe.html"><img src="europe.jpeg" alt="Europe" style="width:100%></a>
+            </div>
+            <div class="column">
+            <a href="north america.html"><img src="north america.jpeg" alt="North America" style="width:100%></a>
+            </div>
+            <div class="column">
+            <a href="south america.html"><img src="south america.jpeg" alt="South America" style="width:100%></a>
+            </div>
+           <div class="column">
+            <a href="antarctica.html"><img src="antarctica.jpeg" alt="Antarctica" style="width:100%></a>
+            </div>
+           <div class="column">
+            <a href="oceania.html"><img src="oceania.jpeg" alt="Oceania" style="width:100%></a>
+            </div>
+  
+</div>
     </main>
 
     <!-- Footer -->

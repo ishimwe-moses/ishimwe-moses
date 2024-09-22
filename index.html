@@ -368,131 +368,139 @@ main {
         <h2>Our World is so Amaizing!</h2>
     </div>
     <main>
-       
-            <script>const questions = [
-  {
-    type: 'multiple-choice',
-    question: 'Which continent has the most countries?',
-    options: ['Africa', 'Asia', 'Europe', 'North America'],
-    correctAnswer: 0
-  },
-  {
-    type: 'true-false',
-    question: 'Is Australia both a country and a continent?',
-    options: ['True', 'False'],
-    correctAnswer: 0
-  },
-  {
-    type: 'checkbox',
-    question: 'Select the countries located in South America:',
-    options: ['Argentina', 'Canada', 'Brazil', 'India'],
-    correctAnswers: [0, 2]
-  },
-  {
-    type: 'multiple-choice',
-    question: 'Which is the smallest continent by area?',
-    options: ['Antarctica', 'Europe', 'Australia', 'South America'],
-    correctAnswer: 2
-  },
-  {
-    type: 'true-false',
-    question: 'Is the Sahara Desert located in South America?',
-    options: ['True', 'False'],
-    correctAnswer: 1
-  },
-  {
-    type: 'checkbox',
-    question: 'Select the countries located in Europe:',
-    options: ['France', 'Japan', 'Spain', 'South Africa'],
-    correctAnswers: [0, 2]
-  },
-  {
-    type: 'multiple-choice',
-    question: 'What is the capital city of Canada?',
-    options: ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'],
-    correctAnswer: 2
-  },
-  {
-    type: 'true-false',
-    question: 'Is the Amazon River the longest river in the world?',
-    options: ['True', 'False'],
-    correctAnswer: 1
-  },
-  {
-    type: 'checkbox',
-    question: 'Select the continents:',
-    options: ['Africa', 'Greenland', 'Asia', 'Europe'],
-    correctAnswers: [0, 2, 3]
-  },
-  {
-    type: 'multiple-choice',
-    question: 'Which is the largest country by area?',
-    options: ['Canada', 'Russia', 'China', 'USA'],
-    correctAnswer: 1
-  },
-  {
-    type: 'true-false',
-    question: 'Is Egypt located in Europe?',
-    options: ['True', 'False'],
-    correctAnswer: 1
-  },
-  {
-    type: 'checkbox',
-    question: 'Select the cities that are capitals:',
-    options: ['Berlin', 'Sydney', 'Cairo', 'Mexico City'],
-    correctAnswers: [0, 2, 3]
-  },
-  {
-    type: 'multiple-choice',
-    question: 'Which continent is known as the birthplace of Western civilization?',
-    options: ['Africa', 'Europe', 'Asia', 'Australia'],
-    correctAnswer: 1
-  },
-  {
-    type: 'true-false',
-    question: 'Is Mount Everest the highest mountain in Africa?',
-    options: ['True', 'False'],
-    correctAnswer: 1
-  },
-  {
-    type: 'checkbox',
-    question: 'Select the oceans:',
-    options: ['Indian Ocean', 'Mediterranean Sea', 'Pacific Ocean', 'Caribbean Sea'],
-    correctAnswers: [0, 2]
-  },
-  {
-    type: 'multiple-choice',
-    question: 'Which continent is home to the Andes Mountains?',
-    options: ['Africa', 'North America', 'South America', 'Asia'],
-    correctAnswer: 2
-  },
-  {
-    type: 'true-false',
-    question: 'Is Greenland the largest island in the world?',
-    options: ['True', 'False'],
-    correctAnswer: 0
-  },
-  {
-    type: 'checkbox',
-    question: 'Select the landlocked countries:',
-    options: ['Bolivia', 'Peru', 'Switzerland', 'Italy'],
-    correctAnswers: [0, 2]
-  },
-  {
-    type: 'multiple-choice',
-    question: 'Which country has the highest population?',
-    options: ['USA', 'India', 'China', 'Indonesia'],
-    correctAnswer: 2
-  },
-  {
-    type: 'true-false',
-    question: 'Is Africa the second-largest continent by both population and area?',
-    options: ['True', 'False'],
-    correctAnswer: 0
-  }
-];
-
-         let currentQuestionIndex = 0;
+        <div class="quiz-container">
+            <div id="question-container">
+              <p class="question"></p>
+              <div class="options"></div>
+              <p class="feedback"></p>
+            </div>
+            <button id="next-btn" style="display:none;">Next</button>
+          </div>
+        <script>const questions = [
+            {
+              type: 'multiple-choice',
+              question: 'Which continent has the most countries?',
+              options: ['Africa', 'Asia', 'Europe', 'North America'],
+              correctAnswer: 0
+            },
+            {
+              type: 'true-false',
+              question: 'Is Australia both a country and a continent?',
+              options: ['True', 'False'],
+              correctAnswer: 0
+            },
+            {
+              type: 'checkbox',
+              question: 'Select the countries located in South America:',
+              options: ['Argentina', 'Canada', 'Brazil', 'India'],
+              correctAnswers: [0, 2]
+            },
+            {
+              type: 'multiple-choice',
+              question: 'Which is the smallest continent by area?',
+              options: ['Antarctica', 'Europe', 'Australia', 'South America'],
+              correctAnswer: 2
+            },
+            {
+              type: 'true-false',
+              question: 'Is the Sahara Desert located in South America?',
+              options: ['True', 'False'],
+              correctAnswer: 1
+            },
+            {
+              type: 'checkbox',
+              question: 'Select the countries located in Europe:',
+              options: ['France', 'Japan', 'Spain', 'South Africa'],
+              correctAnswers: [0, 2]
+            },
+            {
+              type: 'multiple-choice',
+              question: 'What is the capital city of Canada?',
+              options: ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'],
+              correctAnswer: 2
+            },
+            {
+              type: 'true-false',
+              question: 'Is the Amazon River the longest river in the world?',
+              options: ['True', 'False'],
+              correctAnswer: 1
+            },
+            {
+              type: 'checkbox',
+              question: 'Select the continents:',
+              options: ['Africa', 'Greenland', 'Asia', 'Europe'],
+              correctAnswers: [0, 2, 3]
+            },
+            {
+              type: 'multiple-choice',
+              question: 'Which is the largest country by area?',
+              options: ['Canada', 'Russia', 'China', 'USA'],
+              correctAnswer: 1
+            },
+            {
+              type: 'true-false',
+              question: 'Is Egypt located in Europe?',
+              options: ['True', 'False'],
+              correctAnswer: 1
+            },
+            {
+              type: 'checkbox',
+              question: 'Select the cities that are capitals:',
+              options: ['Berlin', 'Sydney', 'Cairo', 'Mexico City'],
+              correctAnswers: [0, 2, 3]
+            },
+            {
+              type: 'multiple-choice',
+              question: 'Which continent is known as the birthplace of Western civilization?',
+              options: ['Africa', 'Europe', 'Asia', 'Australia'],
+              correctAnswer: 1
+            },
+            {
+              type: 'true-false',
+              question: 'Is Mount Everest the highest mountain in Africa?',
+              options: ['True', 'False'],
+              correctAnswer: 1
+            },
+            {
+              type: 'checkbox',
+              question: 'Select the oceans:',
+              options: ['Indian Ocean', 'Mediterranean Sea', 'Pacific Ocean', 'Caribbean Sea'],
+              correctAnswers: [0, 2]
+            },
+            {
+              type: 'multiple-choice',
+              question: 'Which continent is home to the Andes Mountains?',
+              options: ['Africa', 'North America', 'South America', 'Asia'],
+              correctAnswer: 2
+            },
+            {
+              type: 'true-false',
+              question: 'Is Greenland the largest island in the world?',
+              options: ['True', 'False'],
+              correctAnswer: 0
+            },
+            {
+              type: 'checkbox',
+              question: 'Select the landlocked countries:',
+              options: ['Bolivia', 'Peru', 'Switzerland', 'Italy'],
+              correctAnswers: [0, 2]
+            },
+            {
+              type: 'multiple-choice',
+              question: 'Which country has the highest population?',
+              options: ['USA', 'India', 'China', 'Indonesia'],
+              correctAnswer: 2
+            },
+            {
+              type: 'true-false',
+              question: 'Is Africa the second-largest continent by both population and area?',
+              options: ['True', 'False'],
+              correctAnswer: 0
+            }
+          ];
+          
+          
+          let currentQuestionIndex = 0;
           
           function showQuestion() {
             const questionContainer = document.getElementById('question-container');
@@ -592,8 +600,7 @@ main {
           // Start the quiz
           showQuestion();
           </script>
-</div>
-    </main>
+        </main>
 
     <!-- Footer -->
     <footer>

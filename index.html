@@ -111,24 +111,27 @@ main {
     align-items: center;
     padding: 20px;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  float: left;
-  width: 12%%;
-  padding: 3px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
+    .quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .options {
+      margin-bottom: 20px;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
 
 
         /* Footer */
@@ -355,31 +358,227 @@ main {
 
     <!-- Continent List -->
     <div class="h2class">
-        <h2>Continents</h2>
+        <h2>Our World is so Amaizing!</h2>
     </div>
     <main>
-        <div class="row">
-            <div class="column">
-            <a href="africa.html"><img src="africa.jpeg" alt="Africa" style="width:10%></a>
-            </div>
-             <div class="column">
-            <a href="asia.html"><img src="asia.jpeg" alt="Asia" style="width:10%></a>
-            </div>
-             <div class="column">
-            <a href="europe.html"><img src="europe.jpeg" alt="Europe" style="width:10%></a>
-            </div>
-            <div class="column">
-            <a href="north america.html"><img src="north america.jpeg" alt="North America" style="width:10%></a>
-            </div>
-            <div class="column">
-            <a href="south america.html"><img src="south america.jpeg" alt="South America" style="width:10%></a>
-            </div>
-           <div class="column">
-            <a href="antarctica.html"><img src="antarctica.jpeg" alt="Antarctica" style="width:10%></a>
-            </div>
-           <div class="column">
-            <a href="oceania.html"><img src="oceania.jpeg" alt="Oceania" style="width:10%></a>
-            </div>
+       
+            <script>const questions = [
+  {
+    type: 'multiple-choice',
+    question: 'Which continent has the most countries?',
+    options: ['Africa', 'Asia', 'Europe', 'North America'],
+    correctAnswer: 0
+  },
+  {
+    type: 'true-false',
+    question: 'Is Australia both a country and a continent?',
+    options: ['True', 'False'],
+    correctAnswer: 0
+  },
+  {
+    type: 'checkbox',
+    question: 'Select the countries located in South America:',
+    options: ['Argentina', 'Canada', 'Brazil', 'India'],
+    correctAnswers: [0, 2]
+  },
+  {
+    type: 'multiple-choice',
+    question: 'Which is the smallest continent by area?',
+    options: ['Antarctica', 'Europe', 'Australia', 'South America'],
+    correctAnswer: 2
+  },
+  {
+    type: 'true-false',
+    question: 'Is the Sahara Desert located in South America?',
+    options: ['True', 'False'],
+    correctAnswer: 1
+  },
+  {
+    type: 'checkbox',
+    question: 'Select the countries located in Europe:',
+    options: ['France', 'Japan', 'Spain', 'South Africa'],
+    correctAnswers: [0, 2]
+  },
+  {
+    type: 'multiple-choice',
+    question: 'What is the capital city of Canada?',
+    options: ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'],
+    correctAnswer: 2
+  },
+  {
+    type: 'true-false',
+    question: 'Is the Amazon River the longest river in the world?',
+    options: ['True', 'False'],
+    correctAnswer: 1
+  },
+  {
+    type: 'checkbox',
+    question: 'Select the continents:',
+    options: ['Africa', 'Greenland', 'Asia', 'Europe'],
+    correctAnswers: [0, 2, 3]
+  },
+  {
+    type: 'multiple-choice',
+    question: 'Which is the largest country by area?',
+    options: ['Canada', 'Russia', 'China', 'USA'],
+    correctAnswer: 1
+  },
+  {
+    type: 'true-false',
+    question: 'Is Egypt located in Europe?',
+    options: ['True', 'False'],
+    correctAnswer: 1
+  },
+  {
+    type: 'checkbox',
+    question: 'Select the cities that are capitals:',
+    options: ['Berlin', 'Sydney', 'Cairo', 'Mexico City'],
+    correctAnswers: [0, 2, 3]
+  },
+  {
+    type: 'multiple-choice',
+    question: 'Which continent is known as the birthplace of Western civilization?',
+    options: ['Africa', 'Europe', 'Asia', 'Australia'],
+    correctAnswer: 1
+  },
+  {
+    type: 'true-false',
+    question: 'Is Mount Everest the highest mountain in Africa?',
+    options: ['True', 'False'],
+    correctAnswer: 1
+  },
+  {
+    type: 'checkbox',
+    question: 'Select the oceans:',
+    options: ['Indian Ocean', 'Mediterranean Sea', 'Pacific Ocean', 'Caribbean Sea'],
+    correctAnswers: [0, 2]
+  },
+  {
+    type: 'multiple-choice',
+    question: 'Which continent is home to the Andes Mountains?',
+    options: ['Africa', 'North America', 'South America', 'Asia'],
+    correctAnswer: 2
+  },
+  {
+    type: 'true-false',
+    question: 'Is Greenland the largest island in the world?',
+    options: ['True', 'False'],
+    correctAnswer: 0
+  },
+  {
+    type: 'checkbox',
+    question: 'Select the landlocked countries:',
+    options: ['Bolivia', 'Peru', 'Switzerland', 'Italy'],
+    correctAnswers: [0, 2]
+  },
+  {
+    type: 'multiple-choice',
+    question: 'Which country has the highest population?',
+    options: ['USA', 'India', 'China', 'Indonesia'],
+    correctAnswer: 2
+  },
+  {
+    type: 'true-false',
+    question: 'Is Africa the second-largest continent by both population and area?',
+    options: ['True', 'False'],
+    correctAnswer: 0
+  }
+];
+
+          let currentQuestionIndex = 0;
+          
+          function showQuestion() {
+            const questionContainer = document.getElementById('question-container');
+            const questionElement = questionContainer.querySelector('.question');
+            const optionsElement = questionContainer.querySelector('.options');
+            const feedbackElement = questionContainer.querySelector('.feedback');
+            const nextBtn = document.getElementById('next-btn');
+          
+            // Clear previous question and feedback
+            questionElement.textContent = '';
+            optionsElement.innerHTML = '';
+            feedbackElement.textContent = '';
+            feedbackElement.className = 'feedback';
+            nextBtn.style.display = 'none';
+          
+            const currentQuestion = questions[currentQuestionIndex];
+          
+            // Set question text
+           
+            if (currentQuestion.type === 'multiple-choice' || currentQuestion.type === 'true-false') {
+              currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.onclick = () => checkAnswer(index);
+                optionsElement.appendChild(button);
+              });
+            } else  (currentQuestion.type === 'checkbox') {
+              currentQuestion.options.forEach((option, index) => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = index;
+                optionsElement.appendChild(checkbox);
+                optionsElement.innerHTML += ` ${option}<br>`;
+              });
+              const submitBtn = document.createElement('button');
+              submitBtn.textContent = 'Submit';
+              submitBtn.onclick = checkCheckboxAnswers;
+              optionsElement.appendChild(submitBtn);
+            }
+          }
+          
+          function checkAnswer(selectedIndex) {
+            const currentQuestion = questions[currentQuestionIndex];
+            const feedbackElement = document.querySelector('.feedback');
+            const nextBtn = document.getElementById('next-btn');
+          
+            if (selectedIndex === currentQuestion.correctAnswer) {
+              feedbackElement.textContent = 'Correct!';
+              feedbackElement.classList.add('correct');
+            } else {
+              feedbackElement.textContent = `Incorrect! The correct answer is ${currentQuestion.options[currentQuestion.correctAnswer]}.`;
+              feedbackElement.classList.add('incorrect');
+            }
+          
+            nextBtn.style.display = 'inline-block';
+            nextBtn.onclick = () => nextQuestion();
+          }
+          
+          function checkCheckboxAnswers() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedAnswers = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(
+              checkbox => parseInt(checkbox.value)
+            );
+            const feedbackElement = document.querySelector('.feedback');
+            const nextBtn = document.getElementById('next-btn');
+          
+            if (JSON.stringify(selectedAnswers) === JSON.stringify(currentQuestion.correctAnswers)) {
+              feedbackElement.textContent = 'Correct!';
+              feedbackElement.classList.add('correct');
+            } else {
+              const correctOptions = currentQuestion.correctAnswers.map(i => currentQuestion.options[i]).join(', ');
+              feedbackElement.textContent = `Incorrect! The correct answers are ${correctOptions}.`;
+              feedbackElement.classList.add('incorrect');
+            }
+          
+            nextBtn.style.display = 'inline-block';
+            nextBtn.onclick = () => nextQuestion();
+          }
+          
+          function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+              showQuestion();
+            } else {
+              alert('You have completed the quiz choose continent to explore!');
+              currentQuestionIndex = 0;
+              showQuestion();
+            }
+          }
+          
+          // Start the quiz
+          showQuestion();
+          </script>
   
 </div>
     </main>

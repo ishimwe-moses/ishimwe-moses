@@ -13,7 +13,23 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bb2d5">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#394111">
-  <!-- Styles -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the World</title>
+
+    <!-- Favicon and Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bb2d5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#394111">
+
+    <!-- Styles -->
     <style>
         /* Global Styles */
         * {
@@ -30,7 +46,6 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            display: block;
             min-height: 100vh;
             color: #333;
         }
@@ -38,27 +53,43 @@
         /* Header Styles */
         header {
             display: flex;
+            justify-content: space-between; /* Align left and right items */
             align-items: center;
             background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent header */
-            color:white;
-            padding: 20 px;
+            padding: 20px;
+            position: relative;
             z-index: 10;
         }
 
         header img {
             width: 150px;
             height: 150px;
-            margin-right: 15px;
         }
 
-        header h1 {
-            font-size: 2.3rem;
-            color: rgb(10, 76, 244);
-            text-shadow: 0 0 3px #FF0000;
-            flex: 1;
+        /* Logo Styling */
+        .logo {
+            display: flex;
+            align-items: center;
         }
 
-        /* Navigation Bar */
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Login Icon Styling */
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info .user-icon {
+            width: 50px;  /* Adjusted the size of the icon */
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        /* Additional Elements */
         .nav-links {
             display: flex;
             justify-content: center;
@@ -71,266 +102,30 @@
             text-decoration: none;
             color: #333;
             font-weight: bold;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: #FF5733;
         }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.9);
-            min-width: 120px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 20;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Main Content */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .continent-list {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-
-        .continent-list li:hover {
-            transform: scale(1.1); /* Slight zoom effect on hover */
-        }
-
-        .continent-list img {
-            opacity: 0.5;
-            width: 100px;
-            height: 100px;
-            margin-top: -80px;
-            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
-        }
-
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #FFF;
-            text-align: center;
-            padding: 4px 0;
-            margin-top: 5px;
-        }
-
-        .footer-links {
-            position: absolute;
-            right: 20px;
-            bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #FFF;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: #FF5733;
-        }
-
-        /* Additional Elements */
-        .background-element {
-            position: absolute;
-            z-index: 0;
-            opacity: 1;
-        }
-
-        .airplane,
-        .airplan,
-        .globe4 {
-            animation: fly 20s infinite ease-in-out;
-        }
-
-        .airplane { bottom: 5%; left: 10%; width: 80px; height: 50px; }
-        .airplan { bottom: 20%; right: 12%; width: 200px; height: 150px; }
-        .globe4 { bottom: 20%; left: 4%; width: 80px; height: 80px; animation-duration: 50s; }
-
-        @keyframes fly {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(450px, -450px); }
-            100% { transform: translate(0, 0); }
-        }
-
-        /* Marquee */
-        .marquee {
-            width: 100%;
-            overflow: hidden;
-            background-color: #333;
-            color: #FFF;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .marquee div {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 15s linear infinite alternate;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Forms */
-        .form-container {
-            position: fixed;
-            top: 50%;
-            left: 80%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 2rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 5;
-        }
-
-        .form-box {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-box input,
-        .form-box button {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #0582ef;
-            border-radius: 3px;
-        }
-
-        .form-box button {
-            background-color: #06f390;
-            color: #0c0b0b;
-            cursor: pointer;
-        }
-
-        .form-box button:hover {
-            background-color: #05c17c;
-        }
-
-        .form-box a {
-            text-decoration: none;
-            color: #06f390;
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-
-        .form-box a:hover {
-            color: #05c17c;
-        }
-
-        .password-container {
-            position: relative;
-        }
-
-        .password-container input {
-            width: 100%;
-        }
-
-        .password-container .toggle-password {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        /* Error and User Info */
-        .error-message {
-            color: red;
-            font-size: 0.9rem;
-            display: none;
-        }
-
-        .user-info {
-            top: 50px;
-            right: 70px;
-            z-index: 5;
-            cursor: pointer;
-        }
-
-        .user-info .user-icon {
-            width: 150px;
-            height: 150px;
-            margin-left: 20px;
-        }
-
-        .user-info-box {
-            display: block;
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 0.5rem;
-            border-radius: 3.5px;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            font-size: 8px;
-        }
-
-        .user-info-box p {
-            margin: 0.5rem 0;
-        }
-
-        .user-info-box button {
-            padding: 0.5rem;
-            border: none;
-            background-color: #06f390;
-            color: white;
-            cursor: pointer;
-            border-radius: 3px;
-            margin-top: 0.5rem;
-        }
-
-        .user-info-box button:hover {
-            background-color: #05c17c;
-        }
-
-        /* Title Styling */
-        .h2class {
-            font-family: 'Arial', sans-serif;
-            font-size: 3rem;
-            color: #037ffa;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
-            text-align: center;
-            margin-top: 3px;
-        }
     </style>
+</head>
+<body>
+    <header>
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="logo.png" alt="Explore the World Logo">
+        </div>
+
+        <!-- Login Icon Section -->
+        <div class="user-info">
+            <img src="login-icon.png" alt="Login Icon" class="user-icon">
+        </div>
+    </header>
+
+    <!-- Other content of the page -->
+</body>
+</html>
+
 </head>
 <body>
 

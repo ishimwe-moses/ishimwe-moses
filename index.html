@@ -36,30 +36,30 @@
         header {
             display: flex;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent header */
-            color: #FFF;
+            background-color: rgb(173, 238, 9); /* Semi-transparent header */
+            color: #0c0101;
             padding: 20px;
         }
 
         header img {
-            width: 100px;
-            height: 100px;
-            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
 
         header h1 {
-            font-size: 3.1rem;
-            color: rgb(10, 76, 244);;
-            text-shadow: 0 0 3px #FF0000;
+            font-size: 2.0rem;
+            color: black;
+            text-shadow: white;
             flex: 1;
         }
 
         /* Navigation Bar */
         .nav-links {
             display: flex;
-            justify-content: center;
+            justify-content:flex-start;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 12px 0;
+            padding: 20px 0 0 0;
         }
 
         .nav-links a {
@@ -154,13 +154,15 @@ main {
 
         /* Footer */
         footer {
-            background-color: #111;
-            color: #FFF;
+            background-color: rgb(173, 238, 9);
+            color: black;
             text-align: center;
             padding: 4px 0;
-            position: relative;
-            margin-top: auto;
-            margin-bottom:auto;
+            bottom:2%;
+            left:40%;
+            font-size: large;
+            position:fixed;
+
         }
     
         /* Background Elements */
@@ -168,68 +170,6 @@ main {
     position: absolute;
     z-index: 0.5;
     opacity: 1;
-}
-/* Container holding the button and drop-up content */
-.dropup {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropup Button */
-.dropup-btn {
-    background-color: #3498db;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-/* The content inside the drop-up (hidden by default) */
-.dropup-content {
-    display: none;
-    position: absolute;
-    bottom: 40px; /* Adjust this value based on button height */
-    left: 0;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropup */
-.dropup-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropup links on hover */
-.dropup-content a:hover {
-    background-color: #ddd;
-}
-
-/* Show the drop-up content when hovering over the drop-up container */
-.dropup:hover .dropup-content {
-    display: block;
-}
-
-/* Optional: Add a transition effect */
-.dropup-content {
-    animation: dropup-animation 0.3s ease-in-out;
-}
-
-/* Drop-up Animation */
-@keyframes dropup-animation {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Start from 20px below */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* End at the normal position */
-    }
 }
 
 .airplane {
@@ -311,20 +251,127 @@ main {
     text-align: center; /* Center the text */
             margin-top:3px;
 }
-        
+
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 15;
+  height: 350px;
+  top: 14%;
+  left: 0;
+  background-color: rgb(173, 238, 9); ;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 70px;
+}
+
+.sidepanel a {
+  padding: 12px 5px 5px 30px;
+  text-decoration: none;
+  font-size: 17px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 45px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  margin-top:-1%
+}
+
+.openbtn:hover {
+  background-color:rgb(164, 175, 141);
+}
+
+
+
+
+.search-bar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .search-input {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #results {
+            margin-top: 50px;
+        }
+
+
+
+
+
     </style>
 </head>
 <body>
 
     <!-- Header with Logo -->
     <header>
-        <img src="explorer logo.jpeg" alt="Logo">
-        <h1>Let's Explore the World</h1>
+       <a href="index.html"><img src="check.png" alt="Logo"></a>
+       <a href="index.html"><h1>World Explorer</h1></a>
     </header>
 
     <!-- Navigation Links -->
      <div class="nav-links">
-        <a href="index.html">Home</a>
+      <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">1. Explore Continents</a>
+        <a href="#">2. Quizes</a>
+        <a href="#">3. General Tests</a>
+        <a href="#">4. Final exams</a>
+        <a href="#">6. World Maps</a>
+        <a href="#">7. FLags Challenge</a>
+        <a href="#">8. Capital city Challenge</a>
+        <a href="#">9. Did You Know?</a>
+        <a href="#">10. News $ Updates</a>
+
+
+    
+   
+  </div>
+      <button class="openbtn" onclick="openNav()"> Open  ☰</button>  
+      
+      
+      <script>
+      function openNav() {
+        document.getElementById("mySidepanel").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+      }
+      </script>
+   
+        <a href="#">Home</a>
         <div class="dropdown">
             <a href="#">Continents</a>
             <div class="dropdown-content">
@@ -337,42 +384,51 @@ main {
                 <a href="oceania.html">Oceania</a>
             </div>
          </div>
-        <div class="dropdown">
-            <a href="#">A good Explorer</a>
-            <div class="dropdown-content">
-                <a href="animals.html">Animals</a>
-                <a href="culture.html">Our Origin</a>
-                <a href="visit.html">Our World!</a>
-                <a href="people.html">Human Nature</a>
-                <a href="magic.html">What’s Beyond Us?</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Map Ur Ideas</a>
-            <div class="dropdown-content">
-                <a href="introduction.html">Intro</a>
-                <a href="historical-facts.html">Historical Facts</a>
-                <a href="fun-facts.html">Fun Facts</a>
-                <a href="images.html">Gallery</a>
-                <a href="nature.html">Our Nature</a>
-            </div>
-        </div>
+         <div class="dropdown">
+          <a href="#">A good Explorer</a>
+          <div class="dropdown-content">
+              <a href="animals.html">Your Purpose!</a>
+              <a href="culture.html">Origin of World!</a>
+              <a href="people.html">In Human Nature</a>
+              <a href="magic.html">What’s Beyond Us?</a>
+              <a href="visit.html">Our World!</a>
+              <a href="visit.html">Dangerous Zones</a>
+              <a href="visit.html">Magic Zone</a>
+              <a href="visit.html">Safe Places</a>
+              <a href="visit.html">Places to Visit</a>
 
-        <div class="dropdown">
-            <a href="#">More</a>
-            <div class="dropdown-content">
-                <a href="animals.html">Animals</a>
-                <a href="visit.html">Higher Visits</a>
-                <a href="culture.html">People and Culture</a>
-                <a href="magic.html">Magic Zones</a>
-            </div>
-        </div>
+          </div>
+      </div>
+      <div class="dropdown">
+          <a href="#">Gallery</a>
+          <div class="dropdown-content">
+              <a href="introduction.html">Animals</a>
+              <a href="historical-facts.html">Animal Challenge</a>
+              <a href="fun-facts.html">World Leaders</a>
+              <a href="images.html">Famous People</a>
+              <a href="nature.html">Quick Challenge</a>
+              
+          </div>
+  
+      </div>
+        
     </div>
 
+
+<div class="search-bar">
+        <input type="text" id="search-input" class="search-input" placeholder="Search..." />
+        <button id="search-btn">Search</button> <!-- Add this button -->
+    </div>
+
+    <div id="results"></div>
+
+    <script src="search.js"></script>
     <!-- Marquee -->
     <div class="marquee">
         <div>🌍 Explore continents, cultures, and more with our interactive app! 🚀</div>
     </div>
+
+
 
     <!-- Continent List -->
     <div class="h2class">
@@ -615,16 +671,7 @@ main {
 
     <!-- Footer -->
     <footer>
-      <div class="dropup">
-    <button class="dropup-btn">Menu</button>
-    <div class="dropup-content">
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="policy.html">Our Policy</a>
-            <a href="help.html">Help Center</a>
-    </div>
-</div>
- <p>&copy; 2024 Explore the World. All rights reserved.</p>
+ <p>&copy; 2024 World Explorer. All rights reserved.</p>
  </footer>
 
 <div class=mask1>

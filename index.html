@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Explore the World</title>
    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -59,7 +60,7 @@
             display: flex;
             justify-content:flex-start;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px 0 0 0;
+            padding: 10px 0 0 0;
         }
 
         .nav-links a {
@@ -160,6 +161,7 @@ main {
             padding: 4px 0;
             bottom:2%;
             left:40%;
+           
             font-size: large;
             position:fixed;
 
@@ -223,7 +225,7 @@ main {
             background-color: #333;
             color: #FFF;
             padding: 10px;
-            margin: 13px 0;
+           margin-top:2%;
             text-align: center;
         }
 
@@ -317,8 +319,8 @@ a {
             right: 10px;
         }
         .search-input {
-            padding: 8px;
-            font-size: 14px;
+            padding: 5px;
+            font-size: 12px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -328,6 +330,19 @@ a {
 
 
 
+
+        @media (max-width: 600px) {
+    /* Styles for screens less than 600px wide */
+}
+@media (min-width: 601px) and (max-width: 1200px) {
+    /* Styles for screens between 601px and 1200px wide */
+}
+@media (min-width: 1201px) {
+    /* Styles for screens wider than 1200px */
+}
+
+
+        
 
 
     </style>
@@ -417,7 +432,7 @@ a {
 
 <div class="search-bar">
         <input type="text" id="search-input" class="search-input" placeholder="Search..." />
-        <button id="search-btn">Search</button> <!-- Add this button -->
+        <button id="search-btn">🛫</button> <!-- Add this button -->
     </div>
 
     <div id="results"></div>

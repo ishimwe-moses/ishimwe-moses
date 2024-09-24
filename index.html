@@ -30,8 +30,6 @@
     display: flex;
     flex-direction: column; /* Stack items vertically */
     min-height: 100vh; /* Ensure body covers full viewport height */
-    margin: 0; /* Remove any default margin from the body */
-    padding: 0;
     color: #333; /* Text color */
     box-sizing: border-box;
 }
@@ -45,11 +43,6 @@
     width: 100%; /* Full width */
 }
 
-header, footer {
-    width: 100%; /* Ensure the header and footer take up full width */
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.1); /* Example background */
-}
 
 .main-content {
     flex-grow: 1; /* Ensures the main content fills available space */
@@ -82,15 +75,19 @@ header, footer {
             flex: 1;
         }
 
+        
         /* Navigation Bar */
-        .nav-links {
-            display: flex;
-            justify-content:flex-start;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 0 0 0;
-            flex: [flex-grow] [flex-shrink] [flex-basis];
+       .nav-links {
+    display: flex; /* Set flexbox layout */
+    justify-content: flex-start; /* Align items to the start of the main axis */
+    background-color: rgba(255, 255, 255, 0.8); /* Background color */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    flex: 0 1 auto; /* Define flex-grow, flex-shrink, and flex-basis values */
+}
 
-        }
+
+
 
         .nav-links a {
             margin: 0 15px;
@@ -189,8 +186,7 @@ main {
             text-align: center;
             padding: 4px 0;
             bottom:2%;
-            left:40%;
-           
+            left:37%%;
             font-size: large;
             position:fixed;
 
@@ -418,21 +414,21 @@ a {
       }
       </script>
    
-        <a href="#">Home</a>
+        <a href="#">🏠Home</a>
         <div class="dropdown">
             <a href="#">Continents</a>
             <div class="dropdown-content">
-                <a href="africa.html">Africa</a>
-                <a href="asia.html">Asia</a>
-                <a href="europe.html">Europe</a>
-                <a href="north america.html">North America</a>
-                <a href="south america.html">South America</a>
-                <a href="antarctica.html">Antarctica</a>
-                <a href="oceania.html">Oceania</a>
+                <a href="africa.html">🌍Africa</a>
+                <a href="asia.html">🌏Asia</a>
+                <a href="europe.html">🌍Europe</a>
+                <a href="north america.html">🌎North America</a>
+                <a href="south america.html">🌎South America</a>
+                <a href="antarctica.html">🦈Antarctica</a>
+                <a href="oceania.html"🦈Oceania</a>
             </div>
          </div>
          <div class="dropdown">
-          <a href="#">A good Explorer</a>
+          <a href="#">🚴‍♂️A good Explorer</a>
           <div class="dropdown-content">
               <a href="animals.html">Your Purpose!</a>
               <a href="culture.html">Origin of World!</a>
@@ -447,7 +443,7 @@ a {
           </div>
       </div>
       <div class="dropdown">
-          <a href="#">Gallery</a>
+          <a href="#">📷Gallery</a>
           <div class="dropdown-content">
               <a href="introduction.html">Animals</a>
               <a href="historical-facts.html">Animal Challenge</a>

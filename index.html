@@ -82,7 +82,7 @@
     justify-content: flex-start; /* Align items to the start of the main axis */
     background-color: rgba(255, 255, 255, 0.8); /* Background color */
     padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    margin-top: 0; /* Remove margin */
     flex: 0 1 auto; /* Define flex-grow, flex-shrink, and flex-basis values */
 }
 
@@ -136,7 +136,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
    
 }
     .quiz-container {
@@ -180,17 +180,17 @@ main {
 
 
         /* Footer */
-        footer {
-            background-color: rgb(173, 238, 9);
-            color: black;
-            text-align: center;
-            padding: 4px 0;
-            bottom:2%;
-            left:37%%;
-            font-size: large;
-            position:fixed;
-
-        }
+       footer {
+    position: fixed; /* Fixes the footer in place */
+    bottom: 0; /* Positions it at the bottom of the viewport */
+    left: 50%; /* Positions it at the center relative to the viewport */
+    transform: translateX(-50%); /* Shifts the footer back by 50% of its width to center it */
+    background-color: #333; /* Background color of the footer */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding inside the footer */
+    text-align: center; /* Center text */
+    width: auto; /* Auto width, can be set as per content or requirement */
+}
     
         /* Background Elements */
 .background-element {

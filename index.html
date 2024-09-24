@@ -22,17 +22,43 @@
             font-family: Tahoma, Verdana, sans-serif;
         }
 
-        body {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            color: #333;
-            position:fixed;
-        }
+       body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    min-height: 100vh; /* Ensure body covers full viewport height */
+    margin: 0; /* Remove any default margin from the body */
+    padding: 0;
+    color: #333; /* Text color */
+    box-sizing: border-box;
+}
+
+.container {
+    flex-grow: 1; /* This will make the container expand to fill available space */
+    display: flex;
+    flex-direction: column; /* Adjust as needed */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    width: 100%; /* Full width */
+}
+
+header, footer {
+    width: 100%; /* Ensure the header and footer take up full width */
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1); /* Example background */
+}
+
+.main-content {
+    flex-grow: 1; /* Ensures the main content fills available space */
+    display: flex;
+    justify-content: center; /* Center main content horizontally */
+    align-items: center; /* Center main content vertically */
+    padding: 1rem;
+}
+
 
         /* Header with Logo */
         header {

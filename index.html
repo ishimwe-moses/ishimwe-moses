@@ -509,7 +509,7 @@ a {
         }
 
         // Call your Netlify function
-        const response = await fetch('/.netlify/functions/summarize', {
+        const response = await fetch('/.summarize', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

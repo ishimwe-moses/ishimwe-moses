@@ -22,17 +22,21 @@
             font-family: Tahoma, Verdana, sans-serif;
         }
 
-       body {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the background fixed */
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    min-height: 100vh; /* Ensure body covers full viewport height */
-    color: #333; /* Text color */
-    box-sizing: border-box;
+   background-color: #ffffff; /* White background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333; /* Text color */
+            box-sizing: border-box;
+            font-family: Arial, sans-serif; /* Optional: Set a font */
+
+/* Optional: Add some responsiveness */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Change to scroll on smaller screens */
+    }
 }
+
 
 .container {
     flex-grow: 1; /* This will make the container expand to fill available space */
@@ -41,8 +45,9 @@
     justify-content: center; /* Centers content vertically */
     align-items: center; /* Centers content horizontally */
     width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: Set a max width for larger screens */
+    margin: auto; /* Center the container on larger screens */
 }
-
 
 .main-content {
     flex-grow: 1; /* Ensures the main content fills available space */
@@ -50,6 +55,8 @@
     justify-content: center; /* Center main content horizontally */
     align-items: center; /* Center main content vertically */
     padding: 0.5rem;
+    width: 100%; /* Ensure full width */
+    max-width: 800px; /* Optional: Set a max width for main content */
 }
 
 
@@ -109,19 +116,19 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 12%;
-            left: 10%;
             background-color: rgba(255, 255, 255, 0.9);
             min-width: 160px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 15;
+            z-index: 3000;
+            margin-left:12 px;
         }
 
         .dropdown-content a {
             color: black;
-            padding: 6px 16px;
+            padding: 6px 5px;
             text-decoration: none;
             display: block;
+            z-index: 3000;
         }
 
         .dropdown-content a:hover {
@@ -143,12 +150,14 @@ main {
 }
     .quiz-container {
       max-width: 600px;
-      margin: 0 auto;
+     margin-top: 7px;
+      margin-right: 10px;
          z-index:5;
     }
     .question {
       font-size: 18px;
       margin-bottom: 10px;
+     
          z-index:5;
     }
     .options {
@@ -520,7 +529,7 @@ input {
                 <a href="north america.html">🌎North America</a>
                 <a href="south america.html">🌎South America</a>
                 <a href="antarctica.html">🦈Antarctica</a>
-                <a href="oceania.html"🌊Oceania</a>
+                <a href="oceania.html">Oceania</a>
             </div>
          </div>
          <div class="dropdown">
@@ -557,7 +566,7 @@ input {
     <div class="h2class">
         <h2>Our World is so Amaizing!</h2>
     </div>
-    <main>
+    
 <input type="text" id="searchQuery" placeholder="capital of Japan?">
     <button class="search-button" onclick="search()">Go</button>
     <div id="results"></div>
@@ -1832,7 +1841,7 @@ input {
 
     </script>
 
-    
+    <main>
         <div class="quiz-container">
             <div id="question-container">
               <p class="question"></p>

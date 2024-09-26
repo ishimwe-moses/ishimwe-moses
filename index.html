@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center; /* Center main content horizontally */
     align-items: center; /* Center main content vertically */
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 
@@ -63,8 +63,8 @@
         }
 
         header img {
-            width: 30px;
-            height: 20px;
+            width: 45px;
+            height: 45px;
             margin-right: 5px;
         }
 
@@ -109,6 +109,8 @@
         .dropdown-content {
             display: none;
             position: absolute;
+            top: 12%;
+            left: 10%;
             background-color: rgba(255, 255, 255, 0.9);
             min-width: 160px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
@@ -117,7 +119,7 @@
 
         .dropdown-content a {
             color: black;
-            padding: 12px 16px;
+            padding: 6px 16px;
             text-decoration: none;
             display: block;
         }
@@ -136,7 +138,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5px;
+    padding: 1.5px;
    
 }
     .quiz-container {
@@ -243,38 +245,15 @@ main {
         transform: translate(0, 0);
     }
 }
-         /* Marquee */
-        .marquee {
-            width: 100%;
-            overflow: hidden;
-            background-color: #333;
-            color: #FFF;
-            padding: 10px;
-           margin-top:2%;
-            text-align: center;
-            
-        }
-
-        .marquee div {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 15s linear infinite alternate;
-            justify-content: flex-start;
-            margin-top:-12 px;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+    
 
     .h2class {
     font-family: 'Arial', sans-serif; /* Simple, clean font */
     font-size: 3.5rem; /* Large but not overwhelming */
     color: #037ffa; /* A deep blue-gray color */
     text-transform: uppercase; /* Capitalizes all letters */
-    letter-spacing: 2px; /* Adds subtle spacing between letters */
-    margin-bottom: 1.2rem; /* Adds space beneath the title */
+    letter-spacing: 3px; /* Adds subtle spacing between letters */
+    margin-bottom: 0.5rem; /* Adds space beneath the title */
     border-bottom: 3px solid #3498db; /* Light blue underline for emphasis */
     border-width: 50%;
     padding-bottom: 0.5rem; /* Spacing between text and border */
@@ -450,7 +429,28 @@ input {
      z-index: 1000;
     }
 
+.search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex: 1;
+        }
 
+        .search-button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 50px; /* Makes it rounded */
+            background-color: #007BFF; /* Button color */
+            color: white; /* Text color */
+            cursor: pointer;
+            margin-left: 10px; /* Space between input and button */
+            font-size: 14px; /* Small text size */
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+
+        .search-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
 
 
 
@@ -553,9 +553,13 @@ input {
         
     </div>
 
-
-<input type="text" id="searchQuery" placeholder="What is the capital of Japan?">
-    <button onclick="search()">Go</button>
+<!-- Continent List -->
+    <div class="h2class">
+        <h2>Our World is so Amaizing!</h2>
+    </div>
+    <main>
+<input type="text" id="searchQuery" placeholder="capital of Japan?">
+    <button class="search-button" onclick="search()">Go</button>
     <div id="results"></div>
 
     <!-- Include Fuse.js for fuzzy searching -->
@@ -1828,19 +1832,7 @@ input {
 
     </script>
 
-
-    <!-- Marquee -->
-    <div class="marquee">
-        <div>🌍 Explore continents, cultures, and more with our interactive app! 🚀</div>
-    </div>
-
-
-
-    <!-- Continent List -->
-    <div class="h2class">
-        <h2>Our World is so Amaizing!</h2>
-    </div>
-    <main>
+    
         <div class="quiz-container">
             <div id="question-container">
               <p class="question"></p>

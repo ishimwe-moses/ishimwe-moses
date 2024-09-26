@@ -341,10 +341,77 @@ a {
 
 
 
-.search-bar {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+input {
+            margin-right: 10px;
+            padding: 10px;
+            width: 210px;
+            font-size: 16px;
+            color:black;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #results {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Limits the width of the result div */
+    padding: 0 15px; /* Adds padding for small screens */
+    z-index:5000;
+}
+
+/* Style for each result item */
+.result-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+    position: relative;
+    z-index:5000;
+}
+
+/* Add a close button */
+.result-item .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:5000;
+}
+
+/* Responsive: Center the div on larger screens */
+@media (min-width: 768px) {
+    #results {
+        top: 10px;
+        right: 10px;
+       
+        width: 600px;
+        padding: 0;
+    }
+}
+        .result-item strong {
+            color: #2b7e5b;
+        }
+            
         }
         .search-input {
             padding: 5px;
@@ -487,52 +554,1278 @@ a {
     </div>
 
 
-<form id="searchForm">
-    <input type="text" id="searchInput" placeholder="Type your question here">
-    <button type="submit">Go</button>
-  </form>
+<input type="text" id="searchQuery" placeholder="What is the capital of Japan?">
+    <button onclick="search()">Go</button>
+    <div id="results"></div>
 
-  <!-- Pop-up div for summary -->
-  <div id="summaryPopup" class="hidden">
-    <button id="closePopup">X</button>
-    <div id="summaryDiv"></div>
-  </div>
+    <!-- Include Fuse.js for fuzzy searching -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+    
+    <script>
+        const countriesData = [
+       
+        
+  {
+    name: "Algeria",
+    capital: "Algiers",
+    summary: "<img src='flag-of-algeria.jpeg' alt='Flag of Algeria'> Algiers is the capital of Algeria, the largest country in Africa. It is known for its rich history and diverse culture."
+  },
+  {
+    name: "Angola",
+    capital: "Luanda",
+    summary: "<img src='flag-of-angola.jpeg' alt='Flag of Angola'> Luanda is the capital of Angola, a country located in Southern Africa. It is known for its oil reserves and beautiful coastline."
+  },
+  {
+    name: "Benin",
+    capital: "Porto-Novo",
+    summary: "<img src='flag-of-benin.jpeg' alt='Flag of Benin'> Porto-Novo is the capital of Benin, a small West African nation known for its vibrant culture and history."
+  },
+  {
+    name: "Botswana",
+    capital: "Gaborone",
+    summary: "<img src='flag-of-botswana.jpeg' alt='Flag of Botswana'> Gaborone is the capital of Botswana, a country known for its stable democracy and wildlife."
+  },
+  {
+    name: "Burkina Faso",
+    capital: "Ouagadougou",
+    summary: "<img src='flag-of-burkina-faso.jpeg' alt='Flag of Burkina Faso'> Ouagadougou is the capital of Burkina Faso, a West African nation known for its culture and art."
+  },
+  {
+    name: "Burundi",
+    capital: "Gitega",
+    summary: "<img src='flag-of-burundi.jpeg' alt='Flag of Burundi'> Gitega is the capital of Burundi, a small landlocked country in East Africa known for its hills and valleys."
+  },
+  {
+    name: "Cabo Verde",
+    capital: "Praia",
+    summary: "<img src='flag-of-cabo-verde.jpeg' alt='Flag of Cabo Verde'> Praia is the capital of Cabo Verde, an island country located in the central Atlantic Ocean."
+  },
+  {
+    name: "Cameroon",
+    capital: "Yaoundé",
+    summary: "<img src='flag-of-cameroon.jpeg' alt='Flag of Cameroon'> Yaoundé is the capital of Cameroon, a Central African country known for its diverse geography and wildlife."
+  },
+  {
+    name: "Central African Republic",
+    capital: "Bangui",
+    summary: "<img src='flag-of-central-african-republic.jpeg' alt='Flag of Central African Republic'> Bangui is the capital of the Central African Republic, a landlocked country in Central Africa."
+  },
+  {
+    name: "Chad",
+    capital: "N'Djamena",
+    summary: "<img src='flag-of-chad.jpeg' alt='Flag of Chad'> N'Djamena is the capital of Chad, a country known for its diverse cultures and desert landscapes."
+  },
+  {
+    name: "Comoros",
+    capital: "Moroni",
+    summary: "<img src='flag-of-comoros.jpeg' alt='Flag of Comoros'> Moroni is the capital of Comoros, a small island nation in the Indian Ocean."
+  },
+  {
+    name: "Congo (Brazzaville)",
+    capital: "Brazzaville",
+    summary: "<img src='flag-of-congo-brazzaville.jpeg' alt='Flag of Congo-Brazzaville'> Brazzaville is the capital of the Republic of Congo, known for its location along the Congo River."
+  },
+  {
+    name: "Democratic Republic of the Congo",
+    capital: "Kinshasa",
+    summary: "<img src='flag-of-democratic-republic-of-the-congo.jpeg' alt='Flag of DR Congo'> Kinshasa is the capital of the Democratic Republic of the Congo, the second-largest country in Africa."
+  },
+  {
+    name: "Djibouti",
+    capital: "Djibouti",
+    summary: "<img src='flag-of-djibouti.jpeg' alt='Flag of Djibouti'> Djibouti is the capital of the small East African country of Djibouti, located on the Horn of Africa."
+  },
+  {
+    name: "Egypt",
+    capital: "Cairo",
+    summary: "<img src='flag-of-egypt.jpeg' alt='Flag of Egypt'> Cairo is the capital of Egypt, a country famous for its ancient civilization and monuments like the Pyramids and the Sphinx."
+  },
+  {
+    name: "Equatorial Guinea",
+    capital: "Malabo",
+    summary: "<img src='flag-of-equatorial-guinea.jpeg' alt='Flag of Equatorial Guinea'> Malabo is the capital of Equatorial Guinea, a small country on the west coast of Central Africa."
+  },
+  {
+    name: "Eritrea",
+    capital: "Asmara",
+    summary: "<img src='flag-of-eritrea.jpeg' alt='Flag of Eritrea'> Asmara is the capital of Eritrea, a country located on the Red Sea coast in East Africa."
+  },
+  {
+    name: "Eswatini (Swaziland)",
+    capital: "Mbabane",
+    summary: "<img src='flag-of-eswatini.jpeg' alt='Flag of Eswatini'> Mbabane is the capital of Eswatini, a small landlocked country in Southern Africa."
+  },
+  {
+    name: "Ethiopia",
+    capital: "Addis Ababa",
+    summary: "<img src='flag-of-ethiopia.jpeg' alt='Flag of Ethiopia'> Addis Ababa is the capital of Ethiopia, the second-most populous country in Africa, known for its rich history."
+  },
+  {
+    name: "Gabon",
+    capital: "Libreville",
+    summary: "<img src='flag-of-gabon.jpeg' alt='Flag of Gabon'> Libreville is the capital of Gabon, a country in Central Africa known for its wildlife and rainforests."
+  },
+  {
+    name: "Gambia",
+    capital: "Banjul",
+    summary: "<img src='flag-of-gambia.jpeg' alt='Flag of Gambia'> Banjul is the capital of The Gambia, the smallest country on mainland Africa."
+  },
+  {
+    name: "Ghana",
+    capital: "Accra",
+    summary: "<img src='flag-of-ghana.jpeg' alt='Flag of Ghana'> Accra is the capital of Ghana, a country known for its vibrant culture and history."
+  },
+  {
+    name: "Guinea",
+    capital: "Conakry",
+    summary: "<img src='flag-of-guinea.jpeg' alt='Flag of Guinea'> Conakry is the capital of Guinea, a country located in West Africa with rich mineral resources."
+  },
+  {
+    name: "Guinea-Bissau",
+    capital: "Bissau",
+    summary: "<img src='flag-of-guinea-bissau.jpeg' alt='Flag of Guinea-Bissau'> Bissau is the capital of Guinea-Bissau, a small West African nation."
+  },
+  {
+    name: "Ivory Coast",
+    capital: "Yamoussoukro",
+    summary: "<img src='flag-of-ivory-coast.jpeg' alt='Flag of Ivory Coast'> Yamoussoukro is the capital of Ivory Coast, known for its coffee and cocoa production."
+  },
+  {
+    name: "Kenya",
+    capital: "Nairobi",
+    summary: "<img src='flag-of-kenya.jpeg' alt='Flag of Kenya'> Nairobi is the capital of Kenya, famous for its safaris and diverse wildlife."
+  },
+  {
+    name: "Lesotho",
+    capital: "Maseru",
+    summary: "<img src='flag-of-lesotho.jpeg' alt='Flag of Lesotho'> Maseru is the capital of Lesotho, a landlocked country in Southern Africa."
+  },
+  {
+    name: "Liberia",
+    capital: "Monrovia",
+    summary: "<img src='flag-of-liberia.jpeg' alt='Flag of Liberia'> Monrovia is the capital of Liberia, a country in West Africa founded by freed American slaves."
+  },
+  {
+    name: "Libya",
+    capital: "Tripoli",
+    summary: "<img src='flag-of-libya.jpeg' alt='Flag of Libya'> Tripoli is the capital of Libya, a country in North Africa known for its vast desert and oil reserves."
+  },
+  {
+    name: "Madagascar",
+    capital: "Antananarivo",
+    summary: "<img src='flag-of-madagascar.jpeg' alt='Flag of Madagascar'> Antananarivo is the capital of Madagascar, the world's fourth-largest island, known for its unique biodiversity."
+  },
+  {
+    name: "Malawi",
+    capital: "Lilongwe",
+    summary: "<img src='flag-of-malawi.jpeg' alt='Flag of Malawi'> Lilongwe is the capital of Malawi, a landlocked country in southeastern Africa."
+  },
+  {
+    name: "Mali",
+    capital: "Bamako",
+    summary: "<img src='flag-of-mali.jpeg' alt='Flag of Mali'> Bamako is the capital of Mali, a landlocked country in West Africa with a rich cultural heritage."
+  },
+  {
+    name: "Mauritania",
+    capital: "Nouakchott",
+    summary: "<img src='flag-of-mauritania.jpeg' alt='Flag of Mauritania'> Nouakchott is the capital of Mauritania, a large but sparsely populated country in West Africa."
+  },
+  {
+    name: "Mauritius",
+    capital: "Port Louis",
+    summary: "<img src='flag-of-mauritius.jpeg' alt='Flag of Mauritius'> Port Louis is the capital of Mauritius, a small island nation in the Indian Ocean."
+  },
+  {
+    name: "Morocco",
+    capital: "Rabat",
+    summary: "<img src='flag-of-morocco.jpeg' alt='Flag of Morocco'> Rabat is the capital of Morocco, a country known for its historic cities and desert landscapes."
+  },
+  {
+    name: "Mozambique",
+    capital: "Maputo",
+    summary: "<img src='flag-of-mozambique.jpeg' alt='Flag of Mozambique'> Maputo is the capital of Mozambique, a southeastern African country known for its long Indian Ocean coastline."
+  },
+  {
+    name: "Namibia",
+    capital: "Windhoek",
+    summary: "<img src='flag-of-namibia.jpeg' alt='Flag of Namibia'> Windhoek is the capital of Namibia, known for its vast desert landscapes."
+  },
+  {
+    name: "Niger",
+    capital: "Niamey",
+    summary: "<img src='flag-of-niger.jpeg' alt='Flag of Niger'> Niamey is the capital of Niger, a landlocked country in West Africa known for its deserts and uranium mines."
+  },
+  {
+    name: "Nigeria",
+    capital: "Abuja",
+    summary: "<img src='flag-of-nigeria.jpeg' alt='Flag of Nigeria'> Abuja is the capital of Nigeria, the most populous country in Africa and a major oil producer."
+  },
+  {
+    name: "Rwanda",
+    capital: "Kigali",
+    summary: "<img src='flag-of-rwanda.jpeg' alt='Flag of Rwanda'> Kigali is the capital of Rwanda, known for its stunning landscapes and recovery from the 1994 genocide."
+  },
+  {
+    name: "Sao Tome and Principe",
+    capital: "São Tomé",
+    summary: "<img src='flag-of-sao-tome-and-principe.jpeg' alt='Flag of Sao Tome and Principe'> São Tomé is the capital of Sao Tome and Principe, a small island nation off the west coast of Central Africa."
+  },
+  {
+    name: "Senegal",
+    capital: "Dakar",
+    summary: "<img src='flag-of-senegal.jpeg' alt='Flag of Senegal'> Dakar is the capital of Senegal, a West African country known for its music and culture."
+  },
+  {
+    name: "Seychelles",
+    capital: "Victoria",
+    summary: "<img src='flag-of-seychelles.jpeg' alt='Flag of Seychelles'> Victoria is the capital of Seychelles, an island nation in the Indian Ocean known for its beautiful beaches."
+  },
+  {
+    name: "Sierra Leone",
+    capital: "Freetown",
+    summary: "<img src='flag-of-sierra-leone.jpeg' alt='Flag of Sierra Leone'> Freetown is the capital of Sierra Leone, a West African country with a rich history related to the transatlantic slave trade."
+  },
+  {
+    name: "Somalia",
+    capital: "Mogadishu",
+    summary: "<img src='flag-of-somalia.jpeg' alt='Flag of Somalia'> Mogadishu is the capital of Somalia, located in the Horn of Africa, known for its long coastline."
+  },
+  {
+    name: "South Africa",
+    capital: "Pretoria",
+    summary: "<img src='flag-of-south-africa.jpeg' alt='Flag of South Africa'> Pretoria is one of South Africa's three capitals and serves as the administrative capital of the country."
+  },
+  {
+    name: "South Sudan",
+    capital: "Juba",
+    summary: "<img src='flag-of-south-sudan.jpeg' alt='Flag of South Sudan'> Juba is the capital of South Sudan, the world's newest country, gaining independence in 2011."
+  },
+  {
+    name: "Sudan",
+    capital: "Khartoum",
+    summary: "<img src='flag-of-sudan.jpeg' alt='Flag of Sudan'> Khartoum is the capital of Sudan, a country located at the crossroads of Sub-Saharan Africa and the Middle East."
+  },
+  {
+    name: "Tanzania",
+    capital: "Dodoma",
+    summary: "<img src='flag-of-tanzania.jpeg' alt='Flag of Tanzania'> Dodoma is the capital of Tanzania, a country known for Mount Kilimanjaro and Serengeti National Park."
+  },
+  {
+    name: "Togo",
+    capital: "Lomé",
+    summary: "<img src='flag-of-togo.jpeg' alt='Flag of Togo'> Lomé is the capital of Togo, a small West African nation known for its palm-lined beaches and hilltop villages."
+  },
+  {
+    name: "Tunisia",
+    capital: "Tunis",
+    summary: "<img src='flag-of-tunisia.jpeg' alt='Flag of Tunisia'> Tunis is the capital of Tunisia, a North African country known for its Mediterranean coast and ancient Carthaginian ruins."
+  },
+  {
+    name: "Uganda",
+    capital: "Kampala",
+    summary: "<img src='flag-of-uganda.jpeg' alt='Flag of Uganda'> Kampala is the capital of Uganda, a country in East Africa known for its wildlife and Lake Victoria."
+  },
+  {
+    name: "Zambia",
+    capital: "Lusaka",
+    summary: "<img src='flag-of-zambia.jpeg' alt='Flag of Zambia'> Lusaka is the capital of Zambia, a landlocked country in southern Africa known for its wildlife and Victoria Falls."
+  },
+  {
+    name: "Zimbabwe",
+    capital: "Harare",
+    summary: "<img src='flag-of-zimbabwe.jpeg' alt='Flag of Zimbabwe'> Harare is the capital of Zimbabwe, known for its national parks and ancient ruins."
+  },
+ 
+  {
+    name: "Afghanistan",
+    capital: "Kabul",
+    summary: "<img src='flag-of-afghanistan.jpeg' alt='Flag of Afghanistan'> Kabul is the capital of Afghanistan, a landlocked country known for its rugged terrain and long history of conflict."
+  },
+  {
+    name: "Armenia",
+    capital: "Yerevan",
+    summary: "<img src='flag-of-armenia.jpeg' alt='Flag of Armenia'> Yerevan is the capital of Armenia, a landlocked country in the South Caucasus known for its ancient history and churches."
+  },
+  {
+    name: "Azerbaijan",
+    capital: "Baku",
+    summary: "<img src='flag-of-azerbaijan.jpeg' alt='Flag of Azerbaijan'> Baku is the capital of Azerbaijan, located on the Caspian Sea. The city is known for its modern architecture and ancient heritage."
+  },
+  {
+    name: "Bahrain",
+    capital: "Manama",
+    summary: "<img src='flag-of-bahrain.jpeg' alt='Flag of Bahrain'> Manama is the capital of Bahrain, a small island nation in the Persian Gulf known for its financial sector and oil wealth."
+  },
+  {
+    name: "Bangladesh",
+    capital: "Dhaka",
+    summary: "<img src='flag-of-bangladesh.jpeg' alt='Flag of Bangladesh'> Dhaka is the capital of Bangladesh, one of the most densely populated countries in the world, known for its rivers and vibrant culture."
+  },
+  {
+    name: "Bhutan",
+    capital: "Thimphu",
+    summary: "<img src='flag-of-bhutan.jpeg' alt='Flag of Bhutan'> Thimphu is the capital of Bhutan, a small Himalayan kingdom known for its emphasis on happiness and stunning mountain landscapes."
+  },
+  {
+    name: "Brunei",
+    capital: "Bandar Seri Begawan",
+    summary: "<img src='flag-of-brunei.jpeg' alt='Flag of Brunei'> Bandar Seri Begawan is the capital of Brunei, a tiny, wealthy nation on the island of Borneo known for its oil and gas reserves."
+  },
+  {
+    name: "Cambodia",
+    capital: "Phnom Penh",
+    summary: "<img src='flag-of-cambodia.jpeg' alt='Flag of Cambodia'> Phnom Penh is the capital of Cambodia, known for its ancient temples, including the famous Angkor Wat."
+  },
+  {
+    name: "China",
+    capital: "Beijing",
+    summary: "<img src='flag-of-china.jpeg' alt='Flag of China'> Beijing is the capital of China, the world's most populous country, known for its ancient history and modern developments."
+  },
+  {
+    name: "Cyprus",
+    capital: "Nicosia",
+    summary: "<img src='flag-of-cyprus.jpeg' alt='Flag of Cyprus'> Nicosia is the capital of Cyprus, an island nation in the Eastern Mediterranean with a rich history and divided governance."
+  },
+  {
+    name: "Georgia",
+    capital: "Tbilisi",
+    summary: "<img src='flag-of-georgia.jpeg' alt='Flag of Georgia'> Tbilisi is the capital of Georgia, a country at the intersection of Europe and Asia, known for its diverse culture and landscapes."
+  },
+  {
+    name: "India",
+    capital: "New Delhi",
+    summary: "<img src='flag-of-india.jpeg' alt='Flag of India'> New Delhi is the capital of India, the world's largest democracy, known for its diverse culture, history, and economy."
+  },
+  {
+    name: "Indonesia",
+    capital: "Jakarta",
+    summary: "<img src='flag-of-indonesia.jpeg' alt='Flag of Indonesia'> Jakarta is the capital of Indonesia, the largest archipelago nation in the world, known for its biodiversity and cultural diversity."
+  },
+  {
+    name: "Iran",
+    capital: "Tehran",
+    summary: "<img src='flag-of-iran.jpeg' alt='Flag of Iran'> Tehran is the capital of Iran, a major country in the Middle East known for its rich cultural heritage and history."
+  },
+  {
+    name: "Iraq",
+    capital: "Baghdad",
+    summary: "<img src='flag-of-iraq.jpeg' alt='Flag of Iraq'> Baghdad is the capital of Iraq, one of the world's oldest cities, known for its significance in ancient history and modern conflicts."
+  },
+  {
+    name: "Israel",
+    capital: "Jerusalem",
+    summary: "<img src='flag-of-israel.jpeg' alt='Flag of Israel'> Jerusalem is the capital of Israel, a city with deep religious significance for Judaism, Christianity, and Islam."
+  },
+  {
+    name: "Japan",
+    capital: "Tokyo",
+    summary: "<img src='flag-of-japan.jpeg' alt='Flag of Japan'> Tokyo is the capital of Japan, known for its modern technology, unique culture, and historical traditions."
+  },
+  {
+    name: "Jordan",
+    capital: "Amman",
+    summary: "<img src='flag-of-jordan.jpeg' alt='Flag of Jordan'> Amman is the capital of Jordan, a country known for its ancient cities like Petra and desert landscapes."
+  },
+  {
+    name: "Kazakhstan",
+    capital: "Astana",
+    summary: "<img src='flag-of-kazakhstan.jpeg' alt='Flag of Kazakhstan'> Astana, also known as Nur-Sultan, is the capital of Kazakhstan, the largest landlocked country in the world."
+  },
+  {
+    name: "Kuwait",
+    capital: "Kuwait City",
+    summary: "<img src='flag-of-kuwait.jpeg' alt='Flag of Kuwait'> Kuwait City is the capital of Kuwait, a small but wealthy Gulf nation known for its oil production."
+  },
+  {
+    name: "Kyrgyzstan",
+    capital: "Bishkek",
+    summary: "<img src='flag-of-kyrgyzstan.jpeg' alt='Flag of Kyrgyzstan'> Bishkek is the capital of Kyrgyzstan, a mountainous country in Central Asia known for its nomadic traditions."
+  },
+  {
+    name: "Laos",
+    capital: "Vientiane",
+    summary: "<img src='flag-of-laos.jpeg' alt='Flag of Laos'> Vientiane is the capital of Laos, a landlocked country in Southeast Asia known for its Buddhist culture and Mekong River."
+  },
+  {
+    name: "Lebanon",
+    capital: "Beirut",
+    summary: "<img src='flag-of-lebanon.jpeg' alt='Flag of Lebanon'> Beirut is the capital of Lebanon, a country known for its rich history, vibrant culture, and scenic Mediterranean coast."
+  },
+  {
+    name: "Malaysia",
+    capital: "Kuala Lumpur",
+    summary: "<img src='flag-of-malaysia.jpeg' alt='Flag of Malaysia'> Kuala Lumpur is the capital of Malaysia, a Southeast Asian country known for its tropical rainforests and vibrant cities."
+  },
+  {
+    name: "Maldives",
+    capital: "Malé",
+    summary: "<img src='flag-of-maldives.jpeg' alt='Flag of Maldives'> Malé is the capital of Maldives, a tropical paradise known for its atolls and coral reefs."
+  },
+  {
+    name: "Mongolia",
+    capital: "Ulaanbaatar",
+    summary: "<img src='flag-of-mongolia.jpeg' alt='Flag of Mongolia'> Ulaanbaatar is the capital of Mongolia, a landlocked country known for its vast steppes and nomadic culture."
+  },
+  {
+    name: "Myanmar (Burma)",
+    capital: "Naypyidaw",
+    summary: "<img src='flag-of-myanmar.jpeg' alt='Flag of Myanmar'> Naypyidaw is the capital of Myanmar, a Southeast Asian country with a rich history and diverse ethnic groups."
+  },
+  {
+    name: "Nepal",
+    capital: "Kathmandu",
+    summary: "<img src='flag-of-nepal.jpeg' alt='Flag of Nepal'> Kathmandu is the capital of Nepal, home to the Himalayas and Mount Everest, the world's highest peak."
+  },
+  {
+    name: "North Korea",
+    capital: "Pyongyang",
+    summary: "<img src='flag-of-north-korea.jpeg' alt='Flag of North Korea'> Pyongyang is the capital of North Korea, a secretive state known for its strict government and military power."
+  },
+  {
+    name: "Oman",
+    capital: "Muscat",
+    summary: "<img src='flag-of-oman.jpeg' alt='Flag of Oman'> Muscat is the capital of Oman, known for its rich maritime history and strategic location on the Arabian Peninsula."
+  },
+  {
+    name: "Pakistan",
+    capital: "Islamabad",
+    summary: "<img src='flag-of-pakistan.jpeg' alt='Flag of Pakistan'> Islamabad is the capital of Pakistan, a South Asian country with a rich history and diverse landscapes."
+  },
+  {
+    name: "Palestine",
+    capital: "Ramallah",
+    summary: "<img src='flag-of-palestine.jpeg' alt='Flag of Palestine'> Ramallah is the de facto capital of Palestine, known for its political significance in the Israeli-Palestinian conflict."
+  },
+  {
+    name: "Philippines",
+    capital: "Manila",
+    summary: "<img src='flag-of-philippines.jpeg' alt='Flag of Philippines'> Manila is the capital of the Philippines, an archipelago known for its beautiful islands and vibrant culture."
+  },
+  {
+    name: "Qatar",
+    capital: "Doha",
+    summary: "<img src='flag-of-qatar.jpeg' alt='Flag of Qatar'> Doha is the capital of Qatar, a wealthy Gulf state known for its modern skyline and hosting of global events."
+  },
+  {
+    name: "Russia",
+    capital: "Moscow",
+    summary: "<img src='flag-of-russia.jpeg' alt='Flag of Russia'> Moscow is the capital of Russia, the largest country in the world, known for its rich history and cultural significance."
+  },
+  {
+    name: "Saudi Arabia",
+    capital: "Riyadh",
+    summary: "<img src='flag-of-saudi-arabia.jpeg' alt='Flag of Saudi Arabia'> Riyadh is the capital of Saudi Arabia, a country known for its oil wealth and being the birthplace of Islam."
+  },
+  {
+    name: "Singapore",
+    capital: "Singapore",
+    summary: "<img src='flag-of-singapore.jpeg' alt='Flag of Singapore'> Singapore is a city-state in Southeast Asia, known for its economic prosperity and modern skyline."
+  },
+  {
+    name: "South Korea",
+    capital: "Seoul",
+    summary: "<img src='flag-of-south-korea.jpeg' alt='Flag of South Korea'> Seoul is the capital of South Korea, known for its technology, pop culture, and historical landmarks."
+  },
+  {
+    name: "Sri Lanka",
+    capital: "Colombo",
+    summary: "<img src='flag-of-sri-lanka.jpeg' alt='Flag of Sri Lanka'> Colombo is the capital of Sri Lanka, an island nation known for its beaches, tea plantations, and ancient temples."
+  },
+  {
+    name: "Syria",
+    capital: "Damascus",
+    summary: "<img src='flag-of-syria.jpeg' alt='Flag of Syria'> Damascus is the capital of Syria, one of the oldest continuously inhabited cities in the world."
+  },
+  {
+    name: "Tajikistan",
+    capital: "Dushanbe",
+    summary: "<img src='flag-of-tajikistan.jpeg' alt='Flag of Tajikistan'> Dushanbe is the capital of Tajikistan, a mountainous country in Central Asia known for its rugged landscapes."
+  },
+  {
+    name: "Thailand",
+    capital: "Bangkok",
+    summary: "<img src='flag-of-thailand.jpeg' alt='Flag of Thailand'> Bangkok is the capital of Thailand, a Southeast Asian country known for its vibrant cities and beautiful beaches."
+  },
+  {
+    name: "Timor-Leste",
+    capital: "Dili",
+    summary: "<img src='flag-of-timor-leste.jpeg' alt='Flag of Timor-Leste'> Dili is the capital of Timor-Leste, a small Southeast Asian nation that gained independence in 2002."
+  },
+  {
+    name: "Turkey",
+    capital: "Ankara",
+    summary: "<img src='flag-of-turkey.jpeg' alt='Flag of Turkey'> Ankara is the capital of Turkey, a transcontinental country known for its rich history and cultural heritage."
+  },
+  {
+    name: "Turkmenistan",
+    capital: "Ashgabat",
+    summary: "<img src='flag-of-turkmenistan.jpeg' alt='Flag of Turkmenistan'> Ashgabat is the capital of Turkmenistan, known for its grandiose architecture and vast desert landscapes."
+  },
+  {
+    name: "United Arab Emirates",
+    capital: "Abu Dhabi",
+    summary: "<img src='flag-of-united-arab-emirates.jpeg' alt='Flag of United Arab Emirates'> Abu Dhabi is the capital of the United Arab Emirates, a wealthy Gulf nation known for its skyscrapers and luxury lifestyle."
+  },
+  {
+    name: "Uzbekistan",
+    capital: "Tashkent",
+    summary: "<img src='flag-of-uzbekistan.jpeg' alt='Flag of Uzbekistan'> Tashkent is the capital of Uzbekistan, a Central Asian country known for its Silk Road heritage."
+  },
+  {
+    name: "Vietnam",
+    capital: "Hanoi",
+    summary: "<img src='flag-of-vietnam.jpeg' alt='Flag of Vietnam'> Hanoi is the capital of Vietnam, a Southeast Asian country known for its history, cuisine, and natural beauty."
+  },
+  {
+    name: "Yemen",
+    capital: "Sana'a",
+    summary: "<img src='flag-of-yemen.jpeg' alt='Flag of Yemen'> Sana'a is the capital of Yemen, one of the oldest cities in the world, now experiencing a severe humanitarian crisis."
+  },
 
-  <script>
-        document.getElementById('searchForm').addEventListener('submit', async function (event) {
-            event.preventDefault(); // Prevent form submission from reloading the page
+ 
+  {
+    name: "Albania",
+    capital: "Tirana",
+    summary: "<img src='flag-of-albania.jpeg' alt='Flag of Albania'> Tirana is the capital of Albania, known for its rich history and cultural landmarks in Southeast Europe."
+  },
+  {
+    name: "Andorra",
+    capital: "Andorra la Vella",
+    summary: "<img src='flag-of-andorra.jpeg' alt='Flag of Andorra'> Andorra la Vella is the capital of Andorra, a small principality nestled in the Pyrenees mountains between France and Spain."
+  },
+  {
+    name: "Armenia",
+    capital: "Yerevan",
+    summary: "<img src='flag-of-armenia.jpeg' alt='Flag of Armenia'> Yerevan is the capital of Armenia, one of the world's oldest continuously inhabited cities, located in the South Caucasus."
+  },
+  {
+    name: "Austria",
+    capital: "Vienna",
+    summary: "<img src='flag-of-austria.jpeg' alt='Flag of Austria'> Vienna is the capital of Austria, famous for its classical music heritage and imperial history in Central Europe."
+  },
+  {
+    name: "Azerbaijan",
+    capital: "Baku",
+    summary: "<img src='flag-of-azerbaijan.jpeg' alt='Flag of Azerbaijan'> Baku, located on the Caspian Sea, is the capital of Azerbaijan and is renowned for its modern architecture and ancient history."
+  },
+  {
+    name: "Belarus",
+    capital: "Minsk",
+    summary: "<img src='flag-of-belarus.jpeg' alt='Flag of Belarus'> Minsk, the capital of Belarus, is known for its Soviet-style architecture and as a political and cultural hub in Eastern Europe."
+  },
+  {
+    name: "Belgium",
+    capital: "Brussels",
+    summary: "<img src='flag-of-belgium.jpeg' alt='Flag of Belgium'> Brussels is the capital of Belgium and the administrative center of the European Union, known for its historic squares and international institutions."
+  },
+  {
+    name: "Bosnia and Herzegovina",
+    capital: "Sarajevo",
+    summary: "<img src='flag-of-bosnia-and-herzegovina.jpeg' alt='Flag of Bosnia and Herzegovina'> Sarajevo is the capital of Bosnia and Herzegovina, known for its cultural diversity and historical significance in the Balkans."
+  },
+  {
+    name: "Bulgaria",
+    capital: "Sofia",
+    summary: "<img src='flag-of-bulgaria.jpeg' alt='Flag of Bulgaria'> Sofia is the capital of Bulgaria, a city rich in history, with landmarks dating back to the Roman, Ottoman, and Soviet periods."
+  },
+  {
+    name: "Croatia",
+    capital: "Zagreb",
+    summary: "<img src='flag-of-croatia.jpeg' alt='Flag of Croatia'> Zagreb is the capital of Croatia, known for its Austro-Hungarian architecture and vibrant street life."
+  },
+  {
+    name: "Cyprus",
+    capital: "Nicosia",
+    summary: "<img src='flag-of-cyprus.jpeg' alt='Flag of Cyprus'> Nicosia is the capital of Cyprus and is notable for being the last divided capital in Europe, with a Turkish-controlled northern part."
+  },
+  {
+    name: "Czech Republic",
+    capital: "Prague",
+    summary: "<img src='flag-of-czech-republic.jpeg' alt='Flag of Czech Republic'> Prague, the capital of the Czech Republic, is known for its stunning medieval architecture and vibrant cultural scene."
+  },
+  {
+    name: "Denmark",
+    capital: "Copenhagen",
+    summary: "<img src='flag-of-denmark.jpeg' alt='Flag of Denmark'> Copenhagen is the capital of Denmark, famous for its design, cycling culture, and modern architecture."
+  },
+  {
+    name: "Estonia",
+    capital: "Tallinn",
+    summary: "<img src='flag-of-estonia.jpeg' alt='Flag of Estonia'> Tallinn, the capital of Estonia, is known for its well-preserved medieval old town and advanced digital society."
+  },
+  {
+    name: "Finland",
+    capital: "Helsinki",
+    summary: "<img src='flag-of-finland.jpeg' alt='Flag of Finland'> Helsinki, the capital of Finland, is renowned for its design and high quality of life in Northern Europe."
+  },
+  {
+    name: "France",
+    capital: "Paris",
+    summary: "<img src='flag-of-france.jpeg' alt='Flag of France'> Paris, the capital of France, is one of the most famous cities in the world, known for its art, fashion, and landmarks such as the Eiffel Tower."
+  },
+  {
+    name: "Georgia",
+    capital: "Tbilisi",
+    summary: "<img src='flag-of-georgia.jpeg' alt='Flag of Georgia'> Tbilisi is the capital of Georgia, located at the crossroads of Europe and Asia, known for its diverse architecture and historic churches."
+  },
+  {
+    name: "Germany",
+    capital: "Berlin",
+    summary: "<img src='flag-of-germany.jpeg' alt='Flag of Germany'> Berlin is the capital of Germany, a city famous for its rich history, cultural scene, and modern landmarks such as the Brandenburg Gate."
+  },
+  {
+    name: "Greece",
+    capital: "Athens",
+    summary: "<img src='flag-of-greece.jpeg' alt='Flag of Greece'> Athens, the capital of Greece, is the historical heart of Western civilization, known for its ancient ruins like the Parthenon."
+  },
+  {
+    name: "Hungary",
+    capital: "Budapest",
+    summary: "<img src='flag-of-hungary.jpeg' alt='Flag of Hungary'> Budapest, the capital of Hungary, is known for its scenic location along the Danube River and its thermal baths."
+  },
+  {
+    name: "Iceland",
+    capital: "Reykjavik",
+    summary: "<img src='flag-of-iceland.jpeg' alt='Flag of Iceland'> Reykjavik, the capital of Iceland, is the northernmost capital of a sovereign state in the world, known for its modernist architecture and proximity to stunning natural landscapes."
+  },
+  {
+    name: "Ireland",
+    capital: "Dublin",
+    summary: "<img src='flag-of-ireland.jpeg' alt='Flag of Ireland'> Dublin is the capital of Ireland, famous for its literary history and vibrant pub culture."
+  },
+  {
+    name: "Italy",
+    capital: "Rome",
+    summary: "<img src='flag-of-italy.jpeg' alt='Flag of Italy'> Rome, the capital of Italy, is one of the most historically significant cities in the world, known for its ancient ruins and art treasures."
+  },
+  {
+    name: "Kazakhstan",
+    capital: "Astana",
+    summary: "<img src='flag-of-kazakhstan.jpeg' alt='Flag of Kazakhstan'> Astana (also called Nur-Sultan) is the capital of Kazakhstan, famous for its futuristic skyline and rapid development in the heart of Eurasia."
+  },
+  {
+    name: "Kosovo",
+    capital: "Pristina",
+    summary: "<img src='flag-of-kosovo.jpeg' alt='Flag of Kosovo'> Pristina is the capital of Kosovo, the youngest European country, with a rich cultural heritage and a mix of Ottoman and modern influences."
+  },
+  {
+    name: "Latvia",
+    capital: "Riga",
+    summary: "<img src='flag-of-latvia.jpeg' alt='Flag of Latvia'> Riga, the capital of Latvia, is known for its wooden buildings, Art Nouveau architecture, and medieval Old Town."
+  },
+  {
+    name: "Liechtenstein",
+    capital: "Vaduz",
+    summary: "<img src='flag-of-liechtenstein.jpeg' alt='Flag of Liechtenstein'> Vaduz is the capital of Liechtenstein, a small, landlocked principality known for its medieval castles and Alpine landscapes."
+  },
+  {
+    name: "Lithuania",
+    capital: "Vilnius",
+    summary: "<img src='flag-of-lithuania.jpeg' alt='Flag of Lithuania'> Vilnius, the capital of Lithuania, is known for its Baroque architecture and cobblestone streets."
+  },
+  {
+    name: "Luxembourg",
+    capital: "Luxembourg City",
+    summary: "<img src='flag-of-luxembourg.jpeg' alt='Flag of Luxembourg'> Luxembourg City is the capital of Luxembourg, known for its medieval fortifications and status as a financial hub."
+  },
+  {
+    name: "Malta",
+    capital: "Valletta",
+    summary: "<img src='flag-of-malta.jpeg' alt='Flag of Malta'> Valletta, the capital of Malta, is a UNESCO World Heritage site known for its historic fortifications and Baroque architecture."
+  },
+  {
+    name: "Moldova",
+    capital: "Chisinau",
+    summary: "<img src='flag-of-moldova.jpeg' alt='Flag of Moldova'> Chisinau is the capital of Moldova, known for its Soviet-era architecture and green spaces."
+  },
+  {
+    name: "Monaco",
+    capital: "Monaco",
+    summary: "<img src='flag-of-monaco.jpeg' alt='Flag of Monaco'> Monaco, a city-state on the French Riviera, is known for its luxurious lifestyle, casinos, and as a tax haven."
+  },
+  {
+    name: "Montenegro",
+    capital: "Podgorica",
+    summary: "<img src='flag-of-montenegro.jpeg' alt='Flag of Montenegro'> Podgorica is the capital of Montenegro, known for its proximity to scenic landscapes and coastal regions."
+  },
+  {
+    name: "Netherlands",
+    capital: "Amsterdam",
+    summary: "<img src='flag-of-netherlands.jpeg' alt='Flag of Netherlands'> Amsterdam is the capital of the Netherlands, known for its canals, museums, and progressive culture."
+  },
+  {
+    name: "North Macedonia",
+    capital: "Skopje",
+    summary: "<img src='flag-of-north-macedonia.jpeg' alt='Flag of North Macedonia'> Skopje is the capital of North Macedonia, known for its historic Ottoman and Byzantine sites, as well as modern monuments."
+  },
+  {
+    name: "Norway",
+    capital: "Oslo",
+    summary: "<img src='flag-of-norway.jpeg' alt='Flag of Norway'> Oslo is the capital of Norway, a city known for its modern architecture, green spaces, and proximity to fjords."
+  },
+  {
+    name: "Poland",
+    capital: "Warsaw",
+    summary: "<img src='flag-of-poland.jpeg' alt='Flag of Poland'> Warsaw, the capital of Poland, is known for its resilient history and beautifully reconstructed Old Town."
+  },
+  {
+    name: "Portugal",
+    capital: "Lisbon",
+    summary: "<img src='flag-of-portugal.jpeg' alt='Flag of Portugal'> Lisbon, the capital of Portugal, is famous for its hills, colorful buildings, and rich maritime history."
+  },
+  {
+    name: "Romania",
+    capital: "Bucharest",
+    summary: "<img src='flag-of-romania.jpeg' alt='Flag of Romania'> Bucharest, the capital of Romania, is known for its Belle Époque buildings and vibrant cultural life."
+  },
+  {
+    name: "Russia",
+    capital: "Moscow",
+    summary: "<img src='flag-of-russia.jpeg' alt='Flag of Russia'> Moscow, the capital of Russia, is known for its monumental architecture, including the Kremlin and Red Square."
+  },
+  {
+    name: "San Marino",
+    capital: "San Marino",
+    summary: "<img src='flag-of-san-marino.jpeg' alt='Flag of San Marino'> San Marino is the capital of the microstate of San Marino, known for its medieval old town and mountainous landscapes."
+  },
+  {
+    name: "Serbia",
+    capital: "Belgrade",
+    summary: "<img src='flag-of-serbia.jpeg' alt='Flag of Serbia'> Belgrade is the capital of Serbia, known for its historical significance and vibrant nightlife."
+  },
+  {
+    name: "Slovakia",
+    capital: "Bratislava",
+    summary: "<img src='flag-of-slovakia.jpeg' alt='Flag of Slovakia'> Bratislava is the capital of Slovakia, located along the Danube River and known for its medieval Old Town."
+  },
+  {
+    name: "Slovenia",
+    capital: "Ljubljana",
+    summary: "<img src='flag-of-slovenia.jpeg' alt='Flag of Slovenia'> Ljubljana, the capital of Slovenia, is known for its green spaces, lively cultural scene, and charming old town."
+  },
+  {
+    name: "Spain",
+    capital: "Madrid",
+    summary: "<img src='flag-of-spain.jpeg' alt='Flag of Spain'> Madrid, the capital of Spain, is known for its royal palaces, art museums, and vibrant nightlife."
+  },
+  {
+    name: "Sweden",
+    capital: "Stockholm",
+    summary: "<img src='flag-of-sweden.jpeg' alt='Flag of Sweden'> Stockholm is the capital of Sweden, built on 14 islands, and is known for its stunning architecture and cultural history."
+  },
+  {
+    name: "Switzerland",
+    capital: "Bern",
+    summary: "<img src='flag-of-switzerland.jpeg' alt='Flag of Switzerland'> Bern, the capital of Switzerland, is known for its medieval city center and its role in international diplomacy."
+  },
+  {
+    name: "Turkey",
+    capital: "Ankara",
+    summary: "<img src='flag-of-turkey.jpeg' alt='Flag of Turkey'> Ankara is the capital of Turkey, known for its modern government institutions and its role as the political center of the country."
+  },
+  {
+    name: "Ukraine",
+    capital: "Kyiv",
+    summary: "<img src='flag-of-ukraine.jpeg' alt='Flag of Ukraine'> Kyiv, the capital of Ukraine, is one of the oldest cities in Eastern Europe, known for its churches, monasteries, and vibrant cultural scene."
+  },
+  {
+    name: "United Kingdom",
+    capital: "London",
+    summary: "<img src='flag-of-united-kingdom.jpeg' alt='Flag of United Kingdom'> London, the capital of the United Kingdom, is a global city known for its rich history, cultural diversity, and iconic landmarks such as Big Ben and the Tower of London."
+  },
+  {
+    name: "Vatican City",
+    capital: "Vatican City",
+    summary: "<img src='flag-of-vatican-city.jpeg' alt='Flag of Vatican City'> Vatican City is the smallest independent state in the world, known for being the spiritual and administrative center of the Roman Catholic Church."
+  },
 
-            const userInput = document.getElementById('searchInput').value;
+ 
+  {
+    name: "Antigua and Barbuda",
+    capital: "St. John's",
+    summary: "<img src='flag-of-antigua-and-barbuda.jpeg' alt='Flag of Antigua and Barbuda'> St. John's is the capital of Antigua and Barbuda, known for its beaches and tourism-driven economy in the Caribbean."
+  },
+  {
+    name: "Bahamas",
+    capital: "Nassau",
+    summary: "<img src='flag-of-bahamas.jpeg' alt='Flag of Bahamas'> Nassau is the capital of the Bahamas, famous for its resorts, beautiful beaches, and vibrant culture."
+  },
+  {
+    name: "Barbados",
+    capital: "Bridgetown",
+    summary: "<img src='flag-of-barbados.jpeg' alt='Flag of Barbados'> Bridgetown is the capital of Barbados, a Caribbean island nation known for its colonial history and tourism industry."
+  },
+  {
+    name: "Belize",
+    capital: "Belmopan",
+    summary: "<img src='flag-of-belize.jpeg' alt='Flag of Belize'> Belmopan is the capital of Belize, known for its biodiversity and beautiful coastal regions in Central America."
+  },
+  {
+    name: "Canada",
+    capital: "Ottawa",
+    summary: "<img src='flag-of-canada.jpeg' alt='Flag of Canada'> Ottawa is the capital of Canada, located in Ontario, known for its cultural institutions like Parliament Hill and national museums."
+  },
+  {
+    name: "Costa Rica",
+    capital: "San José",
+    summary: "<img src='flag-of-costa-rica.jpeg' alt='Flag of Costa Rica'> San José is the capital of Costa Rica, known for its environmental sustainability and proximity to rainforests and beaches."
+  },
+  {
+    name: "Cuba",
+    capital: "Havana",
+    summary: "<img src='flag-of-cuba.jpeg' alt='Flag of Cuba'> Havana is the capital of Cuba, known for its Spanish colonial architecture and vibrant culture."
+  },
+  {
+    name: "Dominica",
+    capital: "Roseau",
+    summary: "<img src='flag-of-dominica.jpeg' alt='Flag of Dominica'> Roseau is the capital of Dominica, a small Caribbean island known for its natural hot springs and mountainous terrain."
+  },
+  {
+    name: "Dominican Republic",
+    capital: "Santo Domingo",
+    summary: "<img src='flag-of-dominican-republic.jpeg' alt='Flag of Dominican Republic'> Santo Domingo is the capital of the Dominican Republic, known for its rich history as the site of the first European settlement in the Americas."
+  },
+  {
+    name: "El Salvador",
+    capital: "San Salvador",
+    summary: "<img src='flag-of-el-salvador.jpeg' alt='Flag of El Salvador'> San Salvador is the capital of El Salvador, known for its vibrant culture and volcanic landscape."
+  },
+  {
+    name: "Grenada",
+    capital: "St. George's",
+    summary: "<img src='flag-of-grenada.jpeg' alt='Flag of Grenada'> St. George's is the capital of Grenada, a Caribbean country known as the 'Island of Spice' for its nutmeg production."
+  },
+  {
+    name: "Guatemala",
+    capital: "Guatemala City",
+    summary: "<img src='flag-of-guatemala.jpeg' alt='Flag of Guatemala'> Guatemala City is the capital of Guatemala, a Central American country known for its ancient Mayan sites."
+  },
+  {
+    name: "Haiti",
+    capital: "Port-au-Prince",
+    summary: "<img src='flag-of-haiti.jpeg' alt='Flag of Haiti'> Port-au-Prince is the capital of Haiti, the first independent black republic, located in the Caribbean."
+  },
+  {
+    name: "Honduras",
+    capital: "Tegucigalpa",
+    summary: "<img src='flag-of-honduras.jpeg' alt='Flag of Honduras'> Tegucigalpa is the capital of Honduras, a country known for its natural resources and rich history."
+  },
+  {
+    name: "Jamaica",
+    capital: "Kingston",
+    summary: "<img src='flag-of-jamaica.jpeg' alt='Flag of Jamaica'> Kingston is the capital of Jamaica, known for its influence on global music, particularly reggae."
+  },
+  {
+    name: "Mexico",
+    capital: "Mexico City",
+    summary: "<img src='flag-of-mexico.jpeg' alt='Flag of Mexico'> Mexico City is the capital of Mexico, known for its rich cultural history and as one of the largest cities in the world."
+  },
+  {
+    name: "Nicaragua",
+    capital: "Managua",
+    summary: "<img src='flag-of-nicaragua.jpeg' alt='Flag of Nicaragua'> Managua is the capital of Nicaragua, a Central American country known for its lakes, volcanoes, and biodiversity."
+  },
+  {
+    name: "Panama",
+    capital: "Panama City",
+    summary: "<img src='flag-of-panama.jpeg' alt='Flag of Panama'> Panama City is the capital of Panama, famous for its modern skyline and the Panama Canal."
+  },
+  {
+    name: "Saint Kitts and Nevis",
+    capital: "Basseterre",
+    summary: "<img src='flag-of-saint-kitts-and-nevis.jpeg' alt='Flag of Saint Kitts and Nevis'> Basseterre is the capital of Saint Kitts and Nevis, a twin-island nation in the Caribbean known for its beaches and history."
+  },
+  {
+    name: "Saint Lucia",
+    capital: "Castries",
+    summary: "<img src='flag-of-saint-lucia.jpeg' alt='Flag of Saint Lucia'> Castries is the capital of Saint Lucia, known for its dramatic volcanic landscape and the iconic Pitons."
+  },
+  {
+    name: "Saint Vincent and the Grenadines",
+    capital: "Kingstown",
+    summary: "<img src='flag-of-saint-vincent-and-the-grenadines.jpeg' alt='Flag of Saint Vincent and the Grenadines'> Kingstown is the capital of Saint Vincent and the Grenadines, known for its scenic beauty and lush islands."
+  },
+  {
+    name: "Trinidad and Tobago",
+    capital: "Port of Spain",
+    summary: "<img src='flag-of-trinidad-and-tobago.jpeg' alt='Flag of Trinidad and Tobago'> Port of Spain is the capital of Trinidad and Tobago, known for its vibrant Carnival and multicultural heritage."
+  },
+  {
+    name: "United States",
+    capital: "Washington, D.C.",
+    summary: "<img src='flag-of-united-states.jpeg' alt='Flag of United States'> Washington, D.C. is the capital of the United States, home to the federal government and numerous historical landmarks."
+  },
 
-            if (userInput.trim() === "") {
-                alert("Please enter a valid input.");
-                return;
-            }
+ 
+  {
+    name: "Argentina",
+    capital: "Buenos Aires",
+    summary: "<img src='flag-of-argentina.jpeg' alt='Flag of Argentina'> Buenos Aires is the capital of Argentina, known for its European-style architecture and tango music."
+  },
+  {
+    name: "Bolivia",
+    capital: "Sucre (constitutional) / La Paz (administrative)",
+    summary: "<img src='flag-of-bolivia.jpeg' alt='Flag of Bolivia'> Bolivia has two capitals: Sucre is the constitutional capital, while La Paz serves as the administrative seat, the highest capital city in the world."
+  },
+  {
+    name: "Brazil",
+    capital: "Brasília",
+    summary: "<img src='flag-of-brazil.jpeg' alt='Flag of Brazil'> Brasília is the capital of Brazil, known for its modernist architecture and planned city layout."
+  },
+  {
+    name: "Chile",
+    capital: "Santiago",
+    summary: "<img src='flag-of-chile.jpeg' alt='Flag of Chile'> Santiago is the capital of Chile, surrounded by the Andes and known for its cosmopolitan culture."
+  },
+  {
+    name: "Colombia",
+    capital: "Bogotá",
+    summary: "<img src='flag-of-colombia.jpeg' alt='Flag of Colombia'> Bogotá is the capital of Colombia, located in the Andes and known for its cultural and historical significance."
+  },
+  {
+    name: "Ecuador",
+    capital: "Quito",
+    summary: "<img src='flag-of-ecuador.jpeg' alt='Flag of Ecuador'> Quito, the capital of Ecuador, is known for its well-preserved colonial center and its location near the equator."
+  },
+  {
+    name: "Guyana",
+    capital: "Georgetown",
+    summary: "<img src='flag-of-guyana.jpeg' alt='Flag of Guyana'> Georgetown is the capital of Guyana, known for its British colonial architecture and multicultural heritage."
+  },
+  {
+    name: "Paraguay",
+    capital: "Asunción",
+    summary: "<img src='flag-of-paraguay.jpeg' alt='Flag of Paraguay'> Asunción is the capital of Paraguay, known for its history and as one of the oldest cities in South America."
+  },
+  {
+    name: "Peru",
+    capital: "Lima",
+    summary: "<img src='flag-of-peru.jpeg' alt='Flag of Peru'> Lima is the capital of Peru, known for its rich pre-Columbian history and vibrant food scene."
+  },
+  {
+    name: "Suriname",
+    capital: "Paramaribo",
+    summary: "<img src='flag-of-suriname.jpeg' alt='Flag of Suriname'> Paramaribo is the capital of Suriname, known for its Dutch colonial buildings and tropical rainforests."
+  },
+  {
+    name: "Uruguay",
+    capital: "Montevideo",
+    summary: "<img src='flag-of-uruguay.jpeg' alt='Flag of Uruguay'> Montevideo is the capital of Uruguay, known for its beautiful coastline and European-style architecture."
+  },
+  {
+    name: "Venezuela",
+    capital: "Caracas",
+    summary: "<img src='flag-of-venezuela.jpeg' alt='Flag of Venezuela'> Caracas is the capital of Venezuela, known for its dynamic urban culture and proximity to natural wonders like Angel Falls."
+  },
 
-            // Call Hugging Face API directly (API key exposed here)
-            const response = await fetch('https://api-inference.huggingface.co/models/gpt2', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer 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', // Replace with your actual API key
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ inputs: userInput }),
+
+  
+  {
+    name: "Australia",
+    capital: "Canberra",
+    summary: "<img src='flag-of-australia.jpeg' alt='Flag of Australia'> Canberra is the capital of Australia, known for its cultural institutions and political significance."
+  },
+  {
+    name: "Fiji",
+    capital: "Suva",
+    summary: "<img src='flag-of-fiji.jpeg' alt='Flag of Fiji'> Suva is the capital of Fiji, known for its harbor and as a hub of commerce in the Pacific."
+  },
+  {
+    name: "Kiribati",
+    capital: "Tarawa",
+    summary: "<img src='flag-of-kiribati.jpeg' alt='Flag of Kiribati'> Tarawa is the capital of Kiribati, a Pacific island nation known for its atolls and reefs."
+  },
+  {
+    name: "Marshall Islands",
+    capital: "Majuro",
+    summary: "<img src='flag-of-marshall-islands.jpeg' alt='Flag of Marshall Islands'> Majuro is the capital of the Marshall Islands, known for its marine life and atolls."
+  },
+  {
+    name: "Micronesia",
+    capital: "Palikir",
+    summary: "<img src='flag-of-micronesia.jpeg' alt='Flag of Micronesia'> Palikir is the capital of Micronesia, located on Pohnpei Island, known for its lush tropical landscapes."
+  },
+  {
+    name: "Nauru",
+    capital: "Yaren (de facto)",
+    summary: "<img src='flag-of-nauru.jpeg' alt='Flag of Nauru'> Yaren serves as the de facto capital of Nauru, one of the smallest nations in the world, known for its phosphate mining."
+  },
+  {
+    name: "New Zealand",
+    capital: "Wellington",
+    summary: "<img src='flag-of-new-zealand.jpeg' alt='Flag of New Zealand'> Wellington is the capital of New Zealand, known for its film industry and scenic harbor."
+  },
+  {
+    name: "Palau",
+    capital: "Ngerulmud",
+    summary: "<img src='flag-of-palau.jpeg' alt='Flag of Palau'> Ngerulmud is the capital of Palau, an island nation known for its marine biodiversity and pristine waters."
+  },
+  {
+    name: "Papua New Guinea",
+    capital: "Port Moresby",
+    summary: "<img src='flag-of-papua-new-guinea.jpeg' alt='Flag of Papua New Guinea'> Port Moresby is the capital of Papua New Guinea, known for its diverse cultures and traditions."
+  },
+  {
+    name: "Samoa",
+    capital: "Apia",
+    summary: "<img src='flag-of-samoa.jpeg' alt='Flag of Samoa'> Apia is the capital of Samoa, known for its Polynesian culture and beautiful coastal landscapes."
+  },
+  {
+    name: "Solomon Islands",
+    capital: "Honiara",
+    summary: "<img src='flag-of-solomon-islands.jpeg' alt='Flag of Solomon Islands'> Honiara is the capital of the Solomon Islands, known for its World War II history and coral reefs."
+  },
+  {
+    name: "Tonga",
+    capital: "Nukuʻalofa",
+    summary: "<img src='flag-of-tonga.jpeg' alt='Flag of Tonga'> Nukuʻalofa is the capital of Tonga, a Polynesian kingdom known for its royal family and rich cultural traditions."
+  },
+  {
+    name: "Tuvalu",
+    capital: "Funafuti",
+    summary: "<img src='flag-of-tuvalu.jpeg' alt='Flag of Tuvalu'> Funafuti is the capital of Tuvalu, a small island nation known for its low-lying atolls and vulnerability to climate change."
+  },
+  {
+    name: "Vanuatu",
+    capital: "Port Vila",
+    summary: "<img src='flag-of-vanuatu.jpeg' alt='Flag of Vanuatu'> Port Vila is the capital of Vanuatu, known for its rainforests, active volcanoes, and as a popular tourist destination."
+  },
+
+  {
+    name: "Australia",
+    capital: "Canberra",
+    summary: "<img src='flag-of-australia.jpeg' alt='Flag of Australia'> Canberra is the capital of Australia, known for its political significance, cultural institutions, and being a well-planned city in the Australian Capital Territory."
+  }
+
+        ];
+
+        const fuseOptions = { keys: ['name', 'capital'], threshold: 0.4 };
+        const fuse = new Fuse(countriesData, fuseOptions);
+
+        function splitQuery(query) {
+            return query.split(/[,.!?;:]/).map(part => part.trim()).filter(Boolean);
+        }
+
+        function extractKeywords(query) {
+            const capitalPatterns = [
+                /capital of\s+([a-zA-Z\s]+)/i,                          // "capital of Japan"
+    /what is the capital of\s+([a-zA-Z\s]+)/i,               // "What is the capital of Japan?"
+    /tell me the capital of\s+([a-zA-Z\s]+)/i,               // "Tell me the capital of Japan"
+    /capital city of\s+([a-zA-Z\s]+)/i,                      // "Capital city of Japan"
+    /what is the capital city of\s+([a-zA-Z\s]+)/i,          // "What is the capital city of Japan?"
+    /where is the capital city of\s+([a-zA-Z\s]+)/i,         // "Where is the capital city of Japan?"
+    /what do you know about the capital city of the country called\s+([a-zA-Z\s]+)/i, // "What do you know about the capital city of the country called Japan?"
+    /what is the name of the capital city of\s+([a-zA-Z\s]+)/i, // "What is the name of the capital city of Japan?"
+    /do you know the capital of\s+([a-zA-Z\s]+)/i,           // "Do you know the capital of Japan?"
+    /find the capital of\s+([a-zA-Z\s]+)/i,                  // "Find the capital of Japan"
+    /search for the capital of\s+([a-zA-Z\s]+)/i,            // "Search for the capital of Japan"
+    /I need to know the capital of\s+([a-zA-Z\s]+)/i,        // "I need to know the capital of Japan"
+    /please tell me the capital of\s+([a-zA-Z\s]+)/i,        // "Please tell me the capital of Japan"
+    /can you find the capital of\s+([a-zA-Z\s]+)/i,          // "Can you find the capital of Japan?"
+    /what is the capital city of the nation\s+([a-zA-Z\s]+)/i, // "What is the capital city of the nation Japan?"
+    /what country has\s+([a-zA-Z\s]+)\s+as its capital/i,    // "What country has Tokyo as its capital?"
+    /country with\s+([a-zA-Z\s]+)\s+as its capital/i,        // "Country with Tokyo as its capital?"
+    /what is the country where\s+([a-zA-Z\s]+)\s+is the capital/i, // "What is the country where Tokyo is the capital?"
+    /which country is\s+([a-zA-Z\s]+)\s+the capital of/i,    // "Which country is Tokyo the capital of?"
+    /what country does\s+([a-zA-Z\s]+)\s+belong to as capital/i, // "What country does Tokyo belong to as capital?"
+    /find out which country has\s+([a-zA-Z\s]+)\s+as its capital/i, // "Find out which country has Tokyo as its capital?"
+    /the capital of which country is\s+([a-zA-Z\s]+)/i,      // "The capital of which country is Tokyo?"
+    /capital city of which country is\s+([a-zA-Z\s]+)/i,     // "Capital city of which country is Tokyo?"
+    /which country has\s+([a-zA-Z\s]+)\s+as its capital city/i, // "Which country has Tokyo as its capital city?"
+    /name the country whose capital is\s+([a-zA-Z\s]+)/i,    // "Name the country whose capital is Tokyo?"
+    /which country has the city of\s+([a-zA-Z\s]+)\s+as its capital/i, // "Which country has the city of Tokyo as its capital?"
+    /capital of the country\s+([a-zA-Z\s]+)/i,               // "Capital of the country Japan?"
+    /capital in the nation called\s+([a-zA-Z\s]+)/i,         // "Capital in the nation called Japan?"
+    /what's the capital of the country\s+([a-zA-Z\s]+)/i,    // "What's the capital of the country Japan?"
+    /find out the capital of\s+([a-zA-Z\s]+)/i,              // "Find out the capital of Japan"
+    /the capital city of\s+([a-zA-Z\s]+)/i,                  // "The capital city of Japan"
+    /in which country is\s+([a-zA-Z\s]+)\s+the capital/i,    // "In which country is Tokyo the capital?"
+    /I need the capital of\s+([a-zA-Z\s]+)/i,                // "I need the capital of Japan"
+    /could you tell me the capital of\s+([a-zA-Z\s]+)/i,     // "Could you tell me the capital of Japan?"
+    /give me the capital of\s+([a-zA-Z\s]+)/i,               // "Give me the capital of Japan"
+    /which nation has\s+([a-zA-Z\s]+)\s+as its capital/i,    // "Which nation has Tokyo as its capital?"
+    /search for the country whose capital is\s+([a-zA-Z\s]+)/i, // "Search for the country whose capital is Tokyo"
+    /which country is home to the capital city\s+([a-zA-Z\s]+)/i, // "Which country is home to the capital city Tokyo?"
+    /what is the capital city of the nation called\s+([a-zA-Z\s]+)/i, // "What is the capital city of the nation called Japan?"
+    /give the name of the country with\s+([a-zA-Z\s]+)\s+as its capital/i, // "Give the name of the country with Tokyo as its capital"
+    /which country does\s+([a-zA-Z\s]+)\s+serve as the capital of/i, // "Which country does Tokyo serve as the capital of?"
+    /country whose capital is\s+([a-zA-Z\s]+)/i,             // "Country whose capital is Tokyo?"
+    /which country uses\s+([a-zA-Z\s]+)\s+as its capital/i,  // "Which country uses Tokyo as its capital?"
+    /the nation that has\s+([a-zA-Z\s]+)\s+as its capital city/i, // "The nation that has Tokyo as its capital city?"
+    /which country's capital is\s+([a-zA-Z\s]+)/i,           // "Which country's capital is Tokyo?"
+    /which nation has the capital\s+([a-zA-Z\s]+)/i,         // "Which nation has the capital Tokyo?"
+    /which country holds\s+([a-zA-Z\s]+)\s+as its capital/i, // "Which country holds Tokyo as its capital?"
+    /name the nation that has\s+([a-zA-Z\s]+)\s+as its capital/i, // "Name the nation that has Tokyo as its capital"
+    /which nation has\s+([a-zA-Z\s]+)\s+for its capital city/i, // "Which nation has Tokyo for its capital city?"
+    /the city of\s+([a-zA-Z\s]+)\s+is the capital of which country/i, // "The city of Tokyo is the capital of which country?"
+    /name the country that has\s+([a-zA-Z\s]+)\s+for its capital/i, // "Name the country that has Tokyo for its capital"
+    /the capital of the country called\s+([a-zA-Z\s]+)/i,    // "The capital of the country called Japan"
+    /find the country where\s+([a-zA-Z\s]+)\s+is the capital/i, // "Find the country where Tokyo is the capital"
+    /which country\s+([a-zA-Z\s]+)\s+is the capital of/i,    // "Which country Tokyo is the capital of?"
+    /what country does\s+([a-zA-Z\s]+)\s+act as the capital of/i, // "What country does Tokyo act as the capital of?"
+    /where is the capital\s+([a-zA-Z\s]+)\s+located/i,       // "Where is the capital Tokyo located?"
+    /identify the country whose capital is\s+([a-zA-Z\s]+)/i, // "Identify the country whose capital is Tokyo?"
+    /which country has the capital named\s+([a-zA-Z\s]+)/i,  // "Which country has the capital named Tokyo?"
+    /the city\s+([a-zA-Z\s]+)\s+serves as the capital of which country/i, // "The city Tokyo serves as the capital of which country?"
+    /the capital of the nation called\s+([a-zA-Z\s]+)/i,     // "The capital of the nation called Japan"
+    /identify the nation with the capital city of\s+([a-zA-Z\s]+)/i, // "Identify the nation with the capital city of Tokyo"
+    /what is the name of the country with the capital city\s+([a-zA-Z\s]+)/i, // "What is the name of the country with the capital city Tokyo?"
+    /capital\s+([a-zA-Z\s]+)\s+belongs to which nation/i,    // "Capital Tokyo belongs to which nation?"
+    /what nation has the capital named\s+([a-zA-Z\s]+)/i,    // "What nation has the capital named Tokyo?"
+            ];
+            const countryPatterns = [
+                /capital of\s+([a-zA-Z\s]+)/i,                         // e.g., "capital of Japan"
+    /what is the capital of\s+([a-zA-Z\s]+)/i,              // e.g., "What is the capital of Japan?"
+    /tell me the capital of\s+([a-zA-Z\s]+)/i,              // e.g., "Tell me the capital of Japan"
+    /capital city of\s+([a-zA-Z\s]+)/i,                     // e.g., "Capital city of Japan"
+    /do you know the capital of\s+([a-zA-Z\s]+)/i,          // e.g., "Do you know the capital of Japan?"
+    /can you tell me the capital of\s+([a-zA-Z\s]+)/i,      // e.g., "Can you tell me the capital of Japan?"
+    /find the capital of\s+([a-zA-Z\s]+)/i,                 // e.g., "Find the capital of Japan"
+    /which city is the capital of\s+([a-zA-Z\s]+)/i,        // e.g., "Which city is the capital of Japan?"
+    /what city is the capital of\s+([a-zA-Z\s]+)/i,         // e.g., "What city is the capital of Japan?"
+    /please tell me the capital of\s+([a-zA-Z\s]+)/i,       // e.g., "Please tell me the capital of Japan"
+    /where is the capital of\s+([a-zA-Z\s]+)/i,             // e.g., "Where is the capital of Japan?"
+    /the capital of\s+([a-zA-Z\s]+)\s+is/i,                 // e.g., "The capital of Japan is?"
+    /find out the capital of\s+([a-zA-Z\s]+)/i,             // e.g., "Find out the capital of Japan"
+    /what's the capital of\s+([a-zA-Z\s]+)/i,               // e.g., "What's the capital of Japan?"
+    /name the capital of\s+([a-zA-Z\s]+)/i,                 // e.g., "Name the capital of Japan"
+    /looking for the capital of\s+([a-zA-Z\s]+)/i,          // e.g., "Looking for the capital of Japan"
+    /country whose capital is\s+([a-zA-Z\s]+)/i,            // e.g., "Country whose capital is Tokyo"
+    /name the country whose capital is\s+([a-zA-Z\s]+)/i,   // e.g., "Name the country whose capital is Tokyo"
+    /country where\s+([a-zA-Z\s]+)\s+is the capital/i,      // e.g., "Country where Tokyo is the capital"
+    /which country is\s+([a-zA-Z\s]+)\s+the capital of/i,   // e.g., "Which country is Tokyo the capital of?"
+    /find the country that has\s+([a-zA-Z\s]+)\s+as its capital/i, // e.g., "Find the country that has Tokyo as its capital"
+    /country that has\s+([a-zA-Z\s]+)\s+as its capital/i,   // e.g., "Country that has Tokyo as its capital"
+    /the capital city is\s+([a-zA-Z\s]+)\s+in which country/i, // e.g., "The capital city is Tokyo in which country?"
+    /capital is\s+([a-zA-Z\s]+)\s+which country/i,          // e.g., "Capital is Tokyo, which country?"
+    /which country has the capital of\s+([a-zA-Z\s]+)/i,    // e.g., "Which country has the capital of Tokyo?"
+    /find the country with the capital of\s+([a-zA-Z\s]+)/i, // e.g., "Find the country with the capital of Tokyo"
+    /country that has the capital\s+([a-zA-Z\s]+)/i,        // e.g., "Country that has the capital Tokyo"
+    /which country has\s+([a-zA-Z\s]+)\s+as its capital city/i, // e.g., "Which country has Tokyo as its capital city?"
+    /what country has\s+([a-zA-Z\s]+)\s+as its capital/i,   // e.g., "What country has Tokyo as its capital?"
+    /identify the country with the capital\s+([a-zA-Z\s]+)/i, // e.g., "Identify the country with the capital Tokyo"
+    /which country has\s+([a-zA-Z\s]+)\s+for its capital/i, // e.g., "Which country has Tokyo for its capital?"
+    /name the country that has\s+([a-zA-Z\s]+)\s+for its capital/i, // e.g., "Name the country that has Tokyo for its capital"
+    /what nation has\s+([a-zA-Z\s]+)\s+as its capital/i,    // e.g., "What nation has Tokyo as its capital?"
+    /the capital\s+([a-zA-Z\s]+)\s+is located in which country/i, // e.g., "The capital Tokyo is located in which country?"
+    /the country with\s+([a-zA-Z\s]+)\s+as its capital is/i, // e.g., "The country with Tokyo as its capital is?"
+    /capital of which country is\s+([a-zA-Z\s]+)/i,         // e.g., "Capital of which country is Tokyo?"
+    /which country has the city of\s+([a-zA-Z\s]+)\s+as its capital/i, // e.g., "Which country has the city of Tokyo as its capital?"
+    /find out the country with the capital city\s+([a-zA-Z\s]+)/i, // e.g., "Find out the country with the capital city Tokyo"
+    /which country's capital is\s+([a-zA-Z\s]+)/i,          // e.g., "Which country's capital is Tokyo?"
+    /tell me the country with\s+([a-zA-Z\s]+)\s+as its capital/i, // e.g., "Tell me the country with Tokyo as its capital"
+    /country whose capital city is\s+([a-zA-Z\s]+)/i,       // e.g., "Country whose capital city is Tokyo"
+    /the country of which the capital is\s+([a-zA-Z\s]+)/i, // e.g., "The country of which the capital is Tokyo"
+    /the country that has\s+([a-zA-Z\s]+)\s+as its capital is/i, // e.g., "The country that has Tokyo as its capital is?"
+    /the capital city\s+([a-zA-Z\s]+)\s+belongs to which country/i, // e.g., "The capital city Tokyo belongs to which country?"
+    /what nation has the capital city\s+([a-zA-Z\s]+)/i,    // e.g., "What nation has the capital city Tokyo?"
+    /the country with the capital\s+([a-zA-Z\s]+)\s+is/i,   // e.g., "The country with the capital Tokyo is?"
+    /which country has the city\s+([a-zA-Z\s]+)\s+as its capital city/i, // e.g., "Which country has the city Tokyo as its capital city?"
+    /country where the capital is\s+([a-zA-Z\s]+)/i,        // e.g., "Country where the capital is Tokyo"
+    /the city\s+([a-zA-Z\s]+)\s+is the capital of which country/i, // e.g., "The city Tokyo is the capital of which country?"
+    /the country that has\s+([a-zA-Z\s]+)\s+for its capital city/i, // e.g., "The country that has Tokyo for its capital city"
+    /which country does\s+([a-zA-Z\s]+)\s+serve as the capital/i, // e.g., "Which country does Tokyo serve as the capital?"
+    /find the country whose capital is\s+([a-zA-Z\s]+)/i,   // e.g., "Find the country whose capital is Tokyo"
+    /which country has its capital as\s+([a-zA-Z\s]+)/i,    // e.g., "Which country has its capital as Tokyo?"
+    /country whose capital is the city of\s+([a-zA-Z\s]+)/i, // e.g., "Country whose capital is the city of Tokyo"
+    /name the country whose capital is the city of\s+([a-zA-Z\s]+)/i, // e.g., "Name the country whose capital is the city of Tokyo"
+    /the capital\s+([a-zA-Z\s]+)\s+belongs to which country/i, // e.g., "The capital Tokyo belongs to which country?"
+    /the nation that has\s+([a-zA-Z\s]+)\s+as its capital is/i, // e.g., "The nation that has Tokyo as its capital is?"
+    /capital of\s+([a-zA-Z\s]+)\s+which country/i,          // e.g., "Capital of Tokyo, which country?"
+    /find the nation with\s+([a-zA-Z\s]+)\s+as its capital/i, // e.g., "Find the nation with Tokyo as its capital"
+    /the capital\s+([a-zA-Z\s]+)\s+which country/i,         // e.g., "The capital Tokyo, which country?"
+    /country that\s+([a-zA-Z\s]+)\s+is the capital of/i,    // e.g., "Country that Tokyo is the capital of"
+    /what country\s+([a-zA-Z\s]+)\s+is the capital of/i,    // e.g., "What country Tokyo is the capital of?"
+    /identify the nation whose capital is\s+([a-zA-Z\s]+)/i, // e.g., "Identify the nation whose capital is Tokyo"
+    /the capital city\s+([a-zA-Z\s]+)\s+is located in which nation/i, // e.g., "The capital city Tokyo is located in which nation?"
+    /find the country whose capital city is\s+([a-zA-Z\s]+)/i, // e.g., "Find the country whose capital city is Tokyo"
+    /which nation has\s+([a-zA-Z\s]+)\s+for its capital/i,  // e.g., "Which nation has Tokyo for its capital?"
+    /capital city\s+([a-zA-Z\s]+)\s+is which country's capital/i, // e.g., "Capital city Tokyo is which country's capital?"
+    /what country's capital is the city\s+([a-zA-Z\s]+)/i,  // e.g., "What country's capital is the city Tokyo?"
+    /the country whose capital is\s+([a-zA-Z\s]+)\s+is/i,   // e.g., "The country whose capital is Tokyo is?"
+    /capital city of the country\s+([a-zA-Z\s]+)\s+is located where/i, // e.g., "Capital city of the country Tokyo is located where?"
+    /nation where\s+([a-zA-Z\s]+)\s+is the capital/i,       // e.g., "Nation where Tokyo is the capital"
+    /what is the nation with\s+([a-zA-Z\s]+)\s+as its capital/i, // e.g., "What is the nation with Tokyo as its capital?"
+    /the country with the capital city of\s+([a-zA-Z\s]+)\s+is/i, // e.g., "The country with the capital city of Tokyo is?"
+    /name the nation that has\s+([a-zA-Z\s]+)\s+as its capital/i, // e.g., "Name the nation that has Tokyo as its capital"
+    /the capital city\s+([a-zA-Z\s]+)\s+is found in which country/i, // e.g., "The capital city Tokyo is found in which country?"
+            ];
+
+            const detectedKeywords = [];
+
+            const queryChunks = splitQuery(query);
+
+            queryChunks.forEach(chunk => {
+                capitalPatterns.forEach(pattern => {
+                    let match = chunk.match(pattern);
+                    if (match) {
+                        detectedKeywords.push({ type: 'country', value: match[1].trim() });
+                    }
+                });
+
+                countryPatterns.forEach(pattern => {
+                    let match = chunk.match(pattern);
+                    if (match) {
+                        detectedKeywords.push({ type: 'capital', value: match[1].trim() });
+                    }
+                });
             });
 
-            const result = await response.json();
+            return detectedKeywords;
+        }
 
-            // Display the summary in the div
-            const summaryDiv = document.getElementById('summaryDiv');
-            summaryDiv.innerText = result[0].generated_text;
+        function search() {
+    const query = document.getElementById('searchQuery').value.trim();
+    const resultDiv = document.getElementById('results');
+    resultDiv.innerHTML = ""; // Clear previous results
 
-            // Show the popup div (optional)
-            document.getElementById('summaryPopup').classList.remove('hidden');
+    // Check if the input query is valid
+    if (!query) {
+        resultDiv.innerHTML = "<p>Please enter a valid search query.</p>";
+        return;
+    }
+
+    // Extract keywords based on the query
+    const keywords = extractKeywords(query);
+    let results = [];
+
+    if (keywords.length > 0) {
+        keywords.forEach(keyword => {
+            if (keyword.type === 'country') {
+                results.push(...fuse.search(keyword.value)); // Search country
+            } else if (keyword.type === 'capital') {
+                results.push(...fuse.search(keyword.value)); // Search capital
+            }
         });
+    } else {
+        // If no keywords are detected, search the whole query
+        results = fuse.search(query);
+    }
 
-        // Close the popup when the close button is clicked
-        document.getElementById('closePopup').addEventListener('click', function () {
-            document.getElementById('summaryPopup').classList.add('hidden');
+    // If results are found, display only the first match with a close button
+    if (results.length > 0) {
+        const result = results[0].item;  // Get the first result
+        const { name, capital, summary } = result;
+
+        // Display the result (only one) with a close button
+        resultDiv.innerHTML = `
+            <div class="result-item">
+                <button class="close-btn">&times;</button>
+                <strong>${name}:</strong> ${summary} (Capital: ${capital})
+            </div>
+        `;
+
+        // Add event listener to the close button
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            resultDiv.innerHTML = ""; // Clear the results when close button is clicked
         });
+    } else {
+        // No results found
+        resultDiv.innerHTML = "<p>No results found. Please try with different keywords or country names.</p>";
+    }
+}
+
+
     </script>
 
 

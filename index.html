@@ -33,7 +33,9 @@
 /* Optional: Add some responsiveness */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll; /* Change to scroll on smaller screens */
+      background-attachment: scroll; /* Allows scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
     }
 }
 
@@ -97,7 +99,7 @@
 
 
         .nav-links a {
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
             color: #333;
             font-weight: bold;
@@ -111,6 +113,8 @@
         .dropdown {
             position: relative;
             display: inline-block;
+            top: 50px; /* Move 50px down from the center */
+            left: 30px; /* Move 50px down from the center */
         }
 
         .dropdown-content {
@@ -153,6 +157,7 @@ main {
      margin-top: 7px;
       margin-right: 10px;
          z-index:5;
+        position:fixed;
     }
     .question {
       font-size: 18px;
@@ -385,6 +390,7 @@ input {
     align-items: center;
     z-index:5000;
 }
+        .result-item .img{ width: 200 px; height: 200 px;}
 
 /* Responsive: Center the div on larger screens */
 @media (min-width: 768px) {
@@ -392,7 +398,7 @@ input {
         top: 10px;
         right: 10px;
        
-        width: 600px;
+        width: 800px;
         padding: 0;
     }
 }
@@ -528,8 +534,8 @@ input {
                 <a href="europe.html">🌍Europe</a>
                 <a href="north america.html">🌎North America</a>
                 <a href="south america.html">🌎South America</a>
-                <a href="antarctica.html">🦈Antarctica</a>
-                <a href="oceania.html">Oceania</a>
+                <a href="antarctica.html">🐟Antarctica</a>
+                <a href="oceania.html">🌊Oceania</a>
             </div>
          </div>
          <div class="dropdown">
@@ -551,7 +557,7 @@ input {
           <a href="#">📷Gallery</a>
           <div class="dropdown-content">
               <a href="introduction.html">Animals</a>
-              <a href="historical-facts.html">Animal Challenge</a>
+              <a href="historical-facts.html">🐒Challenge</a>
               <a href="fun-facts.html">World Leaders</a>
               <a href="images.html">Famous People</a>
               <a href="nature.html">Quick Challenge</a>
@@ -567,7 +573,7 @@ input {
         <h2>Our World is so Amaizing!</h2>
     </div>
     
-<input type="text" id="searchQuery" placeholder="capital of Japan?">
+<input type="text" id="searchQuery" placeholder="what is the capital of Japan?">
     <button class="search-button" onclick="search()">Go</button>
     <div id="results"></div>
 
@@ -1794,7 +1800,7 @@ input {
 
     // Check if the input query is valid
     if (!query) {
-        resultDiv.innerHTML = "<p>Please enter a valid search query.</p>";
+        resultDiv.innerHTML = "<p>Please try searching capitals or countries.</p>";
         return;
     }
 
@@ -1834,21 +1840,21 @@ input {
         });
     } else {
         // No results found
-        resultDiv.innerHTML = "<p>No results found. Please try with different keywords or country names.</p>";
+        resultDiv.innerHTML = "<p>No results found. Please try with country names or capitals</p>";
     }
 }
 
 
     </script>
 
-    <main>
+   
         <div class="quiz-container">
             <div id="question-container">
               <p class="question"></p>
               <div class="options"></div>
               <p class="feedback"></p>
             </div>
-            <button id="next-btn" style="display:none;">Next</button>
+            <button id="next-btn" style="display:none;">continue</button>
           </div>
         <script>const questions = [
             {
@@ -2074,11 +2080,11 @@ input {
           // Start the quiz
           showQuestion();
           </script>
-        </main>
+       
 
     <!-- Footer -->
     <footer>
- <p>&copy; 2024 World Explorer. All rights reserved.</p>
+ <p>&copy; 2024 IA World Explorer.</p>
  </footer>
 
 <div class=mask1>

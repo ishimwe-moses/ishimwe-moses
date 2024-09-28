@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Explore the World</title>
+    <title>World explorer</title>
    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,481 +12,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bb2d5">
 <meta name="msapplication-TileColor" content="#603cba">
 <meta name="theme-color" content="#394111">
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-size: 12px;
-            font-family: Tahoma, Verdana, sans-serif;
-        }
-
-   background-color: #ffffff; /* White background */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            color: #333; /* Text color */
-            box-sizing: border-box;
-            font-family: Arial, sans-serif; /* Optional: Set a font */
-
-/* Optional: Add some responsiveness */
-@media (max-width: 768px) {
-    body {
-      background-attachment: scroll; /* Allows scrolling */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    }
-}
-
-
-.container {
-    flex-grow: 1; /* This will make the container expand to fill available space */
-    display: flex;
-    flex-direction: column; /* Adjust as needed */
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    width: 100%; /* Full width */
-    max-width: 1200px; /* Optional: Set a max width for larger screens */
-    margin: auto; /* Center the container on larger screens */
-}
-
-.main-content {
-    flex-grow: 1; /* Ensures the main content fills available space */
-    display: flex;
-    justify-content: center; /* Center main content horizontally */
-    align-items: center; /* Center main content vertically */
-    padding: 0.5rem;
-    width: 100%; /* Ensure full width */
-    max-width: 800px; /* Optional: Set a max width for main content */
-}
-
-
-        /* Header with Logo */
-        header {
-            display: flex;
-            align-items: center;
-            background-color: rgb(173, 238, 9); /* Semi-transparent header */
-            color: #0c0101;
-            padding: 20px;
-        }
-
-        header img {
-            width: 45px;
-            height: 45px;
-            margin-right: 5px;
-        }
-
-        header h1 {
-            font-size: 1.5rem;
-            color: black;
-            text-shadow: white;
-            flex: 1;
-        }
-
-        
-        /* Navigation Bar */
-       .nav-links {
-    display: flex; /* Set flexbox layout */
-    justify-content: flex-start; /* Align items to the start of the main axis */
-    background-color: rgba(255, 255, 255, 0.8); /* Background color */
-    padding: 0; /* Remove padding */
-    margin-top: 0; /* Remove margin */
-    flex: 0 1 auto; /* Define flex-grow, flex-shrink, and flex-basis values */
-}
-
-
-
-
-        .nav-links a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #FF5733;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            top: 50px; /* Move 50px down from the center */
-            left: 30px; /* Move 50px down from the center */
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.9);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 3000;
-            margin-left:12 px;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 6px 5px;
-            text-decoration: none;
-            display: block;
-            z-index: 3000;
-            margin-bottom:12p;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-       /* Continent Section */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1.5px;
-   
-}
-    .quiz-container {
-      max-width: 600px;
-     margin-top: 7px;
-      margin-right: 10px;
-         z-index:5;
-        position:fixed;
-    }
-    .question {
-      font-size: 18px;
-      margin-bottom: 10px;
-     
-         z-index:5;
-    }
-    .options {
-      margin-bottom: 20px;
-         z-index:5;
-    }
-    .feedback {
-      margin-top: 10px;
-      font-weight: bold;
-         z-index:5;
-    }
-    .correct {
-      color: green;
-         z-index:5;
-    }
-    .incorrect {
-      color: red;
-         z-index:5;
-    }
-          button {
-  background-color: #f0f0f0; /* Light grey background */
-  color: black; /* Black text for options */
-  padding: 10px 20px; /* Larger padding to make buttons bigger */
-  font-size: 10px; /* Larger font size */
-  border: 2px solid #ccc; /* Add a border */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Cursor changes to pointer */
-  margin: 5px 0; /* Space between buttons */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-
-        /* Footer */
-       footer {
-    position: fixed; /* Fixes the footer in place */
-    bottom: 0; /* Positions it at the bottom of the viewport */
-    left: 50%; /* Positions it at the center relative to the viewport */
-    transform: translateX(-50%); /* Shifts the footer back by 50% of its width to center it */
-    background-color: #333; /* Background color of the footer */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding inside the footer */
-    text-align: center; /* Center text */
-    width: auto; /* Auto width, can be set as per content or requirement */
-}
-    
-        /* Background Elements */
-.background-element {
-    position: absolute;
-    z-index: 0.5;
-    opacity: 1;
-}
-
-.airplane {
-    width: 80px;
-    height: 50px;
-    bottom: 5%;
-    left: 10%;
-    animation: fly 20s infinite ease-in-out;
-}
-
-.airplan {
-    width: 200px;
-    height: 150px;
-    bottom: 20%;
-    right: 12%;
-    animation: fly 45s infinite ease-in-out;
-}
-
-.globe4 {
-    width: 80px;
-    height: 80px;
-    bottom: 20%;
-    left: 4%;
-    animation: fly 50s infinite linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes fly {
-    0% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(450px, -450px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-    
-
-    .h2class {
-    font-family: 'Arial', sans-serif; /* Simple, clean font */
-    font-size: 3.5rem; /* Large but not overwhelming */
-    color: #037ffa; /* A deep blue-gray color */
-    text-transform: uppercase; /* Capitalizes all letters */
-    letter-spacing: 3px; /* Adds subtle spacing between letters */
-    margin-bottom: 0.5rem; /* Adds space beneath the title */
-    border-bottom: 3px solid #3498db; /* Light blue underline for emphasis */
-    border-width: 50%;
-    padding-bottom: 0.5rem; /* Spacing between text and border */
-    text-align: center; /* Center the text */
-            margin-top:3px;
-}
-
-
-
-
-
-a {
-  text-decoration: none;
-}
-
-
-.sidepanel  {
-  width: 0;
-  position: fixed;
-  z-index: 15;
-  height: 350px;
-  top: 14%;
-  left: 0;
-  background-color: rgb(173, 238, 9); ;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 70px;
-}
-
-.sidepanel a {
-  padding: 12px 5px 5px 30px;
-  text-decoration: none;
-  font-size: 17px;
-  color: black;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidepanel a:hover {
-  color: #f1f1f1;
-}
-
-.sidepanel .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 45px;
-}
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  padding: 10px 15px;
-  border: none;
-  margin-top:-1%
-}
-
-.openbtn:hover {
-  background-color:rgb(164, 175, 141);
-}
-
-
-
-
-input {
-            margin-right: 10px;
-            padding: 10px;
-            width: 210px;
-            font-size: 16px;
-            color:black;
-        }
-        button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #results {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 600px; /* Limits the width of the result div */
-    padding: 0 15px; /* Adds padding for small screens */
-    z-index:5000;
-}
-
-/* Style for each result item */
-.result-item {
-    border: 1px solid #ccc;
-    padding: 15px;
-     margin-left: 30px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
-    position: relative;
-    z-index:5000;
-}
-
-/* Add a close button */
-.result-item .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index:5000;
-}
-        .result-item .img{ width: 200 px; height: 200 px;}
-
-/* Responsive: Center the div on larger screens */
-@media (min-width: 768px) {
-    #results {
-        top: 10px;
-        right: 10px;
-       
-        width: 800px;
-        padding: 0;
-    }
-}
-        .result-item strong {
-            color: #2b7e5b;
-        }
-            
-        }
-        .search-input {
-            padding: 5px;
-            font-size: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #results {
-            margin-top: 50px;
-        }
-
-
-
-
-
-        .hidden { display: none; }
-    #summaryPopup {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      z-index: 1000;
-    }
-    #closePopup {
-      background: none;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-     z-index: 1000;
-    }
-
-.search-input {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            flex: 1;
-        }
-
-        .search-button {
-            padding: 8px 12px;
-            border: none;
-            border-radius: 50px; /* Makes it rounded */
-            background-color: #007BFF; /* Button color */
-            color: white; /* Text color */
-            cursor: pointer;
-            margin-left: 10px; /* Space between input and button */
-            font-size: 14px; /* Small text size */
-            transition: background-color 0.3s; /* Transition for hover effect */
-        }
-
-        .search-button:hover {
-            background-color: #0056b3; /* Darker shade on hover */
-        }
-
-
-
-
-        @media (max-width: 600px) {
-    /* Styles for screens less than 600px wide */
-}
-@media (min-width: 601px) and (max-width: 1200px) {
-    /* Styles for screens between 601px and 1200px wide */
-}
-@media (min-width: 1201px) {
-    /* Styles for screens wider than 1200px */
-}
-
-
-        
-
-
-    </style>
+<link rel="stylesheet" href="indexcss.css">
 </head>
 <body>
 
@@ -494,27 +20,172 @@ input {
     <header>
        <a href="index.html"><img src="check.png" alt="Logo"></a>
        <a href="index.html"><h1>World Explorer</h1></a>
-    </header>
+    
 
     <!-- Navigation Links -->
      <div class="nav-links">
       <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#">1. Explore Continents</a>
-        <a href="#">2. Quizes</a>
-        <a href="#">3. General Tests</a>
-        <a href="#">4. Final exams</a>
-        <a href="#">6. World Maps</a>
-        <a href="#">7. FLags Challenge</a>
-        <a href="#">8. Capital city Challenge</a>
-        <a href="#">9. Did You Know?</a>
-        <a href="#">10. News $ Updates</a>
+       
 
+  <!-- Continents Section -->
+  <a href="continent.html">🌐 Continents</a>
+
+  <!-- Africa Section -->
+  <a href="africa.html">🌍 Africa</a>
+  <a href="africa day1.html">📅 Africa - Day 1</a>
+  <a href="africa day2.html">📅 Africa - Day 2</a>
+  <a href="africa day3.html">📅 Africa - Day 3</a>
+  <a href="africa quiz1.html">📝 Africa - Quiz 1</a>
+  <a href="africa day4.html">📅 Africa - Day 4</a>
+  <a href="africa day5.html">📅 Africa - Day 5</a>
+  <a href="africa day6.html">📅 Africa - Day 6</a>
+  <a href="africa quiz2.html">📝 Africa - Quiz 2</a>
+  <a href="africa day7.html">📅 Africa - Day 7</a>
+  <a href="africa day8.html">📅 Africa - Day 8</a>
+  <a href="africa day9.html">📅 Africa - Day 9</a>
+  <a href="africa quiz3.html">📝 Africa - Quiz 3</a>
+  <a href="africa general test.html">✅ Africa - General Test</a>
+  <a href="africa exam.html">🧠 Africa - Exam</a>
+  <a href="africa flags challenge.html">🚩 Africa - Flags Challenge</a>
+  <a href="africa capital city challenge.html">🏛️ Africa - Capital City Challenge</a>
+
+  <!-- Europe Section -->
+  <a href="europe.html">🌍 Europe</a>
+  <a href="europe day1.html">📅 Europe - Day 1</a>
+  <a href="europe day2.html">📅 Europe - Day 2</a>
+  <a href="europe day3.html">📅 Europe - Day 3</a>
+  <a href="europe quiz1.html">📝 Europe - Quiz 1</a>
+  <a href="europe day4.html">📅 Europe - Day 4</a>
+  <a href="europe day5.html">📅 Europe - Day 5</a>
+  <a href="europe day6.html">📅 Europe - Day 6</a>
+  <a href="europe quiz2.html">📝 Europe - Quiz 2</a>
+  <a href="europe day7.html">📅 Europe - Day 7</a>
+  <a href="europe day8.html">📅 Europe - Day 8</a>
+  <a href="europe day9.html">📅 Europe - Day 9</a>
+  <a href="europe quiz3.html">📝 Europe - Quiz 3</a>
+  <a href="europe general test.html">✅ Europe - General Test</a>
+  <a href="europe exam.html">🧠 Europe - Exam</a>
+  <a href="europe flags challenge.html">🚩 Europe - Flags Challenge</a>
+  <a href="europe capital city challenge.html">🏛️ Europe - Capital City Challenge</a>
+
+  <!-- Asia Section -->
+  <a href="asia.html">🌍 Asia</a>
+  <a href="asia day1.html">📅 Asia - Day 1</a>
+  <a href="asia day2.html">📅 Asia - Day 2</a>
+  <a href="asia day3.html">📅 Asia - Day 3</a>
+  <a href="asia quiz1.html">📝 Asia - Quiz 1</a>
+  <a href="asia day4.html">📅 Asia - Day 4</a>
+  <a href="asia day5.html">📅 Asia - Day 5</a>
+  <a href="asia day6.html">📅 Asia - Day 6</a>
+  <a href="asia quiz2.html">📝 Asia - Quiz 2</a>
+  <a href="asia day7.html">📅 Asia - Day 7</a>
+  <a href="asia day8.html">📅 Asia - Day 8</a>
+  <a href="asia day9.html">📅 Asia - Day 9</a>
+  <a href="asia quiz3.html">📝 Asia - Quiz 3</a>
+  <a href="asia general test.html">✅ Asia - General Test</a>
+  <a href="asia exam.html">🧠 Asia - Exam</a>
+  <a href="asia flags challenge.html">🚩 Asia - Flags Challenge</a>
+  <a href="asia capital city challenge.html">🏛️ Asia - Capital City Challenge</a>
+
+  <!-- North America Section -->
+  <a href="north america.html">🌍 North America</a>
+  <a href="north america day1.html">📅 North America - Day 1</a>
+  <a href="north america day2.html">📅 North America - Day 2</a>
+  <a href="north america day3.html">📅 North America - Day 3</a>
+  <a href="north america quiz1.html">📝 North America - Quiz 1</a>
+  <a href="north america day4.html">📅 North America - Day 4</a>
+  <a href="north america day5.html">📅 North America - Day 5</a>
+  <a href="north america day6.html">📅 North America - Day 6</a>
+  <a href="north america quiz2.html">📝 North America - Quiz 2</a>
+  <a href="north america day7.html">📅 North America - Day 7</a>
+  <a href="north america day8.html">📅 North America - Day 8</a>
+  <a href="north america day9.html">📅 North America - Day 9</a>
+  <a href="north america quiz3.html">📝 North America - Quiz 3</a>
+  <a href="north america general test.html">✅ North America - General Test</a>
+  <a href="north america exam.html">🧠 North America - Exam</a>
+  <a href="north america flags challenge.html">🚩 North America - Flags Challenge</a>
+  <a href="north america capital city challenge.html">🏛️ North America - Capital City Challenge</a>
+
+  <!-- South America Section -->
+  <a href="south america.html">🌍 South America</a>
+  <a href="south america day1.html">📅 South America - Day 1</a>
+  <a href="south america day2.html">📅 South America - Day 2</a>
+  <a href="south america day3.html">📅 South America - Day 3</a>
+  <a href="south america quiz1.html">📝 South America - Quiz 1</a>
+  <a href="south america day4.html">📅 South America - Day 4</a>
+  <a href="south america day5.html">📅 South America - Day 5</a>
+  <a href="south america day6.html">📅 South America - Day 6</a>
+  <a href="south america quiz2.html">📝 South America - Quiz 2</a>
+  <a href="south america day7.html">📅 South America - Day 7</a>
+  <a href="south america day8.html">📅 South America - Day 8</a>
+  <a href="south america day9.html">📅 South America - Day 9</a>
+  <a href="south america quiz3.html">📝 South America - Quiz 3</a>
+  <a href="south america general test.html">✅ South America - General Test</a>
+  <a href="south america exam.html">🧠 South America - Exam</a>
+  <a href="south america flags challenge.html">🚩 South America - Flags Challenge</a>
+  <a href="south america capital city challenge.html">🏛️ South America - Capital City Challenge</a>
+
+  <!-- Australia Section -->
+  <a href="australia.html">🌍 Australia</a>
+  <a href="australia day1.html">📅 Australia - Day 1</a>
+  <a href="australia day2.html">📅 Australia - Day 2</a>
+  <a href="australia day3.html">📅 Australia - Day 3</a>
+  <a href="australia quiz1.html">📝 Australia - Quiz 1</a>
+  <a href="australia day4.html">📅 Australia - Day 4</a>
+  <a href="australia day5.html">📅 Australia - Day 5</a>
+  <a href="australia day6.html">📅 Australia - Day 6</a>
+  <a href="australia quiz2.html">📝 Australia - Quiz 2</a>
+  <a href="australia day7.html">📅 Australia - Day 7</a>
+  <a href="australia day8.html">📅 Australia - Day 8</a>
+  <a href="australia day9.html">📅 Australia - Day 9</a>
+  <a href="australia quiz3.html">📝 Australia - Quiz 3</a>
+  <a href="australia general test.html">✅ Australia - General Test</a>
+  <a href="australia exam.html">🧠 Australia - Exam</a>
+  <a href="australia flags challenge.html">🚩 Australia - Flags Challenge</a>
+  <a href="australia capital city challenge.html">🏛️ Australia - Capital City Challenge</a>
+
+  <!-- Antarctica Section -->
+  <a href="antarctica.html">🌍 Antarctica</a>
+  <a href="antarctica day1.html">📅 Antarctica - Day 1</a>
+  <a href="antarctica day2.html">📅 Antarctica - Day 2</a>
+  <a href="antarctica day3.html">📅 Antarctica - Day 3</a>
+  <a href="antarctica quiz1.html">📝 Antarctica - Quiz 1</a>
+  <a href="antarctica day4.html">📅 Antarctica - Day 4</a>
+  <a href="antarctica day5.html">📅 Antarctica - Day 5</a>
+  <a href="antarctica day6.html">📅 Antarctica - Day 6</a>
+  <a href="antarctica quiz2.html">📝 Antarctica - Quiz 2</a>
+  <a href="antarctica day7.html">📅 Antarctica - Day 7</a>
+  <a href="antarctica day8.html">📅 Antarctica - Day 8</a>
+  <a href="antarctica day9.html">📅 Antarctica - Day 9</a>
+  <a href="antarctica quiz3.html">📝 Antarctica - Quiz 3</a>
+  <a href="antarctica general test.html">✅ Antarctica - General Test</a>
+  <a href="antarctica exam.html">🧠 Antarctica - Exam</a>
+  <a href="antarctica flags challenge.html">🚩 Antarctica - Flags Challenge</a>
+  <a href="antarctica capital city challenge.html">🏛️ Antarctica - Capital City Challenge</a>
+
+  <!-- Global Challenges and General Sections -->
+  <a href="purpose.html">🎯 Purpose</a>
+  <a href="origin of the world.html">🌏 Origin of the World</a>
+  <a href="human nature.html">👤 Human Nature</a>
+  <a href="our world.html">🌎 Our World</a>
+  <a href="dangerous zones.html">⚠️ Dangerous Zones</a>
+  <a href="magic zones.html">🪄 Magic Zones</a>
+  <a href="places to visit.html">🗺️ Places to Visit</a>
+  <a href="world gallery.html">🖼️ World Gallery</a>
+  <a href="animals.html">🐾 Animals</a>
+  <a href="animal challenge.html">🐘 Animal Challenge</a>
+  <a href="world leaders.html">👑 World Leaders</a>
+  <a href="did you know.html">💡 Did You Know?</a>
+  <a href="news and updates.html">📰 News & Updates</a>
+
+      </div>
+        
 
     
    
   </div>
-      <button class="openbtn" onclick="openNav()"> Open  ☰</button>  
+      <button class="openbtn" onclick="openNav()"> ☰📖Menu</button>  
       
       
       <script>
@@ -527,56 +198,26 @@ input {
       }
       </script>
    
-        <a href="#">🏠Home</a>
-        <div class="dropdown">
-            <a href="#">🌐Continents</a>
-            <div class="dropdown-content">
-                <a href="africa.html">🌍Africa</a>
-                <a href="asia.html">🌏Asia</a>
-                <a href="europe.html">🌍Europe</a>
-                <a href="north america.html">🌎North America</a>
-                <a href="south america.html">🌎South America</a>
-                <a href="antarctica.html">🐟Antarctica</a>
-                <a href="oceania.html">🌊Oceania</a>
-            </div>
-         </div>
-         <div class="dropdown">
-          <a href="#">🚴‍♂️Explorer</a>
-          <div class="dropdown-content">
-              <a href="animals.html">Your Purpose!</a>
-              <a href="culture.html">Origin of World!</a>
-              <a href="people.html">In Human Nature</a>
-              <a href="magic.html">What’s Beyond Us?</a>
-              <a href="visit.html">Our World!</a>
-              <a href="visit.html">Dangerous Zones</a>
-              <a href="visit.html">Magic Zone</a>
-              <a href="visit.html">Safe Places</a>
-              <a href="visit.html">Places to Visit</a>
-
-          </div>
-      </div>
-      <div class="dropdown">
-          <a href="#">📷Gallery</a>
-          <div class="dropdown-content">
-              <a href="introduction.html">Animals</a>
-              <a href="historical-facts.html">🐒Challenge</a>
-              <a href="fun-facts.html">World Leaders</a>
-              <a href="images.html">Famous People</a>
-              <a href="nature.html">Quick Challenge</a>
-              
-          </div>
-  
-      </div>
-        
-    </div>
+       
+   
 
 <!-- Continent List -->
-    <div class="h2class">
-        <h2>Our World is so Amaizing!</h2>
-    </div>
+    </header>
+    
+    
    <main>
-<input type="text" id="searchQuery" placeholder="what is the capital of x?">
-    <button class="search-button" onclick="search()">Go</button>
+    
+    
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center; padding: 10px; max-width: 100%; box-sizing: border-box;">
+    <input type="text" id="searchQuery" placeholder="What is the capital of X?" 
+           style="padding: 10px; font-size: 16px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px; box-sizing: border-box;">
+    <button class="search-button" onclick="search()" 
+            style="padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Ask🤔
+    </button>
+  </div>
+  
     <div id="results"></div>
 
     <!-- Include Fuse.js for fuzzy searching -->
@@ -1849,253 +1490,248 @@ input {
 
     </script>
 
-   
-        <div class="quiz-container">
-            <div id="question-container">
-              <p class="question"></p>
-              <div class="options"></div>
-              <p class="feedback"></p>
-            </div>
-            <button id="next-btn" style="display:none;">continue</button>
-          </div>
-        <script>const questions = [
-            {
-              type: 'multiple-choice',
-              question: 'Which continent has the most countries?',
-              options: ['Africa', 'Asia', 'Europe', 'North America'],
-              correctAnswer: 0
-            },
-            {
-              type: 'true-false',
-              question: 'Is Australia both a country and a continent?',
-              options: ['True', 'False'],
-              correctAnswer: 0
-            },
-            {
-              type: 'checkbox',
-              question: 'Select the countries located in South America:',
-              options: ['Argentina', 'Canada', 'Brazil', 'India'],
-              correctAnswers: [0, 2]
-            },
-            {
-              type: 'multiple-choice',
-              question: 'Which is the smallest continent by area?',
-              options: ['Antarctica', 'Europe', 'Australia', 'South America'],
-              correctAnswer: 2
-            },
-            {
-              type: 'true-false',
-              question: 'Is the Sahara Desert located in South America?',
-              options: ['True', 'False'],
-              correctAnswer: 1
-            },
-            {
-              type: 'checkbox',
-              question: 'Select the countries located in Europe:',
-              options: ['France', 'Japan', 'Spain', 'South Africa'],
-              correctAnswers: [0, 2]
-            },
-            {
-              type: 'multiple-choice',
-              question: 'What is the capital city of Canada?',
-              options: ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'],
-              correctAnswer: 2
-            },
-            {
-              type: 'true-false',
-              question: 'Is the Amazon River the longest river in the world?',
-              options: ['True', 'False'],
-              correctAnswer: 1
-            },
-            {
-              type: 'checkbox',
-              question: 'Select the continents:',
-              options: ['Africa', 'Greenland', 'Asia', 'Europe'],
-              correctAnswers: [0, 2, 3]
-            },
-            {
-              type: 'multiple-choice',
-              question: 'Which is the largest country by area?',
-              options: ['Canada', 'Russia', 'China', 'USA'],
-              correctAnswer: 1
-            },
-            {
-              type: 'true-false',
-              question: 'Is Egypt located in Europe?',
-              options: ['True', 'False'],
-              correctAnswer: 1
-            },
-            {
-              type: 'checkbox',
-              question: 'Select the cities that are capitals:',
-              options: ['Berlin', 'Sydney', 'Cairo', 'Mexico City'],
-              correctAnswers: [0, 2, 3]
-            },
-            {
-              type: 'multiple-choice',
-              question: 'Which continent is known as the birthplace of Western civilization?',
-              options: ['Africa', 'Europe', 'Asia', 'Australia'],
-              correctAnswer: 1
-            },
-            {
-              type: 'true-false',
-              question: 'Is Mount Everest the highest mountain in Africa?',
-              options: ['True', 'False'],
-              correctAnswer: 1
-            },
-            {
-              type: 'checkbox',
-              question: 'Select the oceans:',
-              options: ['Indian Ocean', 'Mediterranean Sea', 'Pacific Ocean', 'Caribbean Sea'],
-              correctAnswers: [0, 2]
-            },
-            {
-              type: 'multiple-choice',
-              question: 'Which continent is home to the Andes Mountains?',
-              options: ['Africa', 'North America', 'South America', 'Asia'],
-              correctAnswer: 2
-            },
-            {
-              type: 'true-false',
-              question: 'Is Greenland the largest island in the world?',
-              options: ['True', 'False'],
-              correctAnswer: 0
-            },
-            {
-              type: 'checkbox',
-              question: 'Select the landlocked countries:',
-              options: ['Bolivia', 'Peru', 'Switzerland', 'Italy'],
-              correctAnswers: [0, 2]
-            },
-            {
-              type: 'multiple-choice',
-              question: 'Which country has the highest population?',
-              options: ['USA', 'India', 'China', 'Indonesia'],
-              correctAnswer: 2
-            },
-            {
-              type: 'true-false',
-              question: 'Is Africa the second-largest continent by both population and area?',
-              options: ['True', 'False'],
-              correctAnswer: 0
-            }
-          ];
-          
-          
-          let currentQuestionIndex = 0;
-          
-          function showQuestion() {
-            const questionContainer = document.getElementById('question-container');
-            const questionElement = questionContainer.querySelector('.question');
-            const optionsElement = questionContainer.querySelector('.options');
-            const feedbackElement = questionContainer.querySelector('.feedback');
-            const nextBtn = document.getElementById('next-btn');
-          
-            // Clear previous question and feedback
-            questionElement.textContent = '';
-            optionsElement.innerHTML = '';
-            feedbackElement.textContent = '';
-            feedbackElement.className = 'feedback';
-            nextBtn.style.display = 'none';
-          
-            const currentQuestion = questions[currentQuestionIndex];
-          
-            // Set question text
-            if (currentQuestion.type !== 'image') {
-              questionElement.textContent = currentQuestion.question;
-            } else {
-              questionElement.innerHTML = `<img src="${currentQuestion.imageUrl}" alt="Flag" width="100"><br>${currentQuestion.question}`;
-            }
-          
-            // Show options
-            if (currentQuestion.type === 'multiple-choice' || currentQuestion.type === 'true-false') {
-              currentQuestion.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.textContent = option;
-                button.onclick = () => checkAnswer(index);
-                optionsElement.appendChild(button);
-              });
-            } else if (currentQuestion.type === 'checkbox') {
-              currentQuestion.options.forEach((option, index) => {
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.value = index;
-                optionsElement.appendChild(checkbox);
-                optionsElement.innerHTML += ` ${option}<br>`;
-              });
-              const submitBtn = document.createElement('button');
-              submitBtn.textContent = 'Submit';
-              submitBtn.onclick = checkCheckboxAnswers;
-              optionsElement.appendChild(submitBtn);
-            }
-          }
-          
-          function checkAnswer(selectedIndex) {
-            const currentQuestion = questions[currentQuestionIndex];
-            const feedbackElement = document.querySelector('.feedback');
-            const nextBtn = document.getElementById('next-btn');
-          
-            if (selectedIndex === currentQuestion.correctAnswer) {
-              feedbackElement.textContent = 'Correct!';
-              feedbackElement.classList.add('correct');
-            } else {
-              feedbackElement.textContent = `Incorrect! The correct answer is ${currentQuestion.options[currentQuestion.correctAnswer]}.`;
-              feedbackElement.classList.add('incorrect');
-            }
-          
-            nextBtn.style.display = 'inline-block';
-            nextBtn.onclick = () => nextQuestion();
-          }
-          
-          function checkCheckboxAnswers() {
-            const currentQuestion = questions[currentQuestionIndex];
-            const selectedAnswers = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(
-              checkbox => parseInt(checkbox.value)
-            );
-            const feedbackElement = document.querySelector('.feedback');
-            const nextBtn = document.getElementById('next-btn');
-          
-            if (JSON.stringify(selectedAnswers) === JSON.stringify(currentQuestion.correctAnswers)) {
-              feedbackElement.textContent = 'Correct!';
-              feedbackElement.classList.add('correct');
-            } else {
-              const correctOptions = currentQuestion.correctAnswers.map(i => currentQuestion.options[i]).join(', ');
-              feedbackElement.textContent = `Incorrect! The correct answers are ${correctOptions}.`;
-              feedbackElement.classList.add('incorrect');
-            }
-          
-            nextBtn.style.display = 'inline-block';
-            nextBtn.onclick = () => nextQuestion();
-          }
-          
-          function nextQuestion() {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-              showQuestion();
-            } else {
-              alert('You have completed the quiz!');
-              currentQuestionIndex = 0;
-              showQuestion();
-            }
-          }
-          
-          // Start the quiz
-          showQuestion();
-          </script>
+<div id="quizApp" class="quiz-container">
+  <!-- Questions will be dynamically inserted here -->
+</div>
+
+<!-- Survey Container (hidden initially) -->
+<div id="surveyContainer" class="quiz-container hidden">
+  <h2>How did you find our app?</h2>
+  <div class="survey-question">
+    <p>1. How would you rate your overall experience?</p>
+    <label><input type="radio" name="survey1" value="Bad"> Bad</label><br>
+    <label><input type="radio" name="survey1" value="Good"> Good</label><br>
+    <label><input type="radio" name="survey1" value="Very Good"> Very Good</label><br>
+    <label><input type="radio" name="survey1" value="Excellent"> Excellent</label>
+  </div>
+
+  <div class="survey-question">
+    <p>2. Did you find the questions interesting?</p>
+    <label><input type="radio" name="survey2" value="Yes"> Yes</label><br>
+    <label><input type="radio" name="survey2" value="No"> No</label>
+  </div>
+
+  <div class="survey-question">
+    <p>3. How would you rate the design of the app?</p>
+    <label><input type="radio" name="survey3" value="Bad"> Bad</label><br>
+    <label><input type="radio" name="survey3" value="Good"> Good</label><br>
+    <label><input type="radio" name="survey3" value="Very Good"> Very Good</label><br>
+    <label><input type="radio" name="survey3" value="Excellent"> Excellent</label>
+  </div>
+
+  <button class="continue-btn" onclick="submitSurvey()">Submit Survey</button>
+</div>
+
+<script>
+ 
+  const questions =[
+  { type: 'radio', question: 'What is the capital of France?', options: ['Paris', 'London', 'Berlin', 'Madrid'], correct: 'Paris' },
+  { type: 'radio', question: 'Which continent is Brazil located in?', options: ['Asia', 'Africa', 'South America', 'Europe'], correct: 'South America' },
+  { type: 'checkbox', question: 'Which of the following are island nations? (Select all that apply)', options: ['Japan', 'Australia', 'Russia', 'Maldives'], correct: ['Japan', 'Australia', 'Maldives'] },
+  { type: 'text', question: 'What is the largest desert in the world?', correct: 'Sahara' },
+  { type: 'radio', question: 'What is the official language of Brazil?', options: ['Spanish', 'Portuguese', 'French', 'English'], correct: 'Portuguese' },
+  { type: 'radio', question: 'What is the capital of Italy?', options: ['Rome', 'Athens', 'Madrid', 'Paris'], correct: 'Rome' },
+  { type: 'radio', question: 'Which continent is Egypt in?', options: ['Africa', 'Europe', 'Asia', 'South America'], correct: 'Africa' },
+  { type: 'text', question: 'What is the longest river in the world?', correct: 'Nile' },
+  { type: 'radio', question: 'Which is the largest ocean?', options: ['Atlantic', 'Pacific', 'Indian', 'Arctic'], correct: 'Pacific' },
+  { type: 'checkbox', question: 'Which countries are in the UK? (Select all that apply)', options: ['Scotland', 'Ireland', 'Wales', 'England'], correct: ['Scotland', 'Wales', 'England'] },
+  { type: 'radio', question: 'What is the capital of Japan?', options: ['Beijing', 'Tokyo', 'Seoul', 'Bangkok'], correct: 'Tokyo' },
+  { type: 'radio', question: 'Which country is the largest by land area?', options: ['Russia', 'Canada', 'China', 'USA'], correct: 'Russia' },
+  { type: 'text', question: 'What is the capital of Australia?', correct: 'Canberra' },
+  { type: 'radio', question: 'What is the largest continent?', options: ['Asia', 'Africa', 'Europe', 'North America'], correct: 'Asia' },
+  { type: 'checkbox', question: 'Which of the following are in North America? (Select all that apply)', options: ['Canada', 'Mexico', 'Cuba', 'Greenland'], correct: ['Canada', 'Mexico', 'Cuba', 'Greenland'] },
+  { type: 'radio', question: 'Which desert is the largest in Africa?', options: ['Kalahari', 'Sahara', 'Namib', 'Atacama'], correct: 'Sahara' },
+  { type: 'text', question: 'What is the capital of Canada?', correct: 'Ottawa' },
+  { type: 'radio', question: 'Which country is home to the Amazon rainforest?', options: ['Peru', 'Brazil', 'Venezuela', 'Colombia'], correct: 'Brazil' },
+  { type: 'radio', question: 'What is the highest mountain in the world?', options: ['K2', 'Everest', 'Kilimanjaro', 'Denali'], correct: 'Everest' },
+  { type: 'checkbox', question: 'Which are official languages of Switzerland? (Select all that apply)', options: ['German', 'Italian', 'French', 'Spanish'], correct: ['German', 'Italian', 'French'] },
+  { type: 'radio', question: 'What is the capital of Russia?', options: ['St. Petersburg', 'Moscow', 'Kazan', 'Sochi'], correct: 'Moscow' },
+  { type: 'radio', question: 'Which continent is the Sahara Desert located on?', options: ['Africa', 'Asia', 'Europe', 'South America'], correct: 'Africa' },
+  { type: 'text', question: 'What is the smallest country in the world?', correct: 'Vatican City' },
+  { type: 'radio', question: 'Which ocean is the deepest?', options: ['Atlantic', 'Pacific', 'Indian', 'Arctic'], correct: 'Pacific' },
+  { type: 'checkbox', question: 'Which countries are in South America? (Select all that apply)', options: ['Argentina', 'Chile', 'Peru', 'South Africa'], correct: ['Argentina', 'Chile', 'Peru'] },
+  { type: 'radio', question: 'What is the largest island in the world?', options: ['Greenland', 'Iceland', 'Madagascar', 'Australia'], correct: 'Greenland' },
+  { type: 'radio', question: 'What is the capital of Germany?', options: ['Berlin', 'Munich', 'Frankfurt', 'Hamburg'], correct: 'Berlin' },
+  { type: 'text', question: 'What is the capital of Mexico?', correct: 'Mexico City' },
+  { type: 'radio', question: 'Which country is the smallest by land area?', options: ['Monaco', 'Malta', 'Vatican City', 'Liechtenstein'], correct: 'Vatican City' },
+  { type: 'checkbox', question: 'Which of the following countries are landlocked? (Select all that apply)', options: ['Switzerland', 'Nepal', 'Mongolia', 'Japan'], correct: ['Switzerland', 'Nepal', 'Mongolia'] },
+  { type: 'radio', question: 'What is the capital of South Africa?', options: ['Pretoria', 'Cape Town', 'Durban', 'Johannesburg'], correct: 'Pretoria' },
+  { type: 'text', question: 'Which city is known as the “Big Apple”?', correct: 'New York' },
+  { type: 'radio', question: 'Which continent is the largest by population?', options: ['Asia', 'Africa', 'Europe', 'North America'], correct: 'Asia' },
+  { type: 'radio', question: 'Which river flows through Egypt?', options: ['Nile', 'Amazon', 'Danube', 'Mississippi'], correct: 'Nile' },
+  { type: 'checkbox', question: 'Which of the following are Nordic countries? (Select all that apply)', options: ['Norway', 'Sweden', 'Denmark', 'Finland'], correct: ['Norway', 'Sweden', 'Denmark', 'Finland'] },
+  { type: 'radio', question: 'What is the capital of India?', options: ['New Delhi', 'Mumbai', 'Kolkata', 'Chennai'], correct: 'New Delhi' },
+  { type: 'text', question: 'What is the largest freshwater lake in the world?', correct: 'Lake Superior' },
+  { type: 'radio', question: 'Which country has the most natural lakes?', options: ['Canada', 'USA', 'Finland', 'Russia'], correct: 'Canada' },
+  { type: 'checkbox', question: 'Which countries are part of Scandinavia? (Select all that apply)', options: ['Norway', 'Sweden', 'Finland', 'Denmark'], correct: ['Norway', 'Sweden', 'Denmark'] },
+  { type: 'radio', question: 'What is the capital of China?', options: ['Shanghai', 'Beijing', 'Hong Kong', 'Guangzhou'], correct: 'Beijing' },
+  { type: 'radio', question: 'Which country has the largest population?', options: ['China', 'India', 'USA', 'Indonesia'], correct: 'China' },
+  { type: 'text', question: 'What is the tallest waterfall in the world?', correct: 'Angel Falls' },
+  { type: 'radio', question: 'Which country shares the longest border with the USA?', options: ['Mexico', 'Canada', 'Cuba', 'Russia'], correct: 'Canada' },
+  { type: 'checkbox', question: 'Which countries are in the European Union? (Select all that apply)', options: ['Germany', 'France', 'Norway', 'Spain'], correct: ['Germany', 'France', 'Spain'] },
+  { type: 'radio', question: 'Which sea separates Europe and Africa?', options: ['Mediterranean', 'Red Sea', 'Black Sea', 'Baltic Sea'], correct: 'Mediterranean' },
+  { type: 'radio', question: 'What is the currency of Japan?', options: ['Yen', 'Won', 'Rupee', 'Dollar'], correct: 'Yen' },
+  { type: 'text', question: 'What is the capital of Argentina?', correct: 'Buenos Aires' },
+  { type: 'radio', question: 'What is the largest desert in Asia?', options: ['Gobi', 'Thar', 'Karakum', 'Arabian'], correct: 'Gobi' },
+  { type: 'checkbox', question: 'Which of the following countries are in the Middle East? (Select all that apply)', options: ['Saudi Arabia', 'Israel', 'Jordan', 'Greece'], correct: ['Saudi Arabia', 'Israel', 'Jordan'] },
+  { type: 'radio', question: 'Which country has the most volcanoes?', options: ['USA', 'Japan', 'Indonesia', 'Italy'], correct: 'Indonesia' },
+  { type: 'text', question: 'What is the smallest continent by land area?', correct: 'Australia' }
+];
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  function loadQuestion() {
+    const quizApp = document.getElementById('quizApp');
+    quizApp.innerHTML = ''; // Clear the container
+    const questionData = questions[currentQuestionIndex];
+
+    // Create question element
+    const questionElement = document.createElement('div');
+    questionElement.classList.add('question');
+
+    // Add question text
+    const questionText = document.createElement('p');
+    questionText.textContent = (currentQuestionIndex + 1) + '. ' + questionData.question;
+    questionElement.appendChild(questionText);
+
+    // Add options based on type
+    if (questionData.type === 'radio') {
+      const optionsDiv = document.createElement('div');
+      optionsDiv.classList.add('options');
+      questionData.options.forEach(option => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'question';
+        input.value = option;
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(option));
+        optionsDiv.appendChild(label);
+        optionsDiv.appendChild(document.createElement('br'));
+      });
+      questionElement.appendChild(optionsDiv);
+    } else if (questionData.type === 'checkbox') {
+      const optionsDiv = document.createElement('div');
+      optionsDiv.classList.add('options');
+      questionData.options.forEach(option => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.name = 'question';
+        input.value = option;
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(option));
+        optionsDiv.appendChild(label);
+        optionsDiv.appendChild(document.createElement('br'));
+      });
+      questionElement.appendChild(optionsDiv);
+    } else if (questionData.type === 'text') {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = 'question';
+      input.placeholder = 'Type your answer here';
+      questionElement.appendChild(input);
+    }
+
+    // Add submit button
+    const submitBtn = document.createElement('button');
+    submitBtn.classList.add('submit-btn');
+    submitBtn.textContent = 'Submit';
+    submitBtn.onclick = submitAnswer;
+    questionElement.appendChild(submitBtn);
+
+    // Append question to the quiz container
+    quizApp.appendChild(questionElement);
+  }
+
+  function submitAnswer() {
+    const questionData = questions[currentQuestionIndex];
+    let userAnswer = '';
+
+    if (questionData.type === 'radio') {
+      const selectedOption = document.querySelector('input[name="question"]:checked');
+      if (selectedOption) {
+        userAnswer = selectedOption.value;
+      }
+    } else if (questionData.type === 'checkbox') {
+      userAnswer = Array.from(document.querySelectorAll('input[name="question"]:checked')).map(input => input.value);
+    } else if (questionData.type === 'text') {
+      userAnswer = document.querySelector('input[name="question"]').value.trim();
+    }
+
+    let isCorrect = false;
+
+    if (questionData.type === 'checkbox') {
+      isCorrect = JSON.stringify(userAnswer) === JSON.stringify(questionData.correct);
+    } else {
+      isCorrect = userAnswer === questionData.correct;
+    }
+
+    const feedbackElement = document.createElement('div');
+    feedbackElement.classList.add('feedback');
+    if (isCorrect) {
+      feedbackElement.textContent = 'Correct!';
+      score++;
+    } else {
+      feedbackElement.classList.add('incorrect');
+      feedbackElement.textContent = `Incorrect! The correct answer was: ${questionData.correct}`;
+    }
+
+    document.querySelector('.question').appendChild(feedbackElement);
+
+    // Move to next question after delay
+    setTimeout(() => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        showSurvey();
+      }
+    }, 2000);
+  }
+
+  function showSurvey() {
+    document.getElementById('quizApp').classList.add('hidden');
+    document.getElementById('surveyContainer').classList.remove('hidden');
+  }
+
+  function submitSurvey() {
+    alert('Thank you for your feedback!');
+    window.location.reload(); // Reload the page for next session
+  }
+
+  // Load first question on page load
+  loadQuestion();
+</script>
+
+<p style="font-family: 'Arial', sans-serif; font-size: 1.2em; color: #2c3e50; line-height: 1.6; text-align: center; padding: 20px; background-color: #ecf0f1; border-radius: 10px; border: 2px solid #3498db; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 700px; margin: 20px auto;">
+  World Explorer welcomes you! Begin an incredible journey that will take you across diverse landscapes, from towering mountains to the deepest oceans. This is your chance to discover the rich history, cultures, and natural wonders that shape our world.
+</p>
+
+<p style="font-family: 'Arial', sans-serif; font-size: 1.2em; color: #2c3e50; line-height: 1.6; text-align: center; padding: 20px; background-color: #ecf0f1; border-radius: 10px; border: 2px solid #3498db; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 700px; margin: 20px auto;">
+  Click the menu to start your exploration. Whether you're fascinated by the ancient wonders of the world, the vibrant life of bustling cities, or the serene beauty of untouched landscapes, there's something here for every curious traveler.
+</p>
+
+<p style="font-family: 'Arial', sans-serif; font-size: 1.2em; color: #2c3e50; line-height: 1.6; text-align: center; padding: 20px; background-color: #ecf0f1; border-radius: 10px; border: 2px solid #3498db; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 700px; margin: 20px auto;">
+  As you move through continents and countries, you’ll uncover hidden treasures and expand your understanding of the world around you. Ready to become a true World Explorer? Let's begin the adventure!
+</p>
+
        
 </main> 
+<div class=mask1>
+  <!-- Background Images -->
+  
+  <img src="airplane3.gif" alt="Airplane" class="background-element airplane">
+  <img src="airplane3.gif" alt="Airplane" class="background-element airplan">
+  <img src="airplane3.gif" alt="airplane" class="background-element globe4">
+</div> 
     <!-- Footer -->
     <footer>
  <p>&copy; 2024  {IA} World Explorer.</p>
  </footer>
 
-<div class=mask1>
-    <!-- Background Images -->
-    
-    <img src="airplane3.gif" alt="Airplane" class="background-element airplane">
-    <img src="airplane3.gif" alt="Airplane" class="background-element airplan">
-    <img src="airplane3.gif" alt="airplane" class="background-element globe4">
-</div>   
+  
 <script>
     // Service Worker Registration
     if ('serviceWorker' in navigator) {

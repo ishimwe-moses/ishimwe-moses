@@ -118,23 +118,27 @@ a {
   background-color: #5a662a;
 }
 
-/* Image Styles */
+.result-item {
+  padding: 10px;
+  background-color: #f0f2f5;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  position: -webkit-sticky; /* For Safari */
+  position: sticky; /* For other browsers */
+  top: 0;           /* Will stick to the top of the page when scrolled to this point */
+  z-index: 1000;    /* Keep it above other elements */
+}
+
 .result-item img {
   width: 60px;
   height: auto;
   display: inline-block;
   margin-right: 10px;
   border-radius: 5px;
-}
-
-.result-item {
-  padding: 10px;
-  background-color: #f0f2f5;
-  border-radius: 5px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .result-item button.close-btn {
@@ -150,6 +154,7 @@ a {
 .result-item button.close-btn:hover {
   background-color: #5a662a;
 }
+
 
 /* Airplane Animation */
 .background-element {

@@ -120,7 +120,7 @@ a {
 
 .result-item {
   padding: 10px;
-  background-color: #f0f2f5;
+  background-color: #d7e45e;
   border-radius: 5px;
   margin-top: 10px;
   display: flex;
@@ -134,7 +134,7 @@ a {
 }
 
 .result-item img {
-  width: 60px;
+  width: 70px;
   height: auto;
   display: inline-block;
   margin-right: 10px;
@@ -142,7 +142,7 @@ a {
 }
 
 .result-item button.close-btn {
-  background-color: #394111;
+  background-color: #0fdd0c;
   color: white;
   border: none;
   font-size: 16px;
@@ -152,7 +152,7 @@ a {
 }
 
 .result-item button.close-btn:hover {
-  background-color: #5a662a;
+  background-color: #3808e3;
 }
 
 

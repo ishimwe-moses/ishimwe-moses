@@ -100,63 +100,6 @@ button:active {
 #correct-answers p {
     margin: 5px 0;
 }
-/* Example styles for new sections */
-#login-section, #create-account-section {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(7, 195, 101, 0.1);
-}
-
-#login-section header, #create-account-section header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#login-section form div, #create-account-section form div {
-    margin-bottom: 15px;
-}
-
-#login-section form label, #create-account-section form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#login-section form input, #create-account-section form input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-#login-section button, #create-account-section button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#login-section button:hover, #create-account-section button:hover {
-    background-color: #0056b3;
-}
-
-#login-error, #create-success {
-    text-align: center;
-    font-weight: bold;
-}
-
-#login-error {
-    color: red;
-}
-
-#create-success {
-    color: rgb(18, 219, 18);
-}
-
 #description {
     margin-bottom: 20px;
     color:#f9f9f9
@@ -186,14 +129,14 @@ button:active {
 }
 
 .introduction{ font-family: Arial, sans-serif; 
-    color: #e3d5d5; 
+    color: black; 
     line-height: 1.0; 
     margin: 15px; padding: 12px;
     border-radius: 10px; 
-    background-color: #e1f0ef;}
+    background-color: white;}
     body {
         font-family: Arial, sans-serif;
-        background-color: rgb(91, 137, 147);
+        background-color: white;
     }
 
     .header {
@@ -363,63 +306,6 @@ button:active {
 #correct-answers p {
     margin: 5px 0;
 }
-/* Example styles for new sections */
-#login-section, #create-account-section {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(7, 195, 101, 0.1);
-}
-
-#login-section header, #create-account-section header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#login-section form div, #create-account-section form div {
-    margin-bottom: 15px;
-}
-
-#login-section form label, #create-account-section form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#login-section form input, #create-account-section form input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-#login-section button, #create-account-section button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#login-section button:hover, #create-account-section button:hover {
-    background-color: #0056b3;
-}
-
-#login-error, #create-success {
-    text-align: center;
-    font-weight: bold;
-}
-
-#login-error {
-    color: red;
-}
-
-#create-success {
-    color: rgb(18, 219, 18);
-}
-
 #description {
     margin-bottom: 20px;
 }

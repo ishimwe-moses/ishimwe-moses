@@ -1,166 +1,1791 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Explore the world</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<div class="header">
-    <div class="menu" onclick="toggleMenu()">&#9776;</div>
-    <h1>Let's Explore Africa</h1>
-</div>
-
-<div id="dropdown" class="dropdown">
-    <a href="index.html">Home</a>
-    <a href="africa day1.html">Day 1</a>
-    <a href="africa day2.html">Day 2</a>
-    <a href="africa day3.html">Day 3</a>
-    <a href="africa quiz1.html">Quiz 1</a>
-    <a href="africa day4.html">Day 4</a>
-    <a href="africa day5.html">Day 5</a>
-    <a href="africa day6.html">Day 6</a>
-    <a href="africa quiz2.html">Quiz 2</a>
-    <a href="africa day7.html">Day 7</a>
-    <a href="africa day8.html">day 8</a>
-    <a href="africa day9.html">day 9</a>
-    <a href="africa quiz3.html">Quiz 3</a>
-    <a href="africa general test.html">General-test</a>
-    <a href="africa exam.html">exam</a>
-   
-</div>
-<main>
+    <title>Explore Africa the world!</title>
     
-            <section id="continents">
-                <div class="introduction">
-                    <p><strong>Africa</strong> is the <em>second-largest</em> continent, both by land area and population, with 54 recognized countries.</p>
-                    <p>The continent is rich in <strong>natural resources</strong>, including vast reserves of minerals like diamonds, gold, and oil.</p>
-                    <p>Africa is home to the <strong>Sahara</strong>, the world's largest hot desert, and the <strong>Nile River</strong>, the longest river on Earth.</p>
-                    <p>It has a diverse range of ecosystems, from tropical rainforests to savannas and deserts, hosting unique wildlife such as lions, elephants, and gorillas.</p>
-                    <p>Africa is the <em>cradle of humankind</em>, with the earliest evidence of human existence found in Ethiopia.</p>
-                    <p>The continent has a rich cultural heritage, with thousands of ethnic groups, languages, and traditional practices.</p>
-                    <p>In recent decades, Africa has seen rapid urbanization and economic growth, with several countries emerging as regional powerhouses.</p>
-                </div>
-                <div><p id="description">Think you know Africa? Match the cities with their correct countries and find out!.</p></div>
-                <div class="buttons">
-                    <button onclick="chooseContinent('Africa')">GeoMatch</button>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="srylesheet" href="day.css">
+    
+
+    
+</head>
+
+<body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#" onclick="goToSection(0)">Africa</a>
+        <a href="#" onclick="goToSection(1)">Day 1</a>
+        <a href="#" onclick="goToSection(2)">Day 2</a>
+        <a href="#" onclick="goToSection(7)">Day 3</a>
+        <a href="#" onclick="goToSection(22)">Day 4</a>
+        <a href="#" onclick="goToSection(27)">Day 5</a>
+        <a href="#" onclick="goToSection(33)">Day 6</a>
+        <a href="#" onclick="goToSection(39)">Day 7</a>
+        <a href="#" onclick="goToSection(52)">Day 8</a>
+        <a href="#" onclick="goToSection(58)">Summary</a>
+
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore Africa</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="active" style="font-family: Bahnschrift; font-size: 16px;">
+            <h2 style="color: #2E8B57; font-size: 24px; text-align: center;">Welcome to Africa 🌍</h2>
+            <p><strong>Africa</strong> is the <em>second-largest</em> continent both in size and population, with 54 recognized countries. It is rich in <strong>natural resources</strong> such as diamonds, gold, and oil, and is home to iconic landmarks like the <strong>Sahara</strong>, the world's largest hot desert, and the <strong>Nile River</strong>, the longest river on Earth.</p>
+            <p>This diverse continent features ecosystems that range from lush rainforests to vast savannas, providing habitats for extraordinary wildlife such as 🦁 lions, 🐘 elephants, and 🦍 gorillas. Africa is also known as the <em>cradle of humankind</em>, with the earliest evidence of human life discovered in Ethiopia.</p>
+            <p>Africa's cultural richness is equally impressive, with thousands of ethnic groups, languages, and traditions. In recent decades, the continent has experienced rapid urbanization and economic growth, with several countries becoming key regional powerhouses.</p>
+        </section>
+        <section style="font-family: Bahnschrift; font-size: 16px; padding: 20px;">
+            <!-- Day 1: Introduction to Africa -->
+            <h2 style="color: #2E8B57; text-align: center;">Day 1: Introduction to Africa</h2>
+            <p>Africa is big and beautiful. It is the second-largest continent on Earth, covering about 30.3 million square kilometers. Africa has many different landscapes, like deserts, rainforests, savannas, and mountains.</p>
+            <p>The Sahara Desert is the world's largest hot desert, and the Congo Rainforest is the second-largest tropical rainforest.</p>
+            
+            <h3 style="color: #2E8B57;">People and Languages</h3>
+            <p>Africa is home to over 1.3 billion people who speak more than 2,000 languages. This makes Africa a very diverse place with many different cultures, music, art, and traditions.</p>
+        
+            <h3 style="color: #2E8B57;">Old Man "Lucy"</h3>
+            <p>A long time ago, scientists found the bones of a very old man named "Lucy" in East Africa. This shows that Africa is the place where humans first lived.</p>
+        
+            <h3 style="color: #2E8B57;">Treasures of the Earth</h3>
+            <p>Africa has many natural treasures, like gold, diamonds, oil, and gas. These resources help many African countries grow and develop.</p>
+        
+            <h3 style="color: #2E8B57;">Challenges and Hopes</h3>
+            <p>Africa faces some challenges like poverty, political instability, and health issues like malaria and HIV/AIDS. But many African countries are also growing fast and making progress in education and healthcare.</p>
+        
+            <h3 style="color: #2E8B57;">Slavery</h3>
+            <p>A long time ago, many Africans were taken away from their homes and sold as slaves. This was a very sad and difficult time in Africa's history. But today, Africa is moving forward with hope and strength.</p>
+        </section>
+        
+        <!-- Day 2: Major Physical Features of Africa -->
+        <section style="font-family: Bahnschrift; font-size: 16px; padding: 20px;">
+            <h2 style="color: #2E8B57; text-align: center;">Day 2: Major Physical Features of Africa</h2>
+            <p>Africa is a continent with diverse physical features that include lakes, rivers, mountains, and more.</p>
+        
+            <!-- Lakes Section -->
+            
+                <h3 style="color: #2E8B57;">Lakes</h3>
+                <p>Some of the largest lakes in the world are found in Africa, including Lake Victoria, the largest lake in Africa, and Lake Tanganyika, the second deepest in the world.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="flex: 1;">
+                        <img src="lake-victoria.jpeg" alt="Lake Victoria" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Lake Victoria</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="lake-tanganyika.jpeg" alt="Lake Tanganyika" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Lake Tanganyika</div>
+                    </div>
                 </div>
             </section>
         
-            <section id="quiz" style="display: none;">
-                <h2>You want to prove that you know <span id="chosen-continent"></span></h2>
-                <div class="introduction">
-                    <p><strong>Africa</strong> is a diverse and vibrant continent, home to 54 recognized countries, each with its unique capital city.</p>
-                    <p>This quiz will test your knowledge of African geography, specifically the capital cities of these countries.</p>
-                    <p>Africa's capitals range from bustling metropolises like <strong>Cairo</strong> in Egypt to serene cities like <strong>Maseru</strong> in Lesotho.</p>
-                    <p>Many of these capitals are not only political centers but also hubs of culture, history, and economic activity.</p>
-                    <p>Whether it's the ancient history of <strong>Addis Ababa</strong> in Ethiopia or the modern skyline of <strong>Nairobi</strong> in Kenya, each capital has a story to tell.</p>
-                    <p>As you match each country with its capital, consider the rich diversity and the unique characteristics that make each city special.</p>
-                    <p>Good luck, and enjoy exploring the fascinating capitals of Africa!</p>
+            <!-- Rivers Section -->
+            <section>
+                <h3 style="color: #2E8B57;">Rivers</h3>
+                <p>The Nile River, which many believe originates in Rwanda, is the longest river in the world. Other significant rivers include the Congo River and the Niger River.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="flex: 1;">
+                        <img src="nile-river.jpeg" alt="Nile River" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Nile River</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="congo-river.jpeg" alt="Congo River" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Congo River</div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Mountains Section -->
+            <section>
+                <h3 style="color: #2E8B57;">Mountains</h3>
+                <p>Africa has several major mountain ranges, including the Atlas Mountains in the north and the Drakensberg Mountains in the south. Mount Kilimanjaro in Tanzania is the highest peak in Africa.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="flex: 1;">
+                        <img src="mount-kilimanjaro.jpeg" alt="Mount Kilimanjaro" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Mount Kilimanjaro</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="atlas-mountains.jpeg" alt="Atlas Mountains" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Atlas Mountains</div>
+                    </div>
+                </div>
+            
+            <!-- Great Rift Valley Section -->
+            
+                <h3 style="color: #2E8B57;">Great Rift Valley</h3>
+                <p>The Great Rift Valley is a significant geological feature that runs from Lebanon to Mozambique, passing through East Africa.</p>
+                <div style="display: flex;">
+                    <img src="great-rift-valley.jpeg" alt="Great Rift Valley" style="width: 100%; height: auto;">
+                </div>
+                <div class="image-note" style="text-align: center;">Great Rift Valley</div>
+            </section>
+        
+            <!-- Oceans Section -->
+            <section>
+                <h3 style="color: #2E8B57;">Oceans</h3>
+                <p>Africa is surrounded by several major bodies of water, including the Mediterranean Sea to the north, the Red Sea to the northeast, the Indian Ocean to the southeast, and the Atlantic Ocean to the west.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="flex: 1;">
+                        <img src="indian-ocean.jpeg" alt="Indian Ocean" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Indian Ocean</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="atlantic-ocean.jpeg" alt="Atlantic Ocean" style="width: 100%; height: auto;">
+                        <div class="image-note" style="text-align: center;">Atlantic Ocean</div>
+                    </div>
+                </div>
+            
+        </section>
+        
+        <!-- Other Sections on Historical Figures and Real Facts -->
+        <section style="font-family: Bahnschrift; font-size: 16px; padding: 20px;">
+            <h3 style="color: #2E8B57;">Historical Figures</h3>
+            <p>Africa has a rich history with many notable figures, such as Nelson Mandela, who played a key role in ending apartheid in South Africa.</p>
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <img src="nelson-mandela.jpeg" alt="Nelson Mandela" style="width: 100%; height: auto;">
+                    <div class="image-note" style="text-align: center;">Nelson Mandela</div>
+                </div>
+                <div style="flex: 1;">
+                    <img src="african-leader.jpeg" alt="African Leader" style="width: 100%; height: auto;">
+                    <div class="image-note" style="text-align: center;">Prominent African Leaders</div>
+                </div>
+            </div>
+        
+            <h3 style="color: #2E8B57;">Real Facts</h3>
+            <p>Africa is known for its rich biodiversity, including numerous species of flora and fauna found nowhere else on Earth. It is also the birthplace of humanity, with evidence of the earliest humans found on this continent.</p>
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <img src="african-wildlife.jpeg" alt="African Wildlife" style="width: 100%; height: auto;">
+                    <div class="image-note" style="text-align: center;">African Wildlife</div>
+                </div>
+                <div style="flex: 1;">
+                    <img src="africa-heritage.jpeg" alt="Africa Heritage" style="width: 100%; height: auto;">
+                    <div class="image-note" style="text-align: center;">Africa Heritage</div>
+                </div>
+            </div>
+        </section>
+                
+       
+
+        <section>
+            <h2>🌍 Day 3: Exploring East Africa</h2>
+            <h3 style="color: #2E8B57;">Introduction to East Africa</h3>
+            <p>East Africa is a beautiful region with many different countries. It's famous for its stunning landscapes, from tall mountains to deep lakes. The people of East Africa have rich cultures and histories, making the area very special.</p>
+        
+            <h3 style="color: #2E8B57;">How Many Countries in East Africa?</h3>
+            <p>There are 13 countries in East Africa, including well-known ones like Kenya, Tanzania, and Uganda. Each country has its own unique culture and attractions.</p>
+        
+            <h3 style="color: #2E8B57;">What is the Biggest Country in East Africa?</h3>
+            <p>The largest country in East Africa by area is Tanzania, known for its huge national parks and Mount Kilimanjaro, Africa's highest mountain.</p>
+        
+            <h3 style="color: #2E8B57;">Main Touristic Areas in East Africa</h3>
+            <p>East Africa is famous for its wildlife and natural beauty. Popular touristic areas include:</p>
+            <ul>
+                <li><strong>Serengeti National Park (Tanzania)</strong>: Famous for the Great Migration of wildebeest.</li>
+                <li><strong>Mount Kilimanjaro (Tanzania)</strong>: The highest mountain in Africa.</li>
+                <li><strong>Maasai Mara National Reserve (Kenya)</strong>: Known for its lions and other wildlife.</li>
+                <li><strong>Lake Victoria</strong>: The largest lake in Africa, shared by Kenya, Uganda, and Tanzania.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3 style="color: #2E8B57;">🌍 Countries, Flags, and Capital Cities of East Africa</h3>
+            <table>
+                <tr>
+                    <th>Country</th>
+                    <th>Flag</th>
+                    <th>Capital City</th>
+                </tr>
+                <tr>
+                    <td>Kenya 🇰🇪</td>
+                    <td><img src="flag-of-kenya.jpeg" alt="Kenya Flag"></td>
+                    <td>Nairobi</td>
+                </tr>
+                <tr>
+                    <td>Tanzania 🇹🇿</td>
+                    <td><img src="flag-of-tanzania.jpeg" alt="Tanzania Flag"></td>
+                    <td>Dodoma</td>
+                </tr>
+                <tr>
+                    <td>Uganda 🇺🇬</td>
+                    <td><img src="flag-of-uganda.jpeg" alt="Uganda Flag"></td>
+                    <td>Kampala</td>
+                </tr>
+                <tr>
+                    <td>Rwanda 🇷🇼</td>
+                    <td><img src="flag-of-rwanda.jpeg" alt="Rwanda Flag"></td>
+                    <td>Kigali</td>
+                </tr>
+                <tr>
+                    <td>Burundi 🇧🇮</td>
+                    <td><img src="flag-of-burundi.jpeg" alt="Burundi Flag"></td>
+                    <td>Gitega</td>
+                </tr>
+                <tr>
+                    <td>South Sudan 🇸🇸</td>
+                    <td><img src="flag-of-south-sudan.jpeg" alt="South Sudan Flag"></td>
+                    <td>Juba</td>
+                </tr>
+                <tr>
+                    <td>Ethiopia 🇪🇹</td>
+                    <td><img src="flag-of-ethiopia.jpeg" alt="Ethiopia Flag"></td>
+                    <td>Addis Ababa</td>
+                </tr>
+                <tr>
+                    <td>Somalia 🇸🇴</td>
+                    <td><img src="flag-of-somalia.jpeg" alt="Somalia Flag"></td>
+                    <td>Mogadishu</td>
+                </tr>
+                <tr>
+                    <td>Eritrea 🇪🇷</td>
+                    <td><img src="flag-of-eritrea.jpeg" alt="Eritrea Flag"></td>
+                    <td>Asmara</td>
+                </tr>
+                <tr>
+                    <td>Djibouti 🇩🇯</td>
+                    <td><img src="flag-of-djibouti.jpeg" alt="Djibouti Flag"></td>
+                    <td>Djibouti City</td>
+                </tr>
+                <tr>
+                    <td>Comoros 🇰🇲</td>
+                    <td><img src="flag-of-comoros.jpeg" alt="Comoros Flag"></td>
+                    <td>Moroni</td>
+                </tr>
+                <tr>
+                    <td>Seychelles 🇸🇨</td>
+                    <td><img src="flag-of-seychelles.jpeg" alt="Seychelles Flag"></td>
+                    <td>Victoria</td>
+                </tr>
+                <tr>
+                    <td>Madagascar 🇲🇬</td>
+                    <td><img src="flag-of-madagascar.jpeg" alt="Madagascar Flag"></td>
+                    <td>Antananarivo</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+        <h3>🎉 Culture and Languages</h3>
+        <p>East Africa is rich in culture and languages. Each country has its own traditions, music, dances, and festivals. Swahili is a common language spoken in many East African countries like Kenya and Tanzania. The region is also known for colorful festivals and unique traditional clothing.</p>
+    
+      
+            <h3>🇷🇼 Rwanda</h3>
+            <p><strong>Introduction</strong>: Rwanda, the "Land of a Thousand Hills," is known for its mountainous terrain. The country has experienced a remarkable transformation in recent years.</p>
+            <p><strong>Military Strength</strong>: Rwanda has a disciplined military that plays a big role in peacekeeping missions across Africa.</p>
+            <p><strong>Notable Figure</strong>: President Paul Kagame is praised for his leadership in rebuilding the country.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Kigali Convention Centre</strong>: A modern architectural marvel.</li>
+                <li><strong>Nyungwe Forest National Park</strong>: A large mountain rainforest, home to chimpanzees.</li>
+                <li><strong>Amahoro National Stadium</strong>: Rwanda’s largest stadium for sports and events.</li>
+            </ul>
+            <p><strong>Kigali</strong>: Kigali, the capital, is one of the cleanest and safest cities in Africa.</p>
+            <img src="kigali-convention-center.jpeg" alt="Kigali Convention Centre" class="main-image">
+            <div class="image-note">Kigali Convention Centre</div>
+            <img src="amahoro-stadium.jpeg" alt="Amahoro Stadium" class="main-image">
+            <div class="image-note">Amahoro Stadium</div>
+        </section>
+
+        <section>
+            <h3>Kenya</h3>
+            <p><strong>Kenya</strong>: <br>Kenya is known for its diverse landscapes and rich cultural heritage. It is a major tourist destination with iconic wildlife reserves and beautiful beaches.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Maasai Mara</strong>: Renowned for its lion population and annual wildebeest migration.</li>
+                <li><strong>Mount Kenya</strong>: The second-highest peak in Africa, ideal for trekking.</li>
+            </ul>
+            <p><strong>KENYA</strong>: Kenya's capital city is called Nairobi, is a vibrant city that serves as a gateway to the country’s natural wonders.</p>
+            <img src="maasai-mara.jpeg" alt="Maasai Mara" class="main-image">
+            <div class="image-note">Maasai Mara in kenya</div>
+            <img src="mount-kenya.jpeg" alt="Mount Kenya" class="main-image">
+            <div class="image-note"> Mount Kenya in Kenya</div>
+        </section>
+        
+        <section>
+            <h3>Tanzania</h3>
+            <p><strong>TANZANIA</strong>: <br>Tanzania is home to some of Africa’s most famous national parks and Mount Kilimanjaro, the continent’s highest peak.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Serengeti National Park</strong>: Famous for the Great Migration of wildebeest and zebras.</li>
+                <li><strong>Zanzibar</strong>: An exotic island with beautiful beaches and rich history.</li>
+            </ul>
+            <p><strong>Notes</strong>: Dodoma, the capital, is the political hub, while Dar es Salaam remains the major economic center.</p>
+            <img src="serengeti-national-park.jpeg" alt="Serengeti National Park" class="main-image">
+            <div class="image-note">Serengeti National Park </div>
+            <img src="zanzibar-beach.jpeg" alt="Zanzibar Beach" class="main-image">
+            <div class="image-note">Zanzibar Beach in Tanzania</div>
+        </section>
+        
+        <section>
+            <h3>Uganda</h3>
+            <p><strong>Introduction</strong>: Uganda is known for its stunning landscapes, including the source of the Nile River and mountain gorillas.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Bwindi Impenetrable Forest</strong>: A sanctuary for endangered mountain gorillas.</li>
+                <li><strong>Lake Victoria</strong>: The largest lake in Africa, shared with neighboring countries.</li>
+            </ul>
+            <p><strong>Notes</strong>: Kampala, the capital, is the cultural and political heart of Uganda.</p>
+            <img src="bwindi-impenetrable-forest.jpeg" alt="Bwindi Impenetrable Forest" class="main-image">
+            <div class="image-note">Bwindi Impenetrable Forest </div>
+            <img src="lake-victoria.jpeg" alt="Lake Victoria" class="main-image">
+            <div class="image-note"> Lake Victoria in Uganda</div>
+        </section>
+        
+        <section>
+            <h3>Burundi</h3>
+            <p><strong>Introduction</strong>: Burundi is a small country with a rich cultural heritage, beautiful landscapes, and a tumultuous history.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Lake Tanganyika</strong>: The world’s second-deepest lake, ideal for fishing and exploring.</li>
+                <li><strong>Kibira National Park</strong>: A protected area home to various wildlife species.</li>
+            </ul>
+            <p><strong>Notes</strong>: Gitega, the new capital, was designated to promote decentralization and national unity.</p>
+            <img src="lake-tanganyika.jpeg" alt="Lake Tanganyika" class="main-image">
+            <div class="image-note">Lake Tanganyika</div>
+            <img src="kibira-national-park.jpeg" alt="Kibira National Park" class="main-image">
+            <div class="image-note">Kibira National Park in Burundi</div>
+        </section>
+        
+        <section>
+            <h3>South Sudan</h3>
+            <p><strong>Introduction</strong>: South Sudan, the world’s youngest nation, gained independence in 2011. It is rich in cultural diversity and natural resources.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Sudd Swamp</strong>: One of the largest wetlands in the world, crucial for biodiversity.</li>
+                <li><strong>Nimule National Park</strong>: Offers a unique wildlife experience along the White Nile.</li>
+            </ul>
+            <p><strong>Notes</strong>: Juba, the capital, is a rapidly growing city, despite the ongoing challenges of nation-building.</p>
+            <img src="sudd-swamp.jpeg" alt="Sudd Swamp" class="main-image">
+            <div class="image-note">Sudd Swamp </div>
+            <img src="nimule-national-park.jpeg" alt="Nimule National Park" class="main-image">
+            <div class="image-note">Nimule National Park in South Sudan</div>
+        </section>
+        
+        <section>
+            <h3>Ethiopia</h3>
+            <p><strong>Introduction</strong>: Ethiopia is one of the oldest nations in the world, with a rich history and diverse cultures. It’s known for its ancient monuments and rugged landscapes.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Lalibela</strong>: Famous for its rock-hewn churches, a UNESCO World Heritage site.</li>
+                <li><strong>Simien Mountains</strong>: A breathtaking range that offers trekking and wildlife viewing.</li>
+            </ul>
+            <p><strong>Notes</strong>: Addis Ababa, the capital, is the political and diplomatic hub of Africa, hosting the African Union’s headquarters.</p>
+            <img src="lalibela-churches.jpeg" alt="Lalibela Churches" class="main-image">
+            <div class="image-note">Lalibela Churches </div>
+            <img src="simien-mountains.jpeg" alt="Simien Mountains" class="main-image">
+            <div class="image-note">Simien Mountains in Ethiopia</div>
+        </section>
+        
+        <section>
+            <h3>Somalia</h3>
+            <p><strong>Introduction</strong>: Somalia, located on the Horn of Africa, is known for its long coastline, rich maritime history, and resilient people.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Laas Geel</strong>: Ancient rock art dating back thousands of years.</li>
+                <li><strong>Mogadishu</strong>: The capital, with its historic sites and beautiful beaches.</li>
+            </ul>
+            <p><strong>Notes</strong>: Despite its challenges, Somalia has a vibrant culture and a strong sense of community.</p>
+            <img src="laas-geel.jpeg" alt="Laas Geel" class="main-image">
+            <div class="image-note">Laas Geel </div>
+            <img src="mogadishu-beach.jpeg" alt="Mogadishu Beach" class="main-image">
+            <div class="image-note"> Mogadishu Beach in Somalia</div>
+        </section>
+        
+        <section>
+            <h3>Eritrea</h3>
+            <p><strong>Introduction</strong>: Eritrea, located in the Horn of Africa, has a unique blend of African and Mediterranean influences.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Asmara</strong>: The capital, known for its well-preserved colonial Italian architecture.</li>
+                <li><strong>Dahlak Archipelago</strong>: A group of islands in the Red Sea, ideal for diving and snorkeling.</li>
+            </ul>
+            <p><strong>Notes</strong>: Eritrea has a long coastline along the Red Sea, making it strategically significant.</p>
+            <img src="asmara-architecture.jpeg" alt="Asmara Architecture" class="main-image">
+            <div class="image-note">Asmara Architecture </div>
+            <img src="dahlak-archipelago.jpeg" alt="Dahlak Archipelago" class="main-image">
+            <div class="image-note"> Dahlak Archipelago in Eritrea</div>
+        </section>
+        
+        <section>
+            <h3>Djibouti</h3>
+            <p><strong>Introduction</strong>: Djibouti is a small but strategically important country located at the crossroads of Africa and the Middle East.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Lake Assal</strong>: The lowest point in Africa and one of the saltiest bodies of water in the world.</li>
+                <li><strong>Gulf of Tadjoura</strong>: Known for its coral reefs and marine life.</li>
+            </ul>
+            <p><strong>Notes</strong>: Djibouti City, the capital, is a hub for international shipping and military presence.</p>
+            <img src="lake-assal.jpeg" alt="Lake Assal" class="main-image">
+            <div class="image-note">Lake Assal i</div>
+            <img src="gulf-of-tadjoura.jpeg" alt="Gulf of Tadjoura" class="main-image">
+            <div class="image-note">Gulf of Tadjoura in Djibouti</div>
+        </section>
+        
+        <section>
+            <h3>Comoros</h3>
+            <p><strong>Introduction</strong>: The Comoros is a small island nation in the Indian Ocean, known for its beautiful beaches, volcanic mountains, and rich culture.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Mount Karthala</strong>: An active volcano and the highest point in the Comoros.</li>
+                <li><strong>Mitsamiouli Beach</strong>: A pristine beach popular for swimming and snorkeling.</li>
+            </ul>
+            <p><strong>Notes</strong>: Moroni, the capital, is a charming city with a mix of African, Arab, and French influences.</p>
+            <img src="mount-karthala.jpeg" alt="Mount Karthala" class="main-image">
+            <div class="image-note">Mount Karthala </div>
+            <img src="mitsamiouli-beach.jpeg" alt="Mitsamiouli Beach" class="main-image">
+            <div class="image-note">Mitsamiouli Beach in the Comoros</div>
+        </section>
+        
+        <section>
+            <h3>Seychelles</h3>
+            <p><strong>Introduction</strong>: Seychelles is an archipelago of 115 islands in the Indian Ocean, known for its beautiful beaches, coral reefs, and nature reserves.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Anse Source d'Argent</strong>: One of the most photographed beaches in the world.</li>
+                <li><strong>Vallée de Mai</strong>: A UNESCO World Heritage site home to the famous Coco de Mer palm.</li>
+            </ul>
+            <p><strong>Notes</strong>: Victoria, the capital, is one of the smallest capitals in the world, offering a relaxed and picturesque setting.</p>
+            <img src="anse-source-dargent.jpeg" alt="Anse Source d'Argent" class="main-image">
+            <div class="image-note">Anse Source d'Argent</div>
+            <img src="vallee-de-mai.jpeg" alt="Vallée de Mai" class="main-image">
+            <div class="image-note">Vallée de Mai in Seychelles</div>
+        </section>
+        
+        <section>
+            <h3>Madagascar</h3>
+            <p><strong>Introduction</strong>: Madagascar is the fourth largest island in the world, known for its unique wildlife and biodiversity.</p>
+            <p><strong>Key Attractions</strong>:</p>
+            <ul>
+                <li><strong>Avenue of the Baobabs</strong>: A famous group of ancient baobab trees.</li>
+                <li><strong>Andasibe-Mantadia National Park</strong>: Home to various lemur species and other endemic wildlife.</li>
+            </ul>
+            <p><strong>Notes</strong>: Antananarivo, the capital, is the political and cultural center of Madagascar.</p>
+            <img src="avenue-of-the-baobabs.jpeg" alt="Avenue of the Baobabs" class="main-image">
+            <div class="image-note">Avenue of the Baobabs </div>
+            <img src="andasibe-mantadia-park.jpeg" alt="Andasibe-Mantadia National Park" class="main-image">
+            <div class="image-note">Andasibe-Mantadia National Park in Madagascar</div>
+        </section>
+
+        <section><!--section 22-->
+            <h2>Day 4: Exploring West Africa</h2>
+            <h3>Introduction to West Africa</h3>
+            <p>West Africa is a lively and colorful part of Africa. It's famous for its music, dances, and festivals. People here are known for their warm hospitality and rich traditions.</p>
+
+            <img src="cape-coast-castle.jpeg" alt="Cape Coast Castle" class="main-image">
+            <div class="image-note">Cape Coast Castle in Ghana is a UNESCO World Heritage site and played a significant role in the transatlantic slave trade.</div>
+
+            <h3>How Many Countries in West Africa?</h3>
+            <p>There are 16 countries in West Africa. Some of the well-known countries include Nigeria, Ghana, and Senegal. Each of these countries has its own unique culture and history.</p>
+
+            <h3>What is the Biggest Country in West Africa?</h3>
+            <p>The biggest country in West Africa by area is Niger. However, Nigeria has the largest population and is very influential in the region.</p>
+
+            <img src="yankari-national-park.jpeg" alt="Yankari National Park" class="main-image">
+            <div class="image-note">Yankari National Park in Nigeria is famous for its diverse wildlife, including elephants and baboons.</div>
+        </section>
+        <section>
+            <h3>Main Touristic Areas in West Africa</h3>
+            <p>West Africa has many exciting places to visit. Here are some popular touristic areas:</p>
+            <ul>
+                <li><strong>Cape Coast Castle (Ghana)</strong>: A historic castle that played a role in the transatlantic slave trade.</li>
+                <li><strong>Djenne (Mali)</strong>: Known for its beautiful mud-brick architecture.</li>
+                <li><strong>Yankari National Park (Nigeria)</strong>: A wildlife park with lots of animals like elephants and baboons.</li>
+                <li><strong>Lake Volta (Ghana)</strong>: One of the largest man-made lakes in the world.</li>
+            </ul>
+        </section>
+
+        <section>
+            
+            <h3>Countries, Their Flags, and Capital Cities in West Africa</h3>
+            <table>
+                <tr>
+                    <th>Country</th>
+                    <th>Flag</th>
+                    <th>Capital City</th>
+                </tr>
+                <tr>
+                    <td>Nigeria</td>
+                    <td><img src="flag-of-nigeria.jpeg" alt="Nigeria Flag"></td>
+                    <td>Abuja</td>
+                </tr>
+                <tr>
+                    <td>Ghana</td>
+                    <td><img src="flag-of-ghana.jpeg" alt="Ghana Flag"></td>
+                    <td>Accra</td>
+                </tr>
+                <tr>
+                    <td>Senegal</td>
+                    <td><img src="flag-of-senegal.jpeg" alt="Senegal Flag"></td>
+                    <td>Dakar</td>
+                </tr>
+                <tr>
+                    <td>Ivory Coast</td>
+                    <td><img src="flag-of-ivory-coast.jpeg" alt="Ivory Coast Flag"></td>
+                    <td>Yamoussoukro</td>
+                </tr>
+                <tr>
+                    <td>Mali</td>
+                    <td><img src="flag-of-mali.jpeg" alt="Mali Flag"></td>
+                    <td>Bamako</td>
+                </tr>
+                <tr>
+                    <td>Niger</td>
+                    <td><img src="flag-of-niger.jpeg" alt="Niger Flag"></td>
+                    <td>Niamey</td>
+                </tr>
+                <tr>
+                    <td>Burkina Faso</td>
+                    <td><img src="flag-of-burkina-faso.jpeg" alt="Burkina Faso Flag"></td>
+                    <td>Ouagadougou</td>
+                </tr>
+                <tr>
+                    <td>Guinea</td>
+                    <td><img src="flag-of-guinea.jpeg" alt="Guinea Flag"></td>
+                    <td>Conakry</td>
+                </tr>
+                <tr>
+                    <td>Benin</td>
+                    <td><img src="flag-of-benin.jpeg" alt="Benin Flag"></td>
+                    <td>Porto-Novo</td>
+                </tr>
+                <tr>
+                    <td>Sierra Leone</td>
+                    <td><img src="flag-of-sierra-leone.jpeg" alt="Sierra Leone Flag"></td>
+                    <td>Freetown</td>
+                </tr>
+                <tr>
+                    <td>Togo</td>
+                    <td><img src="flag-of-togo.jpeg" alt="Togo Flag"></td>
+                    <td>Lomé</td>
+                </tr>
+                <tr>
+                    <td>Liberia</td>
+                    <td><img src="flag-of-liberia.jpeg" alt="Liberia Flag"></td>
+                    <td>Monrovia</td>
+                </tr>
+                <tr>
+                    <td>Mauritania</td>
+                    <td><img src="flag-of-mauritania.jpeg" alt="Mauritania Flag"></td>
+                    <td>Nouakchott</td>
+                </tr>
+                <tr>
+                    <td>Gambia</td>
+                    <td><img src="flag-of-gambia.jpeg" alt="Gambia Flag"></td>
+                    <td>Banjul</td>
+                </tr>
+                <tr>
+                    <td>Cape Verde</td>
+                    <td><img src="flag-of-cape-verde.jpeg" alt="Cape Verde Flag"></td>
+                    <td>Praia</td>
+                </tr>
+                <tr>
+                    <td>Guinea-Bissau</td>
+                    <td><img src="flag-of-guinea-bissau.jpeg" alt="Guinea-Bissau Flag"></td>
+                    <td>Bissau</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+
+                <h3>Countries in Focus</h3>
+
+                <div class="country-div">
+                    <h4>Nigeria</h4>
+                    <img src="lagos.jpeg" alt="Nigeria lagos city" class="main-image">
+                    <p class="image-note">Nigeria is a country with diverse cultures, languages, and landscapes. It's known for its rich history and vibrant cities like Lagos.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Ghana</h4>
+                    <img src="gold.jpeg" alt="Ghana gold" class="main-image">
+                    <p class="image-note">Ghana is famous for its gold resources and historical sites like Cape Coast Castle, which played a significant role in the transatlantic slave trade.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Senegal</h4>
+                    <img src="dakar.jpeg" alt="Senegal dakar city" class="main-image">
+                    <p class="image-note">Senegal is known for its music, especially the popular genre called Mbalax. The capital, Dakar, is a vibrant city with a rich culture.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Ivory Coast</h4>
+                    <img src="basilica.jpeg" alt="Ivory Coast basilica" class="main-image">
+                    <p class="image-note">Ivory Coast is the world's largest producer of cocoa beans. Its capital, Yamoussoukro, is known for its large basilica.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Mali</h4>
+                    <img src="timbuktu.jpeg" alt="timbuktu" class="main-image">
+                    <p class="image-note">Mali is famous for its ancient city of Timbuktu, which was once a center of learning and culture in Africa.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Niger</h4>
+                    <img src="sahara-desert.jpeg" alt="sahara-desert" class="main-image">
+                    <p class="image-note">Niger is home to the Sahara Desert, offering breathtaking views of sand dunes and oases.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Burkina Faso</h4>
+                    <img src="burkina-faso-music.jpeg" alt="Burkina Faso music" class="main-image">
+                    <p class="image-note">Burkina Faso is known for its music and film festivals, particularly the FESPACO film festival held in Ouagadougou.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Benin</h4>
+                    <img src="porto-novo.jpeg" alt="porto novo" class="main-image">
+                    <p class="image-note">Benin is known for its historical kingdom of Dahomey, and its capital, Porto-Novo, showcases vibrant culture and history.</p>
+                </div>
+            </section>
+            <section>
+                <div class="country-div">
+                    <h4>Sierra Leone</h4>
+                    <img src="sierra-leone-landscape.jpeg" alt="Sierra Leone Landscape" class="main-image">
+                    <p class="image-note">Sierra Leone is known for its beautiful beaches and the tragic history of the civil war, which the country is still recovering from.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Togo</h4>
+                    <img src="lome.jpeg" alt="Lome" class="main-image">
+                    <p class="image-note">Togo is a narrow strip of land with a diverse landscape, from beaches to mountains. Its capital, Lomé, is a bustling city.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Liberia</h4>
+                    <img src="slaves.jpeg" alt="slave in liberia" class="main-image">
+                    <p class="image-note">Liberia is Africa's oldest republic, founded by freed American slaves. The country is known for its historical significance and beautiful coastline.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Mauritania</h4>
+                    <img src="sahara-desert.jpeg" alt="Mauritania Landscape" class="main-image">
+                    <p class="image-note">Mauritania is largely covered by the Sahara Desert, and its economy is primarily based on mining and fishing.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Gambia</h4>
+                    <img src="gambia-landscape.jpeg" alt="Gambia Landscape" class="main-image">
+                    <p class="image-note">Gambia is the smallest country in mainland Africa, known for its river, which flows through the entire country and gives it its name.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Cape Verde</h4>
+                    <img src="cape-verde-landscape.jpeg" alt="Cape Verde Landscape" class="main-image">
+                    <p class="image-note">Cape Verde is an island nation known for its Creole Portuguese-African culture, beautiful beaches, and volcanic landscapes.</p>
+                </div>
+
+                <div class="country-div">
+                    <h4>Guinea-Bissau</h4>
+                    <img src="guinea-bissau-landscape.jpeg" alt="Guinea-Bissau Landscape" class="main-image">
+                    <p class="image-note">Guinea-Bissau is known for its national parks and wildlife, particularly the Orango Islands National Park, which is a haven for rare species.</p>
+            
+                </div>
+            </section> 
+            <section><!--section27-->
+                <h2>Day 5: Exploring North Africa</h2>
+                <h3>Introduction to North Africa</h3>
+                <p>North Africa is known for its vast deserts and ancient civilizations. This region is home to some of the world's oldest and most famous historical sites, like the pyramids of Egypt.</p>
+                
+                <h3>How Many Countries in North Africa?</h3>
+                <p>There are 6 countries in North Africa. Some of the well-known countries include Egypt, Morocco, and Algeria. Each country has a rich history and unique culture.</p>
+                
+                <h3>What is the Biggest Country in North Africa?</h3>
+                <p>The biggest country in North Africa by area is Algeria. It's the largest country in Africa and is known for its Sahara Desert.</p>
+
+            </section>
+
+            <section>
+                <h3>Main Touristic Areas in North Africa</h3>
+                <p>North Africa has many famous places to visit. Here are some popular touristic areas:</p>
+                <ul>
+                    <li><strong>Pyramids of Giza (Egypt)</strong>: Ancient pyramids built by the Pharaohs.
+                        <div class="images">
+                            <img src="pyramids-of-giza.jpeg" alt="Pyramids of Giza" class="main-image">
+                            <p class="image-note ">The Pyramids of Giza, one of the Seven Wonders of the Ancient World.</p>
+                        </div>
+                    </li>
+                    <li><strong>Marrakech (Morocco)</strong>: Known for its vibrant markets and beautiful palaces.
+                        <div class="images">
+                            <img src="marrakech.jpeg" alt="Marrakech" class="main-image">
+                            <p class="image-note ">Marrakech is famous for its lively souks and the historical Medina.</p>
+                        </div>
+                    </li>
+                    <li><strong>Carthage (Tunisia)</strong>: Ancient ruins of a powerful city that once rivaled Rome.
+                        <div class="images">
+                            <img src="carthage.jpeg" alt="Carthage Ruins" class="main-image">
+                            <p class="image-note ">The ruins of Carthage, a testament to the city's ancient glory.</p>
+                        </div>
+                    </li>
+                    <li><strong>Sahara Desert</strong>: The largest hot desert in the world, covering much of North Africa.
+                        <div class="images">
+                            <img src="sahara-desert.jpeg" alt="Sahara Desert" class="main-image">
+                            <p class="image-note ">The vast and mesmerizing dunes of the Sahara Desert.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Countries, Their Flags, and Capital Cities in North Africa</h3>
+                <table>
+                    <tr>
+                        <th>Country</th>
+                        <th>Flag</th>
+                        <th>Capital City</th>
+                    </tr>
+                    <tr>
+                        <td>Egypt</td>
+                        <td><img src="flag-of-egypt.jpeg" alt="Egypt Flag"></td>
+                        <td>Cairo</td>
+                    </tr>
+                    <tr>
+                        <td>Morocco</td>
+                        <td><img src="flag-of-morocco.jpeg" alt="Morocco Flag"></td>
+                        <td>Rabat</td>
+                    </tr>
+                    <tr>
+                        <td>Algeria</td>
+                        <td><img src="flag-of-algeria.jpeg" alt="Algeria Flag"></td>
+                        <td>Algiers</td>
+                    </tr>
+                    <tr>
+                        <td>Tunisia</td>
+                        <td><img src="flag-of-tunisia.jpeg" alt="Tunisia Flag"></td>
+                        <td>Tunis</td>
+                    </tr>
+                    <tr>
+                        <td>Libya</td>
+                        <td><img src="flag-of-libya.jpeg" alt="Libya Flag"></td>
+                        <td>Tripoli</td>
+                    </tr>
+                    <tr>
+                        <td>Sudan</td>
+                        <td><img src="flag-of-sudan.jpeg" alt="Sudan Flag"></td>
+                        <td>Khartoum</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section><!--section 30-->
+                <h3>Culture and Languages</h3>
+                <p>North Africa has a mix of Arab and Berber cultures. People here speak Arabic and French, among other languages. The region is known for its beautiful architecture, traditional music, and delicious food like couscous and tagine.</p>
+
+                <div class="country-section">
+                    <!-- Start of country divs -->
+                    <div class="country-div">
+                        <h4>Egypt</h4>
+                        <p>Egypt is known for its ancient civilization and iconic monuments, including the Pyramids of Giza and the Great Sphinx.</p>
+                        <img src="pyramids-of-giza.jpeg" alt="Pyramids in Egypt" class="main-image">
+                        <p class="image-note">The Pyramids of Giza are a wonder of the ancient world and a must-see.</p>
+                        <img src="egypt-nile.jpeg" alt="Nile River in Egypt" class="main-image">
+                        <p class="image-note">The Nile River, the lifeblood of Egypt for millennia.</p>
+                    </div>
+
+                    <div class="country-div">
+                        <h4>Morocco</h4>
+                        <p class="image-note">The bustling markets of Marrakech are a shopper's paradise.</p>
+                        <img src="atlas-mountains.jpeg" alt="Atlas Mountains in Morocco" class="main-image">
+                        <p class="image-note">The Atlas Mountains provide breathtaking views and hiking opportunities.</p>
+                    </div>
+
+                    <div class="country-div">
+                        <h4>Algeria</h4>
+                        <p>Algeria is the largest country in Africa, known for its Saharan landscapes and the historic city of Algiers.</p>
+                        <img src="sahara-desert.jpeg" alt="Sahara Desert in Algeria" class="main-image">
+                        <p class="image-note">The Sahara Desert in Algeria offers endless adventures for explorers.</p>
+                        <img src="algiers.jpeg" alt="Algiers in Algeria" class="main-image">
+                        <p class="image-note">Algiers, the white city, is rich in history and culture.</p>
+                    </div>
+
+                    <div class="country-div">
+                        <h4>Tunisia</h4>
+                        <p class="image-note">Carthage was once a powerful city-state that rivaled Rome.</p>
+                        <img src="tunisia-beach.jpeg" alt="Beach in Tunisia" class="main-image">
+                        <p class="image-note">Tunisia's beaches are perfect for relaxation and sunbathing.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="country-div">
+                        <h4>Libya</h4>
+                        <p>Libya is known for its ancient Greek and Roman sites, as well as the vast Sahara Desert.</p>
+                        <img src="libya-ruins.jpeg" alt="Ruins in Libya" class="main-image">
+                        <p class="image-note">Libya's ancient ruins tell stories of its rich and varied history.</p>
+                        <img src="libya-desert.jpeg" alt="Desert in Libya" class="main-image">
+                        <p class="image-note">The Libyan Desert is an expanse of sand and solitude.</p>
+                    </div>
+
+                    <div class="country-div">
+                        <h4>Sudan</h4>
+                        <p>Sudan is famous for its ancient Nubian pyramids and rich cultural heritage along the Nile River.</p>
+                        <img src="sudan-pyramids.jpeg" alt="Pyramids in Sudan" class="main-image">
+                        <p class="image-note">Sudan's pyramids are lesser-known but equally magnificent.</p>
+                        <img src="sudan-nile.jpeg" alt="Nile River in Sudan" class="main-image">
+                        <p class="image-note">The Nile in Sudan is a cultural and historical lifeline.</p>
+                    </div>
+                    <!-- End of country divs -->
+                </div>
+            </section>
+
+            <section>
+                <div class="facts"></div>
+                    <h3>Did You Know?</h3>
+                    <p>North Africa is not only known for its rich history and cultural diversity but also for being a strategic point during ancient times. The region has seen the rise and fall of many empires, including the Carthaginian, Roman, and Ottoman empires.</p>
+                    <p>Additionally, the Sahara Desert, which covers much of North Africa, is the third-largest desert in the world after Antarctica and the Arctic. Despite its harsh environment, the Sahara is home to unique ecosystems and species adapted to extreme conditions.</p>
+                </div>
+            </section>
+
+            <section><!--section33-->
+                    <h2>Day 6: Exploring Central Africa</h2>
+                    <h3>Introduction to Central Africa</h3>
+                    <p>Central Africa is known for its dense rainforests, diverse wildlife, and vibrant cultures. It's home to many unique animals like gorillas and elephants.</p>
+                    
+                    <h3>How Many Countries in Central Africa?</h3>
+                    <p>There are 9 countries in Central Africa. Some of them include the Democratic Republic of the Congo, Cameroon, and Gabon.</p>
+                    
+                    <h3>What is the Biggest Country in Central Africa?</h3>
+                    <p>The Democratic Republic of the Congo is the largest country in Central Africa, known for its vast rainforests and mineral resources.</p>
+                    
+            </section>
+
+            <section>
+                <h3>Main Touristic Areas in Central Africa</h3>
+                <ul>
+                    <li><strong>Virunga National Park (DR Congo)</strong>: Famous for mountain gorillas.
+                        <div class="images">
+                            <img src="virunga-national-park.jpeg" alt="Virunga National Park" class="main-image">
+                            <p class="image-note">Mountain gorillas in Virunga National Park, DR Congo.</p>
+                        </div>
+                    </li>
+                    <li><strong>Lobéké National Park (Cameroon)</strong>: Known for diverse wildlife.
+                        <div class="images">
+                            <img src="lobeke-national-park.jpeg" alt="Lobéké National Park" class="main-image">
+                            <p class="main-note">Lobéké National Park, Cameroon, a haven for wildlife.</p>
+                        </div>
+                    </li>
+                    <li><strong>Odzala-Kokoua National Park (Republic of Congo)</strong>: Offers gorilla and forest elephant sightings.
+                        <div class="images">
+                            <img src="odzala-kokoua-national-park.jpeg" alt="Odzala-Kokoua National Park" class="main-image" >
+                            <p class="main-note">A glimpse of the dense forests of Odzala-Kokoua, Republic of Congo.</p>
+                        </div>
+                    </li>
+                    <li><strong>Dzanga-Sangha Reserve (Central African Republic)</strong>: Rich in biodiversity and home to forest elephants.
+                        <div class="images">
+                            <img src="dzanga-sangha-reserve.jpeg" alt="Dzanga-Sangha Reserve" class="main-image">
+                            <p class="main-note">Forest elephants in Dzanga-Sangha Reserve, Central African Republic.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                   <!-- Add div sections for each country -->
+                
+                <!-- Democratic Republic of the Congo -->
+                <div class="images">
+                    <img src="congo-rainforest.jpeg" alt="Congo Rainforest" class="main-image">
+                    <p class="main-note">The vast and dense rainforests of the Democratic Republic of the Congo.</p>
+                </div>
+                <p class="main-note">The Democratic Republic of the Congo is home to the Congo Rainforest, the second-largest tropical forest in the world, known for its incredible biodiversity.</p>
+
+                <!-- Cameroon -->
+                <div class="images">
+                    <img src="mount-cameroon.jpeg" alt="Mount Cameroon" class="main-image">
+                    <p class="main-note">Mount Cameroon, an active volcano and the highest point in West and Central Africa.</p>
+                </div>
+                <p class="main-note">Cameroon is often referred to as "Africa in miniature" because it features all major climates and vegetation types of the continent.</p>
+
+                <!-- Republic of Congo -->
+                <div class="images">
+                    <img src="brazaville-congo-river.jpeg" alt="Brazzaville Congo River" class="main-image">
+                    <p class="main-note">The Congo River flowing through Brazzaville, the capital of the Republic of Congo.</p>
+                </div>
+                <p class="main-note">The Republic of Congo is known for the Congo River, the second-longest river in Africa, which is crucial for transportation and local livelihoods.</p>
+
+                <!-- Central African Republic -->
+                <div class="images">
+                    <img src="manovo-gounda-st-floris.jpeg" alt="Manovo-Gounda St Floris National Park" class="main-image">
+                    <p class="main-note">Manovo-Gounda St Floris National Park, a UNESCO World Heritage site in the Central African Republic.</p>
+                </div>
+                <p class="main-note">The Central African Republic is rich in wildlife and protected areas, with national parks like Manovo-Gounda St Floris being critical for conservation.</p>
+
+                <!-- Chad -->
+                <div class="images">
+                    <img src="lake-chad.jpeg" alt="Lake Chad" class="main-image">
+                    <p class="main-note">Lake Chad, a vital water source for millions of people in the region.</p>
+                </div>
+                <p class="main-note">Chad is home to Lake Chad, which supports over 30 million people in four countries and is an essential source of water in a largely arid region.</p>
+
+                <!-- Equatorial Guinea -->
+                <div class="images">
+                    <img src="bioko-island.jpeg" alt="Bioko Island" class="main-image">
+                    <p class="main-note">The beautiful landscapes of Bioko Island, Equatorial Guinea.</p>
+                </div>
+                <p class="main-note">Equatorial Guinea's Bioko Island is known for its stunning beaches, volcanic landscapes, and rich biodiversity, including endangered primates.</p>
+            </section>
+
+            <section>
+                <!-- Gabon -->
+                <div class="images">
+                    <img src="loango-national-park.jpeg" alt="Loango National Park" class="main-image">
+                    <p class="main-note">Loango National Park, often called "Africa's Last Eden" in Gabon.</p>
+                </div>
+                <p class="main-note">Gabon is famous for its national parks, which cover almost 11% of the country, with Loango National Park being one of the most pristine and biodiverse areas.</p>
+
+                <!-- São Tomé and Príncipe -->
+                <div class="images">
+                    <img src="sao-tome-island.jpeg" alt="São Tomé Island" class="main-image">
+                    <p class="main-note">São Tomé Island, the larger of the two islands making up São Tomé and Príncipe.</p>
+                </div>
+                <p class="main-note">São Tomé and Príncipe are known for their stunning natural beauty, including lush rainforests, volcanic landscapes, and unique wildlife.</p>
+
+                <!-- Angola -->
+                <div class="images">
+                    <img src="angola-waterfall.jpeg" alt="Kalandula Waterfalls" class="main-image">
+                    <p class="main-note">Kalandula Waterfalls, one of the largest and most spectacular waterfalls in Angola.</p>
+                </div>
+                <p class="main-note">Angola is known for its dramatic landscapes, including the Kalandula Waterfalls, one of the largest waterfalls in Africa, and a major natural attraction.</p>
+
+            </section>
+
+            <section>
+                <h3>Countries, Their Flags, and Capital Cities in Central Africa</h3>
+                <table>
+                    <tr>
+                        <th>Country</th>
+                        <th>Flag</th>
+                        <th>Capital City</th>
+                    </tr>
+                    <tr>
+                        <td>Democratic Republic of the Congo</td>
+                        <td><img src="flag-of-DR-congo.jpeg" alt="DR Congo Flag"></td>
+                        <td>Kinshasa</td>
+                    </tr>
+                    <tr>
+                        <td>Cameroon</td>
+                        <td><img src="flag-of-cameroon.jpeg" alt="Cameroon Flag"></td>
+                        <td>Yaoundé</td>
+                    </tr>
+                    <tr>
+                        <td>Republic of Congo</td>
+                        <td><img src="flag-of-republic-of-congo.jpeg" alt="Republic of Congo Flag"></td>
+                        <td>Brazzaville</td>
+                    </tr>
+                    <tr>
+                        <td>Central African Republic</td>
+                        <td><img src="flag-of-central-africa.jpeg" alt="Central African Republic Flag"></td>
+                        <td>Bangui</td>
+                    </tr>
+                    <tr>
+                        <td>Chad</td>
+                        <td><img src="flag-of-chad.jpeg" alt="Chad Flag"></td>
+                        <td>N'Djamena</td>
+                    </tr>
+                    <tr>
+                        <td>Equatorial Guinea</td>
+                        <td><img src="flag-of-equatorial-guinea.jpeg" alt="Equatorial Guinea Flag"></td>
+                        <td>Malabo</td>
+                    </tr>
+                    <tr>
+                        <td>Gabon</td>
+                        <td><img src="flag-of-gabon.jpeg" alt="Gabon Flag"></td>
+                        <td>Libreville</td>
+                    </tr>
+                    <tr>
+                        <td>São Tomé and Príncipe</td>
+                        <td><img src="flag-of-sao-tome.jpeg" alt="São Tomé and Príncipe Flag"></td>
+                        <td>São Tomé</td>
+                    </tr>
+                    <tr>
+                        <td>Angola</td>
+                        <td><img src="flag-of-angola.jpeg" alt="Angola Flag"></td>
+                        <td>Luanda</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <h3>Culture and Languages</h3>
+                    <p>Central Africa has a rich cultural heritage with many ethnic groups speaking various languages. French is commonly spoken, along with local languages like Lingala and Kikongo.</p>
+            </section>
+        <!--first section of day 7 section-->
+            <section>
+                <h2>Day 7: Exploring Southern Africa</h2>
+                <h3>Introduction to Southern Africa</h3>
+                <p>Southern Africa is a diverse region known for its deserts, grasslands, and breathtaking landscapes. It's home to iconic wildlife like lions, elephants, and rhinos.</p>
+                
+                <h3>How Many Countries in Southern Africa?</h3>
+                <p>There are 16 countries in Southern Africa. Some of them include South Africa, Botswana, and Zimbabwe.</p>
+                
+                <h3>What is the Biggest Country in Southern Africa?</h3>
+                <p>South Africa is the largest country in Southern Africa by both area and population. It's known for its cultural diversity and economic strength.</p>
+                
+            </section>
+            <section><!--section 40-->
+                  <ul>
+                <li><strong>Kruger National Park (South Africa)</strong>: Famous for its wildlife safaris and beautiful landscapes.
+                    <div >
+                        <img src="kruger-national-park.jpeg" alt="Kruger National Park" class="main-image">
+                    </div>
+                   <p class="image-note"> Kruger National Park is one of Africa's largest game reserves, offering a chance to see the Big Five: lions, leopards, rhinos, elephants, and buffalo.</p>
+                </li>
+                <li><strong>Victoria Falls (Zambia/Zimbabwe)</strong>: One of the largest and most famous waterfalls in the world.
+                    <div class="main-image">
+                        <img src="victoria-falls.jpeg" alt="Victoria Falls" class="main-image">
+                    </div>
+                    Victoria Falls, also known as "The Smoke That Thunders," is a UNESCO World Heritage site and a natural wonder of the world.
+                </li>
+                <li><strong>Okavango Delta (Botswana)</strong>: A unique inland delta that attracts wildlife and tourists.
+                    <div class="main-image">
+                        <img src="okavango-delta.jpeg" alt="Okavango Delta" class="main-image">
+                    </div>
+                    The Okavango Delta is a vast and unique ecosystem, providing a haven for wildlife and offering stunning landscapes and boat safaris.
+                </li>
+                <li><strong>Namib Desert (Namibia)</strong>: One of the oldest deserts with unique landscapes and wildlife.
+                    <div class="main-image">
+                        <img src="namib-desert.jpeg" alt="Namib Desert" class="main-image">
+                    </div>
+                    The Namib Desert is famous for its towering sand dunes, some of the highest in the world, and its stark, otherworldly beauty.
+                </li>
+            </ul>
+            </section>
+
+            <section><!--section 41-->
+                <h3>Countries, Their Flags, and Capital Cities in Southern Africa</h3>
+                <table>
+                    <tr>
+                        <th>Country</th>
+                        <th>Flag</th>
+                        <th>Capital City</th>
+                    </tr>
+                    <tr>
+                        <td>South Africa</td>
+                        <td><img src="flag-of-south-africa.jpeg" alt="South Africa Flag"></td>
+                        <td>Pretoria, Cape Town, Bloemfontein</td>
+                    </tr>
+                    <tr>
+                        <td>Botswana</td>
+                        <td><img src="flag-of-Botswana.jpeg" alt="Botswana Flag"></td>
+                        <td>Gaborone</td>
+                    </tr>
+                    <tr>
+                        <td>Zimbabwe</td>
+                        <td><img src="flag-of-zimbabwe.jpeg" alt="Zimbabwe Flag"></td>
+                        <td>Harare</td>
+                    </tr>
+                    <tr>
+                        <td>Zambia</td>
+                        <td><img src="flag-of-zambia.jpeg" alt="Zambia Flag"></td>
+                        <td>Lusaka</td>
+                    </tr>
+                    <tr>
+                        <td>Namibia</td>
+                        <td><img src="flag-of-namibia.jpeg" alt="Namibia Flag"></td>
+                        <td>Windhoek</td>
+                    </tr>
+                    <tr>
+                        <td>Lesotho</td>
+                        <td><img src="flag-of-lesotho.jpeg" alt="Lesotho Flag"></td>
+                        <td>Maseru</td>
+                    </tr>
+                    <tr>
+                        <td>Eswatini (Swaziland)</td>
+                        <td><img src="flag-of-eswatini.jpeg" alt="Eswatini Flag"></td>
+                        <td>Mbabane</td>
+                    </tr>
+                    <tr>
+                        <td>Angola</td>
+                        <td><img src="flag-of-angola.jpeg" alt="Angola Flag"></td>
+                        <td>Luanda</td>
+                    </tr>
+                    <tr>
+                        <td>Mozambique</td>
+                        <td><img src="flag-of-mozambique.jpeg" alt="Mozambique Flag"></td>
+                        <td>Maputo</td>
+                    </tr>
+                    <tr>
+                        <td>Malawi</td>
+                        <td><img src="flag-of-malawi.jpeg" alt="Malawi Flag"></td>
+                        <td>Lilongwe</td>
+                    </tr>
+                    <tr>
+                        <td>Madagascar</td>
+                        <td><img src="flag-of-madagascar.jpeg" alt="Madagascar Flag"></td>
+                        <td>Antananarivo</td>
+                    </tr>
+                    <tr>
+                        <td>Mauritius</td>
+                        <td><img src="flag-of-mauritius.jpeg" alt="Mauritius Flag"></td>
+                        <td>Port Louis</td>
+                    </tr>
+                    <tr>
+                        <td>Seychelles</td>
+                        <td><img src="flag-of-seychelles.jpeg" alt="Seychelles Flag"></td>
+                        <td>Victoria</td>
+                    </tr>
+                    <tr>
+                        <td>Democratic Republic of the Congo</td>
+                        <td><img src="flag-of-DR-congo.jpeg" alt="Democratic Republic of the Congo Flag"></td>
+                        <td>Kinshasa</td>
+                    </tr>
+                    <tr>
+                        <td>Tanzania</td>
+                        <td><img src="flag-of-tanzania.jpeg" alt="Tanzania Flag"></td>
+                        <td>Dodoma</td>
+                    </tr>
+                    <tr>
+                        <td>Comoros</td>
+                        <td><img src="flag-of-comoros.jpeg" alt="Comoros Flag"></td>
+                        <td>Moroni</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section><!--section 42-->
+                <div class="country-section">
+                    <h3>Botswana</h3>
+                    <div class="main-image">
+                        <img src="chobe-national-park.jpeg" alt="Chobe National Park" class="main-image">
+                    </div>
+                    <div class="culture">
+                        <h4>Culture</h4>
+                        <p>Botswana is known for its rich cultural heritage, especially the traditional music and dance of the Tswana people. The country has a strong tradition of preserving its cultural practices.</p>
+                    </div>
+                    <div class="attractions">
+                        <h4>Main Attractions</h4>
+                        <div class="attraction">
+                            <p><strong>Okavango Delta:</strong> A UNESCO World Heritage site and one of the world's largest inland deltas, offering unique wildlife experiences.</p>
+                        </div>
+                        <div class="attraction">
+                            <p><strong>Chobe National Park:</strong> Known for its large elephant population and boat safaris on the Chobe River.</p>
+                        </div>
+                        <div class="attraction">
+                            <p><strong>Makgadikgadi Pans:</strong> One of the largest salt flats in the world, offering unique landscapes and wildlife during the wet season.</p>
+                        </div>
+                    </div>
+                    <div class="image-note">
+                        <p> Botswana is considered one of Africa's most stable and economically prosperous countries, with a strong focus on conservation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Culture and Languages</h3>
+                <p>Southern Africa has diverse cultures influenced by indigenous traditions and colonial histories. Languages spoken include English, Afrikaans, and local languages like Zulu and Shona.</p>
+
+            </section>
+
+            <section>
+                <div class="country-section">
+                    <h3>South Africa</h3>
+                    <div class="main-image">
+                        <img src="table-mountains.jpeg" alt="Table Mountain" class="main-image">
+                    </div>
+                    <div class="culture">
+                        <h4>Culture</h4>
+                        <p>South Africa is known as the "Rainbow Nation" due to its multicultural diversity. It has 11 official languages, including Zulu, Xhosa, and Afrikaans.</p>
+                    </div>
+                  </div>
+            </section>
+
+            <section>
+                       <!-- Section for each country with images and notes -->
+                       
+                        <div class="attractions">
+                            <h4>Main Attractions</h4>
+                            <div class="attraction">
+                                <p><strong>Table Mountain:</strong> A flat-topped mountain forming a prominent landmark overlooking the city of Cape Town.</p>
+                            </div>
+                            <div class="attraction">
+                                <p><strong>Robben Island:</strong> The island where Nelson Mandela was imprisoned for 18 of his 27 years in jail. It's now a museum and UNESCO World Heritage site.</p>
+                            </div>
+                            <div class="attraction">
+                                <p><strong>Kruger National Park:</strong> One of Africa's largest game reserves, offering a chance to see the Big Five.</p>
+                            </div>
+                        </div>
+                        <div class="notes">
+                            <p> South Africa's wine regions in the Western Cape are among the best in the world, producing globally recognized wines.</p>
+                        </div>
+                   
+                </section>
+
+                <section>
+                                   <!-- Botswana Section -->
+<div class="country-section">
+    <h3>Botswana</h3>
+    <div class="main-image">
+        <img src="chobe-national-park.jpeg" alt="Chobe National Park" class="main-image">
+    </div>
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Botswana is known for its rich cultural heritage, especially the traditional music and dance of the Tswana people. The country has a strong tradition of preserving its cultural practices.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Okavango Delta:</strong> A UNESCO World Heritage site and one of the world's largest inland deltas, offering unique wildlife experiences.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Chobe National Park:</strong> Known for its large elephant population and boat safaris on the Chobe River.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Makgadikgadi Pans:</strong> One of the largest salt flats in the world, offering unique landscapes and wildlife during the wet season.</p>
+        </div>
+    </div>
+    <div class="image-note">
+        <p> Botswana is considered one of Africa's most stable and economically prosperous countries, with a strong focus on conservation.</p>
+    </div>
+</div>
+
+<!-- Zimbabwe Section -->
+<div class="country-section">
+    <h3>Zimbabwe</h3>
+    
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Zimbabwe has a rich cultural history, with influences from the Shona and Ndebele people. The country is known for its traditional music, art, and stone sculptures.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Victoria Falls:</strong> One of the most famous waterfalls in the world, shared with Zambia.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Great Zimbabwe Ruins:</strong> The remains of an ancient city, offering a glimpse into the region's historical significance.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Hwange National Park:</strong> Known for its large elephant herds and diverse wildlife.</p>
+        </div>
+    </div>
+    <div class="main-image">
+        <p> Zimbabwe is home to one of the Seven Natural Wonders of the World, Victoria Falls, which is a major tourist attraction.</p>
+    </div>
+</div>
+
+<!-- Namibia Section -->
+<div class="country-section">
+    <h3>Namibia</h3>
+    <div class="main-image">
+        <img src="sossusvlei.jpeg" alt="Sossusvlei" class="main-image">
+    </div>
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Namibia's culture is a mix of indigenous traditions and colonial influences, with significant contributions from the Himba and Herero people.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Sossusvlei:</strong> Famous for its high red dunes and salt pans, located in the Namib Desert.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Etosha National Park:</strong> One of Africa's greatest wildlife parks, known for its salt pan and diverse animal species.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Fish River Canyon:</strong> The second largest canyon in the world, offering stunning views and hiking opportunities.</p>
+        </div>
+    </div>
+    <div class="notes">
+        <p> Namibia is one of the least densely populated countries in the world, offering vast landscapes and untouched wilderness.</p>
+    </div>
+</div>
+                
+            </section>
+
+
+            <section>
+                <!-- Angola Section -->
+<div class="country-section">
+    <h3>Angola</h3>
+    <div class="main-image">
+        <img src="kalandula-falls.jpeg" alt="Kalandula Falls" class="main-image">
+    </div>
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Angola's culture is heavily influenced by Portuguese colonial history, with a vibrant music scene known for genres like semba and kizomba.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Kissama National Park:</strong> A protected area known for its diverse wildlife and successful animal rehabilitation programs.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Kalandula Falls:</strong> One of the largest waterfalls in Africa, located in the Malanje province.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Fortress of São Miguel:</strong> A historic fort in Luanda, offering insights into Angola's colonial past.</p>
+        </div>
+    </div>
+    <div class="main-image">
+        <p>Angola has one of the fastest growing economies in Africa, driven by its oil and diamond industries.</p>
+    </div>
+</div>
+
+
+<!-- Mozambique Section -->
+<div class="country-section">
+    <h3>Mozambique</h3>
+    <div class="main-image">
+        <img src="bazaruto-archipelago.jpeg" alt="Bazaruto Archipelago" class="main-image">
+    </div>
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Mozambique's culture is a blend of African, Arab, and Portuguese influences, evident in its music, dance, and cuisine.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Bazaruto Archipelago:</strong> A group of islands known for their pristine beaches, coral reefs, and marine life.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Gorongosa National Park:</strong> A national park known for its biodiversity and conservation efforts.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Island of Mozambique:</strong> A UNESCO World Heritage site with historic buildings and a rich cultural heritage.</p>
+        </div>
+    </div>
+    <div class="main-image">
+        <p> Mozambique's coastline stretches for over 2,500 km, offering some of the best diving and snorkeling spots in the world.</p>
+    </div>
+</div>
+</section>
+
+
+<section>
+<!-- Malawi Section -->
+<div class="country-section">
+    <h3>Malawi</h3>
+    <div class="main-image">
+        <img src="lake-malawi.jpeg" alt="Lake Malawi" class="main-image">
+    </div>
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Malawi is known for its friendly people, earning it the nickname "The Warm Heart of Africa." The culture is centered around traditional music, dance, and art.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Lake Malawi:</strong> Africa's third largest lake, known for its clear waters, sandy beaches, and diverse fish species.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Mount Mulanje:</strong> A large granite massif offering hiking opportunities and stunning views.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Liwonde National Park:</strong> A popular park for wildlife safaris, especially known for its elephant and hippo populations.</p>
+        </div>
+    </div>
+    <div class="notes">
+        <p>Lake Malawi is home to more species of fish than any other lake in the world, making it a biodiversity hotspot.</p>
+    </div>
+</div>
+<!-- Madagascar Section -->
+<div class="country-section">
+    <h3>Madagascar</h3>
+    <div class="main-image">
+        <img src="baobab-avenue.jpeg" alt="Avenue of the Baobabs" class="main-image">
+    </div>
+    <div class="culture">
+        <h4>Culture</h4>
+        <p>Madagascar's culture is a unique blend of African, Asian, and French influences, with strong ties to traditional Malagasy customs and beliefs.</p>
+    </div>
+    <div class="attractions">
+        <h4>Main Attractions</h4>
+        <div class="attraction">
+            <p><strong>Avenue of the Baobabs:</strong> A famous road lined with towering baobab trees, a symbol of Madagascar's unique flora.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Ranomafana National Park:</strong> A rainforest park known for its rich biodiversity, including several species of lemurs.</p>
+        </div>
+        <div class="attraction">
+            <p><strong>Tsingy de Bemaraha:</strong> A UNESCO World Heritage site featuring unique limestone formations and a variety of endemic species.</p>
+        </div>
+    </div>
+    <div class="notes">
+        <p>Madagascar is home to about 5% of the world's plant and animal species, most of which are found nowhere else on Earth.</p>
+    </div>
+</div>
+</section>
+
+
+<section><!-- Tanzania Section -->
+    <div class="country-section">
+        <h3>Tanzania</h3>
+        <div class="main-image">
+            <img src="mount-kilimanjaro.jpeg" alt="Mount Kilimanjaro" class="main-image">
+        </div>
+        <div class="culture">
+            <h4>Culture</h4>
+            <p>Tanzania is known for its diverse cultural heritage, with influences from the Swahili coast, Arab traders, and various ethnic groups like the Maasai and Chaga.</p>
+        </div>
+        <div class="attractions">
+            <h4>Main Attractions</h4>
+            <div class="attraction">
+                <p><strong>Serengeti National Park:</strong> Famous for the annual migration of over a million wildebeest and thousands of zebras.</p>
+            </div>
+            <div class="attraction">
+                <p><strong>Mount Kilimanjaro:</strong> Africa's highest mountain, a popular destination for trekking and mountaineering.</p>
+            </div>
+            <div class="attraction">
+                <p><strong>Zanzibar:</strong> An archipelago known for its historic Stone Town, pristine beaches, and spice plantations.</p>
+            </div>
+        </div>
+        <div class="notes">
+            <p>Tanzania is a member of both the Southern African Development Community (SADC) and the East African Community (EAC), reflecting its geographical and political significance in the region.</p>
+        </div>
+    </div>
+    
+    <!-- Democratic Republic of the Congo Section -->
+    <div class="country-section">
+        <h3>Democratic Republic of the Congo (DRC)</h3>
+        <div class="main-image">
+            <img src="virunga-national-park.jpeg" alt="Virunga National Park" class="main-image">
+        </div>
+        <div class="culture">
+            <h4>Culture</h4>
+            <p>The DRC is culturally rich, with over 200 ethnic groups. It is known for its vibrant music scene, particularly the Congolese rumba, and its diverse traditions and languages.</p>
+        </div>
+        <div class="attractions">
+            <h4>Main Attractions</h4>
+            <div class="attraction">
+                <p><strong>Virunga National Park:</strong> Africa's oldest national park, home to mountain gorillas, active volcanoes, and diverse wildlife.</p>
+            </div>
+            <div class="attraction">
+                <p><strong>Kinshasa:</strong> The bustling capital city, known for its lively music and art scene.</p>
+            </div>
+            <div class="attraction">
+                <p><strong>Lake Kivu:</strong> A large lake offering stunning views and opportunities for water activities, shared with Rwanda.</p>
+            </div>
+        </div>
+        <div class="image-note">
+            <p> The DRC is incredibly rich in natural resources, including minerals like cobalt and diamonds, which play a significant role in the global economy.</p>
+        </div>
+    </div>
+    
+    <!-- Comoros Section -->
+    <div class="country-section">
+        <h3>Comoros</h3>
+        <div >
+            <img src="mount-karthala.jpeg" alt="Mount Karthala" class="main-image">
+        </div>
+        <div class="culture">
+            <h4>Culture</h4>
+            <p>Comoros has a unique blend of African, Arab, and French cultural influences. The islands are known for their traditional music, dance, and vibrant festivals.</p>
+        </div>
+        <div>
+            <h4>Main Attractions</h4>
+            <div class="image-note">
+                <p><strong>Mount Karthala:</strong> An active volcano and the highest point in Comoros, offering hiking opportunities and breathtaking views.</p>
+            </div>
+            <div class="image-note">
+                <p><strong>Moheli Marine Park:</strong> A marine park known for its coral reefs, sea turtles, and diverse marine life.</p>
+            </div>
+            <div class="image-note">
+                <p><strong>Chomoni Beach:</strong> A pristine beach with white sand and clear waters, popular for relaxation and water activities.</p>
+            </div>
+        </div>
+        <div class="image-note">
+            <p>Note: Comoros is one of the world's largest producers of ylang-ylang, a key ingredient in many perfumes.</p>
+        </div>
+    </div>
+</section>
+
+<section>          
+    <h3>Did you know?</h3>
+    <div class="facts">
+        <p> <strong>Tanzania</strong> is a member of both the Southern African Development Community (SADC) and the East African Community (EAC), due to its unique geographical position connecting the two regions.</p>
+    </div>
+ </section>
+           
+ <section><!--section 52-->
+                <h2>Day 8: Exploring Islands of Africa</h2>
+                <h3>Introduction to Islands of Africa</h3>
+                <p>The islands of Africa are scattered across the Indian Ocean and the Atlantic Ocean. They are known for their beautiful beaches, rich marine life, and unique cultures.</p>
+                
+                <h3>How Many Islands of Africa?</h3>
+                <p>There are numerous islands belonging to Africa. Some of the well-known ones include Madagascar, Mauritius, Seychelles, Cape Verde, and many more.</p>
+                
+ </section>
+            <section>
+                <h3>Main Touristic Areas on Islands of Africa</h3>
+
+                <div id="madagascar">
+                    <h4>Madagascar</h4>
+                    <p>Famous for its biodiversity and unique wildlife, like lemurs.</p>
+                    <div class="main-image">
+                        <img src="madagascar-wildlife.jpeg" alt="Madagascar Wildlife">
+                    </div>
+                    <p>Madagascar offers unique experiences with its extraordinary wildlife, including lemurs, chameleons, and baobab trees.</p>
+                </div>
+
+                <div id="mauritius">
+                    <h4>Mauritius</h4>
+                    <p>Known for its stunning beaches, luxury resorts, and vibrant culture.</p>
+                    <div class="main-image">
+                        <img src="mauritius-beach.jpeg" alt="Mauritius Beach">
+                    </div>
+                    <p>Mauritius is a haven for beach lovers, with clear waters, coral reefs, and a blend of Indian, African, and French cultures.</p>
+                </div>
+
+                <div id="seychelles">
+                    <h4>Seychelles</h4>
+                    <p>A paradise for beach lovers and nature enthusiasts with pristine beaches and crystal-clear waters.</p>
+                    <div class="main-image">
+                        <img src="seychelle-beach.jpeg" alt="Seychelles Beach">
+                    </div>
+                    <p>Seychelles is an archipelago of 115 islands, known for their untouched natural beauty, including the famous Anse Source d'Argent beach.</p>
+                </div>
+
+                <div id="zanzibar">
+                    <h4>Zanzibar (Tanzania)</h4>
+                    <p>A historic island with spice tours, beautiful beaches, and cultural experiences.</p>
+                    <div class="main-image">
+                        <img src="zanzibar-culture.jpeg" alt="Zanzibar Culture">
+                    </div>
+                    <p>Zanzibar, also known as the "Spice Island," offers rich cultural history, beautiful beaches, and traditional markets.</p>
+                </div>
+            </section>
+
+            <section>
+                <div id="sao-tome">
+                    <h4>São Tomé and Príncipe</h4>
+                    <p>Known for their lush rainforests, volcanic peaks, and colonial architecture.</p>
+                    <div class="main-image">
+                        <img src="sao-tome-architecture.jpeg" alt="São Tomé and Príncipe Architecture">
+                    </div>
+                    <p>São Tomé and Príncipe are lesser-known gems, offering unspoiled nature, cocoa plantations, and historic colonial buildings.</p>
+                </div>
+
+                <div id="comoros">
+                    <h4>Comoros</h4>
+                    <p>Offers a blend of African, Arab, and French cultures, with beautiful beaches and coral reefs.</p>
+                    <div class="main-image">
+                        <img src="comoros-reef.jpeg" alt="Comoros Reef">
+                    </div>
+                    <p>Comoros is a volcanic archipelago, with rich marine biodiversity and a unique mix of cultures.</p>
+                </div>
+
+                <div id="reunion">
+                    <h4>Réunion (France)</h4>
+                    <p>A volcanic island with dramatic landscapes, hiking trails, and cultural diversity.</p>
+                    <div class="main-image">
+                        <img src="reunion-landscape.jpeg" alt="Réunion Landscape">
+                    </div>
+                    <p>Réunion offers an adventurous landscape with active volcanoes, waterfalls, and hiking trails, alongside a blend of French, African, and Indian cultures.</p>
+                </div>
+
+                <div id="mayotte">
+                    <h4>Mayotte (France)</h4>
+                    <p>Known for its rich marine life, including coral reefs and lagoons.</p>
+                    <div class="main-image">
+                        <img src="mayotte-lagoon.jpeg" alt="Mayotte Lagoon">
+                    </div>
+                    <p>Mayotte is renowned for its lagoons, coral reefs, and the opportunity to explore underwater life.</p>
+                </div>
+            </section>
+            <section>
+                <div id="canary-islands">
+                    <h4>Canary Islands (Spain)</h4>
+                    <p>Famous for their diverse landscapes, from beaches to volcanic mountains.</p>
+                    <div class="main-image">
+                        <img src="canary-islands-volcano.jpeg" alt="Canary Islands Volcano">
+                    </div>
+                    <p>The Canary Islands offer a unique mix of beach resorts and volcanic landscapes, with a mild climate year-round.</p>
+                </div>
+
+                <div id="madeira">
+                    <h4>Madeira (Portugal)</h4>
+                    <p>Renowned for its wine, botanical gardens, and stunning coastal scenery.</p>
+                    <div class="main-image">
+                        <img src="madeira-scenery.jpeg" alt="Madeira Scenery">
+                    </div>
+                    <p>Madeira is famous for its lush gardens, rugged coastline, and the production of world-renowned Madeira wine.</p>
+                </div>
+
+                <div id="bioko">
+                    <h4>Bioko (Equatorial Guinea)</h4>
+                    <p>Known for its rich biodiversity and unique cultural heritage.</p>
+                    <div class="main-image">
+                        <img src="bioko-wildlife.jpeg" alt="Bioko Wildlife">
+                    </div>
+                    <p>Bioko is an island rich in wildlife, including monkeys, and offers a glimpse into Equatorial Guinea's diverse cultures.</p>
+                </div>
+            </section>
+            <section>
+                <h3>Countries, Their Flags, and Capital Cities on Islands of Africa</h3>
+                <table>
+                    <tr>
+                        <th>Country/Island</th>
+                        <th>Flag</th>
+                        <th>Capital/City</th>
+                    </tr>
+                    <tr>
+                        <td>Madagascar</td>
+                        <td><img src="flag-of-madagascar.jpeg" alt="Madagascar Flag"></td>
+                        <td>Antananarivo</td>
+                    </tr>
+                    <tr>
+                        <td>Mauritius</td>
+                        <td><img src="flag-of-mauritius.jpeg" alt="Mauritius Flag"></td>
+                        <td>Port Louis</td>
+                    </tr>
+                    <tr>
+                        <td>Seychelles</td>
+                        <td><img src="flag-of-seychelles.jpeg" alt="Seychelles Flag"></td>
+                        <td>Victoria</td>
+                    </tr>
+                    <tr>
+                        <td>Cape Verde</td>
+                        <td><img src="flag-of-cape-verde.jpeg" alt="Cape Verde Flag"></td>
+                        <td>Praia</td>
+                    </tr>
+                    <tr>
+                        <td>São Tomé and Príncipe</td>
+                        <td><img src="flag-of-sao-tome.jpeg" alt="São Tomé and Príncipe Flag"></td>
+                        <td>São Tomé</td>
+                    </tr>
+                    <tr>
+                        <td>Comoros</td>
+                        <td><img src="flag-of-comoros.jpeg" alt="Comoros Flag"></td>
+                        <td>Moroni</td>
+                    </tr>
+                    <tr>
+                        <td>Réunion (France)</td>
+                        <td><img src="flag-of-france.jpeg" alt="France Flag"></td>
+                        <td>Saint-Denis</td>
+                    </tr>
+                    <tr>
+                        <td>Mayotte (France)</td>
+                        <td><img src="flag-of-france.jpeg" alt="France Flag"></td>
+                        <td>Mamoudzou</td>
+                    </tr>
+                    <tr>
+                        <td>Canary Islands (Spain)</td>
+                        <td><img src="flag-of-spain.jpeg" alt="Spain Flag"></td>
+                        <td>Las Palmas / Santa Cruz de Tenerife</td>
+                    </tr>
+                    <tr>
+                        <td>Madeira (Portugal)</td>
+                        <td><img src="flag-of-portugal.jpeg" alt="Portugal Flag"></td>
+                        <td>Funchal</td>
+                    </tr>
+                    <tr>
+                        <td>Bioko (Equatorial Guinea)</td>
+                        <td><img src="flag-of-equatorial-guinea.jpeg" alt="Equatorial Guinea Flag"></td>
+                        <td>Malabo</td>
+                    </tr>
+                </table>
+            </section>
+            <section><!--section 57-->
+                <h3>Culture and Languages</h3>
+                <p>The islands of Africa have diverse cultures influenced by African, European, and Asian traditions. Creole languages, French, Spanish, Portuguese, and English are commonly spoken, reflecting their colonial histories.</p>
+           
+            </section>
+            <section><!--section 58-->
+                <h2>Summary and Review</h2>
+                <p>Congratulations on completing your journey through Africa! Let's review what you've learned:</p>
+                
+                <h3>Highlights of Your Journey</h3>
+                <ul>
+                    <li>
+                        <strong>North Africa:</strong> Explored the rich history, including the Pyramids of Egypt and ancient cities.which country flag`s below?
+                        <img src="flag-of-egypt.jpeg" alt="Egypt Flag">
+                    </li>
+                    <li>
+                        <strong>West Africa:</strong> Discovered the vibrant cultures and festivals in countries like Nigeria and Ghana.which country flag`s below?
+                        <img src="flag-of-nigeria.jpeg" alt="Nigeria Flag">
+                    </li>
+                    <li>
+                        <strong>East Africa:</strong> Explored the diverse landscapes, from the Serengeti to Mount Kilimanjaro.which country flag`s below?
+                        <img src="flag-of-kenya.jpeg" alt="Kenya Flag">
+                    </li>
+                    <li>
+                        <strong>Southern Africa:</strong> Learned about the natural wonders and wildlife, including safaris in South Africa.which country flag`s below?
+                        <img src="flag-of-south-africa.jpeg" alt="South Africa Flag">
+                    </li>
+                    <li>
+                        <strong>Islands of Africa:</strong> Explored the unique islands, from Madagascar to Seychelles, with beautiful beaches and rich marine life.which country flag`s below?
+                        <img src="flag-of-seychelles.jpeg" alt="Seychelles Flag">
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <div class="facts">
+                    <h4>Did You Know?</h4>
+                    <p>🌍 Africa is the second-largest continent in the world, both in size and population.</p>
+                    <p>🐘 The Serengeti in Tanzania is home to one of the largest wildlife migrations on earth.</p>
+                    <p>🗿 The Great Pyramid of Giza is the oldest of the Seven Wonders of the Ancient World and the only one to remain largely intact.</p>
                 </div>
                 
-                <div class="buttons">
-                    <button onclick="startQuiz('country')">Country Finder</button>
-                    <button onclick="startQuiz('city')">City Finder</button>
-                </div>
-            </section>
-        
-            <section id="questions" style="display: none;">
-                <h3 id="instruction"></h3>
-                <div id="question-list"></div>
-                <button class="primary-btn" onclick="submitAnswers()">Submit</button>
-            </section>
-        
-            <section id="results" style="display: none;">
-                <h3 id="result-message"></h3>
-                <div id="correct-answers"></div>
-                <div class="buttons">
-                    <button class="secondary-btn" onclick="continueQuiz()">Back</button>
-                </div>
+                <h3>What Did You Enjoy the Most?</h3>
+                <p>Think about your favorite parts of Africa. Was it the pyramids of Egypt, the safaris in Kenya, or the beautiful beaches of Mauritius?</p>
+                
+                <h3> Do you really plan to explore africa!</h3>
+                <p>what would you like to explore when you got a chance to come to Africa.</p>
+                <p>How did you enjoyed this ? Time to get quiz,general test and exam.</p>
+                
+                
             </section>
         </main>
-        </div>
-        <script src="script.js"></script>
-        <script>
-           
-        
-            function toggleMenu() {
-                const dropdown = document.getElementById('dropdown');
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            }
-        
-            function showContent(id) {
-                const contents = document.querySelectorAll('.content');
-                contents.forEach(content => content.style.display = 'none');
-                document.getElementById(id).style.display = 'block';
-                if (id.startsWith('quiz')) {
-                    loadQuiz(parseInt(id.replace('quiz', '')));
-                }
-            }
-        
-            function shuffle(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-                return array;
-            }
-        
-        
-                resultsHTML += '</ul>';
-                resultsHTML += `<p>Your score: ${(correctAnswers / questions.length) * 100}%</p>`;
-                const resultsDiv = document.getElementById('results' + quizNumber);
-                resultsDiv.innerHTML = resultsHTML;
-        
-                if ((correctAnswers / questions.length) * 100 >= 60) {
-                    resultsDiv.innerHTML += '<p class="correct">You passed the quiz!</p>';
-                    const key = `${firstName}_${lastName}_${quizNumber}`;
-                    if (!localStorage.getItem(key)) {
-                        localStorage.setItem(key, (correctAnswers / questions.length) * 100);
-                    }
-                } else {
-                    resultsDiv.innerHTML += '<p class="incorrect">You failed the quiz. Please try again.</p>';
-                    const retryButton = document.querySelector(`#quiz${quizNumber} button[onclick="retryQuiz(${quizNumber})"]`);
-                    retryButton.style.display = 'inline';
-                }
-            
-        
-            function displayMarks() {
-                const firstName = document.getElementById('firstNameMarks').value;
-                const lastName = document.getElementById('lastNameMarks').value;
-                const pin = document.getElementById('pinMarks').value;
-        
-                if (!firstName || !lastName || !pin) {
-                    alert('Please fill out all the fields.');
-                    return;
-                }
-        
-                let marksHTML = '<h3>Your Marks</h3><ul>';
-                let found = false;
-                for (let i = 1; i <= 5; i++) {
-                    const key = `${firstName}_${lastName}_${i}`;
-                    const score = localStorage.getItem(key);
-                    if (score !== null) {
-                        found = true;
-                        marksHTML += `<li>Quiz ${i}: ${score}%</li>`;
-                    }
-                }
-        
-                if (!found) {
-                    marksHTML += '<li>No marks found.</li>';
-                }
-        
-                marksHTML += '</ul>';
-                document.getElementById('marksContent').innerHTML = marksHTML;
-            }
-        
-            // Load the first quiz by default when the page loads
-            document.addEventListener('DOMContentLoaded', () => {
-                showContent('quiz1');
+
+    <!-- Fixed Button Navigation -->
+    <div class="button-container">
+        <button class="button" onclick="previousSection()">
+            <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button class="button" onclick="nextSection()">
+            Next <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('section');
+
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+
+        function showSection(index) {
+            sections.forEach((section, i) => {
+                section.classList.toggle('active', i === index);
             });
-        </script>
-        </body>
-        </html>
-        
+            currentSection = index;
+        }
+
+        function nextSection() {
+            if (currentSection < sections.length - 1) {
+                showSection(currentSection + 1);
+            }
+        }
+
+        function previousSection() {
+            if (currentSection > 0) {
+                showSection(currentSection - 1);
+            }
+        }
+
+        function goToSection(index) {
+            showSection(index);
+            closeNav();
+        }
+    </script>
+</body>
+
+</html>

@@ -8,6 +8,15 @@ th {
     font-variant-position: super;
 }
 
+/* Table image styling */
+img.table-img {
+    width: 80px; /* Adjust width as needed */
+    height: auto; /* Keep the aspect ratio */
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; /* Optional for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
 
 ul {
     list-style-type: disc;

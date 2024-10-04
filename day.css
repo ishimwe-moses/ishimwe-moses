@@ -9,14 +9,16 @@ th {
 }
 
 /* Styling for images inside a table within a section */
+/* Table image styling */
 section table img.table-img {
-    width: 80px; /* Adjust width as needed */
-    height: auto; /* Keep aspect ratio */
+    width: 60px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 0 auto;
-    border-radius: 5px; /* Optional */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional */
+    border-radius: 4px; /* Optional for slight rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional for a subtle shadow */
 }
+
 
 
 ul {

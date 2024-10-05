@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>world explorer!</title>
+    
+    <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="day.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+    
+</head>
+
+<body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#" onclick="goToSection(0)">Oceania</a>
+        <a href="#" onclick="goToSection(1)">Day 1</a>
+        <a href="#" onclick="goToSection(4)">Day 2</a>
+        <a href="#" onclick="goToSection(7)">Day 3</a>
+        <a href="#" onclick="goToSection(11)">Day 4</a>
+        <a href="#" onclick="goToSection(15)">summary</a>
+       
+
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore South America</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="active">
+            <div class="introduction">
+    <p><strong>Australia (Oceania)</strong> is the smallest continent by land area and is often referred to as Oceania when including the Pacific islands.</p>
+    <p>It is known for its unique wildlife, including species found nowhere else, like kangaroos, koalas, and the platypus.</p>
+    <p>The <strong>Great Barrier Reef</strong>, off the coast of Australia, is the world’s largest coral reef system and a UNESCO World Heritage Site.</p>
+    <p>Oceania includes a diverse range of cultures, from the Aboriginal peoples of Australia to the Polynesian cultures of the Pacific islands.</p>
+    <p>Australia has a highly developed economy, with strengths in mining, agriculture, and tourism, and is known for its high quality of life.</p>
+    <p>The continent has a mix of modern cities like <strong>Sydney</strong> and <strong>Melbourne</strong>, known for their iconic landmarks such as the <strong>Sydney Opera House</strong> and the <strong>Harbour Bridge</strong>.</p>
+    <p>The region’s remote islands, such as Fiji and Tahiti, are famous for their stunning beaches, rich marine life, and vibrant cultural traditions.</p>
+</section>
+<section><!--section 2 -->
+            <h2>day1: Introduction to Oceania</h2>
+
+            <!-- Added main image and image note -->
+            <div class="main-image">
+                <img src="Oceania-islands.jpeg" alt="Oceania Exploration">
+            </div>
+            <div class="image-note">
+                <p>This image shows some of the beautiful islands we will explore in Oceania.</p>
+            </div>
+
+            <h3>Welcome to Oceania</h3>
+            <p>Oceania is a region filled with thousands of islands spread across the central and South Pacific Ocean. It is divided into four main areas: Australasia, Melanesia, Micronesia, and Polynesia. Each area has its own unique cultures, languages, and landscapes, from the bustling cities of Australia to the remote beaches of Micronesia.</p>
+
+            <h3>Regions of Oceania</h3>
+            <ul>
+                <li><strong>Australasia</strong>: Includes Australia and New Zealand, known for their diverse wildlife and modern cities.</li>
+                <li><strong>Melanesia</strong>: Features countries like Fiji and Papua New Guinea, with rich cultural traditions and tropical islands.</li>
+                <li><strong>Micronesia</strong>: Consists of small islands such as the Federated States of Micronesia and Palau, famous for their beautiful marine life.</li>
+                <li><strong>Polynesia</strong>: Encompasses a vast number of islands, including Hawaii, Samoa, and Tonga, known for their stunning landscapes and vibrant cultures.</li>
+            </ul>
+            <p>Over the next few days, we'll explore Australasia, Melanesia, and Micronesia in more detail.</p>
+ </section>
+
+        <!-- Added sections for countries -->
+<section><!--section 3 -->
+            <div class="country-div">
+                <h4>Australia</h4>
+                <div class="main-image">
+                    <img src="Australia-kangaroos.jpeg" alt="Australia Landscape">
+                </div>
+                <div class="image-note">
+                    <p>Australia is famous for its outback, kangaroos, and the Sydney Opera House.</p>
+                </div>
+                <div class="main-image">
+                    <img src="Australia-Sydney.jpeg" alt="Sydney City">
+                </div>
+                <div class="image-note">
+                    <p>Sydney is one of Australia's biggest cities, known for its beautiful harbor.</p>
+                </div>
+            </div>
+
+            <div class="country-div">
+                <h4>New Zealand</h4>
+                <div class="main-image">
+                    <img src="NewZealand.jpeg" alt="New Zealand Landscape">
+                </div>
+                <div class="image-note">
+                    <p>New Zealand is known for its breathtaking mountains and friendly people.</p>
+                </div>
+                <div class="main-image">
+                    <img src="NewZealand-Auckland .jpeg" alt="Auckland City">
+                </div>
+                <div class="image-note">
+                    <p>Auckland is the largest city in New Zealand, surrounded by beautiful beaches and islands.</p>
+                </div>
+            </div>
+
+            <div class="country-div">
+                <h4>Fiji</h4>
+                <div class="main-image">
+                    <img src="Fiji.jpeg" alt="Fiji Landscape">
+                </div>
+                <div class="image-note">
+                    <p>Fiji is famous for its crystal-clear waters, coral reefs, and tropical weather.</p>
+                </div>
+                <div class="main-image">
+                    <img src="Fiji-Suva.jpeg" alt="Suva City">
+                </div>
+                <div class="image-note">
+                    <p>Suva is the capital of Fiji, located on the island of Viti Levu.</p>
+                </div>
+            </div>
+ </section>
+<sectioon><!--section  4 -->
+        <!-- Added Did You Know section -->
+        <h3>Did you know?</h3>
+        <div class="facts">
+            
+            <p>Oceania is home to the Great Barrier Reef, the largest coral reef system in the world.</p>
+            <p>New Zealand was the first country to give women the right to vote in 1893.</p>
+            <p>Australia is both a country and a continent, known for its unique wildlife like koalas and kangaroos.</p>
+            <p>Fiji has over 330 islands, but only about 100 are inhabited by people.</p>
+            <p>The Pacific Islands in Oceania are some of the most remote places in the world.</p>
+        </div>
+</sectioon>
+<section><!--section 5 -->
+      <h2>day 2: Exploring Australasia</h2>
+
+      <!-- Added main image and image note -->
+      <div class="main-image">
+          <img src="Australasia.jpeg" alt="Australasia Exploration">
+      </div>
+      <div class="image-note">
+          <p>Map of Australasia.</p>
+      </div>
+
+      <h3>Introduction to Australasia</h3>
+      <p>Australasia is a region of Oceania that includes Australia, New Zealand, and neighboring islands in the Pacific Ocean. This part of the world is known for its diverse wildlife, stunning natural scenery, and vibrant cultures. From kangaroos and koalas in Australia to the Maori traditions of New Zealand, Australasia is a place of wonder and adventure.</p>
+
+      <h3>Big Cities</h3>
+      <p>The biggest cities in Australasia include Sydney, Melbourne, Brisbane, and Auckland. These cities are known for their modern skylines, cultural festivals, and famous landmarks. Sydney's Harbour Bridge and Melbourne's Federation Square are must-see spots, while Auckland is known as the "City of Sails" due to its beautiful harbors.</p>
+
+      <h3>Famous Places</h3>
+      <p>Australasia is home to many famous places that attract visitors from all over the world. The Great Barrier Reef in Australia is the largest coral reef system on the planet, teeming with marine life. New Zealand's Fiordland National Park offers breathtaking fjords and mountains, while Australia's Uluru is a sacred site for Indigenous Australians, known for its massive sandstone monolith.</p>
+
+      <h3>Culture and Traditions</h3>
+      <p>Australasia has a rich cultural heritage. In Australia, the Aboriginal culture is one of the oldest on Earth, with a history dating back over 65,000 years. In New Zealand, the Maori culture is celebrated through traditional dances, carvings, and language. Festivals like Australia Day and Waitangi Day in New Zealand bring people together to celebrate their national pride.</p>
+
+      <h3>Heroes and Icons</h3>
+      <p>Heroes from Australasia include Sir Edmund Hillary, who was the first person to reach the summit of Mount Everest. Steve Irwin, known as the "Crocodile Hunter," was famous for his work with wildlife and his love for animals. Another notable figure is Cathy Freeman, an Australian sprinter who won a gold medal in the 2000 Sydney Olympics, making her a national icon.</p>
+      <div style="text-align: center; margin: 20px 0; padding: 20px; background-color: #e0f7fa; border-radius: 10px;">
+        <h2 style="color: #4caf50;">Now You're Ready to Take the Quiz!</h2>
+        <p style="font-size: 18px; color: #333;">Head over to the home page to get started with your first quiz!</p>
+        </div>
+    </section>
+<section><!--section 6 -->
+      <h3>Countries, Their Flags, and Capital Cities in Australasia</h3>
+      <table>
+          <tr>
+              <th>Country</th>
+              <th>Flag</th>
+              <th>Capital City</th>
+          </tr>
+          <tr>
+              <td>Australia</td>
+              <td><img src="flag-of-australia.jpeg" alt="Australia Flag" width="50"></td>
+              <td>Canberra</td>
+          </tr>
+          <tr>
+              <td>New Zealand</td>
+              <td><img src="flag-of-new-zealand.jpeg" alt="New Zealand Flag" width="50"></td>
+              <td>Wellington</td>
+          </tr>
+          <tr>
+              <td>Fiji</td>
+              <td><img src="flag-of-fiji.jpeg" alt="Fiji Flag" width="50"></td>
+              <td>Suva</td>
+          </tr>
+          <tr>
+              <td>Papua New Guinea</td>
+              <td><img src="flag-of-papua-new-guinea.jpeg" alt="Papua New Guinea Flag" width="50"></td>
+              <td>Port Moresby</td>
+          </tr>
+          <tr>
+              <td>Samoa</td>
+              <td><img src="flag-of-samoa.jpeg" alt="Samoa Flag" width="50"></td>
+              <td>Apia</td>
+          </tr>
+          <tr>
+              <td>Tonga</td>
+              <td><img src="flag-of-tonga.jpeg" alt="Tonga Flag" width="50"></td>
+              <td>Nukuʻalofa</td>
+          </tr>
+          <tr>
+              <td>Palau</td>
+              <td><img src="flag-of-palau.jpeg" alt="Palau Flag" width="50"></td>
+              <td>Ngerulmud</td>
+          </tr>
+          <tr>
+              <td>Vanuatu</td>
+              <td><img src="flag-of-vanuatu.jpeg" alt="Vanuatu Flag" width="50"></td>
+              <td>Port Vila</td>
+          </tr>
+      </table>
+</section>
+<section><!--section 7 -->
+  <!-- Added Did You Know section -->
+  <h3>Did you know?</h3>
+  <div class="facts">
+
+      <p>Australia is home to 21 of the world's 25 most venomous snakes, but don't worry—they prefer to avoid humans!</p>
+      <p>New Zealand is home to more sheep than people, with a ratio of about 6 sheep for every person.</p>
+      <p>Fiji is made up of over 300 islands, but only about 100 of them are inhabited by people.</p>
+      <p>Papua New Guinea has over 800 languages spoken across the country, making it one of the most linguistically diverse places in the world.</p>
+      <p>Vanuatu is known for its land diving tradition, where men jump from tall wooden towers with vines tied to their ankles—a precursor to modern bungee jumping!</p>
+  </div>
+</section>
+<section><!--section 8 -->
+      <h2> day 3: Exploring Melanesia</h2>
+
+      <!-- Main Image and Note -->
+      <div class="main-image">
+          <img src="Melanesia.jpeg" alt="Melanesia Exploration">
+      </div>
+      <div class="image-note">
+          <p>malanesian people.</p>
+      </div>
+
+      <h3>Introduction to Melanesia</h3>
+      <p>Melanesia is a beautiful part of Oceania made up of many islands. It is known for its stunning beaches, lush forests, and rich culture. The people here live close to nature, and their traditions have been passed down for generations.</p>
+
+      <h3>Big Cities</h3>
+      <p>Melanesia is home to several big cities like Port Moresby in Papua New Guinea, Honiara in the Solomon Islands, and Suva in Fiji. These cities are full of life, with colorful markets, traditional dances, and warm, welcoming people.</p>
+</section>
+<section><!--section 9 -->
+      <!-- Country Sections with Images and Notes -->
+      <h3>Countries and Their Unique Features</h3>
+      <div class="country-div">
+          <h4>Fiji</h4>
+          <div class="main-image">
+              <img src="fiji coral reefs.jpeg" alt="Beautiful beaches in Fiji">
+          </div>
+          <div class="image-note">
+              <p>Fiji is famous for its crystal-clear waters and beautiful coral reefs.</p>
+          </div>
+          <div class="main-image">
+              <img src="Suva.jpeg" alt="Suva City in Fiji">
+          </div>
+          <div class="image-note">
+              <p>Suva, the capital city of Fiji, is a bustling hub of culture and commerce.</p>
+          </div>
+      </div>
+
+      <div class="country-div">
+          <h4>Papua New Guinea</h4>
+          <div class="main-image">
+              <img src="papua_new_guinea.jpeg" alt="Highlands of Papua New Guinea">
+          </div>
+          <div class="image-note">
+              <p>The highlands of Papua New Guinea are home to many indigenous tribes with unique cultures.</p>
+          </div>
+          <div class="main-image">
+              <img src="Port Moresby.jpeg" alt="Port Moresby in Papua New Guinea">
+          </div>
+          <div class="image-note">
+              <p>Port Moresby, the capital, is a city with a rich history and vibrant cultural scene.</p>
+          </div>
+      </div>
+
+      <div class="country-div">
+          <h4>Solomon Islands</h4>
+          <div class="main-image">
+              <img src="solomon_islands.jpeg" alt="Beautiful islands in Solomon Islands">
+          </div>
+          <div class="image-note">
+              <p>The Solomon Islands are known for their unspoiled natural beauty and friendly communities.</p>
+          </div>
+          <div class="main-image">
+              <img src="Honiara.jpeg" alt="Honiara City in Solomon Islands">
+          </div>
+          <div class="image-note">
+              <p>Honiara, the capital, is a gateway to the rich cultural heritage of the islands.</p>
+          </div>
+      </div>
+
+      <div class="country-div">
+          <h4>Vanuatu</h4>
+          <div class="main-image">
+              <img src="vanuatu active volcanoes.jpeg" alt="Active volcanoes in Vanuatu">
+          </div>
+          <div class="image-note">
+              <p>Vanuatu is famous for its active volcanoes and adventurous spirit.</p>
+          </div>
+          <div class="main-image">
+              <img src="vanuatu Port Vila.jpeg" alt="Port Vila City in Vanuatu">
+          </div>
+          <div class="image-note">
+              <p>Port Vila, the capital, is a charming city with a mix of traditional and modern influences.</p>
+          </div>
+      </div>
+
+      <div class="country-div">
+          <h4>New Caledonia</h4>
+          <div class="main-image">
+              <img src="new_caledonia lagoon.jpeg" alt="Lagoon in New Caledonia">
+          </div>
+          <div class="image-note">
+              <p>New Caledonia is known for its beautiful lagoon, one of the largest in the world.</p>
+          </div>
+          <div class="main-image">
+              <img src="new_caledonia Nouméa.jpeg" alt="Nouméa City in New Caledonia">
+          </div>
+          <div class="image-note">
+              <p>Nouméa, the capital, is a vibrant city with French influences and tropical charm.</p>
+          </div>
+      </div>
+
+      <div class="country-div">
+          <h4>West Papua</h4>
+          <div class="main-image">
+              <img src="west_papua dense rainforests.jpeg" alt="Rainforests in West Papua">
+          </div>
+          <div class="image-note">
+              <p>West Papua is known for its dense rainforests and diverse wildlife.</p>
+          </div>
+          <div class="main-image">
+              <img src="Manokwari City.jpeg" alt="Manokwari City in West Papua">
+          </div>
+          <div class="image-note">
+              <p>Manokwari, the capital, is a city rich in culture and natural beauty.</p>
+          </div>
+      </div>
+
+</section>
+<section><!-- section 10 -->
+      <!-- Countries, Flags, and Capitals -->
+      <h3>Countries, Their Flags, and Capital Cities in Melanesia</h3>
+      <table>
+          <tr>
+              <th>Country</th>
+              <th>Flag</th>
+              <th>Capital City</th>
+          </tr>
+          <tr>
+              <td>Fiji</td>
+              <td><img src="flag-of-fiji.jpeg" alt="Fiji Flag" width="50"></td>
+              <td>Suva</td>
+          </tr>
+          <tr>
+              <td>Papua New Guinea</td>
+              <td><img src="flag-of-papua-new-guinea.jpeg" alt="Papua New Guinea Flag" width="50"></td>
+              <td>Port Moresby</td>
+          </tr>
+          <tr>
+              <td>Solomon Islands</td>
+              <td><img src="flag-of-solomon-islands.jpeg" alt="Solomon Islands Flag" width="50"></td>
+              <td>Honiara</td>
+          </tr>
+          <tr>
+              <td>Vanuatu</td>
+              <td><img src="flag-of-vanuatu.jpeg" alt="Vanuatu Flag" width="50"></td>
+              <td>Port Vila</td>
+          </tr>
+          <tr>
+              <td>New Caledonia</td>
+              <td><img src="flag-of-new-caledonia.jpeg" alt="New Caledonia Flag" width="50"></td>
+              <td>Nouméa</td>
+          </tr>
+          <tr>
+              <td>West Papua</td>
+              <td><img src="flag-of-west-papua.jpeg" alt="West Papua Flag" width="50"></td>
+              <td>Manokwari</td>
+          </tr>
+      </table>
+</section>
+<section><!-- section 11 -->
+      <h3>Did You Know?</h3>
+      <div class="facts">
+          <p>Did you know that Melanesia is home to some of the most diverse languages in the world? Papua New Guinea alone has over 800 languages!</p>
+          <p>The coral reefs in Melanesia are among the most beautiful and diverse on the planet, attracting divers from all over the world.</p>
+          <p>Vanuatu is known for its traditional land diving ceremonies, where people jump from tall wooden towers with only vines tied to their ankles!</p>
+          <p>New Caledonia's lagoon is a UNESCO World Heritage site, celebrated for its exceptional marine life.</p>
+          <p>West Papua is part of the "Coral Triangle," an area known for having the highest marine biodiversity in the world.</p>
+      </div>
+
+</section>
+<section><!--section 12 -->
+      <h2>Day 4: Exploring Micronesia</h2>
+
+      <div class="main-image">
+          <img src="Oceania- marine life.jpeg" alt="Oceania Day 3 Image">
+      </div>
+      <div class="image-note">A breathtaking view of Micronesia's beaches and marine life.</div>
+
+      <h3>Introduction to Micronesia</h3>
+      <p>Micronesia is a group of small islands spread across the Pacific Ocean. These islands are known for their stunning beaches and rich marine life.</p>
+
+      <h3>Big Cities</h3>
+      <p>Some of the main cities in Micronesia are Palikir, Majuro, and Tarawa. These cities are small but have lots of interesting things to see.</p>
+
+      <h3>Famous Places</h3>
+      <p>Micronesia has famous places like the ancient city of Nan Madol, the diving spots in Chuuk Lagoon, and the Rock Islands of Palau.</p>
+
+      <h3>Culture</h3>
+      <p>People in Micronesia speak many languages. They celebrate traditional dances and enjoy foods like breadfruit and fish.</p>
+
+      <h3>Heroes</h3>
+      <p>Heroes from Micronesia include Bailey Olter from the Federated States of Micronesia, who was a famous leader, and Lazarus Salii from Palau, who helped his country gain independence.</p>
+</section>
+<section><!--section 13 -->
+      <h3>Countries, Their Flags, and Capital Cities in Micronesia</h3>
+      <table>
+          <tr>
+              <th>Country</th>
+              <th>Flag</th>
+              <th>Capital City</th>
+          </tr>
+          <tr>
+              <td>Federated States of Micronesia</td>
+              <td><img src="flag-of-micronesia.jpeg" alt="Micronesia Flag" width="50"></td>
+              <td>Palikir</td>
+          </tr>
+          <tr>
+              <td>Kiribati</td>
+              <td><img src="flag-of-kiribati.jpeg" alt="Kiribati Flag" width="50"></td>
+              <td>Tarawa</td>
+          </tr>
+          <tr>
+              <td>Marshall Islands</td>
+              <td><img src="flag-of-marshall-islands.jpeg" alt="Marshall Islands Flag" width="50"></td>
+              <td>Majuro</td>
+          </tr>
+          <tr>
+              <td>Nauru</td>
+              <td><img src="flag-of-nauru.jpeg" alt="Nauru Flag" width="50"></td>
+              <td>Yaren (de facto)</td>
+          </tr>
+          <tr>
+              <td>Palau</td>
+              <td><img src="flag-of-palau.jpeg" alt="Palau Flag" width="50"></td>
+              <td>Ngerulmud</td>
+          </tr>
+          <tr>
+              <td>Guam</td>
+              <td><img src="flag-of-guam.jpeg" alt="Guam Flag" width="50"></td>
+              <td>Hagåtña</td>
+          </tr>
+          <tr>
+              <td>Northern Mariana Islands</td>
+              <td><img src="flag-of-northern-mariana-islands.jpeg" alt="Northern Mariana Islands Flag" width="50"></td>
+              <td>Saipan</td>
+          </tr>
+      </table>
+
+</section>
+<section><!--section 14 -->
+          <div class="country-div">
+              <h4>Federated States of Micronesia</h4>
+              <div class="main-image">
+                  <img src="lush landscapes of the Federated States of Micronesia.jpeg" alt="Micronesia Physical Feature">
+              </div>
+              <div class="image-note">The lush landscapes of the Federated States of Micronesia.</div>
+              <div class="main-image">
+                  <img src="micronesia Palikir.jpeg" alt="Palikir City">
+              </div>
+              <div class="image-note">A view of Palikir, the capital city.</div>
+          </div>
+
+          <div class="country-div">
+              <h4>Kiribati</h4>
+              <div class="main-image">
+                  <img src="serene atolls of Kiribati.jpeg" alt="Kiribati Physical Feature">
+              </div>
+              <div class="image-note">The serene atolls of Kiribati.</div>
+              <div class="main-image">
+                  <img src="kiribati Tarawa.jpeg" alt="Tarawa City">
+              </div>
+              <div class="image-note">Tarawa, the bustling capital of Kiribati.</div>
+          </div>
+
+          <div class="country-div">
+              <h4>Marshall Islands</h4>
+              <div class="main-image">
+                  <img src="Beautiful atolls and coral reefs of the Marshall Islands.jpeg" alt="Marshall Islands Physical Feature">
+              </div>
+              <div class="image-note">Beautiful atolls and coral reefs of the Marshall Islands.</div>
+              <div class="main-image">
+                  <img src="marshall-Majuro.jpeg" alt="Majuro City">
+              </div>
+              <div class="image-note">Majuro, the capital of the Marshall Islands.</div>
+          </div>
+
+          <div class="country-div">
+              <h4>Nauru</h4>
+              <div class="main-image">
+                  <img src="Nauru's stunning coastal cliffs.jpeg" alt="Nauru Physical Feature">
+              </div>
+              <div class="image-note">Nauru's stunning coastal cliffs.</div>
+              <div class="main-image">
+                  <img src="Yaren.jpeg" alt="Yaren City">
+              </div>
+              <div class="image-note">Yaren, the de facto capital of Nauru.</div>
+          </div>
+
+          <div class="country-div">
+              <h4>Palau</h4>
+              <div class="main-image">
+                  <img src="palau Rock Islands.jpeg" alt="Palau Physical Feature">
+              </div>
+              <div class="image-note">The Rock Islands of Palau.</div>
+              <div class="main-image">
+                  <img src="Ngerulmud.jpeg" alt="Ngerulmud City">
+              </div>
+              <div class="image-note">Ngerulmud, the capital of Palau.</div>
+          </div>
+
+          <div class="country-div">
+              <h4>Guam</h4>
+              <div class="main-image">
+                  <img src="Guam's beautiful Tumon Bay.jpeg" alt="Guam Physical Feature">
+              </div>
+              <div class="image-note">Guam's beautiful Tumon Bay.</div>
+              <div class="main-image">
+                  <img src="Hagåtña.jpeg" alt="Hagåtña City">
+              </div>
+              <div class="image-note">Hagåtña, the capital city of Guam.</div>
+          </div>
+
+          <div class="country-div">
+              <h4>Northern Mariana Islands</h4>
+              <div class="main-image">
+                  <img src="pristine beaches.jpeg" alt="Northern Mariana Islands Physical Feature">
+              </div>
+              <div class="image-note">The pristine beaches of Saipan.</div>
+              <div class="main-image">
+                  <img src="Saipan.jpeg" alt="Saipan City">
+              </div>
+              <div class="image-note">Saipan, the capital of the Northern Mariana Islands.</div>
+          </div>
+</section>
+<section><!--section 15 -->
+      <h3>Did you know?</h3>
+
+      <div class="facts">
+          
+          <p>🌴 The Federated States of Micronesia is made up of over 600 islands, each offering unique natural beauty.</p>
+          <p>🐟 Kiribati is one of the most isolated countries in the world, and its atolls are spread over 3.5 million square kilometers of ocean.</p>
+          <p>🏝️ The Marshall Islands are home to the world's largest atoll, Kwajalein, which is part of the Republic of the Marshall Islands.</p>
+          <p>🦅 Nauru is the third smallest country in the world by land area, with only 21 square kilometers.</p>
+          <p>🐚 Palau's Rock Islands are a UNESCO World Heritage site, known for their incredible biodiversity.</p>
+          <p>🌺 Guam is the largest and southernmost island in the Mariana Islands archipelago, known for its rich history and vibrant Chamorro culture.</p>
+      </div>
+</section>
+<section><!--section 16 -->
+      <h2> Summary of Our Journey Through Oceania</h2>
+
+      <div class="main-image">
+          <img src="oceania.jpeg" alt="Oceania Journey Image">
+      </div>
+      <div class="image-note">Map of Oceania.</div>
+
+      <h3>Recap of Our Adventure</h3>
+      <p>Over the past few days, we've traveled through the diverse and beautiful regions of Oceania. We started in <strong>Australasia</strong>, exploring the vibrant cities and famous landmarks of Australia and New Zealand. We then ventured into <strong>Melanesia</strong>, where we experienced the rich cultural traditions and stunning natural beauty of countries like Fiji and Papua New Guinea. Finally, we discovered the small but enchanting islands of <strong>Micronesia</strong>, known for their unique marine life and historic sites.</p>
+</section>
+<section><!--section 17 -->
+      <h3>Highlights of Our Journey</h3>
+      <ul>
+          <li><strong>Australasia</strong>: The Great Barrier Reef, Sydney Opera House, and friendly wildlife.</li>
+          <li><strong>Melanesia</strong>: Coral reefs of Fiji, volcanoes of Vanuatu, and traditional dances.</li>
+          <li><strong>Micronesia</strong>: Ancient city of Nan Madol, Chuuk Lagoon diving spots, and Rock Islands of Palau.</li>
+      </ul>
+
+      <h3>Celebrating Oceania's Diversity</h3>
+      <p>Oceania is a region rich in diversity, with each area offering its own unique cultures, languages, and landscapes. Whether it's the bustling cities of Australasia, the cultural villages of Melanesia, or the tranquil islands of Micronesia, there's something special to discover in every corner of Oceania.</p>
+</section>
+<section><!--section 18 -->
+      <h3>Flags of Oceania</h3>
+      <p>Here are some of the flags of the countries we explored:</p>
+      <table>
+          <tr>
+              <th>Country</th>
+              <th>Flag</th>
+              <th>Capital City</th>
+          </tr>
+          <tr>
+              <td>Australia</td>
+              <td><img src="flag-of-australia.jpeg" alt="Australia Flag" width="50"></td>
+              <td>Canberra</td>
+          </tr>
+          <tr>
+              <td>New Zealand</td>
+              <td><img src="flag-of-new-zealand.jpeg" alt="New Zealand Flag" width="50"></td>
+              <td>Wellington</td>
+          </tr>
+          <tr>
+              <td>Fiji</td>
+              <td><img src="flag-of-fiji.jpeg" alt="Fiji Flag" width="50"></td>
+              <td>Suva</td>
+          </tr>
+          <tr>
+              <td>Papua New Guinea</td>
+              <td><img src="flag-of-papua-new-guinea.jpeg" alt="Papua New Guinea Flag" width="50"></td>
+              <td>Port Moresby</td>
+          </tr>
+          <tr>
+              <td>Federated States of Micronesia</td>
+              <td><img src="flag-of-micronesia.jpeg" alt="Micronesia Flag" width="50"></td>
+              <td>Palikir</td>
+          </tr>
+          <tr>
+              <td>Palau</td>
+              <td><img src="flag-of-palau.jpeg" alt="Palau Flag" width="50"></td>
+              <td>Ngerulmud</td>
+          </tr>
+      </table>
+</section>
+<section><!--section 19-->
+     
+      <h3>Did you know?</h3>
+      <div class="facts">
+        
+          <p>🌏 Australia is the only country that is also a continent, home to unique wildlife like kangaroos and koalas.</p>
+          <p>🌋 New Zealand is known for its active geothermal areas, including the famous Rotorua geysers.</p>
+          <p>🪸 Fiji is considered the "Soft Coral Capital of the World" due to its vibrant underwater life.</p>
+          <p>🏔️ Papua New Guinea has one of the highest rates of linguistic diversity, with over 800 languages spoken.</p>
+          <p>🌺 The Federated States of Micronesia consists of four states spread across the Western Pacific Ocean.</p>
+          <p>🛶 Palau is known for its pristine marine environment, making it a top destination for diving enthusiasts.</p>
+      </div>
+      <div style="text-align: center; margin: 20px 0; padding: 20px; background-color: #e0f7fa; border-radius: 10px;">
+        <h2 style="color: #4caf50;">Now You're Ready to Take the Second Quiz!</h2>
+        <p style="font-size: 18px; color: #333;">Head over to the home page to get started with your Second quiz as well as General test Exam!</p>
+        </div>
+</section> 
+    </main>
+
+    <!-- Fixed Button Navigation -->
+    <div class="button-container">
+        <button class="button" onclick="previousSection()">
+            <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button class="button" onclick="nextSection()">
+            Next <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('section');
+
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+
+        function showSection(index) {
+            sections.forEach((section, i) => {
+                section.classList.toggle('active', i === index);
+            });
+            currentSection = index;
+        }
+
+        function nextSection() {
+            if (currentSection < sections.length - 1) {
+                showSection(currentSection + 1);
+            }
+        }
+
+        function previousSection() {
+            if (currentSection > 0) {
+                showSection(currentSection - 1);
+            }
+        }
+
+        function goToSection(index) {
+            showSection(index);
+            closeNav();
+        }
+    </script>
+</body>
+
+</html>

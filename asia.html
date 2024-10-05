@@ -1,237 +1,1210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore the world</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="header">
-    <div class="menu" onclick="toggleMenu()">&#9776;</div>
-    <h1>Let's Explore Asia</h1>
-</div>
-<section>
-<div id="dropdown" class="dropdown">
-    <a href="index.html">Home</a>
-    <a href="asia day1.html">Day 1</a>
-    <a href="asia day2.html">Day 2</a>
-    <a href="asia day3.html">Day 3</a>
-    <a href="asia quiz1.html">Quiz 1</a>
-    <a href="asia day4.html">Day 4</a>
-    <a href="asia day5.html">Day 5</a>
-    <a href="asia day6.html">Day 6</a>
-    <a href="asia quiz2.html">Quiz 2</a>
-    <a href="asia day7.html">Day 7</a>
-    <a href="asia day8.html">day 8</a>
-    <a href="asia day9.html">day 9</a>
-    <a href="asia quiz3.html">Quiz 3</a>
-    <a href="asia general test.html">General-test</a>
-    <a href="asia exam.html">Exam</a>
-    
-</div>
-<main>
-    <section id="continents">
-        <div class="introduction">
-                <p><strong>Asia</strong> is the <em>largest</em> and most populous continent, containing nearly 60% of the world’s population.</p>
-                <p>It is incredibly diverse, encompassing a wide range of climates, cultures, languages, and religions.</p>
-                <p>Asia is home to the world’s highest peak, <strong>Mount Everest</strong>, and the lowest point on land, the <strong>Dead Sea</strong>.</p>
-                <p>The continent is the birthplace of major world religions, including Hinduism, Buddhism, Islam, and Confucianism.</p>
-                <p>Economically, Asia is a powerhouse, with countries like <strong>China, Japan,</strong> and <strong>India</strong> playing major roles in global trade and technology.</p>
-                <p>The region has a rich history of ancient civilizations, including the Mesopotamian, Indus Valley, and Chinese civilizations.</p>
-                <p>Asia is known for its rapid modernization, with cities like <strong>Tokyo</strong>, <strong>Singapore</strong>, and <strong>Seoul</strong> leading in technological innovation and infrastructure.</p>
-            </div>
-        <div><p id="description">Think you know Asia? Match the cities with their correct countries and find out!.</p></div>
-        <div class="buttons">
-            <button onclick="chooseContinent('Asia')">GeoMatch</button>
-        </div>
-    </section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <section id="quiz" style="display: none;">
-        <h2>You want to prove that you know <span id="chosen-continent"?></span></h2>
-        <div class="introduction">
-            <p><strong>Asia</strong> is the largest and most populous continent, with 49 countries, each boasting a capital city rich in culture and history.</p>
+    <title>world explorer!</title>
+    
+    <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="day.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+    
+</head>
+
+<body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#" onclick="goToSection(0)">Asia</a>
+        <a href="#" onclick="goToSection(1)">Day 1</a>
+        <a href="#" onclick="goToSection(4)">Day 2</a>
+        <a href="#" onclick="goToSection(8)">Day 3</a>
+        <a href="#" onclick="goToSection(12)">Day 4</a>
+        <a href="#" onclick="goToSection(16)">Day 5</a>
+        <a href="#" onclick="goToSection(20)">Day 6</a>
+        <a href="#" onclick="goToSection(24)">Day 7</a>
+        <a href="#" onclick="goToSection(28)">Day 8</a>
+        
+        <a href="#" onclick="goToSection(32)">summary</a>
+       
+
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore Asia</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="active">
+            <p><strong>Asia</strong> is the <em>largest</em> and most populous continent, containing nearly 60% of the world’s population.</p>
+            <p>It is incredibly diverse, encompassing a wide range of climates, cultures, languages, and religions.</p>
+            <p>Asia is home to the world’s highest peak, <strong>Mount Everest</strong>, and the lowest point on land, the <strong>Dead Sea</strong>.</p>
+            <p>The continent is the birthplace of major world religions, including Hinduism, Buddhism, Islam, and Confucianism.</p>
+            <p>Economically, Asia is a powerhouse, with countries like <strong>China, Japan,</strong> and <strong>India</strong> playing major roles in global trade and technology.</p>
+            <p>The region has a rich history of ancient civilizations, including the Mesopotamian, Indus Valley, and Chinese civilizations.</p>
+            <p>Asia is known for its rapid modernization, with cities like <strong>Tokyo</strong>, <strong>Singapore</strong>, and <strong>Seoul</strong> leading in technological innovation and infrastructure.</p>
+            <br><p><strong>Asia</strong> is the largest and most populous continent, with 49 countries, each boasting a capital city rich in culture and history.</p>
             <p>This quiz challenges your knowledge of Asian geography by asking you to match countries with their capitals.</p>
             <p>From the vibrant streets of <strong>Tokyo</strong> in Japan to the ancient city of <strong>Beijing</strong> in China, Asia's capitals are as diverse as the continent itself.</p>
             <p>These cities are not just administrative centers but also cultural and economic powerhouses, with deep historical roots and modern significance.</p>
             <p>Whether you're familiar with the bustling markets of <strong>Delhi</strong> in India or the serene temples of <strong>Bangkok</strong> in Thailand, each capital has a unique charm.</p>
-            <p>As you take this quiz, reflect on the vastness of Asia and the rich cultural tapestry woven into its capitals.</p>
-            <p>Good luck, and enjoy discovering the capitals of Asia!</p>
+</section>
+<section><!--section 1-->
+<h2>Day 1: Introduction to Asia</h2>
+<div class="main-image">
+    <!-- Added an image within <div class="main-image"> -->
+    <img src="asia.jpeg" alt="Asia Day 1 Introduction Image" style="width:45%">
+</div>
+<div class="image-note">
+    <!-- Added a note below the image -->
+    <p>Asia Map.</p>
+</div>
+<p>Asia is the largest continent in the world. It has many different countries, cultures, and landscapes. From high mountains to big deserts and beautiful beaches, Asia has it all!</p>
+<h3>People and Languages</h3>
+<p>Asia is home to over 4.5 billion people who speak many different languages, like Chinese, Hindi, and Japanese.</p>
+<h3>Heroes of Asia</h3>
+<p>Many important people come from Asia. Mahatma Gandhi helped India gain independence, and Confucius was a great teacher from China.</p>
+<h3>Biggest and Smallest Features</h3>
+<p>The biggest country in Asia is China, and the smallest is the Maldives. The tallest mountain is Mount Everest, and the longest river is the Yangtze River.</p>
+<h3>Countries</h3>
+<p>There are 49 countries in Asia, including China, India, and Japan. Each country has its own unique culture and attractions.</p>
+
+<!-- Added sections for all countries -->
+</section>
+<section><!--section 2-->
+           
+<div class="country-div">
+    <h4>China</h4>
+    <div class="main-image">
+        <img src="great-wall-china.jpeg" alt="Main physical feature of China">
+    </div>
+    <div class="image-note">
+        <p>The Great Wall of China, a wonder of the world and a symbol of China's historical significance.</p>
+    </div>
+    <div class="main-image">
+        <img src="Shanghai.jpeg" alt="A city in China">
+    </div>
+    <div class="image-note">
+        <p>Shanghai, a bustling metropolis showcasing China's modernity and rapid development.</p>
+    </div>
+</div>
+<div class="country-div">
+    <h4>India</h4>
+    <div class="main-image">
+        <img src="Himalayas.jpeg" alt="Main physical feature of India">
+    </div>
+    <div class="image-note">
+        <p>The Himalayas, towering peaks that are a prominent feature of India's northern border.</p>
+    </div>
+    <div class="main-image">
+        <img src="Delhi.jpeg" alt="A city in India">
+    </div>
+    <div class="image-note">
+        <p>Delhi, India's capital city, a blend of ancient history and modern culture.</p>
+    </div>
+</div>
+<div class="country-div">
+    <h4>Japan</h4>
+    <div class="main-image">
+        <img src="Mount Fuji.jpeg" alt="Main physical feature of Japan">
+    </div>
+    <div class="image-note">
+        <p>Mount Fuji, an iconic mountain and symbol of Japan's natural beauty.</p>
+    </div>
+    <div class="main-image">
+        <img src="Tokyo.jpeg" alt="A city in Japan">
+    </div>
+    <div class="image-note">
+        <p>Tokyo, Japan's capital, known for its cutting-edge technology and vibrant culture.</p>
+    </div>
+</div>
+</section>   
+<section><!-- Added "Did you know?" section below all country sections --><!--section3-->
+<h3>Did you know?</h3>
+<div class="facts">
+  
+    <p>Asia is home to the world's highest mountain, Mount Everest, standing at 8,848 meters.</p>
+    <p>The Yangtze River in China is the third longest river in the world, after the Nile and the Amazon.</p>
+    <p>Tokyo, Japan's capital, is the largest metropolitan area in the world, with over 37 million residents.</p>
+</div>
+</section>
+<section><!--section4-->
+<h2>Day 2: Exploring China</h2>
+<div class="main-image">
+    <!-- Added an image within <div class="main-image"> -->
+    <img src="asia.jpeg" alt="Introduction Image">
+</div>
+
+<h3>Introduction to China</h3>
+<p>China is the most populous country in the world. It has a rich history, beautiful landscapes, and amazing cities. The capital city is Beijing.</p>
+<h3>Big Cities</h3>
+<p>Some of the biggest cities are Shanghai, Beijing, and Guangzhou. Each city has lots of interesting things to see and do.</p>
+<h3>Famous Places</h3>
+<p>China has many famous landmarks, like the Great Wall of China, the Forbidden City, and the Terracotta Army.</p>
+<h3>Culture</h3>
+<p>People in China speak Mandarin Chinese. They love festivals, like Chinese New Year, and delicious food, like dumplings.</p>
+<h3>Heroes</h3>
+<p>Heroes from China include Confucius, a great teacher, and Sun Yat-sen, a famous leader.</p>
+<h3>Provinces, Their Flags, and Capital Cities in China</h3>
+</section>
+<section><!--section5-->
+<h3>Provinces, Their Flags, and Capital Cities in China</h3>
+            <table>
+                <tr>
+                    <th>Province</th>
+                    <th>Flag</th>
+                    <th>Capital City</th>
+                </tr>
+                <tr>
+                    <td>Beijing</td>
+                    <td><img src="flag-of-beijing.jpeg" alt="Beijing Flag" width="50"></td>
+                    <td>Beijing</td>
+                </tr>
+                <tr>
+                    <td>Shanghai</td>
+                    <td><img src="flag-of-shanghai.jpeg" alt="Shanghai Flag" width="50"></td>
+                    <td>Shanghai</td>
+                </tr>
+                <tr>
+                    <td>Guangdong</td>
+                    <td><img src="flag-of-guangdong.jpeg" alt="Guangdong Flag" width="50"></td>
+                    <td>Guangzhou</td>
+                </tr>
+                <tr>
+                    <td>Sichuan</td>
+                    <td><img src="flag-of-sichuan.jpeg" alt="Sichuan Flag" width="50"></td>
+                    <td>Chengdu</td>
+                </tr>
+            </table>
+        </section><!--section6-->
+          <!-- Added sections for all countries -->
+          <section>
+            <div class="country-div">
+                <h4>Beijing</h4>
+                <div class="main-image">
+                    <img src="beijing Forbidden City.jpeg" alt="Main physical feature of Beijing">
+                </div>
+                <div class="image-note">
+                    <p>The Forbidden City, a magnificent imperial palace and symbol of China's rich heritage.</p>
+                </div>
+                <div class="main-image">
+                    <img src="Beijing's modern skyline.jpeg" alt="A city in Beijing">
+                </div>
+                <div class="image-note">
+                    <p>Beijing's modern skyline, showcasing the city's rapid development and architectural wonders.</p>
+                </div>
+            </div>
+            <div class="country-div">
+                <h4>Shanghai</h4>
+                <div class="main-image">
+                    <img src="shanghai historic colonial buildings.jpeg" alt="Main physical feature of Shanghai">
+                </div>
+                <div class="image-note">
+                    <p>The Bund, a famous waterfront area in central Shanghai known for its historic colonial buildings.</p>
+                </div>
+                <div class="main-image">
+                    <img src="shanghai blend of futuristic architecture.jpeg" alt="A city in Shanghai">
+                </div>
+                <div class="image-note">
+                    <p>Shanghai's vibrant cityscape, a blend of futuristic architecture and traditional Chinese elements.</p>
+                </div>
+            </div>
+            <div class="country-div">
+                <h4>Guangdong</h4>
+                <div class="main-image">
+                    <img src="guangdong Canton Tower.jpeg" alt="Main physical feature of Guangdong">
+                </div>
+                <div class="image-note">
+                    <p>The Canton Tower, a landmark skyscraper in Guangzhou, representing modern China.</p>
+                </div>
+                <div class="main-image">
+                    <img src="Guangzhou.jpeg" alt="A city in Guangdong">
+                </div>
+                <div class="image-note">
+                    <p>Guangzhou, a sprawling port city known for its cultural and historical significance.</p>
+                </div>
+            </div>
+            <div class="country-div">
+                <h4>Sichuan</h4>
+                <div class="main-image">
+                    <img src="Jiuzhaigou Valley.jpeg" alt="Main physical feature of Sichuan">
+                </div>
+                <div class="image-note">
+                    <p>Jiuzhaigou Valley, a stunning nature reserve in Sichuan known for its colorful lakes and waterfalls.</p>
+                </div>
+                <div class="main-image">
+                    <img src="Chengdu.jpeg" alt="A city in Sichuan">
+                </div>
+                <div class="image-note">
+                    <p>Chengdu, the capital city of Sichuan, famous for its pandas and spicy cuisine.</p>
+                </div>
+            </div>
+        </section>
+       <section><!--section 7-->
+        <!-- Added "Did you know?" section below all country sections -->
+        <h3>Did you know?</h3>
+        <div class="facts">
+            
+            <p>China is the fourth largest country in the world by land area, after Russia, Canada, and the United States.</p>
+            <p>The Great Wall of China, stretching over 21,000 kilometers, is one of the most impressive man-made structures in the world.</p>
+            <p>China is known for its rich tea culture, with different regions producing a variety of unique teas.</p>
+        </div>
+    </section>
+    <section><!--section 8-->
+        <h2>Day 3: Exploring India</h2>
+        <!-- Added image and note for introduction -->
+        <div class="main-image">
+            <img src="asia.jpeg" alt="Asia Day 3 Introduction Image">
         </div>
         
-        <div class="buttons">
-            <button onclick="startQuiz('country')">Country Finder</button>
-            <button onclick="startQuiz('city')">City Finder</button>
+
+        <h3>Introduction to India</h3>
+        <p>India is a large and colorful country in Asia. It has diverse cultures, landscapes, and traditions. The capital city is New Delhi.</p>
+        <h3>Big Cities</h3>
+        <p>Some big cities in India are Mumbai, Delhi, and Bangalore. Each city is special and has lots to offer.</p>
+        <h3>Natural Beauty</h3>
+        <p>India is known for its beautiful landscapes like the Himalayas, the Thar Desert, and the backwaters of Kerala.</p>
+        <h3>People and Languages</h3>
+        <p>People in India speak many languages, including Hindi and English. They love festivals, like Diwali and Holi, and delicious food, like curry and biryani.</p>
+        <h3>Famous Indians</h3>
+        <p>Some famous people from India include Mahatma Gandhi, who helped India gain independence, and Rabindranath Tagore, a famous writer and poet.</p>
+       
+    </section>
+    <section><!--section 9-->
+        <h3>States, Their Flags, and Capital Cities in India</h3>
+        <table>
+            <tr>
+                <th>State</th>
+                <th>Flag</th>
+                <th>Capital City</th>
+            </tr>
+            <tr>
+                <td>Maharashtra</td>
+                <td><img src="flag-of-maharashtra.jpeg" alt="Maharashtra Flag" width="50"></td>
+                <td>Mumbai</td>
+            </tr>
+            <tr>
+                <td>Uttar Pradesh</td>
+                <td><img src="flag-of-uttar-pradesh.jpeg" alt="Uttar Pradesh Flag" width="50"></td>
+                <td>Lucknow</td>
+            </tr>
+            <tr>
+                <td>Tamil Nadu</td>
+                <td><img src="flag-of-tamil-nadu.jpeg" alt="Tamil Nadu Flag" width="50"></td>
+                <td>Chennai</td>
+            </tr>
+            <tr>
+                <td>Karnataka</td>
+                <td><img src="flag-of-karnataka.jpeg" alt="Karnataka Flag" width="50"></td>
+                <td>Bangalore</td>
+            </tr>
+        </table>
+
+    </section>
+    <section><!-- section 10-->
+        <div class="country-div">
+            <h4>Maharashtra</h4>
+            <div class="main-image">
+                <img src="Gateway of India.jpeg" alt="Main physical feature of Maharashtra">
+            </div>
+            <div class="image-note">
+                <p>The Gateway of India, a historical monument and a major tourist attraction in Mumbai, Maharashtra.</p>
+            </div>
+            <div class="main-image">
+                <img src="Mumbai.jpeg" alt="A city in Maharashtra">
+            </div>
+            <div class="image-note">
+                <p>Mumbai, the financial capital of India, known for its vibrant nightlife and Bollywood film industry.</p>
+            </div>
         </div>
-    </section>
-    <section id="questions" style="display: none;">
-        <h3 id="instruction"></h3>
-        <div id="question-list"></div>
-        <button class="primary-btn" onclick="submitAnswers()">Submit</button>
-    </section>
-
-    <section id="results" style="display: none;">
-        <h3 id="result-message"></h3>
-        <div id="correct-answers"></div>
-        <div class="buttons">
-            <button class="secondary-btn" onclick="continueQuiz()">Back</button>
+        <div class="country-div">
+            <h4>Uttar Pradesh</h4>
+            <div class="main-image">
+                <img src="The Taj Mahal.jpeg" alt="Main physical feature of Uttar Pradesh">
+            </div>
+            <div class="image-note">
+                <p>The Taj Mahal, an ivory-white marble mausoleum in Agra, a symbol of love and one of the Seven Wonders of the World.</p>
+            </div>
+            <div class="main-image">
+                <img src="Lucknow.jpeg" alt="A city in Uttar Pradesh">
+            </div>
+            <div class="image-note">
+                <p>Lucknow, the capital city of Uttar Pradesh, famous for its rich history, culture, and cuisine.</p>
+            </div>
         </div>
-    </section>
-</main>
-</div>
-<script src="script.js"></script>
-
-<div id="quiz1" class="content">
-    <h2>Quiz 1</h2>
-    <form id="quizForm1">
-        First Name: <input type="text" id="firstName1" />
-        Last Name: <input type="text" id="lastName1" />
-        PIN: <input type="password" id="pin1" />
-        <!-- Quiz questions will be inserted here by JavaScript -->
-    </form>
-    <button onclick="submitQuiz(1)">Submit Quiz</button>
-    <div id="results1" class="results"></div>
-    <button onclick="retryQuiz(1)" style="display: none;">Retry Quiz</button>
-</div>
-
-<div id="quiz2" class="content">
-    <h2>Quiz 2</h2>
-    <form id="quizForm2">
-        First Name: <input type="text" id="firstName2" />
-        Last Name: <input type="text" id="lastName2" />
-        PIN: <input type="password" id="pin2" />
-        <!-- Quiz questions will be inserted here by JavaScript -->
-    </form>
-    <button onclick="submitQuiz(2)">Submit Quiz</button>
-    <div id="results2" class="results"></div>
-    <button onclick="retryQuiz(2)" style="display: none;">Retry Quiz</button>
-</div>
-
-<div id="quiz3" class="content">
-    <h2>Quiz 3</h2>
-    <form id="quizForm3">
-        First Name: <input type="text" id="firstName3" />
-        Last Name: <input type="text" id="lastName3" />
-        PIN: <input type="password" id="pin3" />
-        <!-- Quiz questions will be inserted here by JavaScript -->
-    </form>
-    <button onclick="submitQuiz(3)">Submit Quiz</button>
-    <div id="results3" class="results"></div>
-    <button onclick="retryQuiz(3)" style="display: none;">Retry Quiz</button>
-</div>
-
-<div id="quiz4" class="content">
-    <h2>Quiz 4</h2>
-    <form id="quizForm4">
-        First Name: <input type="text" id="firstName4" />
-        Last Name: <input type="text" id="lastName4" />
-        PIN: <input type="password" id="pin4" />
-        <!-- Quiz questions will be inserted here by JavaScript -->
-    </form>
-    <button onclick="submitQuiz(4)">Submit Quiz</button>
-    <div id="results4" class="results"></div>
-    <button onclick="retryQuiz(4)" style="display: none;">Retry Quiz</button>
-</div>
-
-<div id="quiz5" class="content">
-    <h2>Quiz 5</h2>
-    <form id="quizForm5">
-        First Name: <input type="text" id="firstName5" />
-        Last Name: <input type="text" id="lastName5" />
-        PIN: <input type="password" id="pin5" />
-        <!-- Quiz questions will be inserted here by JavaScript -->
-    </form>
-    <button onclick="submitQuiz(5)">Submit Quiz</button>
-    <div id="results5" class="results"></div>
-    <button onclick="retryQuiz(5)" style="display: none;">Retry Quiz</button>
-</div>
-
-<div id="marks" class="content">
-    <h2>Marks</h2>
-    First Name: <input type="text" id="firstNameMarks" />
-    Last Name: <input type="text" id="lastNameMarks" />
-    PIN: <input type="password" id="pinMarks" />
-    <button onclick="displayMarks()">View Marks</button>
-    <div id="marksContent"></div>
-</div>
-
-<script>
-   
-
-    function toggleMenu() {
-        const dropdown = document.getElementById('dropdown');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function showContent(id) {
-        const contents = document.querySelectorAll('.content');
-        contents.forEach(content => content.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
-        if (id.startsWith('quiz')) {
-            loadQuiz(parseInt(id.replace('quiz', '')));
-        }
-    }
-
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-
-        resultsHTML += '</ul>';
-        resultsHTML += `<p>Your score: ${(correctAnswers / questions.length) * 100}%</p>`;
-        const resultsDiv = document.getElementById('results' + quizNumber);
-        resultsDiv.innerHTML = resultsHTML;
-
-        if ((correctAnswers / questions.length) * 100 >= 60) {
-            resultsDiv.innerHTML += '<p class="correct">You passed the quiz!</p>';
-            const key = `${firstName}_${lastName}_${quizNumber}`;
-            if (!localStorage.getItem(key)) {
-                localStorage.setItem(key, (correctAnswers / questions.length) * 100);
-            }
-        } else {
-            resultsDiv.innerHTML += '<p class="incorrect">You failed the quiz. Please try again.</p>';
-            const retryButton = document.querySelector(`#quiz${quizNumber} button[onclick="retryQuiz(${quizNumber})"]`);
-            retryButton.style.display = 'inline';
-        }
+        <div class="country-div">
+            <h4>Tamil Nadu</h4>
+            <div class="main-image">
+                <img src="Meenakshi Temple.jpeg" alt="Main physical feature of Tamil Nadu">
+            </div>
+            <div class="image-note">
+                <p>The Meenakshi Temple, a historic Hindu temple in Madurai, known for its stunning architecture and intricate carvings.</p>
+            </div>
+            <div class="main-image">
+                <img src="Chennai.jpeg" alt="A city in Tamil Nadu">
+            </div>
+            <div class="image-note">
+                <p>Chennai, the capital city of Tamil Nadu, known for its beaches, temples, and vibrant cultural scene.</p>
+            </div>
+        </div>
+        <div class="country-div">
+            <h4>Karnataka</h4>
+            <div class="main-image">
+                <img src="Coorg.jpeg" alt="Main physical feature of Karnataka">
+            </div>
+            <div class="image-note">
+                <p>Coorg, a beautiful hill station in Karnataka, known for its lush greenery and coffee plantations.</p>
+            </div>
+            <div class="main-image">
+                <img src="Bangalore.jpeg" alt="A city in Karnataka">
+            </div>
+            <div class="image-note">
+                <p>Bangalore, the capital city of Karnataka, known as the Silicon Valley of India, a hub for technology and innovation.</p>
+            </div>
+        </div>
     
+    </section>
+    <section><!--section 11-->
+      <!-- Added "Did you know?" section below all country sections -->
+      <h3>Did you know?</h3>
+      <div class="facts">
+          
+          <p>India is the world's second-most populous country, with over 1.3 billion people.</p>
+          <p>The Indian film industry, known as Bollywood, is the largest in the world, producing over 1,000 films per year.</p>
+          <p>The Kumbh Mela, held every 12 years, is the largest religious gathering in the world, attracting millions of pilgrims.</p>
+      </div>
+      <div style="text-align: center; margin: 20px 0; padding: 20px; background-color: #e0f7fa; border-radius: 10px;">
+        <h2 style="color: #4caf50;">You're Ready to Take the First Quiz!</h2>
+        <p style="font-size: 18px; color: #333;">Head over to the home page to get started with your first quiz!</p>
+        </div>
+    </section>
+    <section><!--section 12-->
+        <h2>Day 4: Exploring Japan</h2>
+            <!-- Added image and note for introduction -->
+            <div class="main-image">
+                <img src="japan-traditional culture.jpeg" alt="Asia Day 4 Introduction Image">
+            </div>
+            <div class="image-note">
+                <p>This image captures the essence of Japan, highlighting its rich blend of traditional culture and modern innovation.</p>
+            </div>
 
-    function displayMarks() {
-        const firstName = document.getElementById('firstNameMarks').value;
-        const lastName = document.getElementById('lastNameMarks').value;
-        const pin = document.getElementById('pinMarks').value;
+            <h3>Introduction to Japan</h3>
+            <p>Japan is an island country in Asia. It is known for its technology, culture, and beautiful landscapes. The capital city is Tokyo.</p>
+            <h3>Big Cities</h3>
+            <p>Other big cities in Japan include Osaka, Kyoto, and Hiroshima. Each city has its own unique culture and attractions.</p>
+            <h3>Natural Beauty</h3>
+            <p>Japan is known for its cherry blossoms, Mount Fuji, and beautiful gardens.</p>
+            <h3>People and Languages</h3>
+            <p>People in Japan speak Japanese. They enjoy festivals, like Hanami and Obon, and delicious food, like sushi and ramen.</p>
+            <h3>Famous Japanese</h3>
+            <p>Some famous people from Japan include Akira Kurosawa, a famous filmmaker, and Marie Kondo, a well-known organizing consultant.</p>
+    </section>
+    <section><!--section 13-->
+        <h3>Prefectures, Their Flags, and Capital Cities in Japan</h3>
+        <table>
+            <tr>
+                <th>Prefecture</th>
+                <th>Flag</th>
+                <th>Capital City</th>
+            </tr>
+            <tr>
+                <td>Tokyo</td>
+                <td><img src="flag-of-tokyo.jpeg" alt="Tokyo Flag" width="50"></td>
+                <td>Tokyo</td>
+            </tr>
+            <tr>
+                <td>Osaka</td>
+                <td><img src="flag-of-osaka.jpeg" alt="Osaka Flag" width="50"></td>
+                <td>Osaka</td>
+            </tr>
+            <tr>
+                <td>Kyoto</td>
+                <td><img src="flag-of-kyoto.jpeg" alt="Kyoto Flag" width="50"></td>
+                <td>Kyoto</td>
+            </tr>
+            <tr>
+                <td>Hokkaido</td>
+                <td><img src="flag-of-hokkaido.jpeg" alt="Hokkaido Flag" width="50"></td>
+                <td>Sapporo</td>
+            </tr>
+        </table>
+    </section>
+    <section><!--section 14-->
+        <div class="country-div">
+            <h4>Tokyo</h4>
+            <div class="main-image">
+                <img src="The iconic Tokyo Tower.jpeg" alt="Main physical feature of Tokyo">
+            </div>
+            <div class="image-note">
+                <p>The iconic Tokyo Tower, a communications and observation tower in the Shiba-koen district of Minato, Tokyo.</p>
+            </div>
+            <div class="main-image">
+                <img src="Shibuya Crossing.jpeg" alt="A city in Tokyo">
+            </div>
+            <div class="image-note">
+                <p>Shibuya Crossing, one of the world's busiest pedestrian crossings, known for its vibrant atmosphere and neon lights.</p>
+            </div>
+        </div>
+        <div class="country-div">
+            <h4>Osaka</h4>
+            <div class="main-image">
+                <img src="Osaka Castle.jpeg" alt="Main physical feature of Osaka">
+            </div>
+            <div class="image-note">
+                <p>Osaka Castle, a historic landmark and a major tourist attraction, especially during the cherry blossom season.</p>
+            </div>
+            <div class="main-image">
+                <img src="Dotonbori.jpeg" alt="A city in Osaka">
+            </div>
+            <div class="image-note">
+                <p>Dotonbori, a popular tourist destination in Osaka, known for its lively atmosphere and street food.</p>
+            </div>
+        </div>
+        <div class="country-div">
+            <h4>Kyoto</h4>
+            <div class="main-image">
+                <img src="vermilion torii gates.jpeg" alt="Main physical feature of Kyoto">
+            </div>
+            <div class="image-note">
+                <p>The Fushimi Inari Shrine, famous for its thousands of vermilion torii gates, leading into the wooded forest of the sacred Mount Inari.</p>
+            </div>
+            <div class="main-image">
+                <img src="traditional streets of Gion.jpeg" alt="A city in Kyoto">
+            </div>
+            <div class="image-note">
+                <p>The traditional streets of Gion, a district in Kyoto, known for its geishas and historic teahouses.</p>
+            </div>
+        </div>
+        <div class="country-div">
+            <h4>Hokkaido</h4>
+            <div class="main-image">
+                <img src="landscapes of Hokkaido.jpeg" alt="Main physical feature of Hokkaido">
+            </div>
+            <div class="image-note">
+                <p>The stunning landscapes of Hokkaido, known for its national parks, hot springs, and ski resorts.</p>
+            </div>
+            <div class="main-image">
+                <img src="Sapporo.jpeg" alt="A city in Hokkaido">
+            </div>
+            <div class="image-note">
+                <p>Sapporo, the largest city on the island of Hokkaido, famous for its annual snow festival and delicious seafood.</p>
+            </div>
+        </div>
+    </section>
+    <section><!--section 15-->
+        <h3>Did you know?</h3>
+        <div class="facts">
+           
+            <p>Japan has more than 6,800 islands, with four main islands: Honshu, Hokkaido, Kyushu, and Shikoku.</p>
+            <p>The Shinkansen, or bullet train, is one of the fastest and most efficient train systems in the world, reaching speeds up to 320 km/h (200 mph).</p>
+            <p>Japan is home to 20 UNESCO World Heritage sites, including the Historic Monuments of Ancient Kyoto and the Itsukushima Shrine.</p>
+        </div>
+    </section>
+   <section> <!--section 16-->
+        <h2>Day 5: Exploring South Korea</h2>
+        <!-- Added image and note for introduction -->
+        <div class="main-image">
+            <img src="tradition that defines South Korea.jpeg" alt="Asia Day 5 Introduction Image">
+        </div>
+        <div class="image-note">
+            <p>This image showcases the blend of modernity and tradition that defines South Korea's unique landscape and culture.</p>
+        </div>
 
-        if (!firstName || !lastName || !pin) {
-            alert('Please fill out all the fields.');
-            return;
+        <h3>Introduction to South Korea</h3>
+        <p>South Korea is a country in East Asia known for its technology, culture, and beautiful scenery. The capital city is Seoul.</p>
+        <h3>Big Cities</h3>
+        <p>Other big cities in South Korea include Busan and Incheon. Each city has its own unique culture and attractions.</p>
+        <h3>Natural Beauty</h3>
+        <p>South Korea is known for its mountains, islands, and national parks.</p>
+        <h3>People and Languages</h3>
+        <p>People in South Korea speak Korean. They enjoy festivals, like Chuseok and Seollal, and delicious food, like kimchi and bulgogi.</p>
+        <h3>Famous South Koreans</h3>
+        <p>Some famous people from South Korea include Ban Ki-moon, a former UN Secretary-General, and BTS, a famous music group.</p>
+   </section>
+ <section><!--section17-->
+    <h3>Provinces, Their Flags, and Capital Cities in South Korea</h3>
+    <table>
+        <tr>
+            <th>Province</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Seoul</td>
+            <td><img src="flag-of-seoul.jpeg" alt="Seoul Flag" width="50"></td>
+            <td>Seoul</td>
+        </tr>
+        <tr>
+            <td>Busan</td>
+            <td><img src="flag-of-busan.jpeg" alt="Busan Flag" width="50"></td>
+            <td>Busan</td>
+        </tr>
+        <tr>
+            <td>Incheon</td>
+            <td><img src="flag-of-incheon.jpeg" alt="Incheon Flag" width="50"></td>
+            <td>Incheon</td>
+        </tr>
+        <tr>
+            <td>Gyeonggi</td>
+            <td><img src="flag-of-gyeonggi.jpeg" alt="Gyeonggi Flag" width="50"></td>
+            <td>Suwon</td>
+        </tr>
+    </table>
+ </section>
+ <!--section18-->
+  <!-- Added sections for all explored countries -->
+  <section>
+    <div class="country-div">
+        <h4>Seoul</h4>
+        <div class="main-image">
+            <img src="N Seoul Tower.jpeg" alt="Main physical feature of Seoul">
+        </div>
+        <div class="image-note">
+            <p>N Seoul Tower, a communication and observation tower located on Namsan Mountain in central Seoul.</p>
+        </div>
+        <div class="main-image">
+            <img src="Gangnam District.jpeg" alt="A city in Seoul">
+        </div>
+        <div class="image-note">
+            <p>Gangnam District, known for its trendy shopping and entertainment venues, highlighted by the iconic COEX Mall.</p>
+        </div>
+    </div>
+    <div class="country-div">
+        <h4>Busan</h4>
+        <div class="main-image">
+            <img src="Haeundae Beach.jpeg" alt="Main physical feature of Busan">
+        </div>
+        <div class="image-note">
+            <p>Haeundae Beach, one of the most popular beaches in South Korea, famous for its beautiful white sand and beach festivals.</p>
+        </div>
+        <div class="main-image">
+            <img src="Busan Tower.jpeg" alt="A city in Busan">
+        </div>
+        <div class="image-note">
+            <p>Busan Tower, a symbol of Busan located in Yongdusan Park, offering panoramic views of the city.</p>
+        </div>
+    </div>
+    <div class="country-div">
+        <h4>Incheon</h4>
+        <div class="main-image">
+            <img src="Incheon Bridge.jpeg" alt="Main physical feature of Incheon">
+        </div>
+        <div class="image-note">
+            <p>Incheon Bridge, a cable-stayed bridge that connects the city of Incheon to Yeongjong Island and Incheon International Airport.</p>
+        </div>
+        <div class="main-image">
+            <img src="Songdo International Business District.jpeg" alt="A city in Incheon">
+        </div>
+        <div class="image-note">
+            <p>Songdo International Business District, a modern and sustainable city built on reclaimed land.</p>
+        </div>
+    </div>
+    <div class="country-div">
+        <h4>Gyeonggi</h4>
+        <div class="main-image">
+            <img src="Namyangju.jpeg" alt="Main physical feature of Gyeonggi">
+        </div>
+        <div class="image-note">
+            <p>Namyangju, known for its scenic views and proximity to the Bukhan River and surrounding mountains.</p>
+        </div>
+        <div class="main-image">
+            <img src="Suwon.jpeg" alt="A city in Gyeonggi">
+        </div>
+        <div class="image-note">
+            <p>Suwon, the capital of Gyeonggi-do, famous for the Hwaseong Fortress, a UNESCO World Heritage Site.</p>
+        </div>
+    </div>
+</section>
+<section><!--section19-->
+  <!-- Added "Did you know?" section below all country sections -->
+  <h3>Did you know?</h3>
+  <div class="facts">
+     
+      <p>South Korea is home to the world's first cloned dog, Snuppy, created by scientists at Seoul National University in 2005.</p>
+      <p>Seoul is known for its vast subway system, which is one of the largest in the world and serves over 7 million passengers daily.</p>
+      <p>The Korean demilitarized zone (DMZ) is the most heavily guarded border in the world, separating North and South Korea.</p>
+  </div>
+</section>
+<section><!--section20-->
+    <h2>Day 6: Exploring Thailand</h2>
+    <!-- Added image and note for introduction -->
+    <div class="main-image">
+        <img src="beauty of Thailand.jpeg" alt="Asia Day 6 Introduction Image">
+    </div>
+    <div class="image-note">
+        <p>This image captures the vibrant culture and natural beauty of Thailand, known for its stunning beaches and rich heritage.</p>
+    </div>
+
+    <h3>Introduction to Thailand</h3>
+    <p>Thailand is a country in Southeast Asia known for its tropical beaches, royal palaces, and ancient ruins. The capital city is Bangkok.</p>
+    <h3>Big Cities</h3>
+    <p>Other big cities in Thailand include Chiang Mai and Pattaya. Each city has its own unique attractions and culture.</p>
+    <h3>Natural Beauty</h3>
+    <p>Thailand is known for its islands, mountains, and beautiful temples.</p>
+    <h3>People and Languages</h3>
+    <p>People in Thailand speak Thai. They love festivals, like Songkran and Loy Krathong, and delicious food, like pad thai and tom yum soup.</p>
+    <h3>Famous Thais</h3>
+    <p>Some famous people from Thailand include King Bhumibol Adulyadej, the longest-reigning monarch, and Apichatpong Weerasethakul, a famous filmmaker.</p>
+</section>
+<section><!--section 21-->
+    <h3>Provinces, Their Flags, and Capital Cities in Thailand</h3>
+    <table>
+        <tr>
+            <th>Province</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Bangkok</td>
+            <td><img src="flag-of-bangkok.jpeg" alt="Bangkok Flag" width="50"></td>
+            <td>Bangkok</td>
+        </tr>
+        <tr>
+            <td>Chiang Mai</td>
+            <td><img src="flag-of-chiang-mai.jpeg" alt="Chiang Mai Flag" width="50"></td>
+            <td>Chiang Mai</td>
+        </tr>
+        <tr>
+            <td>Phuket</td>
+            <td><img src="flag-of-phuket.jpeg" alt="Phuket Flag" width="50"></td>
+            <td>Phuket</td>
+        </tr>
+        <tr>
+            <td>Surat Thani</td>
+            <td><img src="flag-of-surat-thani.jpeg" alt="Surat Thani Flag" width="50"></td>
+            <td>Surat Thani</td>
+        </tr>
+    </table>
+</section>
+ <!-- Added sections for all explored countries -->
+ <section><!--section 22-->
+    <div class="country-div">
+        <h4>Bangkok</h4>
+        <div class="main-image">
+            <img src="The Grand Palace in Bangkok.jpeg" alt="Main physical feature of Bangkok">
+        </div>
+        <div class="image-note">
+            <p>The Grand Palace in Bangkok, a complex of ornate buildings and sacred sites, including the Temple of the Emerald Buddha.</p>
+        </div>
+        <div class="main-image">
+            <img src="Wat Arun.jpeg" alt="A city in Bangkok">
+        </div>
+        <div class="image-note">
+            <p>Wat Arun, also known as the Temple of Dawn, located on the west bank of the Chao Phraya River in Bangkok.</p>
+        </div>
+    </div>
+    <div class="country-div">
+        <h4>Chiang Mai</h4>
+        <div class="main-image">
+            <img src="Doi Suthep1.jpeg" alt="Main physical feature of Chiang Mai">
+        </div>
+        <div class="image-note">
+            <p>Doi Suthep, a mountain that overlooks Chiang Mai, home to the famous Wat Phra That Doi Suthep temple.</p>
+        </div>
+        <div class="main-image">
+            <img src="Chiang Mai Old City.jpeg" alt="A city in Chiang Mai">
+        </div>
+        <div class="image-note">
+            <p>Chiang Mai Old City, surrounded by ancient walls and filled with historic temples and markets.</p>
+        </div>
+    </div>
+    <div class="country-div">
+        <h4>Phuket</h4>
+        <div class="main-image">
+            <img src="Phang Nga Bay.jpeg" alt="Main physical feature of Phuket">
+        </div>
+        <div class="image-note">
+            <p>Phang Nga Bay, known for its limestone karsts and caves, offering spectacular views and kayaking experiences.</p>
+        </div>
+        <div class="main-image">
+            <img src="Patong Beach.jpeg" alt="A city in Phuket">
+        </div>
+        <div class="image-note">
+            <p>Patong Beach, a popular tourist destination in Phuket, famous for its vibrant nightlife and beautiful sandy beaches.</p>
+        </div>
+    </div>
+    <div class="country-div">
+        <h4>Surat Thani</h4>
+        <div class="main-image">
+            <img src="Khao Sok National Park.jpeg" alt="Main physical feature of Surat Thani">
+        </div>
+        <div class="image-note">
+            <p>Khao Sok National Park, a lush rainforest reserve featuring diverse wildlife, waterfalls, and Cheow Lan Lake.</p>
+        </div>
+        <div class="main-image">
+            <img src="Surat Thani City.jpeg" alt="A city in Surat Thani">
+        </div>
+        <div class="image-note">
+            <p>Surat Thani City, known for its role as a gateway to the islands and for its rich cultural festivals and events.</p>
+        </div>
+    </div>
+</section>
+<section><!--section 23-->
+    <h3>Did you know?</h3>
+    <div class="facts">
+        
+        <p>Thailand is the only Southeast Asian country that has never been colonized by a European power, hence the name 'Prathet Thai' which means 'Land of the Free'.</p>
+        <p>The world's smallest mammal, the bumblebee bat, can be found in the western regions of Thailand.</p>
+        <p>Thailand has more than 1,400 islands, making it a perfect destination for island-hopping adventures.</p>
+    </div>
+    <div style="text-align: center; margin: 20px 0; padding: 20px; background-color: #e0f7fa; border-radius: 10px;">
+        <h2 style="color: #4caf50;">You're Ready to Take the second Quiz!</h2>
+        <p style="font-size: 18px; color: #333;">Head over to the home page to get started with your second quiz!</p>
+        </div>
+</section>
+<section><!--section 24-->
+    <h2>Day 7: Exploring Indonesia</h2>
+    <!-- Added image and note for introduction -->
+    <div class="main-image">
+        <img src="pristine beaches.jpeg" alt="Asia Day 7 Introduction Image">
+    </div>
+    <div class="image-note">
+        <p>This image showcases Indonesia's diverse landscapes, from lush rainforests to pristine beaches and vibrant cities.</p>
+    </div>
+
+    <h3>Introduction to Indonesia</h3>
+    <p>Indonesia is an island country in Southeast Asia. It has thousands of islands, beautiful beaches, and rich culture. The capital city is Jakarta.</p>
+    <h3>Big Cities</h3>
+    <p>Other big cities in Indonesia include Surabaya and Bandung. Each city has its own unique attractions and culture.</p>
+    <h3>Natural Beauty</h3>
+    <p>Indonesia is known for its volcanoes, rainforests, and coral reefs.</p>
+    <h3>People and Languages</h3>
+    <p>People in Indonesia speak Bahasa Indonesia. They love festivals, like Nyepi and Galungan, and delicious food, like nasi goreng and satay.</p>
+    <h3>Famous Indonesians</h3>
+    <p>Some famous people from Indonesia include Sukarno, the first president, and Anggun, a famous singer.</p>
+    </section>
+<section><!--section 25-->
+    <div class="country-div">
+        <h4>Jakarta</h4>
+        <div class="main-image">
+            <img src="National Monument (Monas).jpeg" alt="Main physical feature of Jakarta">
+        </div>
+        <div class="image-note">
+            <p>National Monument (Monas) in Jakarta, a symbol of Indonesia's independence and a popular tourist attraction.</p>
+        </div>
+        
+    </div>
+    <div class="country-div">
+        <h4>Bali</h4>
+        <div class="main-image">
+            <img src="Uluwatu Temple.jpeg" alt="Main physical feature of Bali">
+        </div>
+        <div class="image-note">
+            <p>Uluwatu Temple, a famous sea temple located on the edge of a cliff in Bali, offering stunning ocean views.</p>
+        </div>
+        
+    </div>
+    
+    <div class="country-div">
+        <h4>East Java</h4>
+        <div class="main-image">
+            <img src="Mount Bromo.jpeg" alt="Main physical feature of East Java">
+        </div>
+        <div class="image-note">
+            <p>Mount Bromo, an active volcano in East Java, famous for its stunning sunrise views and rugged landscapes.</p>
+        </div>
+        <div class="main-image">
+            <img src="Surabaya.jpeg" alt="A city in East Java">
+        </div>
+        <div class="image-note">
+            <p>Surabaya, the capital of East Java, known for its historical landmarks and as a commercial and industrial hub.</p>
+        </div>
+    </div>
+ </section>
+ <section><!--section 26-->
+     <!-- Added "Did you know?" section below all country sections -->
+     <h3>Did you know?</h3>
+     <div class="facts">
+         
+         <p>Indonesia is the world's largest archipelago, comprising over 17,000 islands, of which about 6,000 are inhabited.</p>
+         <p>The Komodo dragon, the world's largest living species of lizard, is found only in the Indonesian islands of Komodo, Rinca, Flores, and Gili Motang.</p>
+         <p>Indonesia is the largest producer of palm oil in the world, which is used in a variety of products from food to cosmetics.</p>
+     </div>
+ </section>
+ <section><!--section 28-->
+    <h2>Day 8: Exploring the Philippines</h2>
+
+    <!-- Introduction Image and Note -->
+    <div class="main-image">
+        <img src="aerial view of the Philippines' stunning beaches and lush greenery.jpeg" alt="Introduction to the Philippines">
+    </div>
+    <div class="image-note">
+        <p>An aerial view of the Philippines' stunning beaches and lush greenery.</p>
+    </div>
+
+    <h3>Introduction to the Philippines</h3>
+    <p>The Philippines is an island country in Southeast Asia. It has thousands of islands, beautiful beaches, and rich culture. The capital city is Manila.</p>
+
+    <h3>Big Cities</h3>
+    <p>Other big cities in the Philippines include Cebu and Davao. Each city has its own unique attractions and culture.</p>
+
+    <h3>Natural Beauty</h3>
+    <p>The Philippines is known for its beaches, volcanoes, and tropical rainforests.</p>
+
+    <h3>People and Languages</h3>
+    <p>People in the Philippines speak Filipino and English. They love festivals, like Sinulog and Pahiyas, and delicious food, like adobo and lechon.</p>
+
+    <h3>Famous Filipinos</h3>
+    <p>Some famous people from the Philippines include José Rizal, a national hero, and Manny Pacquiao, a famous boxer.</p>
+ </section>
+ <section><!--section 29-->
+    <h3>Regions, Their Flags, and Capital Cities in the Philippines</h3>
+    <table>
+        <tr>
+            <th>Region</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>National Capital Region</td>
+            <td><img src="flag-of-ncr.jpeg" alt="NCR Flag" width="50"></td>
+            <td>Manila</td>
+        </tr>
+        <tr>
+            <td>Central Visayas</td>
+            <td><img src="flag-of-central-visayas.jpeg" alt="Central Visayas Flag" width="50"></td>
+            <td>Cebu City</td>
+        </tr>
+        <tr>
+            <td>Western Mindanao</td>
+            <td><img src="flag-of-western-mindanao.jpeg" alt="Western Mindanao Flag" width="50"></td>
+            <td>Zamboanga City</td>
+        </tr>
+        <tr>
+            <td>Ilocos</td>
+            <td><img src="flag-of-ilocos.jpeg" alt="Ilocos Flag" width="50"></td>
+            <td>San Fernando</td>
+        </tr>
+    </table>
+ </section>
+ <section><!--section 30-->
+      
+               
+    <div class="country-div">
+        <h4>Zamboanga City</h4>
+        <div class="main-image">
+            <img src="Pink Sand Beach in Zamboanga.jpeg" alt="Main physical feature of Zamboanga City">
+        </div>
+        <div class="image-note">
+            <p>Pink Sand Beach in Zamboanga, famous for its unique pink-hued sands and clear waters.</p>
+        </div>
+       
+    </div>
+    <div class="country-div">
+        <h4>Ilocos</h4>
+        <div class="main-image">
+            <img src="Paoay Church.jpeg" alt="Main physical feature of Ilocos">
+        </div>
+        <div class="image-note">
+            <p>Paoay Church, a UNESCO World Heritage Site in Ilocos, known for its Baroque architecture and historical significance.</p>
+        </div>
+        <div class="main-image">
+            <img src="Vigan City.jpeg" alt="A city in Ilocos">
+        </div>
+        <div class="image-note">
+            <p>Vigan City, famous for its well-preserved Spanish colonial architecture and cobblestone streets.</p>
+        </div>
+    </div>
+ </section>
+ <section><!--section 31-->
+    <h3>Did you know?</h3>
+    <div class="facts">
+        
+        <p>The Philippines is home to the Tubbataha Reefs Natural Park, a UNESCO World Heritage Site and one of the world's best dive sites.</p>
+        <p>The Banaue Rice Terraces, often referred to as the "Eighth Wonder of the World," were built over 2,000 years ago and are still in use today.</p>
+        <p>The Philippines is the second-largest archipelago in the world, with over 7,600 islands.</p>
+    </div>
+ </section>
+ <section><!--section 32-->
+    <h2>Summary of Asia</h2>
+
+    <!-- Summary Introduction -->
+    <p>We have learned a lot about Asia! It is a continent full of diversity and beauty. We explored countries like China, India, Japan, South Korea, Thailand, Indonesia, and the Philippines.</p>
+    <p>We saw mountains, beaches, islands, and big cities. We learned about different cultures, languages, and famous people from each country.</p>
+    <p>Asia is a wonderful place with so much to discover. We hope you enjoyed this journey and learned a lot about this amazing continent!</p>
+    
+    <!-- Added Image Gallery -->
+     <!-- Flags Coloring Activity -->
+    <h3>Color the Flags of Asia</h3>
+    <p>Now, you can color the flags of Asian countries. Here are some flags for you to color:</p>
+    
+    <table>
+        <tr>
+            <th>Region</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>National Capital Region</td>
+            <td><img src="flag-of-ncr.jpeg" alt="NCR Flag" width="50"></td>
+            <td>Manila</td>
+        </tr>
+        <tr>
+            <td>Central Visayas</td>
+            <td><img src="flag-of-central-visayas.jpeg" alt="Central Visayas Flag" width="50"></td>
+            <td>Cebu City</td>
+        </tr>
+        <tr>
+            <td>Western Mindanao</td>
+            <td><img src="flag-of-western-mindanao.jpeg" alt="Western Mindanao Flag" width="50"></td>
+            <td>Zamboanga City</td>
+        </tr>
+        <tr>
+            <td>Ilocos</td>
+            <td><img src="flag-of-ilocos.jpeg" alt="Ilocos Flag" width="50"></td>
+            <td>San Fernando</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Province</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Jakarta</td>
+            <td><img src="flag-of-jakarta.jpeg" alt="Jakarta Flag" width="50"></td>
+            <td>Jakarta</td>
+        </tr>
+        <tr>
+            <td>Bali</td>
+            <td><img src="flag-of-bali.jpeg" alt="Bali Flag" width="50"></td>
+            <td>Denpasar</td>
+        </tr>
+        <tr>
+            <td>West Java</td>
+            <td><img src="flag-of-west-java.jpeg" alt="West Java Flag" width="50"></td>
+            <td>Bandung</td>
+        </tr>
+        <tr>
+            <td>East Java</td>
+            <td><img src="flag-of-east-java.jpeg" alt="East Java Flag" width="50"></td>
+            <td>Surabaya</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Province</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Bangkok</td>
+            <td><img src="flag-of-bangkok.jpeg" alt="Bangkok Flag" width="50"></td>
+            <td>Bangkok</td>
+        </tr>
+        <tr>
+            <td>Chiang Mai</td>
+            <td><img src="flag-of-chiang-mai.jpeg" alt="Chiang Mai Flag" width="50"></td>
+            <td>Chiang Mai</td>
+        </tr>
+        <tr>
+            <td>Phuket</td>
+            <td><img src="flag-of-phuket.jpeg" alt="Phuket Flag" width="50"></td>
+            <td>Phuket</td>
+        </tr>
+        <tr>
+            <td>Surat Thani</td>
+            <td><img src="flag-of-surat-thani.jpeg" alt="Surat Thani Flag" width="50"></td>
+            <td>Surat Thani</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Province</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Seoul</td>
+            <td><img src="flag-of-seoul.jpeg" alt="Seoul Flag" width="50"></td>
+            <td>Seoul</td>
+        </tr>
+        <tr>
+            <td>Busan</td>
+            <td><img src="flag-of-busan.jpeg" alt="Busan Flag" width="50"></td>
+            <td>Busan</td>
+        </tr>
+        <tr>
+            <td>Incheon</td>
+            <td><img src="flag-of-incheon.jpeg" alt="Incheon Flag" width="50"></td>
+            <td>Incheon</td>
+        </tr>
+        <tr>
+            <td>Gyeonggi</td>
+            <td><img src="flag-of-gyeonggi.jpeg" alt="Gyeonggi Flag" width="50"></td>
+            <td>Suwon</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Prefecture</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Tokyo</td>
+            <td><img src="flag-of-tokyo.jpeg" alt="Tokyo Flag" width="50"></td>
+            <td>Tokyo</td>
+        </tr>
+        <tr>
+            <td>Osaka</td>
+            <td><img src="flag-of-osaka.jpeg" alt="Osaka Flag" width="50"></td>
+            <td>Osaka</td>
+        </tr>
+        <tr>
+            <td>Kyoto</td>
+            <td><img src="flag-of-kyoto.jpeg" alt="Kyoto Flag" width="50"></td>
+            <td>Kyoto</td>
+        </tr>
+        <tr>
+            <td>Hokkaido</td>
+            <td><img src="flag-of-hokkaido.jpeg" alt="Hokkaido Flag" width="50"></td>
+            <td>Sapporo</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Maharashtra</td>
+            <td><img src="flag-of-maharashtra.jpeg" alt="Maharashtra Flag" width="50"></td>
+            <td>Mumbai</td>
+        </tr>
+        <tr>
+            <td>Uttar Pradesh</td>
+            <td><img src="flag-of-uttar-pradesh.jpeg" alt="Uttar Pradesh Flag" width="50"></td>
+            <td>Lucknow</td>
+        </tr>
+        <tr>
+            <td>Tamil Nadu</td>
+            <td><img src="flag-of-tamil-nadu.jpeg" alt="Tamil Nadu Flag" width="50"></td>
+            <td>Chennai</td>
+        </tr>
+        <tr>
+            <td>Karnataka</td>
+            <td><img src="flag-of-karnataka.jpeg" alt="Karnataka Flag" width="50"></td>
+            <td>Bangalore</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Province</th>
+            <th>Flag</th>
+            <th>Capital City</th>
+        </tr>
+        <tr>
+            <td>Beijing</td>
+            <td><img src="flag-of-beijing.jpeg" alt="Beijing Flag" width="50"></td>
+            <td>Beijing</td>
+        </tr>
+        <tr>
+            <td>Shanghai</td>
+            <td><img src="flag-of-shanghai.jpeg" alt="Shanghai Flag" width="50"></td>
+            <td>Shanghai</td>
+        </tr>
+        <tr>
+            <td>Guangdong</td>
+            <td><img src="flag-of-guangdong.jpeg" alt="Guangdong Flag" width="50"></td>
+            <td>Guangzhou</td>
+        </tr>
+        <tr>
+            <td>Sichuan</td>
+            <td><img src="flag-of-sichuan.jpeg" alt="Sichuan Flag" width="50"></td>
+            <td>Chengdu</td>
+        </tr>
+    </table>
+ </section>
+ <section>
+        <!-- Added Fun Facts Section -->
+        <h3>Fun Facts about Asia</h3>
+        <div class="facts">
+            
+            <ul>
+                <li>Asia is the largest continent in the world, covering about 30% of the Earth's land area.</li>
+                <li>It is home to the world's highest peak, Mount Everest, standing at 8,848 meters.</li>
+                <li>The Great Wall of China is one of the most famous landmarks in Asia and spans over 21,000 km.</li>
+                <li>Indonesia has the world's largest archipelago, with more than 17,000 islands.</li>
+                <li>Japan's Tokyo is the world's most populous metropolitan area, with over 37 million residents.</li>
+            </ul>
+        </div>
+
+        <!-- Final Farewell Section -->
+        <h3>Thank You for Exploring with Us!</h3>
+        <div class="facts">
+            
+            <p>We hope you enjoyed this exciting journey through Asia. Remember, there's always more to discover and learn about our beautiful world!</p>
+        </div>
+        <div style="text-align: center; margin: 20px 0; padding: 20px; background-color: #e0f7fa; border-radius: 10px;">
+            <h2 style="color: #4caf50;">Now You're Ready to Take the third Quiz!</h2>
+            <p style="font-size: 18px; color: #333;">Head over to the home page to get started with your Third  quiz as well as General test and Exam!</p>
+            </div>
+ </section>
+        </main>
+
+    <!-- Fixed Button Navigation -->
+    <div class="button-container">
+        <button class="button" onclick="previousSection()">
+            <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button class="button" onclick="nextSection()">
+            Next <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('section');
+
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
         }
 
-        let marksHTML = '<h3>Your Marks</h3><ul>';
-        let found = false;
-        for (let i = 1; i <= 5; i++) {
-            const key = `${firstName}_${lastName}_${i}`;
-            const score = localStorage.getItem(key);
-            if (score !== null) {
-                found = true;
-                marksHTML += `<li>Quiz ${i}: ${score}%</li>`;
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+
+        function showSection(index) {
+            sections.forEach((section, i) => {
+                section.classList.toggle('active', i === index);
+            });
+            currentSection = index;
+        }
+
+        function nextSection() {
+            if (currentSection < sections.length - 1) {
+                showSection(currentSection + 1);
             }
         }
 
-        if (!found) {
-            marksHTML += '<li>No marks found.</li>';
+        function previousSection() {
+            if (currentSection > 0) {
+                showSection(currentSection - 1);
+            }
         }
 
-        marksHTML += '</ul>';
-        document.getElementById('marksContent').innerHTML = marksHTML;
-    }
-
-    // Load the first quiz by default when the page loads
-    document.addEventListener('DOMContentLoaded', () => {
-        showContent('quiz1');
-    });
-</script>
+        function goToSection(index) {
+            showSection(index);
+            closeNav();
+        }
+    </script>
 </body>
+
 </html>

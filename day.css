@@ -2,18 +2,20 @@
 
 th {
     text-align: center;
-    color: rgba(20, 1, 6, 0.243);
+    color: rgb(107, 242, 4);
     font-size: x-large;
     text-decoration-color: aquamarine;
     font-variant-position: super;
 }
 
 /* Styling for images inside a table within a section */
-img {
-    width: 100px;
-    height: 60px;
-    border: 2px solid black;
-    padding: 5px;
+.table-image {
+  width: 55px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners */
+  padding: 3px; /* Add space around the image */
+  border: 2px solid #ccc; /* Add a border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow */
 }
 
 

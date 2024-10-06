@@ -8,12 +8,11 @@ th {
     font-variant-position: super;
 }
 
-/* Styling for images inside a table within a section */
-.table-image {
-  width: 55px; /* Set the desired width */
+table img {
+  width: 70px; /* Set the desired width */
   height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners */
-  padding: 3px; /* Add space around the image */
+  border-radius: 8px; /* Rounded corners */
+  padding: 5px; /* Add space around the image */
   border: 2px solid #ccc; /* Add a border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow */
 }

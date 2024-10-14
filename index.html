@@ -145,7 +145,65 @@
 
     <!-- Include Fuse.js for fuzzy searching -->
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6"></script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <title>World Explorer PWA</title>
+</head>
+<body>
+
+    <!-- Other homepage content -->
+    <h1>Welcome to World Explorer!</h1>
+
+    <!-- Hidden install button styled like a notification -->
+    <div id="install-container" class="install-notification" style="display: none;">
+        <p>Install World Explorer for a better experience!</p>
+        <button id="install-button">Install App</button>
+        <button id="dismiss-button">Dismiss</button>
+    </div>
+
+    <script >let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (event) => {
+    // Prevent the default prompt
+    event.preventDefault();
+    // Store the event for later use
+    deferredPrompt = event;
     
+    // Show the install notification container
+    const installContainer = document.getElementById('install-container');
+    installContainer.style.display = 'flex';  // Make the container visible
+
+    // When the user clicks the 'Install' button
+    document.getElementById('install-button').addEventListener('click', () => {
+        // Show the prompt to install
+        deferredPrompt.prompt();
+        // Wait for the user's decision
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+            // Hide the install notification after the prompt
+            installContainer.style.display = 'none';
+        });
+    });
+
+    // If the user clicks 'Dismiss'
+    document.getElementById('dismiss-button').addEventListener('click', () => {
+        installContainer.style.display = 'none';  // Hide the notification
+    });
+});
+</script>
+</body>
+</html>
+
     <script>
         const countriesData = [
        

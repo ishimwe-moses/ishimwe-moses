@@ -295,6 +295,8 @@ function displayResults(corrections) {
             <p class="correct">Correct Answer: ${Array.isArray(correction.correctAnswer) ? correction.correctAnswer.join(', ') : correction.correctAnswer}</p>
         </div>
     `).join('');
+  // Scroll to the top of the page after displaying the results
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function restartQuiz() {

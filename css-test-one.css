@@ -1,19 +1,18 @@
- /* General Page Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
+     body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 188, 240);
+    color: #333;
+    text-align: center; /* Center all text by default */
+}
         /* Header Styling */
         header {
             background-color: #084812;
             color: white;
             padding: 10px 20px;
             text-align: center;
-            position: relative;
+             position:sticky;
         }
 
         header h1 {
@@ -57,6 +56,7 @@
             color: #818181;
             display: block;
             transition: 0.3s;
+           text-align: left;
         }
 
         .side-nav a:hover {
@@ -106,6 +106,17 @@
         button:hover {
             background-color: #3498db;
         }
+/* Quiz Section Styling */
+h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 
         /* Quiz Form and Question Container */
         #quiz-form {
@@ -133,55 +144,21 @@
             border-radius: 4px;
         }
 
-        /* Table Image Styling */
-        section img {
-            width: 80px;
-            height: auto;
-            border-radius: 8px;
-            padding: 5px;
-            border: 2px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-
-
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(205, 188, 240);
-    text-align: center; /* Center all text by default */
+       html {
+    scroll-behavior: smooth;
 }
+        
 
-/* Header styling */
-header {
-    background-color: #6fa6e2;
-    color: white;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    text-align: center; /* Ensure header text is centered */
-}
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-/* Main content area */
+/* Main Content Area */
 main {
-    padding: 80px 20px 20px 20px; /* Adjust padding-top for fixed header */
+    padding: 80px 20px 20px; /* Adjust for fixed header */
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the main content */
 }
 
-/* Sections styling */
+/* Sections Styling */
 section {
     margin-top: 20px;
     padding: 15px;
@@ -190,7 +167,6 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%; /* Adjust the width as needed */
     max-width: 800px; /* Set a max-width for better readability */
-    text-align: center; /* Center text in section */
 }
 
 /* Override text alignment for questions */
@@ -199,23 +175,33 @@ section .question {
     margin-bottom: 15px;
 }
 
-/* Ensure images do not exceed the width of their container */
+
+
+        /* Ensure images do not exceed the width of their container */
 section img {
-    max-width: 100%;
+    max-width: 40%; /* Responsive image size */
     height: auto;
     display: block;
-    margin: 10px auto; /* Center the image within the section with some margin */
+    margin: 10px auto; /* Center the image within the section */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
 }
 
-/* Buttons styling */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    /* Remove display: block and margin: auto to allow inline display */
+        /* Input Text Field Styling */
+input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    max-width: 500px; /* Set a max-width for text inputs */
+}
+
+/* Radio and Checkbox Inputs */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+        button[type="button"] {
+    background-color: #007bff;
+    color: rgb(247, 240, 240);
 }
 
 button:hover {
@@ -227,11 +213,6 @@ button:active {
     background-color: #003f7f;
 }
 
-button[type="button"] {
-    background-color: #007bff;
-    color: rgb(247, 240, 240);
-}
-
 /* Center the buttons and display them inline with gaps */
 #button-container {
     display: flex;
@@ -240,7 +221,28 @@ button[type="button"] {
     margin-top: 20px;
 }
 
-/* Correct and incorrect answer styling */
+/* Quiz Form and Question Container */
+#quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Quiz Results Section */
+#results h2,
+#quiz h2 {
+    margin-top: 20px;
+}
+
+#results p,
+#results #corrections {
+    background-color: #dff9fb;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Correct and Incorrect Answer Styling */
 .correct {
     color: green;
 }
@@ -249,29 +251,7 @@ button[type="button"] {
     color: red;
 }
 
-/* Form styling */
-#quiz-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-/* Label styling */
+/* Form Styling */
 label {
     margin-right: 10px;
-}
-
-/* Input text field styling */
-input[type="text"] {
-    padding: 5px;
-    width: 100%;
-    max-width: 500px; /* Set a max-width for text inputs */
-    -webkit-text-fill-color: black;
-}
-
-/* Radio and checkbox inputs */
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
 }

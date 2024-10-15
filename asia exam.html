@@ -3,15 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore the world!</title>
-    <link rel="stylesheet" href="css-test-one.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>World Explorer!</title>
+
+   <link rel="stylesheet"href="css-test-one.css">
+
+    <script>
+        // Function to open the side navigation
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        // Function to close the side navigation
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+
+        // Function to navigate to a specific section (example)
+        function goToSection(sectionNumber) {
+            alert("Navigating to section " + sectionNumber);
+            // Implement scrolling to different sections here if needed
+            closeNav(); // Close the side navigation after selection
+        }
+    </script>
 </head>
 
 <body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Home</a>
+        <a href="asia.html">🌍 africa</a>
+        <a href="asia quiz1.html">📘 Quiz1</a>
+        
+        <a href="asia quiz2.html">📘 Quiz2</a>
+        
+        <a href="asia quiz1.html">📘 Quiz3</a>
+        <a href="asia general test.html">📔 General Test</a>
+        <a href="asia exam.html">📔 Exam</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore Asia</h1>
+    
+
+    <!-- Main Content -->
     <div id="app">
-        <header>
-            <h1>Explore Asia Exam </h1>
+    
+
+            <h1>Explore Asia Exam</h1>
         </header>
         <main>
             <section id="instructions">
@@ -33,9 +79,9 @@
                 <p id="score"></p>
                 <h2>view corrections</h2>
                 <div id="corrections"></div>
-                <h2>click restart to restart exam, and click finish to go back to continue your exploration.</h2>
+               
                 <button onclick="restartQuiz()">Restart exam</button>
-                <button class="button" onclick="document.location='asia.html'">FINISH</button>
+              
             </section>
         </main>
     </div>

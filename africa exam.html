@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Africa Quiz</title>
-    <link rel="stylesheet" href="css-test-one.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>World Explorer!</title>
+
+   <link rel="stylesheet"href="css-test-one.css">
+
+    <script>
+        // Function to open the side navigation
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        // Function to close the side navigation
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+
+        // Function to navigate to a specific section (example)
+        function goToSection(sectionNumber) {
+            alert("Navigating to section " + sectionNumber);
+            // Implement scrolling to different sections here if needed
+            closeNav(); // Close the side navigation after selection
+        }
+    </script>
 </head>
+
 <body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Home</a>
+        <a href="africa.html">🌍 africa</a>
+        <a href="africa quiz1.html">📘 Quiz1</a>
+        
+        <a href="africa quiz2.html">📘 Quiz2</a>
+        
+        <a href="africa quiz1.html">📘 Quiz3</a>
+        <a href="africa general test.html">📔 General Test</a>
+        <a href="africa exam.html">📔 Exam</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore Africa</h1>
+    </header>
+
+    <!-- Main Content -->
     <div id="app">
         <header>
             <h1>Explore Africa EXAM</h1>
@@ -14,7 +61,7 @@
         <main>
             <!-- Instructions and User Information Section -->
             <section id="instructions">
-                <p>Test your knowledge about Africa! We wish you have explored the first 3 days!</p>
+                <p>Test your knowledge about Africa!!</p>
                 
                 <p>Click the button below to start.</p>
                 <button onclick="startTest()">Start Exam</button>
@@ -37,12 +84,11 @@
                 <h2>View Corrections</h2>
                 <div id="corrections"></div>
                 <div id="certificate-section"></div> <!-- Certificate Link will be here -->
-                <h2>Click restart to retake the exam or finish to continue your exploration.</h2>
                 <button onclick="restartQuiz()">Restart Exam</button>
-                <button class="button" onclick="document.location='africa.html'">FINISH</button>
             </section>
         </main>
     </div>
     <script src="africa exam.js"></script>
 </body>
 </html>
+

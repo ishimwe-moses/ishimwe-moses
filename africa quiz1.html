@@ -1,55 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore the World</title>
-    <link rel="stylesheet" href="css-test-one.css">
-    <style>
-        /* Additional CSS to style the fixed header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #f8f8f8;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>World Explorer!</title>
+
+   <link rel="stylesheet"href="css-test-one.css">
+
+    <script>
+        // Function to open the side navigation
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
         }
 
-        main {
-            margin-top: 80px; /* Ensures the content does not overlap with the fixed header */
+        // Function to close the side navigation
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
         }
 
-        #menu {
-            margin-top: 20px;
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            display: inline-block;
+        // Function to navigate to a specific section (example)
+        function goToSection(sectionNumber) {
+            alert("Navigating to section " + sectionNumber);
+            // Implement scrolling to different sections here if needed
+            closeNav(); // Close the side navigation after selection
         }
-
-        #menu:hover {
-            background-color: #0056b3;
-        }
-
-        /* Styling to ensure the results are displayed at the top */
-        #results {
-            margin-top: 20px;
-        }
-    </style>
+    </script>
 </head>
 
 <body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Home</a>
+        <a href="africa.html">🌍 africa</a>
+        <a href="africa quiz1.html">📘 Quiz1</a>
+        
+        <a href="africa quiz2.html">📘 Quiz2</a>
+        
+        <a href="africa quiz1.html">📘 Quiz3</a>
+        <a href="africa general test.html">📔 General Test</a>
+        <a href="africa exam.html">📔 Exam</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore Africa</h1>
+    </header>
+
+    <!-- Main Content -->
     <div id="app">
         <header>
-            <h1>Explore Africa Quiz 1</h1>
-            <div id="menu" onclick="window.location.href='africa.html'">Return to Main Page</div>
+            <h1>Explore Africa Quiz1</h1>
         </header>
-        <main>
+
+         <main>
             <section id="instructions">
                 <p>Test your knowledge about Africa we wish you have explored day1, day2 and day3!</p>
                 <p>Click the button below to start.</p>
@@ -60,7 +71,7 @@
             <section id="quiz" style="display: none;">
                 <form id="quiz-form">
                     <div id="questions-container"></div>
-                    <h2>Click submit button to view your scores.</h2>
+                    <h2>Click submit to view your scores.</h2>
                     <button type="button" onclick="submitAnswers()">Submit</button>
                 </form>
             </section>
@@ -68,35 +79,14 @@
             <section id="results" style="display: none;">
                 <h2>Your Quiz Results</h2>
                 <p id="score"></p>
-                <h2>View corrections</h2>
+                <h2>View Corrections</h2>
                 <div id="corrections"></div>
-                <h2>Click restart to restart the quiz.</h2>
                 <button onclick="restartQuiz()">Restart Quiz</button>
             </section>
         </main>
     </div>
 
-    <script>
-        function startTest() {
-            document.getElementById('instructions').style.display = 'none';
-            document.getElementById('quiz').style.display = 'block';
-        }
-
-        function submitAnswers() {
-            // Assuming submitAnswers logic is handled in africa quiz1.js
-            document.getElementById('quiz').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
-
-            // Scroll the page back to the top when results are shown
-            window.scrollTo(0, 0);
-        }
-
-        function restartQuiz() {
-            document.getElementById('results').style.display = 'none';
-            document.getElementById('quiz').style.display = 'none';
-            document.getElementById('instructions').style.display = 'block';
-        }
-    </script>
+    <script src="africa quiz1.js"></script>
 </body>
 
 </html>

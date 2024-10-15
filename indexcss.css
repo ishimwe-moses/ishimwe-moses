@@ -22,7 +22,7 @@ header {
   color: white;
   padding: 5px;
   display: flex;
-  align-atems: center;
+
   justify-content: space-between; /* Spread items horizontally */
   position: fixed;
   top: 0;

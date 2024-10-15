@@ -220,11 +220,15 @@ function checkAnswer(question, userAnswer) {
     }
     return question.answer.toString().toLowerCase() === userAnswer.toString().toLowerCase();
 }
-
 function displayResults(corrections) {
+    // Hide the quiz and show the results
     document.getElementById('quiz').style.display = 'none';
     document.getElementById('results').style.display = 'block';
+    
+    // Display the score
     document.getElementById('score').innerText = `You got ${correctAnswers} out of 20 correct!`;
+
+    // Populate corrections
     const correctionsContainer = document.getElementById('corrections');
     correctionsContainer.innerHTML = corrections.map(correction => `
         <div>
@@ -235,6 +239,9 @@ function displayResults(corrections) {
             <p class="correct">Correct Answer: ${Array.isArray(correction.correctAnswer) ? correction.correctAnswer.join(', ') : correction.correctAnswer}</p>
         </div>
     `).join('');
+
+    // Scroll to the top of the page after displaying the results
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function restartQuiz() {

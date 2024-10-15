@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>World Explorer!</title>
-<style>
-    /* General Page Styles */
-body {
+
+    <style>
+      
+        body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -15,23 +17,149 @@ body {
     color: #333;
     text-align: center; /* Center all text by default */
 }
+        /* Header Styling */
+        header {
+            background-color: #084812;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+        }
 
-/* Header Styling */
-header {
-    background-color: #084812; /* Original color */
-    color: white;
-    padding: 10px 0;
-    position: fixed; /* Fixed header */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Toggle Menu Button Styling */
+        .toggle-menu {
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+
+        .toggle-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* Side Navigation Styling */
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #084812;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .side-nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+           text-align: left;
+        }
+
+        .side-nav a:hover {
+            color: #f1f1f1;
+        }
+
+        .side-nav .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Main Content */
+        #app {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Quiz Section Styling */
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+/* Quiz Section Styling */
+h2 {
+    font-size: 20px;
+    color: #333;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+p {
+    font-size: 16px;
+    line-height: 1.5;
 }
+
+
+        /* Quiz Form and Question Container */
+        #quiz-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #quiz-form div {
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+
+        /* Quiz Results Section */
+        #results h2,
+        #quiz h2 {
+            margin-top: 20px;
+        }
+
+        #results p,
+        #results #corrections {
+            background-color: #dff9fb;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+       html {
+    scroll-behavior: smooth;
+}
+        
+
 
 /* Main Content Area */
 main {
@@ -58,7 +186,9 @@ section .question {
     margin-bottom: 15px;
 }
 
-/* Ensure images do not exceed the width of their container */
+
+
+        /* Ensure images do not exceed the width of their container */
 section img {
     max-width: 40%; /* Responsive image size */
     height: auto;
@@ -68,17 +198,19 @@ section img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
 }
 
-/* Buttons Styling */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+        /* Input Text Field Styling */
+input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    max-width: 500px; /* Set a max-width for text inputs */
 }
 
-button[type="button"] {
+/* Radio and Checkbox Inputs */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+        button[type="button"] {
     background-color: #007bff;
     color: rgb(247, 240, 240);
 }
@@ -134,73 +266,6 @@ button:active {
 label {
     margin-right: 10px;
 }
-
-/* Input Text Field Styling */
-input[type="text"] {
-    padding: 5px;
-    width: 100%;
-    max-width: 500px; /* Set a max-width for text inputs */
-}
-
-/* Radio and Checkbox Inputs */
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-/* Side Navigation Styling */
-.side-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #084812;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.side-nav a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.side-nav a:hover {
-    color: #f1f1f1;
-}
-
-.side-nav .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Quiz Section Styling */
-h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Quiz Form and Question Container */
-#quiz-form div {
-    padding: 10px;
-    background-color: #ecf0f1;
-    border-radius: 4px;
-}
-
     </style>
 
     <script>
@@ -285,3 +350,4 @@ p {
 </body>
 
 </html>
+

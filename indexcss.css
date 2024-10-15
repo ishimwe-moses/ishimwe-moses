@@ -22,7 +22,7 @@ header {
   color: white;
   padding: 5px;
   display: flex;
-  align-items: center;
+  
   justify-content: space-between; /* Spread items horizontally */
   position: fixed;
   top: 0;
@@ -44,6 +44,7 @@ header img {
   width: 10%; /* Ensure images scale responsively */
   height: auto;
   margin-right: 10px;
+  margin-left:5px;
 }
 
 main {

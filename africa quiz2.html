@@ -1,31 +1,226 @@
+
+   
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>explore the world</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>World Explorer!</title>
+
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="css-test-one.css">
+
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #084812;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Toggle Menu Button Styling */
+        .toggle-menu {
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+
+        .toggle-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* Side Navigation Styling */
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #084812;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .side-nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-nav a:hover {
+            color: #f1f1f1;
+        }
+
+        .side-nav .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Main Content */
+        #app {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Quiz Section Styling */
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        /* Quiz Form and Question Container */
+        #quiz-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #quiz-form div {
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+
+        /* Quiz Results Section */
+        #results h2,
+        #quiz h2 {
+            margin-top: 20px;
+        }
+
+        #results p,
+        #results #corrections {
+            background-color: #dff9fb;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* Table Image Styling */
+        table img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+            padding: 5px;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        // Function to open the side navigation
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        // Function to close the side navigation
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+
+        // Function to navigate to a specific section (example)
+        function goToSection(sectionNumber) {
+            alert("Navigating to section " + sectionNumber);
+            // Implement scrolling to different sections here if needed
+            closeNav(); // Close the side navigation after selection
+        }
+    </script>
 </head>
 
 <body>
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Home</a>
+        <a href="africa.html">🌍 africa</a>
+        <a href="africa quiz1.html">📘 Quiz1</a>
+        
+        <a href="africa quiz2.html">📘 Quiz2</a>
+        
+        <a href="africa quiz1.html">📘 Quiz3</a>
+        <a href="africa general test.html">📔 General Test</a>
+        <a href="africa exam.html">📔 Exam</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="toggle-menu" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Explore Africa</h1>
+    </header>
+
+    <!-- Main Content -->
     <div id="app">
         <header>
-
-            <h1>Explore Africa quiz2 </h1>
+            <h1>Explore Africa Quiz2</h1>
         </header>
+
         <main>
             <section id="instructions">
-                <p>Test your knowledge about Africa we wish you have finished your exploration for day4,day5,day6! 
+                <p>Test your knowledge about Africa! We hope you have completed your exploration for Day 4, Day 5, and Day 6.</p>
                 <p>Click the button below to start.</p>
-                <button onclick="startTest()">Start quiz</button>
-                <p>Good lucky!</p>
+                <button onclick="startTest()">Start Quiz</button>
+                <p>Good luck!</p>
             </section>
 
             <section id="quiz" style="display: none;">
                 <form id="quiz-form">
                     <div id="questions-container"></div>
-                    <h2>click submit button to view your scores.</h2>
+                    <h2>Click submit to view your scores.</h2>
                     <button type="button" onclick="submitAnswers()">Submit</button>
                 </form>
             </section>
@@ -33,15 +228,14 @@
             <section id="results" style="display: none;">
                 <h2>Your Quiz Results</h2>
                 <p id="score"></p>
-                <h2>view corrections</h2>
+                <h2>View Corrections</h2>
                 <div id="corrections"></div>
-                <h2>click restart to restart the quiz and click finish to go back to continue your exploration.</h2>
+                <h2>Click restart to retry the quiz or finish to continue your exploration.</h2>
                 <button onclick="restartQuiz()">Restart Quiz</button>
-                <button class="button", onclick="document.location='africa day7.html'">NEXT</button>
-                <button class="button" onclick="document.location='africa.html'">FINISH</button>
             </section>
         </main>
     </div>
+
     <script src="africa quiz2.js"></script>
 </body>
 

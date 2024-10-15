@@ -22,7 +22,7 @@ header {
   color: white;
   padding: 5px;
   display: flex;
-  
+  align-atems: center;
   justify-content: space-between; /* Spread items horizontally */
   position: fixed;
   top: 0;
@@ -43,8 +43,8 @@ header h1 {
 header img {
   width: 10%; /* Ensure images scale responsively */
   height: auto;
-  margin-right: 10px;
-  margin-left:5px;
+ top: 0%;
+left: 2%;
 }
 
 main {
@@ -54,6 +54,7 @@ main {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
 
 a {
@@ -99,6 +100,7 @@ a {
   color: white;
   display: block;
   transition: 0.3s;
+  align-items: left;
 }
 
 .sidepanel a:hover {
